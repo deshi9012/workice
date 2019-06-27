@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/deals",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Deals\\Providers\\DealsServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Deals\\": ""
+        }
+    }
+}

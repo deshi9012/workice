@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/issues",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Issues\\Providers\\IssuesServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Issues\\": ""
+        }
+    }
+}

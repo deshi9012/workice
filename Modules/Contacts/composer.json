@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/contacts",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Contacts\\Providers\\ContactsServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Contacts\\": ""
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/creditnotes",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Creditnotes\\Providers\\CreditnotesServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Creditnotes\\": ""
+        }
+    }
+}

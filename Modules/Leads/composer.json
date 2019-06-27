@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/leads",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Leads\\Providers\\LeadsServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Leads\\": ""
+        }
+    }
+}

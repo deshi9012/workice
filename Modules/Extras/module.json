@@ -1,0 +1,16 @@
+{
+    "name": "Extras",
+    "alias": "extras",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Extras\\Providers\\ExtrasServiceProvider"
+    ],
+    "aliases": [],
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

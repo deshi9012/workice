@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/subscriptions",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Subscriptions\\Providers\\SubscriptionsServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Subscriptions\\": ""
+        }
+    }
+}

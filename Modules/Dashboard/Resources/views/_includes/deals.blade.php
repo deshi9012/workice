@@ -1,0 +1,5 @@
+@include('partial.base_currency')
+@widget('Deals.TotalsWidget')
+@widget('Deals.TotalsWidget2')
+@widget('Deals.WonLostChart')
+@widget('Deals.StagesChart')

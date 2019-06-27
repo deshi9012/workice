@@ -1,0 +1,41 @@
+//colors
+$white: #fff;
+$color_smalt_blue_approx: #607d8b;
+$color_fern_approx: #66bb6a;
+
+.list-feed {
+	margin: 0;
+	padding: 7px 0;
+	list-style: none;
+	> li {
+		position: relative;
+		margin: 0;
+		padding-bottom: 10px;
+		padding-left: 28px;
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 5px;
+			width: 8px;
+			height: 8px;
+			background-color: $white;
+			display: inline-block;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 50%;
+			border: 2px solid $color_smalt_blue_approx;
+			z-index: 3;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 5px;
+			left: 3px;
+			bottom: -7px;
+			width: 0;
+			border-left: 1px solid $color_fern_approx;
+			border-right: 1px solid $color_fern_approx;
+			z-index: 2;
+		}
+	}
+}

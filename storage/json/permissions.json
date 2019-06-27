@@ -1,0 +1,882 @@
+{
+    "data": [{
+        "name": "activities_view_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all activities"
+    }, {
+        "name": "articles_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create articles"
+    }, {
+        "name": "articles_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete articles"
+    }, {
+        "name": "articles_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update articles"
+    }, {
+        "name": "issues_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create issues"
+    }, {
+        "name": "issues_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update issues"
+    }, {
+        "name": "issues_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete issues"
+    }, {
+        "name": "clients_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create clients"
+    }, {
+        "name": "clients_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete clients"
+    }, {
+        "name": "clients_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update clients"
+    }, {
+        "name": "comments_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete comments"
+    }, {
+        "name": "contacts_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create contacts"
+    }, {
+        "name": "contacts_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete contacts"
+    }, {
+        "name": "contacts_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update contacts"
+    }, {
+        "name": "contacts_view",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all contacts"
+    }, {
+        "name": "contracts_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create contracts"
+    }, {
+        "name": "contracts_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete contracts"
+    }, {
+        "name": "contracts_sign",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to sign contracts"
+    }, {
+        "name": "contracts_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update contracts"
+    }, {
+        "name": "contracts_view_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all contracts"
+    }, {
+        "name": "credits_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create credit notes"
+    }, {
+        "name": "credits_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete credit notes"
+    }, {
+        "name": "credits_send",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to send credit notes"
+    }, {
+        "name": "credits_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update credit notes"
+    }, {
+        "name": "credits_view_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all creditnotes"
+    }, {
+        "name": "deals_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create deals"
+    }, {
+        "name": "deals_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete deals"
+    }, {
+        "name": "deals_send_email",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to send deal emails"
+    }, {
+        "name": "deals_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update deals"
+    }, {
+        "name": "estimates_comment",
+        "guard_name": "web",
+        "created_at": "2018-01-19 08:18:44",
+        "updated_at": "2018-01-19 08:18:44",
+        "description": "Allow user to post estimate comments"
+    }, {
+        "name": "estimates_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create estimates"
+    }, {
+        "name": "estimates_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete estimates"
+    }, {
+        "name": "estimates_send",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to sent estimates"
+    }, {
+        "name": "estimates_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update estimates"
+    }, {
+        "name": "estimates_view_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all estimates"
+    }, {
+        "name": "events_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create events"
+    }, {
+        "name": "events_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update events"
+    }, {
+        "name": "expenses_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create expenses"
+    }, {
+        "name": "expenses_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete expenses"
+    }, {
+        "name": "expenses_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update expenses"
+    }, {
+        "name": "expenses_view_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all expenses"
+    }, {
+        "name": "files_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create files"
+    }, {
+        "name": "files_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete files"
+    }, {
+        "name": "files_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update files"
+    }, {
+        "name": "install_updates",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:34",
+        "updated_at": "2017-12-22 20:55:34",
+        "description": "Allow user to install updates"
+    }, {
+        "name": "invoices_comment",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to post invoice comments"
+    }, {
+        "name": "invoices_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create invoices"
+    }, {
+        "name": "invoices_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete invoices"
+    }, {
+        "name": "invoices_pay",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to pay invoices offline"
+    }, {
+        "name": "invoices_remind",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to send invoice reminders"
+    }, {
+        "name": "invoices_send",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to send invoices"
+    }, {
+        "name": "invoices_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update invoices"
+    }, {
+        "name": "invoices_view_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all invoices"
+    }, {
+        "name": "leads_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create leads"
+    }, {
+        "name": "leads_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete leads"
+    }, {
+        "name": "leads_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update leads"
+    }, {
+        "name": "links_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create links"
+    }, {
+        "name": "menu_calendar",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view calendar menu"
+    }, {
+        "name": "menu_clients",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view clients menu"
+    }, {
+        "name": "menu_contacts",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view contacts menu"
+    }, {
+        "name": "menu_contracts",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view contracts menu"
+    }, {
+        "name": "menu_creditnotes",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view creditnotes menu"
+    }, {
+        "name": "menu_deals",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view deals menu"
+    }, {
+        "name": "menu_estimates",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view estimates menu"
+    }, {
+        "name": "menu_expenses",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view expenses menu"
+    }, {
+        "name": "menu_home",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view homepage"
+    }, {
+        "name": "menu_invoices",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view invoices menu"
+    }, {
+        "name": "menu_items",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view items menu"
+    }, {
+        "name": "menu_knowledgebase",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view knowledgebase menu"
+    }, {
+        "name": "menu_leads",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view leads menu"
+    }, {
+        "name": "menu_messages",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view messages menu"
+    }, {
+        "name": "menu_notes",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view notes menu"
+    }, {
+        "name": "menu_payments",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view payments menu"
+    }, {
+        "name": "menu_projects",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view projects menu"
+    }, {
+        "name": "menu_reports",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view reports menu"
+    }, {
+        "name": "menu_sales",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view sales menu"
+    }, {
+        "name": "menu_marketing",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view marketing menu"
+    }, {
+        "name": "menu_settings",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view settings menu"
+    }, {
+        "name": "menu_tasks",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view tasks menu"
+    }, {
+        "name": "menu_tax_rates",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view tax rates menu"
+    }, {
+        "name": "menu_tickets",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view tickets menu"
+    }, {
+        "name": "menu_users",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view users menu"
+    }, {
+        "name": "menu_subscriptions",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view subscriptions menu"
+    }, {
+        "name": "messages_send_to_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to send messages to all users"
+    }, {
+        "name": "milestones_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create milestones"
+    }, {
+        "name": "milestones_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete milestones"
+    }, {
+        "name": "milestones_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update milestones"
+    }, {
+        "name": "payments_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete payments"
+    }, {
+        "name": "payments_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update payments"
+    }, {
+        "name": "payments_view_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all projects"
+    }, {
+        "name": "project_menu_bugs",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project bugs"
+    }, {
+        "name": "project_menu_calendar",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project calendar"
+    }, {
+        "name": "project_menu_comments",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project discussions"
+    }, {
+        "name": "project_menu_dashboard",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project overview"
+    }, {
+        "name": "project_menu_files",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project files"
+    }, {
+        "name": "project_menu_gantt",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project gantt"
+    }, {
+        "name": "project_menu_links",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project links"
+    }, {
+        "name": "project_menu_milestones",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project milestones"
+    }, {
+        "name": "project_menu_notes",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project notes"
+    }, {
+        "name": "project_menu_tasks",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project tasks"
+    }, {
+        "name": "project_menu_team",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project team"
+    }, {
+        "name": "project_menu_timesheets",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project timesheet"
+    }, {
+        "name": "projects_copy",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to clone projects"
+    },
+    {
+        "name": "projects_download",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to download projects PDF"
+    }, {
+        "name": "projects_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create projects"
+    }, {
+        "name": "projects_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete projects"
+    }, {
+        "name": "projects_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update projects"
+    }, {
+        "name": "projects_view_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all projects"
+    }, {
+        "name": "projects_view_clients",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project clients"
+    }, {
+        "name": "projects_view_cost",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project cost"
+    }, {
+        "name": "projects_view_expenses",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project expenses"
+    }, {
+        "name": "projects_view_hours",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project hours"
+    }, {
+        "name": "projects_view_notes",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project notes"
+    }, {
+        "name": "projects_view_tasks",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project tasks"
+    }, {
+        "name": "projects_view_team",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project team"
+    }, {
+        "name": "projects_view_used_budget",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view project budget"
+    }, {
+        "name": "roles_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create roles"
+    }, {
+        "name": "roles_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete roles"
+    }, {
+        "name": "roles_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update roles"
+    }, {
+        "name": "roles_view_all",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to view all roles"
+    }, {
+        "name": "settings",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to modify settings"
+    }, {
+        "name": "settings_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update settings"
+    }, {
+        "name": "tasks_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create tasks"
+    }, {
+        "name": "tasks_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete tasks"
+    }, {
+        "name": "tasks_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update tasks"
+    },{
+        "name": "tasks_complete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to mark tasks as completed"
+    }, {
+        "name": "taxes_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create taxes"
+    }, {
+        "name": "taxes_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete taxes"
+    }, {
+        "name": "taxes_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:34",
+        "updated_at": "2017-12-22 20:55:34",
+        "description": "Allow user to update taxes"
+    }, {
+        "name": "tickets_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create tickets"
+    }, {
+        "name": "tickets_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete tickets"
+    }, {
+        "name": "tickets_reporter",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to select ticket reporter"
+    }, {
+        "name": "tickets_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update tickets"
+    }, {
+        "name": "timer_start",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to start timer"
+    }, 
+    {
+        "name": "timer_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create time entry"
+    }, 
+    {
+        "name": "timer_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update logged time"
+    }, {
+        "name": "timer_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete logged time"
+    }, {
+        "name": "users_assign",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to assign other users"
+    }, {
+        "name": "users_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create other users"
+    }, {
+        "name": "users_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete users"
+    }, {
+        "name": "users_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update users"
+    }, {
+        "name": "reminders_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create reminders"
+    }, {
+        "name": "announcements_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create announcements"
+    }, {
+        "name": "announcements_update",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to update announcements"
+    }, {
+        "name": "announcements_delete",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to delete announcements"
+    }, {
+        "name": "subscriptions_create",
+        "guard_name": "web",
+        "created_at": "2017-12-22 20:55:35",
+        "updated_at": "2017-12-22 20:55:35",
+        "description": "Allow user to create customer subscriptions"
+    }]
+}

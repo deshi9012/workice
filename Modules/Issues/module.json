@@ -1,0 +1,16 @@
+{
+    "name": "Issues",
+    "alias": "issues",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Issues\\Providers\\IssuesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

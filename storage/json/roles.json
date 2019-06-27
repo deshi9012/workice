@@ -1,0 +1,20 @@
+{
+	"data":
+	[
+		{
+			"id": 1,
+			"name": "admin",
+			"guard_name": "web"
+		},
+		{
+			"id": 2,
+			"name": "client",
+			"guard_name": "web"
+		},
+		{
+			"id": 3,
+			"name": "staff",
+			"guard_name": "web"
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+    "name": "spatie/laravel-translation-loader",
+    "description": "Store your language lines in the database, yaml or other sources",
+    "keywords": [
+        "spatie",
+        "laravel",
+        "laravel-translation-loader",
+        "translate",
+        "database",
+        "db",
+        "language",
+        "i8n"
+    ],
+    "homepage": "https://github.com/spatie/laravel-translation-loader",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/translation": "~5.7.0|~5.8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4|^8.0",
+        "orchestra/testbench":  "~3.7.0|~3.8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\TranslationLoader\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\TranslationLoader\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\TranslationLoader\\TranslationServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

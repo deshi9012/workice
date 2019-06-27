@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/expenses",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Expenses\\Providers\\ExpensesServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Expenses\\": ""
+        }
+    }
+}

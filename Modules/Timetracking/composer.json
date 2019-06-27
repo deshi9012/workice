@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/timetracking",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Timetracking\\Providers\\TimetrackingServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Timetracking\\": ""
+        }
+    }
+}

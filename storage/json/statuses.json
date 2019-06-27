@@ -1,0 +1,31 @@
+{
+	"data":
+	[
+		{
+			"id": 1,
+			"status": "open",
+			"color": "#DA4453"
+		},
+		{
+			"id": 2,
+			"status": "pending",
+			"color": "#967ADC"
+		},
+		{
+			"id": 3,
+			"status": "confirmed",
+			"color": "#38354a"
+		},
+		{
+			"id": 4,
+			"status": "Resolved",
+			"color": "#37BC9B"
+		},
+		{
+			"id": 5,
+			"status": "closed",
+			"color": "#3BAFDA"
+		}
+		
+	]
+}

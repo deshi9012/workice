@@ -1,0 +1,403 @@
+{
+    "data": [{
+        "name": "Accounting Services",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Home Office",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Consulting",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Qualification",
+        "module": "deals",
+        "color": "dark",
+        "active": 1,
+        "order": 1,
+        "description": null,
+        "pipeline": 20
+    }, {
+        "name": "Needs Analysis",
+        "module": "deals",
+        "color": "success",
+        "active": 1,
+        "order": 2,
+        "description": null,
+        "pipeline": 20
+    }, {
+        "name": "Value Proposition",
+        "module": "deals",
+        "color": "danger",
+        "active": 1,
+        "order": 3,
+        "description": null,
+        "pipeline": 20
+    }, {
+        "name": "Decision Makers",
+        "module": "deals",
+        "color": "info",
+        "active": 1,
+        "order": 4,
+        "description": null,
+        "pipeline": 20
+    }, {
+        "name": "Entertainment",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Proposal",
+        "module": "deals",
+        "color": "primary",
+        "active": 1,
+        "order": 5,
+        "description": null,
+        "pipeline": 20
+    }, {
+        "name": "Getting Started",
+        "module": "knowledgebase",
+        "color": "dark",
+        "active": 1,
+        "order": 0,
+        "description": "Beginners Guide",
+        "pipeline": null
+    }, {
+        "name": "Become an Author",
+        "module": "knowledgebase",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": "Steps on Envato Authorship",
+        "pipeline": null
+    }, {
+        "name": "General info for all authors",
+        "module": "knowledgebase",
+        "color": "danger",
+        "active": 1,
+        "order": 0,
+        "description": "General information on Envato Authors",
+        "pipeline": null
+    }, {
+        "name": "Your statement & documents ",
+        "module": "knowledgebase",
+        "color": "dark",
+        "active": 1,
+        "order": 0,
+        "description": "Learn more on your statements and Earnings",
+        "pipeline": null
+    }, {
+        "name": "Account Settings",
+        "module": "knowledgebase",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": "More information about your account setup",
+        "pipeline": null
+    }, {
+        "name": "Protecting Your Copyright",
+        "module": "knowledgebase",
+        "color": "dark",
+        "active": 1,
+        "order": 0,
+        "description": "Learn more on Envato Copyright policy",
+        "pipeline": null
+    }, {
+        "name": "Intellectual Property",
+        "module": "knowledgebase",
+        "color": "dark",
+        "active": 1,
+        "order": 0,
+        "description": "Information about copyright infringment",
+        "pipeline": null
+    }, {
+        "name": "Item Support",
+        "module": "knowledgebase",
+        "color": "danger",
+        "active": 1,
+        "order": 0,
+        "description": "Information about item support",
+        "pipeline": null
+    }, {
+        "name": "Contacting Authors",
+        "module": "knowledgebase",
+        "color": "danger",
+        "active": 1,
+        "order": 0,
+        "description": "Learn the steps to contact Authors",
+        "pipeline": null
+    }, {
+        "name": "Sales",
+        "module": "pipeline",
+        "color": "dark",
+        "active": 1,
+        "order": 0,
+        "description": "Deals pipeline",
+        "pipeline": null
+    }, {
+        "name": "Delivery",
+        "module": "pipeline",
+        "color": "dark",
+        "active": 1,
+        "order": 2,
+        "description": "",
+        "pipeline": 0
+    },{
+        "name": "Computer Hardware",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Shopping",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Transport",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Contacted",
+        "module": "leads",
+        "color": "info",
+        "active": 1,
+        "order": 1,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Proposal Sent",
+        "module": "leads",
+        "color": "info",
+        "active": 1,
+        "order": 2,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Facebook",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 2,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Google Organic",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 3,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Web",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 5,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Twitter",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 6,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Client Referral",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 7,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Youtube",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 8,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Mailchimp",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 9,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Previous Client",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 10,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Email List",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 11,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Google Ads",
+        "module": "source",
+        "color": "info",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Prospecting",
+        "module": "pipeline",
+        "color": "dark",
+        "active": 1,
+        "order": 3,
+        "description": "",
+        "pipeline": 0
+    }, {
+        "name": "Untouched",
+        "module": "deals",
+        "color": "info",
+        "active": 1,
+        "order": 12,
+        "description": null,
+        "pipeline": 19
+    }, {
+        "name": "First Visit",
+        "module": "deals",
+        "color": "info",
+        "active": 1,
+        "order": 13,
+        "description": null,
+        "pipeline": 19
+    }, {
+        "name": "Proposal Prepared",
+        "module": "deals",
+        "color": "info",
+        "active": 1,
+        "order": 14,
+        "description": null,
+        "pipeline": 19
+    }, {
+        "name": "Quote Sent",
+        "module": "deals",
+        "color": "info",
+        "active": 1,
+        "order": 15,
+        "description": null,
+        "pipeline": 19
+    }, {
+        "name": "Confirm Terms",
+        "module": "deals",
+        "color": "info",
+        "active": 1,
+        "order": 16,
+        "description": null,
+        "pipeline": 19
+    }, {
+        "name": "New Lead",
+        "module": "leads",
+        "color": "info",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "In discussion",
+        "module": "leads",
+        "color": "info",
+        "active": 1,
+        "order": 3,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Contact Later",
+        "module": "leads",
+        "color": "info",
+        "active": 1,
+        "order": 4,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Won",
+        "module": "leads",
+        "color": "info",
+        "active": 1,
+        "order": 6,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Lost",
+        "module": "leads",
+        "color": "info",
+        "active": 1,
+        "order": 5,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Marketing",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Utilities",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Credit Cards",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }, {
+        "name": "Software",
+        "module": "expenses",
+        "color": "success",
+        "active": 1,
+        "order": 0,
+        "description": null,
+        "pipeline": null
+    }]
+}

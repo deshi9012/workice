@@ -1,0 +1,16 @@
+{
+    "name": "Teams",
+    "alias": "teams",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Teams\\Providers\\TeamsServiceProvider"
+    ],
+    "aliases": [],
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

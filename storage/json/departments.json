@@ -1,0 +1,15 @@
+{
+	"data":
+	[
+		{
+			"deptid": 1,
+			"deptname": "Billing",
+			"depthidden": null
+		},
+		{
+			"deptid": 2,
+			"deptname": "Support",
+			"depthidden": null
+		}
+	]
+}

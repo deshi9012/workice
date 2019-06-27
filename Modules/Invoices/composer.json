@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/invoices",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Invoices\\Providers\\InvoicesServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Invoices\\": ""
+        }
+    }
+}

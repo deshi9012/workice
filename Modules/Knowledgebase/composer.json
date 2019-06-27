@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/knowledgebase",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Knowledgebase\\Providers\\KnowledgebaseServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Knowledgebase\\": ""
+        }
+    }
+}

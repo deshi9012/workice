@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/webhook",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Webhook\\Providers\\WebhookServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Webhook\\": ""
+        }
+    }
+}

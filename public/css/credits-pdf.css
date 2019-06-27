@@ -1,0 +1,153 @@
+@font-face {
+	font-family: 'dafoe';
+	src: url('/fonts/MrDafoe-Regular.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'lato';
+	src: url('/fonts/Lato-Regular.ttf') format('truetype')
+}
+@font-face {
+	font-family: 'dejavusans';
+	src: url('/fonts/DejaVuSans.ttf') format('truetype')
+}
+body {
+	font-size: 10pt;
+	line-height: 13pt;
+	color: #777777;
+}
+
+p {
+	margin: 4pt 0 0 0;
+}
+
+td {
+	vertical-align: top;
+}
+
+.items td {
+	border: 0.2mm solid #ffffff;
+	background-color: #F5F5F5;
+}
+
+table thead td {
+	vertical-align: bottom;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 8pt;
+	background-color: #FFFFFF;
+	color: #111111;
+}
+
+.item-name {
+	color: #4d5b76;
+	font-size: 10pt
+}
+
+.text-uc {
+	text-transform: uppercase;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+footer {
+	color: #777777;
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+	padding: 8px 0;
+	text-align: center;
+}
+
+footer .pagenum:before {
+	content: counter(page);
+}
+
+.logo {
+	position: absolute;
+}
+
+.width100 {
+	width: 100%;
+}
+
+.width60 {
+	width: 60%;
+}
+
+.width40 {
+	width: 40%;
+}
+
+.width10 {
+	width: 10%;
+}
+
+.width45 {
+	width: 45%;
+}
+
+.width15 {
+	width: 15%;
+}
+
+.font20 {
+	font-size: 20pt;
+}
+
+.m-t-12 {
+	margin-top: 12px;
+}
+
+.height10 {
+	height: 10px;
+}
+
+.m-b-10 {
+	margin-bottom: 10px;
+}
+
+.v-t {
+	vertical-align: top;
+}
+
+.item-table {
+	border-spacing: 3px;
+	font-size: 9pt;
+	border-collapse: collapse;
+}
+
+.m-b-6 {
+	margin-bottom: 6px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.white-bg {
+	background-color: #ffffff !important;
+}
+
+.m-t-40 {
+	margin-top: 40px;
+}
+
+.foot {
+	padding-top: 3mm;
+	width: 40%;
+	float: left;
+}
+
+.page-num {
+	padding-top: 3mm;
+	width: 40%;
+	float: right;
+}

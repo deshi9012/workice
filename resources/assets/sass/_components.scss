@@ -1,0 +1,180 @@
+//colors
+$alabaster: #fafafa;
+$white: #fff;
+$color_mountain_mist_approx: #999;
+$color_alto_approx: #ddd;
+$color_alabaster_approx: #fcfcfc;
+
+//@extend-elements
+//original selectors
+//.table-inbox .table-inbox-message, .table-inbox .table-inbox-name
+%extend_1 {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+.table-inbox {
+	table-layout: fixed;
+	tr {
+		td {
+			cursor: pointer;
+			background-color: $alabaster;
+			&:not(:first-child) {
+				padding-left: 0;
+			}
+		}
+		&.unread {
+			font-weight: 700;
+			td {
+				background-color: $white;
+			}
+		}
+	}
+	.table-inbox-checkbox {
+		width: 58px;
+	}
+	.table-inbox-attachment {
+		width: 36px;
+	}
+	.table-inbox-star {
+		width: 36px;
+	}
+	.table-inbox-image {
+		width: 52px;
+	}
+	.table-inbox-name {
+		width: 180px;
+		@extend %extend_1;
+	}
+	.table-inbox-message {
+		@extend %extend_1;
+	}
+	.table-inbox-preview {
+		font-weight: 400;
+		color: $color_mountain_mist_approx;
+	}
+	.table-inbox-time {
+		text-align: right;
+	}
+}
+@media(max-width:768px) {
+	.table-inbox {
+		min-width: 480px;
+		.table-inbox-message {
+			white-space: normal;
+		}
+		.table-inbox-name {
+			white-space: normal;
+		}
+		.table-inbox-subject {
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.table-inbox-attachment {
+			display: none;
+		}
+		.table-inbox-image {
+			display: none;
+		}
+		.table-inbox-star {
+			display: none;
+		}
+	}
+}
+.mail-details-read {
+	margin: 0;
+	padding: 20px;
+	border-top: 1px solid $color_alto_approx;
+}
+.mail-details-write {
+	margin: 0;
+	border-top: 1px solid $color_alto_approx;
+	.control-label {
+		padding: 10px 20px;
+	}
+	.form-control {
+		border-width: 0;
+		padding: 10px 20px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 0;
+		height: auto;
+	}
+}
+.mail-container-read {
+	max-width: 100%;
+	overflow: auto;
+	padding: 20px;
+	border-top: 1px solid $color_alto_approx;
+}
+.mail-container-write {
+	border-top: 1px solid $color_alto_approx;
+	.note-editor {
+		border-width: 0;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 0;
+		margin-bottom: 0;
+	}
+}
+.mail-attachments-container {
+	padding: 20px;
+	padding-top: 10px;
+}
+.mail-attachments-heading {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.mail-attachments {
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	list-style: none;
+	> li {
+		display: inline-block;
+		font-size: 13px;
+		padding: 15px 20px;
+		background-color: $color_alabaster_approx;
+		border: 1px solid $color_alto_approx;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 3px;
+		margin-top: 10px;
+		margin-right: 10px;
+	}
+	.mail-attachments-preview {
+		display: inline-block;
+		float: left;
+		> i {
+			top: 0;
+			margin-top: 4px;
+		}
+	}
+	.mail-attachments-content {
+		margin-left: 47px;
+	}
+}
+.panel-toolbar-inbox {
+	background-color: $color_alabaster_approx;
+	> {
+		.navbar {
+			background-color: transparent;
+			border-width: 0;
+		}
+		.navbar-default .btn-default {
+			background-color: $white;
+		}
+	}
+}
+@media(min-width:769px) {
+	.panel-toolbar-inbox {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+.panel > .panel-toolbar-inbox:first-child {
+	//Instead of the line below you could use @include border-top-right-radius($radius)
+	border-top-right-radius: 3px;
+	//Instead of the line below you could use @include border-top-left-radius($radius)
+	border-top-left-radius: 3px;
+}

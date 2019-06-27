@@ -1,0 +1,16 @@
+{
+    "name": "Webhook",
+    "alias": "webhook",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Webhook\\Providers\\WebhookServiceProvider"
+    ],
+    "aliases": [],
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

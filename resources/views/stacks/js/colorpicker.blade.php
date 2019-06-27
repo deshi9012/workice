@@ -1,0 +1,1 @@
+<script src="{{ getAsset('plugins/colorpicker/colorpicker.min.js') }}"></script>

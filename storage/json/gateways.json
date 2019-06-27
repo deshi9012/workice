@@ -1,0 +1,49 @@
+{
+	"data":
+	[
+		{
+			"method_id": 1,
+			"method_name": "Paypal"
+		},
+		{
+			"method_id": 2,
+			"method_name": "Cash"
+		},
+		{
+			"method_id": 3,
+			"method_name": "Bank Deposit"
+		},
+		{
+			"method_id": 5,
+			"method_name": "Cheque"
+		},
+		{
+			"method_id": 6,
+			"method_name": "Stripe"
+		},
+		{
+			"method_id": 7,
+			"method_name": "Braintree"
+		},
+		{
+			"method_id": 8,
+			"method_name": "Razorpay"
+		},
+		{
+			"method_id": 9,
+			"method_name": "Telegram"
+		},
+		{
+			"method_id": 10,
+			"method_name": "WePay"
+		},
+		{
+			"method_id": 11,
+			"method_name": "Mollie"
+		},
+		{
+			"method_id": 12,
+			"method_name": "2checkout"
+		}
+	]
+}

@@ -1,0 +1,933 @@
+{
+	"data":
+	[
+		{
+			"config_key": "allowed_files",
+			"value": "gif,png,jpeg,jpg,pdf,txt,xls,zip"
+		},
+		{
+			"config_key": "allow_client_registration",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "amount_in_words",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "enabled_gateways",
+			"value": "paypal,stripe,mollie,razorpay,checkout,braintree,bank,wepay,paytm,pagseguro"
+		},
+		{
+			"config_key": "answerbot_active",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "automatic_email_on_recur",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "automatic_reminders",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "auto_backup_db",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "auto_close_ticket",
+			"value": "30"
+		},
+		{
+			"config_key": "apply_credits",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "beta_updates",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "billing_email",
+			"value": "johndoe@example.com"
+		},
+		{
+			"config_key": "billing_email_name",
+			"value": "Accounting"
+		},
+		{
+			"config_key": "blur_login",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "braintree_live",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "braintree_merchant_account",
+			"value": ""
+		},
+		{
+			"config_key": "build",
+			"value": "0"
+		},
+		{
+			"config_key": "issue_prefix",
+			"value": "B-"
+		},
+		{
+			"config_key": "button_color",
+			"value": "success"
+		},
+		{
+			"config_key": "captcha_login",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "chart_color",
+			"value": "#11A7DB"
+		},
+		{
+			"config_key": "client_create_project",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "company_address",
+			"value": "4146 Golden Woods"
+		},
+		{
+			"config_key": "company_city",
+			"value": "Sydney"
+		},
+		{
+			"config_key": "company_country",
+			"value": "Australia"
+		},
+		{
+			"config_key": "company_domain",
+			"value": "https://gitbench.com"
+		},
+		{
+			"config_key": "company_email",
+			"value": "info@example.com"
+		},
+		{
+			"config_key": "company_fax",
+			"value": ""
+		},
+		{
+			"config_key": "company_id_prefix",
+			"value": "COM"
+		},
+		{
+			"config_key": "company_legal_name",
+			"value": "Acme LLC"
+		},
+		{
+			"config_key": "company_logo",
+			"value": "iHzTzM5iE4i5R8q6P6GehZoXMcU01suqUWSYxthD.png"
+		},
+		{
+			"config_key": "company_mobile",
+			"value": "(123) 456 00000"
+		},
+		{
+			"config_key": "company_name",
+			"value": "Workice"
+		},
+		{
+			"config_key": "company_phone",
+			"value": "(123) 456 78900"
+		},
+		{
+			"config_key": "company_phone_2",
+			"value": ""
+		},
+		{
+			"config_key": "company_registration",
+			"value": ""
+		},
+		{
+			"config_key": "company_state",
+			"value": "Sample State"
+		},
+		{
+			"config_key": "company_vat",
+			"value": "TAX-XXXXX-XX"
+		},
+		{
+			"config_key": "company_zip_code",
+			"value": "20300"
+		},
+		{
+			"config_key": "contact_person",
+			"value": "John Doe"
+		},
+		{
+			"config_key": "contract_to_project",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "creditnote_number_format",
+			"value": "-[yyyy][mm][dd]-[i]"
+		},
+		{
+			"config_key": "creditnote_prefix",
+			"value": "CN"
+		},
+		{
+			"config_key": "creditnote_start_no",
+			"value": "1"
+		},
+		{
+			"config_key": "creditnote_terms",
+			"value": "Thanks for your business."
+		},
+		{
+			"config_key": "creditnote_footer",
+			"value": "Issued by ACME co."
+		},
+		{
+			"config_key": "creditnote_color",
+			"value": "#ea2e49"
+		},
+		{
+			"config_key": "cron_key",
+			"value": "34WI2L12L87I1A65M90M9A42N41D08A26I"
+		},
+		{
+			"config_key": "currency_decimals",
+			"value": "2"
+		},
+		{
+			"config_key": "custom_item_unit",
+			"value": "Price per kg"
+		},
+		{
+			"config_key": "dynamic_units",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "currency_position",
+			"value": "before"
+		},
+		{
+			"config_key": "custom_bank",
+			"value": ""
+		},
+		{
+			"config_key": "custom_nd_number",
+			"value": ""
+		},
+		{
+			"config_key": "date_format",
+			"value": "%d %b, %Y"
+		},
+		{
+			"config_key": "date_php_format",
+			"value": "d M, Y"
+		},
+		{
+			"config_key": "date_picker_format",
+			"value": "dd-mm-yyyy"
+		},
+		{
+			"config_key": "contact_mailbox",
+			"value": "INBOX"
+		},
+		{
+			"config_key": "contact_mail_flags",
+			"value": "/imap/ssl/novalidate-cert"
+		},
+		{
+			"config_key": "contact_mail_imap",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "contact_mail_host",
+			"value": "imap.gmail.com"
+		},
+		{
+			"config_key": "contact_mail_password",
+			"value": ""
+		},
+		{
+			"config_key": "contact_mail_port",
+			"value": "993"
+		},
+		{
+			"config_key": "contact_mail_username",
+			"value": "johndoe"
+		},
+		{
+			"config_key": "deal_rotting",
+			"value": "15"
+		},
+		{
+			"config_key": "deals_invoice_won",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "decimal_separator",
+			"value": "."
+		},
+		{
+			"config_key": "default_currency",
+			"value": "USD"
+		},
+		{
+			"config_key": "default_currency_symbol",
+			"value": "$"
+		},
+		{
+			"config_key": "default_deal_owner",
+			"value": "1"
+		},
+		{
+			"config_key": "default_deal_pipeline",
+			"value": "19"
+		},
+		{
+			"config_key": "default_subscription",
+			"value": "main"
+		},
+		{
+			"config_key": "default_deal_stage",
+			"value": "4"
+		},
+		{
+			"config_key": "default_language",
+			"value": "english"
+		},
+		{
+			"config_key": "default_lead_stage",
+			"value": "42"
+		},
+		{
+			"config_key": "default_project_settings",
+			"value": "{\"show_milestones\":\"on\",\"show_project_tasks\":\"on\",\"show_project_files\":\"on\",\"show_project_issues\":\"on\",\"show_project_calendar\":\"on\",\"show_project_comments\":\"on\",\"show_project_links\":\"on\",\"client_add_tasks\":\"on\",\"show_project_gantt\":\"on\",\"show_project_hours\":\"on\"}"
+		},
+		{
+			"config_key": "default_sales_rep",
+			"value": "6"
+		},
+		{
+			"config_key": "default_tax",
+			"value": "0.00"
+		},
+		{
+			"config_key": "default_issue_status",
+			"value": "open"
+		},
+		{
+			"config_key": "default_tax2",
+			"value": "0.00"
+		},
+		{
+			"config_key": "default_calendar",
+			"value": "1"
+		},
+		{
+			"config_key": "default_terms",
+			"value": "**Thank** you for your business. We do expect payment within 30 days, so please process this invoice within that time. There will be a 1.5% interest charge per month on late invoices."
+		},
+		{
+			"config_key": "default_role",
+			"value": "client"
+		},
+		{
+			"config_key": "late_fee",
+			"value": "10.00"
+		},
+		{
+			"config_key": "demo_mode",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "developer",
+			"value": "ig63Yd/+yuA8127gEyTz9TY4pnoeKq8dtocVP44+BJvtlRp8Vqcetwjk51dhSB6Rx8aVIKOPfUmNyKGWK7C/gg=="
+		},
+		{
+			"config_key": "disable_emails",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "display_estimate_badge",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "display_invoice_badge",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "email_account_details",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "email_estimate_message",
+			"value": "Hi {CLIENT}<br>Thanks for your business inquiry. <br>The estimate EST {REF} is attached with this email. <br>Estimate Overview:<br>Estimate # : EST {REF}<br>Amount: {CURRENCY} {AMOUNT}<br> You can view the estimate online at:<br>{LINK}<br>Best Regards,<br>{COMPANY}"
+		},
+		{
+			"config_key": "email_invoice_message",
+			"value": "Hello {CLIENT}<br>Here is the invoice of {CURRENCY} {AMOUNT}<br>You can view the invoice online at:<br>{LINK}<br>Best Regards,<br>{COMPANY}"
+		},
+		{
+			"config_key": "email_signature",
+			"value": "1234 Main Street, Anywhere, MA 01234, USA"
+		},
+		{
+			"config_key": "email_staff_tickets",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "enable_languages",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "estimate_color",
+			"value": "#d27a70"
+		},
+		{
+			"config_key": "estimate_footer",
+			"value": "Powered by Workice CRM"
+		},
+		{
+			"config_key": "estimate_language",
+			"value": "en"
+		},
+		{
+			"config_key": "estimate_number_format",
+			"value": "-[yyyy][mm][dd]-[i]"
+		},
+		{
+			"config_key": "autoremind_estimates",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "remind_estimates_before",
+			"value": "2"
+		},
+		{
+			"config_key": "estimate_prefix",
+			"value": "EST"
+		},
+		{
+			"config_key": "estimate_start_no",
+			"value": "1"
+		},
+		{
+			"config_key": "estimate_terms",
+			"value": "**Looking** forward to doing business with you."
+		},
+		{
+			"config_key": "estimate_to_project",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "estimate_to_invoice",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "archive_estimate",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "archive_invoice",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "expense_prefix",
+			"value": "EXP-AC"
+		},
+		{
+			"config_key": "expense_start_no",
+			"value": "1"
+		},
+		{
+			"config_key": "filestack_active",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "filestack_api_key",
+			"value": ""
+		},
+		{
+			"config_key": "filestack_app_secret",
+			"value": ""
+		},
+		{
+			"config_key": "file_max_size",
+			"value": "8192"
+		},
+		{
+			"config_key": "gcal_api_key",
+			"value": ""
+		},
+		{
+			"config_key": "gcal_id",
+			"value": ""
+		},
+		{
+			"config_key": "hide_branding",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "hide_sidebar",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "hourly_rate",
+			"value": "0.00"
+		},
+		{
+			"config_key": "increment_creditnote_number",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "increment_invoice_number",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "installed",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "invoices_due_after",
+			"value": "15"
+		},
+		{
+			"config_key": "final_reminder_late_fee",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "remind_invoices_before",
+			"value": "3"
+		},
+		{
+			"config_key": "autoremind_invoices",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "invoices_overdue_reminder1",
+			"value": "1"
+		},
+		{
+			"config_key": "invoices_overdue_reminder2",
+			"value": "5"
+		},
+		{
+			"config_key": "invoices_overdue_reminder3",
+			"value": "10"
+		},
+		{
+			"config_key": "invoice_color",
+			"value": "#5e7bbc"
+		},
+		{
+			"config_key": "invoice_footer",
+			"value": "Email: hello@example.com"
+		},
+		{
+			"config_key": "invoice_language",
+			"value": "en"
+		},
+		{
+			"config_key": "invoice_logo",
+			"value": "xzR7yOxsv2fy9faDCVhAHAFsEw3LTqrGHYjsm2po.png"
+		},
+		{
+			"config_key": "invoice_logo_height",
+			"value": "66"
+		},
+		{
+			"config_key": "invoice_logo_width",
+			"value": "334"
+		},
+		{
+			"config_key": "invoice_number_format",
+			"value": "-[yyyy][mm][dd]-[i]"
+		},
+		{
+			"config_key": "bank_details",
+			"value": "A/C NAME: John Doe \n BANK NAME: Bank of America \n A/C: 0010001XXXXXX \n BRANCH: New York"
+		},
+		{
+			"config_key": "invoice_prefix",
+			"value": "INV"
+		},
+		{
+			"config_key": "invoice_start_no",
+			"value": "1"
+		},
+		{
+			"config_key": "languages",
+			"value": "french,german"
+		},
+		{
+			"config_key": "last_check",
+			"value": "1505272327"
+		},
+		{
+			"config_key": "last_seen_activities",
+			"value": "1497904647"
+		},
+		{
+			"config_key": "lead_mailbox",
+			"value": "INBOX"
+		},
+		{
+			"config_key": "lead_mail_flags",
+			"value": "/imap/ssl/novalidate-cert"
+		},
+		{
+			"config_key": "lead_mail_imap",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "lead_mail_host",
+			"value": "imap.gmail.com"
+		},
+		{
+			"config_key": "lead_mail_password",
+			"value": ""
+		},
+		{
+			"config_key": "lead_mail_port",
+			"value": "993"
+		},
+		{
+			"config_key": "lead_mail_username",
+			"value": "johndoe"
+		},
+		{
+			"config_key": "lead_followup_days",
+			"value": "3"
+		},
+		{
+			"config_key": "lead_expire_days",
+			"value": "14"
+		},
+		{
+			"config_key": "leads_opt_in",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "leads_delete_converted",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "locale",
+			"value": "en"
+		},
+		{
+			"config_key": "login_bg",
+			"value": "LR1mx55BySHJvni9MZ6EgyBhcZAWhi3lzBV9G0iy.jpg"
+		},
+		{
+			"config_key": "login_title",
+			"value": "Project Management & CRM"
+		},
+		{
+			"config_key": "logo_or_icon",
+			"value": "logo_title"
+		},
+		{
+			"config_key": "ticket_due_after",
+			"value": "3"
+		},
+		{
+			"config_key": "ticket_mailbox",
+			"value": "INBOX"
+		},
+		{
+			"config_key": "ticket_mail_flags",
+			"value": "/imap/ssl/novalidate-cert"
+		},
+		{
+			"config_key": "ticket_mail_imap",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "ticket_mail_host",
+			"value": "imap.gmail.com"
+		},
+		{
+			"config_key": "ticket_mail_password",
+			"value": ""
+		},
+		{
+			"config_key": "ticket_mail_port",
+			"value": "993"
+		},
+		{
+			"config_key": "ticket_mail_username",
+			"value": "johndoe"
+		},
+		{
+			"config_key": "mollie_api_key",
+			"value": ""
+		},
+		{
+			"config_key": "paypal_email",
+			"value": "billing@example.com"
+		},
+		{
+			"config_key": "paypal_live",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "pagseguro_live",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "pagseguro_email",
+			"value": "billing@example.com"
+		},
+		{
+			"config_key": "pagseguro_token",
+			"value": "xxxxx"
+		},
+		{
+			"config_key": "payment_prefix",
+			"value": "PAY"
+		},
+		{
+			"config_key": "payment_number_format",
+			"value": "-[yyyy][mm][dd]-[i]"
+		},
+		{
+			"config_key": "payment_color",
+			"value": "#22b66e"
+		},
+		{
+			"config_key": "privacy_policy_url",
+			"value": "https://workice.com/privacy-policy"
+		},
+		{
+			"config_key": "project_prefix",
+			"value": "PRO"
+		},
+		{
+			"config_key": "purchase_code",
+			"value": ""
+		},
+		{
+			"config_key": "quantity_decimals",
+			"value": "2"
+		},
+		{
+			"config_key": "reminder_message",
+			"value": "Hello {CLIENT}<br>This is a friendly reminder to pay your invoice of {CURRENCY} {AMOUNT}<br>You can view the invoice online at:<br>{LINK}<br>Best Regards,<br>{COMPANY}"
+		},
+		{
+			"config_key": "remote_login_expires",
+			"value": "72"
+		},
+		{
+			"config_key": "reset_key",
+			"value": "34WI2L12L87I1A65M90M9A42N41D08A26I"
+		},
+		{
+			"config_key": "rows_per_table",
+			"value": "25"
+		},
+		{
+			"config_key": "rtl",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "settings",
+			"value": "theme"
+		},
+		{
+			"config_key": "send_thank_you_email",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "show_company_name_email_subject",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "show_creditnote_tax",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "show_estimate_tax",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "show_invoice_tax",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "show_login_image",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "show_only_logo",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "show_time_ago",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "social_login",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "sidebar_theme",
+			"value": "dark"
+		},
+		{
+			"config_key": "site_appleicon",
+			"value": "logo_favicon.png"
+		},
+		{
+			"config_key": "site_author",
+			"value": "William Mandai"
+		},
+		{
+			"config_key": "site_desc",
+			"value": "Workice CRM is a web based invoicing and project management tool for freelancers and small businesses. Create and send invoices and estimates, track deals, time, expenses and accept online payments."
+		},
+		{
+			"config_key": "site_favicon",
+			"value": "cwpbvt5SVSGg0AsZfF2PehVpF2AILsB5wnANYzd0.png"
+		},
+		{
+			"config_key": "site_icon",
+			"value": "fas fa-gem"
+		},
+		{
+			"config_key": "site_keywords",
+			"value": "projects, invoices, deals, leads, crm, estimates, tickets, subscriptions, tasks, contacts, contracts, creditnotes, workice"
+		},
+		{
+			"config_key": "slack_webhook",
+			"value": ""
+		},
+		{
+			"config_key": "stop_timer_logout",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "support_email",
+			"value": "support@example.com"
+		},
+		{
+			"config_key": "support_email_name",
+			"value": "Support Desk"
+		},
+		{
+			"config_key": "swap_to_from",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "system_font",
+			"value": "source_sans"
+		},
+		{
+			"config_key": "tax1Label",
+			"value": "IVA"
+		},
+		{
+			"config_key": "tax2Label",
+			"value": "IRPF"
+		},
+		{
+			"config_key": "tax_decimals",
+			"value": "2"
+		},
+		{
+			"config_key": "theme_color",
+			"value": "dark"
+		},
+		{
+			"config_key": "thousand_separator",
+			"value": ","
+		},
+		{
+			"config_key": "ticket_default_department",
+			"value": "1"
+		},
+		{
+			"config_key": "ticket_prefix",
+			"value": "TKT"
+		},
+		{
+			"config_key": "ticket_number_format",
+			"value": "-[yyyy][mm][dd]-[i]"
+		},
+		{
+			"config_key": "ticket_start_no",
+			"value": "1"
+		},
+		{
+			"config_key": "ticket_feedback_after",
+			"value": "3"
+		},
+		{
+			"config_key": "timezone",
+			"value": "Europe/Moscow"
+		},
+		{
+			"config_key": "top_bar_color",
+			"value": "dark"
+		},
+		{
+			"config_key": "2checkout_live",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "updates",
+			"value": "1"
+		},
+		{
+			"config_key": "update_xrates",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "use_alternate_emails",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "use_gravatar",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "use_recaptcha",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "lead_recaptcha",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "valid_license",
+			"value": "TRUE"
+		},
+		{
+			"config_key": "webmaster_email",
+			"value": "support@example.com"
+		},
+		{
+			"config_key": "website_name",
+			"value": "Workice"
+		},
+		{
+			"config_key": "wepay_live",
+			"value": "FALSE"
+		},
+		{
+			"config_key": "xrates_app_id",
+			"value": ""
+		},
+		{
+			"config_key": "xrates_check",
+			"value": "2017-06-04"
+		},
+		{
+			"config_key": "updates_alert",
+			"value": "TRUE"
+		}
+	]
+}

@@ -1,0 +1,4 @@
+{
+    "p1": "This contract (the “Agreement”) is entered into by and between the below named parties (the “Parties”).",
+    "p2": "This offer will expire at the close of business on <strong>{EXPIRY_DATE}</strong> if not accepted in writing by counter-signing this Agreement by the aforementioned date."
+}

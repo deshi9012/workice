@@ -1,0 +1,342 @@
+{
+    "Webhook": {
+        "basename": "Webhook",
+        "name": "Webhook",
+        "slug": "webhook",
+        "version": "2.0",
+        "description": "Module to handle incoiming webhooks",
+        "id": 2322863958,
+        "order": 9001,
+        "enabled": true
+    },
+    "Clients": {
+        "basename": "Clients",
+        "name": "Clients",
+        "slug": "clients",
+        "version": "2.0",
+        "description": "Clients Management Module",
+        "id": 13119092,
+        "order": 9001,
+        "enabled": true
+    },
+    "Settings": {
+        "basename": "Settings",
+        "name": "Settings",
+        "slug": "settings",
+        "version": "2.0",
+        "description": "Application preferences module",
+        "id": 3846545605,
+        "enabled": true,
+        "order": 9001
+    },
+    "Comments": {
+        "basename": "Comments",
+        "name": "Comments",
+        "slug": "comments",
+        "version": "2.0",
+        "description": "Commenting Module",
+        "id": 1604228650,
+        "enabled": true,
+        "order": 9001
+    },
+    "Tickets": {
+        "basename": "Tickets",
+        "name": "Tickets",
+        "slug": "tickets",
+        "version": "2.0",
+        "description": "Ticketing mODULE",
+        "id": 1413914100,
+        "order": 9001,
+        "enabled": true
+    },
+    "Payments": {
+        "basename": "Payments",
+        "name": "Payments",
+        "slug": "payments",
+        "version": "2.0",
+        "description": "Payments Module",
+        "id": 1708301106,
+        "order": 9001,
+        "enabled": true
+    },
+    "Upgrade": {
+        "basename": "Upgrade",
+        "name": "Upgrade",
+        "slug": "upgrade",
+        "version": "2.0",
+        "description": "Perform system upgrade",
+        "id": 3076944922,
+        "order": 9001,
+        "enabled": false
+    },
+    "Tasks": {
+        "basename": "Tasks",
+        "name": "Tasks",
+        "slug": "tasks",
+        "version": "2.0",
+        "description": "Task management module",
+        "id": 1347970455,
+        "order": 9001,
+        "enabled": false
+    },
+    "Messages": {
+        "basename": "Messages",
+        "name": "Messages",
+        "slug": "messages",
+        "version": "2.0",
+        "description": "Messaging Module",
+        "id": 3674349206,
+        "order": 9001,
+        "enabled": true
+    },
+    "Calendar": {
+        "basename": "Calendar",
+        "name": "Calendar",
+        "slug": "calendar",
+        "version": "2.0",
+        "description": "Calendar Module",
+        "id": 1856610630,
+        "order": 9001,
+        "enabled": true
+    },
+    "Invoices": {
+        "basename": "Invoices",
+        "name": "Invoices",
+        "slug": "invoices",
+        "version": "2.0",
+        "description": "Invoicing Module",
+        "id": 1781477269,
+        "order": 9001,
+        "enabled": true
+    },
+    "Estimates": {
+        "basename": "Estimates",
+        "name": "Estimates",
+        "slug": "estimates",
+        "version": "2.0",
+        "description": "Estimates Module",
+        "id": 2243473646,
+        "order": 9001,
+        "enabled": true
+    },
+    "Activity": {
+        "basename": "Activity",
+        "name": "Activity",
+        "slug": "activity",
+        "version": "2.0",
+        "description": "Activity Modules",
+        "id": 2893285722,
+        "enabled": true,
+        "order": 9001
+    },
+    "Expenses": {
+        "basename": "Expenses",
+        "name": "Expenses",
+        "slug": "expenses",
+        "version": "2.0",
+        "description": "Expense Management Module",
+        "id": 613872475,
+        "order": 9001,
+        "enabled": true
+    },
+    "Leads": {
+        "basename": "Leads",
+        "name": "Leads",
+        "slug": "leads",
+        "version": "2.0",
+        "description": "Leads Management Module",
+        "id": 395330898,
+        "order": 9001,
+        "enabled": true
+    },
+    "Contracts": {
+        "basename": "Contracts",
+        "name": "Contracts",
+        "slug": "contracts",
+        "version": "2.0",
+        "description": "Contracting Module",
+        "id": 156281203,
+        "enabled": true,
+        "order": 9001
+    },
+    "Projects": {
+        "basename": "Projects",
+        "name": "Projects",
+        "slug": "projects",
+        "version": "2.0",
+        "description": "Project Management Module",
+        "id": 1553183652,
+        "order": 9001,
+        "enabled": true
+    },
+    "Contacts": {
+        "basename": "Contacts",
+        "name": "Contacts",
+        "slug": "contacts",
+        "version": "2.0",
+        "description": "Contact Management Module",
+        "id": 859837811,
+        "enabled": true,
+        "order": 9001
+    },
+    "Bugs": {
+        "basename": "Bugs",
+        "name": "Bugs",
+        "slug": "bugs",
+        "version": "2.0",
+        "description": "Bug Control Module",
+        "id": 31561673,
+        "enabled": true,
+        "order": 9001
+    },
+    "Deals": {
+        "basename": "Deals",
+        "name": "Deals",
+        "slug": "deals",
+        "version": "2.0",
+        "description": "Deals Module",
+        "id": 4013524123,
+        "order": 9001,
+        "enabled": true
+    },
+    "Dashboard": {
+        "basename": "Dashboard",
+        "name": "Dashboard",
+        "slug": "dashboard",
+        "version": "2.0",
+        "description": "The default homepage",
+        "id": 1553268728,
+        "enabled": true,
+        "order": 9001
+    },
+    "Knowledgebase": {
+        "basename": "Knowledgebase",
+        "name": "Knowledgebase",
+        "slug": "knowledgebase",
+        "version": "2.0",
+        "description": "Knowledgebase module",
+        "id": 149041741,
+        "enabled": true,
+        "order": 9001
+    },
+    "Notes": {
+        "basename": "Notes",
+        "name": "Notes",
+        "slug": "notes",
+        "version": "2.0",
+        "description": "Notes Module",
+        "id": 18589324,
+        "enabled": true,
+        "order": 9001
+    },
+    "Users": {
+        "basename": "Users",
+        "name": "Users",
+        "slug": "users",
+        "version": "2.0",
+        "description": "User Management Modules",
+        "id": 344172009,
+        "enabled": true,
+        "order": 9001
+    },
+    "Creditnotes": {
+        "basename": "Creditnotes",
+        "name": "Creditnotes",
+        "slug": "creditnotes",
+        "version": "2.0",
+        "description": "Credit Notes Module",
+        "id": 1543268778,
+        "enabled": true,
+        "order": 9001
+    },
+    "Teams": {
+        "basename": "Teams",
+        "name": "Teams",
+        "slug": "teams",
+        "version": "2.0",
+        "description": "Project Team Module",
+        "id": 2529305176,
+        "enabled": true,
+        "order": 9001
+    },
+    "Milestones": {
+        "basename": "Milestones",
+        "name": "Milestones",
+        "slug": "milestones",
+        "version": "2.0",
+        "description": "Project Milestone Module",
+        "id": 418873732,
+        "enabled": true,
+        "order": 9001
+    },
+    "Files": {
+        "basename": "Files",
+        "name": "Files",
+        "slug": "files",
+        "version": "2.0",
+        "description": "File Management Module",
+        "id": 104153177,
+        "enabled": true,
+        "order": 9001
+    },
+    "Timetracking": {
+        "basename": "Timetracking",
+        "name": "Timetracking",
+        "slug": "timetracking",
+        "version": "2.0",
+        "description": "System time tracking module",
+        "id": 2293441031,
+        "enabled": true,
+        "order": 9001
+    },
+    "Todos": {
+        "basename": "Todos",
+        "name": "Todos",
+        "slug": "todos",
+        "version": "2.0",
+        "description": "Todo Module",
+        "id": 3447874133,
+        "order": 9001,
+        "enabled": true
+    },
+    "Items": {
+        "basename": "Items",
+        "name": "Items",
+        "slug": "items",
+        "version": "2.0",
+        "description": "Items Module",
+        "id": 3776899405,
+        "enabled": true,
+        "order": 9001
+    },
+    "Installer": {
+        "basename": "Installer",
+        "name": "Installer",
+        "slug": "installer",
+        "version": "2.0",
+        "description": "Installs the web application",
+        "id": 2893397833,
+        "enabled": true,
+        "order": 9001
+    },
+    "Analytics": {
+        "basename": "Analytics",
+        "name": "Analytics",
+        "slug": "analytics",
+        "version": "2.0",
+        "description": "Report analytics",
+        "id": 3938641544,
+        "enabled": true,
+        "order": 9001
+    },
+    "Extras": {
+        "basename": "Extras",
+        "name": "Extras",
+        "slug": "extras",
+        "version": "2.0",
+        "description": "Manage application extra operation",
+        "id": 647718353,
+        "enabled": true,
+        "order": 9001
+    }
+}

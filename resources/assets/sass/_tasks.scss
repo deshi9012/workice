@@ -1,0 +1,66 @@
+//colors
+$color_alabaster_approx: #f9f9f9;
+$wild_sand: #f4f4f4;
+$color_turquoise_approx: #41cac0;
+$color_mantis_approx: #78cd51;
+$color_bittersweet_approx: #ff6c60;
+$color_corn_approx: #f1c500;
+$color_viking_approx: #58c9f3;
+$color_silver_sand_approx: #bec3c7;
+
+.task-content {
+	margin-bottom: 30px;
+}
+.task-footer {
+	margin-top: 5px;
+}
+.task-list {
+	padding: 0;
+	margin: 0;
+}
+li {
+	&.last-line {
+		border-bottom: none;
+	}
+	&.list-primary {
+		border-left: 3px solid $color_turquoise_approx;
+	}
+	&.list-success {
+		border-left: 3px solid $color_mantis_approx;
+	}
+	&.list-danger {
+		border-left: 3px solid $color_bittersweet_approx;
+	}
+	&.list-warning {
+		border-left: 3px solid $color_corn_approx;
+	}
+	&.list-info {
+		border-left: 3px solid $color_viking_approx;
+	}
+	&.list-inverse {
+		border-left: 3px solid $color_silver_sand_approx;
+	}
+}
+> {
+	.task-checkbox {
+		float: left;
+	}
+	.task-title {
+		overflow: hidden;
+		margin-right: 10px;
+	}
+	.task-config {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+}
+.task-config {
+	display: none;
+}
+#sortable {
+	list-style-type: none;
+	margin: 0 0 20px 0;
+	padding: 0;
+	width: 100%;
+}

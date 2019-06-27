@@ -1,0 +1,16 @@
+{
+    "name": "Files",
+    "alias": "files",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Files\\Providers\\FilesServiceProvider"
+    ],
+    "aliases": [],
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

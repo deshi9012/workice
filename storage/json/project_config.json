@@ -1,0 +1,70 @@
+{
+	"data":
+	[
+		{
+			"id": 1,
+			"setting": "show_team_members",
+			"description": "Allow client to view team members"
+		},
+		{
+			"id": 2,
+			"setting": "show_milestones",
+			"description": "Allow client to view project milestones"
+		},
+		{
+			"id": 3,
+			"setting": "show_project_tasks",
+			"description": "Allow client to view project tasks"
+		},
+		{
+			"id": 4,
+			"setting": "show_project_files",
+			"description": "Allow client to view project files"
+		},
+		{
+			"id": 5,
+			"setting": "show_timesheets",
+			"description": "Allow clients to view project timesheets"
+		},
+		{
+			"id": 6,
+			"setting": "show_project_issues",
+			"description": "Allow client to view project issues"
+		},
+		{
+			"id": 7,
+			"setting": "show_project_history",
+			"description": "Allow client to view project history"
+		},
+		{
+			"id": 8,
+			"setting": "show_project_calendar",
+			"description": "Allow clients to view project calendars"
+		},
+		{
+			"id": 9,
+			"setting": "show_project_comments",
+			"description": "Allow clients to view project comments"
+		},
+		{
+			"id": 10,
+			"setting": "show_project_links",
+			"description": "Allow client to view project links"
+		},
+		{
+			"id": 11,
+			"setting": "client_add_tasks",
+			"description": "Allow client to to add task"
+		},
+		{
+			"id": 12,
+			"setting": "show_project_gantt",
+			"description": "Allow client to view Gantt chart"
+		},
+		{
+			"id": 13,
+			"setting": "show_project_hours",
+			"description": "Allow client to view project hours"
+		}
+	]
+}

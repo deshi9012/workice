@@ -1,0 +1,57 @@
+body {
+            font-family: 'dejavu sans', sans-serif;
+            font-size: 10pt;
+            line-height: 13pt;
+            color: #777777;
+        }
+        p {
+            margin: 4pt 0 0 0;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .items td {
+            border: 0.2mm solid #ffffff;
+            background-color: #F5F5F5;
+        }
+
+        table thead td {
+            vertical-align: bottom;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 7pt;
+            font-weight: bold;
+            background-color: #FFFFFF;
+            color: #111111;
+        }
+
+        table thead td {
+            border-bottom: 0.2mm solid {{ $color }};
+        }
+
+        table .last td {
+            border-bottom: 0.2mm solid {{ $color }};
+        }
+
+        table .first td {
+            border-top: 0.2mm solid {{ $color }};
+        }
+        footer {
+                color: #777777;
+                width: 100%;
+                height: 30px;
+                position: absolute;
+                bottom: 0;
+                border-top: 1px solid {{ $color }};
+                padding: 8px 0;
+                text-align: center;
+            }
+        footer .pagenum:before {
+            content: counter(page);
+        }
+
+        .logo{
+            position:absolute;
+        }

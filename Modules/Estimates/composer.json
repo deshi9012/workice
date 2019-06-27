@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/estimates",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Estimates\\Providers\\EstimatesServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Estimates\\": ""
+        }
+    }
+}

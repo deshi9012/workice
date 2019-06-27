@@ -1,0 +1,222 @@
+@font-face {
+	font-family: 'lato';
+	src: url('/fonts/Lato-Regular.ttf') format('truetype')
+}
+@font-face {
+	font-family: 'dejavusans';
+	src: url('/fonts/DejaVuSans.ttf') format('truetype')
+}
+body {
+	font-family: lato;
+	font-size: 10pt;
+	line-height: 13pt;
+	color: #777777;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.header4 {
+	padding: 15px 0;
+	margin-top: 30px;
+	color: #111111;
+	font-size: 9pt;
+	text-transform: uppercase;
+}
+
+.project-page {
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	font-family: lato;
+}
+
+.row {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.col-md-6 {
+	width: 50%;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.m-md {
+	margin: 20px;
+}
+
+.clear {
+	clear: both;
+}
+
+p {
+	margin: 4pt 0 0 0;
+}
+
+td {
+	vertical-align: top;
+}
+
+.items td {
+	border: 0.2mm solid #ffffff;
+	background-color: #F5F5F5;
+}
+
+table thead td {
+	vertical-align: bottom;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 8pt;
+	background-color: #FFFFFF;
+	color: #111111;
+}
+
+.item-name {
+	color: #4d5b76;
+	font-size: 10pt
+}
+
+.text-uc {
+	text-transform: uppercase;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+footer {
+	color: #777777;
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+	padding: 8px 0;
+	text-align: center;
+}
+
+footer .pagenum:before {
+	content: counter(page);
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+.logo {
+	position: absolute;
+}
+
+.width100 {
+	width: 100%;
+}
+
+.width60 {
+	width: 60%;
+}
+
+.width40 {
+	width: 40%;
+}
+
+.width10 {
+	width: 10%;
+}
+
+.width45 {
+	width: 45%;
+}
+
+.width15 {
+	width: 15%;
+}
+
+.font20 {
+	font-size: 20pt;
+}
+
+.m-t-12 {
+	margin-top: 12px;
+}
+
+.height10 {
+	height: 10px;
+}
+
+.m-b-10 {
+	margin-bottom: 10px;
+}
+
+.v-t {
+	vertical-align: top;
+}
+
+.item-table {
+	border-spacing: 3px;
+	font-size: 9pt;
+	border-collapse: collapse;
+}
+
+.m-b-6 {
+	margin-bottom: 6px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.white-bg {
+	background-color: #ffffff;
+}
+
+.m-t-40 {
+	margin-top: 40px;
+}
+
+.float-left {
+	float: left
+}
+
+.float-right {
+	float: right
+}
+
+.foot {
+	padding-top: 3mm;
+	width: 40%;
+	float: left;
+}
+
+.page-num {
+	padding-top: 3mm;
+	width: 40%;
+	float: right;
+}
+
+.m-20 {
+	margin: 20px 0px;
+}
+
+.foot-name {
+	font-size: 9pt;
+	text-align: left;
+	padding-top: 3mm;
+	width: 40%;
+	float: left;
+}
+
+.foot-page {
+	font-size: 9pt;
+	text-align: right;
+	padding-top: 3mm;
+	width: 40%;
+	float: right;
+}

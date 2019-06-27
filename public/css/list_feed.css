@@ -1,0 +1,38 @@
+.list-feed {
+                margin: 0;
+                padding: 7px 0;
+                list-style: none;
+            }
+
+            .list-feed > li {
+                position: relative;
+                margin: 0;
+                padding-bottom: 20px;
+                padding-left: 28px;
+            }
+
+            .list-feed > li:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 5px;
+                width: 8px;
+                height: 8px;
+                background-color: #fff;
+                display: inline-block;
+                border-radius: 50%;
+                border: 2px solid #607d8b;
+                z-index: 3;
+            }
+
+            .list-feed > li:after {
+                content: '';
+                position: absolute;
+                top: 5px;
+                left: 3px;
+                bottom: -7px;
+                width: 0;
+                border-left: 1px solid #66bb6a;;
+                border-right: 1px solid #66bb6a;
+                z-index: 2;
+            }

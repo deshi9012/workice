@@ -1,0 +1,21 @@
+<?php
+
+namespace Modules\Creditnotes\Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
+class CreditnotesDatabaseSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Model::unguard();
+
+        // $this->call("OthersTableSeeder");
+    }
+}

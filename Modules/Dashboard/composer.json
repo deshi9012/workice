@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/dashboard",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Dashboard\\Providers\\DashboardServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Dashboard\\": ""
+        }
+    }
+}

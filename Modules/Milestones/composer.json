@@ -1,0 +1,25 @@
+{
+    "name": "wmandai/milestones",
+    "description": "",
+    "authors": [
+        {
+            "name": "William M",
+            "email": "wil@gitbench.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Milestones\\Providers\\MilestonesServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Milestones\\": ""
+        }
+    }
+}

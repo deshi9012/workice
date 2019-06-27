@@ -1,0 +1,166 @@
+{
+	"data":
+	[
+		{
+			"id": 1,
+			"code": "cs",
+			"name": "czech",
+			"active": 0,
+			"progress": 39
+		},
+		{
+			"id": 2,
+			"code": "de",
+			"name": "german",
+			"active": 1,
+			"progress": 60
+		},
+		{
+			"id": 3,
+			"code": "el",
+			"name": "greek",
+			"active": 1,
+			"progress": 56
+		},
+		{
+			"id": 4,
+			"code": "en",
+			"name": "english",
+			"active": 1,
+			"progress": 100
+		},
+		{
+			"id": 5,
+			"code": "es",
+			"name": "spanish",
+			"active": 1,
+			"progress": 52
+		},
+		{
+			"id": 6,
+			"code": "fr",
+			"name": "french",
+			"active": 1,
+			"progress": 37
+		},
+		{
+			"id": 7,
+			"code": "hr",
+			"name": "croatian",
+			"active": 1,
+			"progress": 49
+		},
+		{
+			"id": 8,
+			"code": "it",
+			"name": "italian",
+			"active": 1,
+			"progress": 53
+		},
+		{
+			"id": 9,
+			"code": "nl",
+			"name": "dutch",
+			"active": 1,
+			"progress": 54
+		},
+		{
+			"id": 10,
+			"code": "no",
+			"name": "norwegian",
+			"active": 1,
+			"progress": 43
+		},
+		{
+			"id": 11,
+			"code": "pl",
+			"name": "polish",
+			"active": 1,
+			"progress": 57
+		},
+		{
+			"id": 12,
+			"code": "pt",
+			"name": "portuguese",
+			"active": 1,
+			"progress": 29
+		},
+		{
+			"id": 13,
+			"code": "pt-br",
+			"name": "portuguese-brazilian",
+			"active": 1,
+			"progress": 59
+		},
+		{
+			"id": 14,
+			"code": "ro",
+			"name": "romanian",
+			"active": 1,
+			"progress": 41
+		},
+		{
+			"id": 15,
+			"code": "ru",
+			"name": "russian",
+			"active": 1,
+			"progress": 57
+		},
+		{
+			"id": 16,
+			"code": "sl",
+			"name": "slovenian",
+			"active": 1,
+			"progress": 43
+		},
+		{
+			"id": 17,
+			"code": "sr",
+			"name": "serbian",
+			"active": 1,
+			"progress": 52
+		},
+		{
+			"id": 18,
+			"code": "tr",
+			"name": "turkish",
+			"active": 0,
+			"progress": 45
+		},
+		{
+			"id": 19,
+			"code": "zh-hk",
+			"name": "chinese-hk",
+			"active": 0,
+			"progress": 54
+		},
+		{
+			"id": 20,
+			"code": "ar",
+			"name": "arabic",
+			"active": 0,
+			"progress": 63
+		},
+		{
+			"id": 21,
+			"code": "uk",
+			"name": "ukrainian",
+			"active": 0,
+			"progress": 64
+		},
+		{
+			"id": 22,
+			"code": "zh-cn",
+			"name": "chinese-cn",
+			"active": 0,
+			"progress": 54
+		},
+		{
+			"id": 23,
+			"code": "zh-tw",
+			"name": "chinese-tw",
+			"active": 0,
+			"progress": 54
+		}
+	]
+}

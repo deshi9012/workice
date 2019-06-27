@@ -1,0 +1,16 @@
+{
+    "name": "Knowledgebase",
+    "alias": "knowledgebase",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Knowledgebase\\Providers\\KnowledgebaseServiceProvider"
+    ],
+    "aliases": [],
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

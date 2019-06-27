@@ -1,0 +1,1078 @@
+//colors
+$color_suva_gray_approx: #888;
+$white: #fff;
+$color_fuscous_gray_approx: #555;
+$color_wild_sand_approx: #f5f5f5;
+$color_saltpan_approx: #f3f8ed;
+$color_lima_approx: #72b92e;
+$color_bilbao_approx: #3f8100;
+$color_alice_blue_approx: #f0f8fd;
+$color_curious_blue_approx: #3e93cf;
+$color_endeavour_approx: #0062a7;
+$color_early_dawn_approx: #fff9e9;
+$color_old_gold_approx: #d0aa42;
+$color_hot_toddy_approx: #ac7e00;
+$color_your_pink_approx: #ffc4bc;
+$color_fuzzy_wuzzy_brown_approx: #d25a4b;
+$color_milano_red_approx: #b71500;
+
+//@extend-elements
+//original selectors
+//.timeline .timeline-item.timeline-item-right, .timeline .timeline-item:nth-of-type(even):not(.timeline-item-left)
+%extend_1 {
+	padding-left: 30px;
+	padding-right: 0;
+	float: right;
+	clear: right;
+}
+
+//original selectors
+//.timeline .timeline-item >.timeline-event:after, .timeline .timeline-item >.timeline-event:before
+%extend_2 {
+	content: "";
+	display: inline-block;
+	position: absolute;
+}
+
+//original selectors
+//.timeline .timeline-item >.timeline-event .blankslate, .timeline .timeline-item >.timeline-event .panel, .timeline .timeline-item >.timeline-event .table
+%extend_3 {
+	margin: 0;
+	border: none;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: inherit;
+	overflow: hidden;
+}
+
+
+.timeline {
+	width: 100%;
+	position: relative;
+	padding: 1px 0;
+	list-style: none;
+	font-weight: 300;
+	.timeline-item {
+		padding-left: 0;
+		padding-right: 30px;
+		position: relative;
+		float: left;
+		clear: left;
+		width: 50%;
+		margin-bottom: 20px;
+		.timeline-event {
+			width: 100%;
+		}
+		&.timeline-item-right {
+			@extend %extend_1;
+			clear: both!important;
+			> {
+				.timeline-event {
+					float: right!important;
+					&:after {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -14px!important;
+						border-right-width: 14px!important;
+					}
+					&:before {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -15px!important;
+						border-right-width: 15px!important;
+					}
+				}
+				.timeline-point {
+					left: -24px;
+					&.timeline-point-blank {
+						left: -12px;
+					}
+				}
+			}
+			+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+				margin-top: 0;
+				clear: both;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 40px;
+				}
+			}
+		}
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		&:before {
+			content: "";
+			display: table;
+		}
+		&:last-child {
+			margin-bottom: 0!important;
+		}
+		> {
+			.timeline-event {
+				background: $white;
+				border: 1px solid $color_suva_gray_approx;
+				color: $color_fuscous_gray_approx;
+				position: relative;
+				float: left;
+				//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+				border-radius: 3px;
+				&:before {
+					top: 10px;
+					right: -15px;
+					border-top: 15px solid transparent;
+					border-left-width: 15px;
+					border-left-style: solid;
+					border-right-width: 0;
+					border-right-style: solid;
+					border-bottom: 15px solid transparent;
+					border-left-color: $color_suva_gray_approx;
+					border-right-color: $color_suva_gray_approx;
+					@extend %extend_2;
+				}
+				&:after {
+					top: 11px;
+					right: -14px;
+					border-top: 14px solid transparent;
+					border-left-width: 14px;
+					border-left-style: solid;
+					border-right-width: 0;
+					border-right-style: solid;
+					border-bottom: 14px solid transparent;
+					border-left-color: $white;
+					border-right-color: $white;
+					@extend %extend_2;
+				}
+				.timeline-inherit-color {
+					color: inherit;
+				}
+				h1 {
+					color: inherit;
+				}
+				h2 {
+					color: inherit;
+				}
+				h3 {
+					color: inherit;
+				}
+				h4 {
+					color: inherit;
+				}
+				h5 {
+					color: inherit;
+				}
+				h6 {
+					color: inherit;
+				}
+				p {
+					color: inherit;
+				}
+				&.timeline-event-default {
+					background: $white;
+					border: 1px solid $color_suva_gray_approx;
+					color: $color_fuscous_gray_approx;
+					&:before {
+						border-left-color: $color_suva_gray_approx;
+						border-right-color: $color_suva_gray_approx;
+					}
+					&:after {
+						border-left-color: $white;
+						border-right-color: $white;
+					}
+					.timeline-inherit-color {
+						color: inherit;
+					}
+					h1 {
+						color: inherit;
+					}
+					h2 {
+						color: inherit;
+					}
+					h3 {
+						color: inherit;
+					}
+					h4 {
+						color: inherit;
+					}
+					h5 {
+						color: inherit;
+					}
+					h6 {
+						color: inherit;
+					}
+					p {
+						color: inherit;
+					}
+				}
+				&.timeline-event-primary {
+					background: $color_wild_sand_approx;
+					border: 1px solid $color_suva_gray_approx;
+					color: $color_fuscous_gray_approx;
+					&:before {
+						border-left-color: $color_suva_gray_approx;
+						border-right-color: $color_suva_gray_approx;
+					}
+					&:after {
+						border-left-color: $color_wild_sand_approx;
+						border-right-color: $color_wild_sand_approx;
+					}
+					.timeline-inherit-color {
+						color: inherit;
+					}
+					h1 {
+						color: inherit;
+					}
+					h2 {
+						color: inherit;
+					}
+					h3 {
+						color: inherit;
+					}
+					h4 {
+						color: inherit;
+					}
+					h5 {
+						color: inherit;
+					}
+					h6 {
+						color: inherit;
+					}
+					p {
+						color: inherit;
+					}
+				}
+				&.timeline-event-success {
+					background: $color_saltpan_approx;
+					border: 1px solid $color_lima_approx;
+					color: $color_bilbao_approx;
+					&:before {
+						border-left-color: $color_lima_approx;
+						border-right-color: $color_lima_approx;
+					}
+					&:after {
+						border-left-color: $color_saltpan_approx;
+						border-right-color: $color_saltpan_approx;
+					}
+					.timeline-inherit-color {
+						color: inherit;
+					}
+					h1 {
+						color: inherit;
+					}
+					h2 {
+						color: inherit;
+					}
+					h3 {
+						color: inherit;
+					}
+					h4 {
+						color: inherit;
+					}
+					h5 {
+						color: inherit;
+					}
+					h6 {
+						color: inherit;
+					}
+					p {
+						color: inherit;
+					}
+				}
+				&.timeline-event-info {
+					background: $color_alice_blue_approx;
+					border: 1px solid $color_curious_blue_approx;
+					color: $color_endeavour_approx;
+					&:before {
+						border-left-color: $color_curious_blue_approx;
+						border-right-color: $color_curious_blue_approx;
+					}
+					&:after {
+						border-left-color: $color_alice_blue_approx;
+						border-right-color: $color_alice_blue_approx;
+					}
+					.timeline-inherit-color {
+						color: inherit;
+					}
+					h1 {
+						color: inherit;
+					}
+					h2 {
+						color: inherit;
+					}
+					h3 {
+						color: inherit;
+					}
+					h4 {
+						color: inherit;
+					}
+					h5 {
+						color: inherit;
+					}
+					h6 {
+						color: inherit;
+					}
+					p {
+						color: inherit;
+					}
+				}
+				&.timeline-event-warning {
+					background: $color_early_dawn_approx;
+					border: 1px solid $color_old_gold_approx;
+					color: $color_hot_toddy_approx;
+					&:before {
+						border-left-color: $color_old_gold_approx;
+						border-right-color: $color_old_gold_approx;
+					}
+					&:after {
+						border-left-color: $color_early_dawn_approx;
+						border-right-color: $color_early_dawn_approx;
+					}
+					.timeline-inherit-color {
+						color: inherit;
+					}
+					h1 {
+						color: inherit;
+					}
+					h2 {
+						color: inherit;
+					}
+					h3 {
+						color: inherit;
+					}
+					h4 {
+						color: inherit;
+					}
+					h5 {
+						color: inherit;
+					}
+					h6 {
+						color: inherit;
+					}
+					p {
+						color: inherit;
+					}
+				}
+				&.timeline-event-danger {
+					background: $color_your_pink_approx;
+					border: 1px solid $color_fuzzy_wuzzy_brown_approx;
+					color: $color_milano_red_approx;
+					&:before {
+						border-left-color: $color_fuzzy_wuzzy_brown_approx;
+						border-right-color: $color_fuzzy_wuzzy_brown_approx;
+					}
+					&:after {
+						border-left-color: $color_your_pink_approx;
+						border-right-color: $color_your_pink_approx;
+					}
+					.timeline-inherit-color {
+						color: inherit;
+					}
+					h1 {
+						color: inherit;
+					}
+					h2 {
+						color: inherit;
+					}
+					h3 {
+						color: inherit;
+					}
+					h4 {
+						color: inherit;
+					}
+					h5 {
+						color: inherit;
+					}
+					h6 {
+						color: inherit;
+					}
+					p {
+						color: inherit;
+					}
+				}
+				.timeline-body {
+					padding: 4px 10px;
+					p {
+						margin-bottom: 0;
+					}
+					ul {
+						margin-bottom: 0;
+					}
+				}
+				.timeline-footer {
+					padding: 4px 10px;
+					p {
+						margin-bottom: 0;
+					}
+					ul {
+						margin-bottom: 0;
+					}
+					a {
+						cursor: pointer;
+						text-decoration: none;
+					}
+				}
+				.timeline-heading {
+					padding: 4px 10px;
+					p {
+						margin-bottom: 0;
+					}
+					ul {
+						margin-bottom: 0;
+					}
+					h4 {
+						font-weight: 400;
+					}
+				}
+				.blankslate {
+					@extend %extend_3;
+				}
+				.panel {
+					@extend %extend_3;
+				}
+				.table {
+					@extend %extend_3;
+					th {
+						border-top: 0;
+					}
+				}
+			}
+			.timeline-point {
+				top: 25px;
+				color: $color_suva_gray_approx;
+				background: $white;
+				right: -24px;
+				width: 24px;
+				height: 24px;
+				margin-top: -12px;
+				margin-left: 12px;
+				margin-right: 12px;
+				position: absolute;
+				z-index: 100;
+				border-width: 2px;
+				border-style: solid;
+				//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+				border-radius: 100%;
+				line-height: 20px;
+				text-align: center;
+				&.timeline-point-blank {
+					right: -12px;
+					width: 12px;
+					height: 12px;
+					margin-top: -6px;
+					margin-left: 6px;
+					margin-right: 6px;
+					color: $color_suva_gray_approx;
+					background: $color_suva_gray_approx;
+				}
+				&.timeline-point-default {
+					color: $color_suva_gray_approx;
+					background: $white;
+				}
+				&.timeline-point-primary {
+					color: $color_suva_gray_approx;
+					background: $white;
+				}
+				&.timeline-point-success {
+					color: $color_lima_approx;
+					background: $white;
+				}
+				&.timeline-point-info {
+					color: $color_curious_blue_approx;
+					background: $white;
+				}
+				&.timeline-point-warning {
+					color: $color_old_gold_approx;
+					background: $white;
+				}
+				&.timeline-point-danger {
+					color: $color_fuzzy_wuzzy_brown_approx;
+					background: $white;
+				}
+			}
+		}
+		&.timeline-item-arrow-sm {
+			> {
+				.timeline-event {
+					&:before {
+						top: 4px;
+						right: -10px;
+						border-top: 10px solid transparent;
+						border-left-width: 10px;
+						border-left-style: solid;
+						border-right-width: 0;
+						border-right-style: solid;
+						border-bottom: 10px solid transparent;
+					}
+					&:after {
+						top: 5px;
+						right: -9px;
+						border-top: 9px solid transparent;
+						border-left-width: 9px;
+						border-left-style: solid;
+						border-right-width: 0;
+						border-right-style: solid;
+						border-bottom: 9px solid transparent;
+					}
+				}
+				.timeline-point {
+					top: 14px;
+				}
+			}
+			&.timeline-item-right > .timeline-event {
+				float: right!important;
+				&:after {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -9px!important;
+					border-right-width: 9px!important;
+				}
+				&:before {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -10px!important;
+					border-right-width: 10px!important;
+				}
+			}
+			&:nth-of-type(even):not(.timeline-item-left) > .timeline-event {
+				float: right!important;
+				&:after {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -9px!important;
+					border-right-width: 9px!important;
+				}
+				&:before {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -10px!important;
+					border-right-width: 10px!important;
+				}
+			}
+		}
+		&:nth-of-type(2) {
+			margin-top: 40px;
+		}
+		&.timeline-item-left {
+			clear: both!important;
+			+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+				margin-top: 0;
+				clear: both;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 40px;
+				}
+			}
+		}
+		&.timeline-item-arrow-lg {
+			> {
+				.timeline-event {
+					&:before {
+						top: 10px;
+						right: -18px;
+						border-top: 18px solid transparent;
+						border-left-width: 18px;
+						border-left-style: solid;
+						border-right-width: 0;
+						border-right-style: solid;
+						border-bottom: 18px solid transparent;
+					}
+					&:after {
+						top: 11px;
+						right: -17px;
+						border-top: 17px solid transparent;
+						border-left-width: 17px;
+						border-left-style: solid;
+						border-right-width: 0;
+						border-right-style: solid;
+						border-bottom: 17px solid transparent;
+					}
+				}
+				.timeline-point {
+					top: 28px;
+				}
+			}
+			&.timeline-item-right > .timeline-event {
+				float: right!important;
+				&:after {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -17px!important;
+					border-right-width: 17px!important;
+				}
+				&:before {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -18px!important;
+					border-right-width: 18px!important;
+				}
+			}
+			&:nth-of-type(even):not(.timeline-item-left) > .timeline-event {
+				float: right!important;
+				&:after {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -17px!important;
+					border-right-width: 17px!important;
+				}
+				&:before {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -18px!important;
+					border-right-width: 18px!important;
+				}
+			}
+		}
+		&.timeline-item-arrow-md {
+			> {
+				.timeline-event {
+					&:before {
+						top: 10px;
+						right: -15px;
+						border-top: 15px solid transparent;
+						border-left-width: 15px;
+						border-left-style: solid;
+						border-right-width: 0;
+						border-right-style: solid;
+						border-bottom: 15px solid transparent;
+					}
+					&:after {
+						top: 11px;
+						right: -14px;
+						border-top: 14px solid transparent;
+						border-left-width: 14px;
+						border-left-style: solid;
+						border-right-width: 0;
+						border-right-style: solid;
+						border-bottom: 14px solid transparent;
+					}
+				}
+				.timeline-point {
+					top: 25px;
+				}
+			}
+			&.timeline-item-right > .timeline-event {
+				float: right!important;
+				&:after {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -14px!important;
+					border-right-width: 14px!important;
+				}
+				&:before {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -15px!important;
+					border-right-width: 15px!important;
+				}
+			}
+			&:nth-of-type(even):not(.timeline-item-left) > .timeline-event {
+				float: right!important;
+				&:after {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -14px!important;
+					border-right-width: 14px!important;
+				}
+				&:before {
+					right: auto!important;
+					border-left-width: 0!important;
+					left: -15px!important;
+					border-right-width: 15px!important;
+				}
+			}
+		}
+		&:nth-of-type(even):not(.timeline-item-left) {
+			@extend %extend_1;
+			> {
+				.timeline-event {
+					float: right!important;
+					&:after {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -14px!important;
+						border-right-width: 14px!important;
+					}
+					&:before {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -15px!important;
+						border-right-width: 15px!important;
+					}
+				}
+				.timeline-point {
+					left: -24px;
+					&.timeline-point-blank {
+						left: -12px;
+					}
+				}
+			}
+		}
+	}
+	&:before {
+		border-right-style: solid;
+		content: " ";
+		display: block;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 50%;
+		height: 100%!important;
+		margin-left: 1px;
+		border-right-width: 2px;
+		border-right-color: $color_suva_gray_approx;
+	}
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	.timeline-label {
+		position: relative;
+		float: left;
+		clear: left;
+		margin-bottom: 20px;
+		top: 1px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0;
+		text-align: center;
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		&:before {
+			content: "";
+			display: table;
+		}
+		&:last-child {
+			margin-bottom: 0!important;
+		}
+		.label-default {
+			background-color: $color_suva_gray_approx;
+		}
+		.label-primary {
+			background-color: $color_suva_gray_approx;
+		}
+		.label-info {
+			background-color: $color_curious_blue_approx;
+		}
+		.label-warning {
+			background-color: $color_old_gold_approx;
+		}
+		.label-danger {
+			background-color: $color_fuzzy_wuzzy_brown_approx;
+		}
+		+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+			margin-top: 0;
+			+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+				margin-top: 40px;
+			}
+		}
+	}
+	&.timeline-line-solid:before {
+		border-right-style: solid;
+	}
+	&.timeline-single-column.timeline {
+		width: 100%;
+		max-width: 768px;
+		.timeline-item {
+			padding-left: 72px;
+			padding-right: 0;
+			width: 100%;
+			margin-bottom: 20px;
+			> {
+				.timeline-event {
+					float: right!important;
+					&:after {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -14px!important;
+						border-right-width: 14px!important;
+					}
+					&:before {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -15px!important;
+						border-right-width: 15px!important;
+					}
+				}
+				.timeline-point {
+					//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+					transform: translateX(-50%);
+					left: 42px!important;
+					margin-left: 0;
+				}
+			}
+			&.timeline-item-right {
+				padding-left: 72px;
+				padding-right: 0;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 0;
+					+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+						margin-top: 0;
+					}
+				}
+			}
+			&:nth-of-type(even) {
+				margin-top: 0;
+				&:not(.timeline-item-left) {
+					padding-left: 72px;
+					padding-right: 0;
+				}
+			}
+			.timeline-event {
+				width: 100%;
+			}
+			&.timeline-item-left + .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+				margin-top: 0;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 0;
+				}
+			}
+		}
+		&:before {
+			left: 42px;
+			width: 0;
+			margin-left: -1px;
+		}
+		.timeline-label {
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: translateX(-50%);
+			margin: 0 0 20px 42px;
+			+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+				margin-top: 0;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+	&.timeline-line-dotted:before {
+		border-right-style: dotted;
+	}
+	&.timeline-line-dashed:before {
+		border-right-style: dashed;
+	}
+	&.timeline-line-hidden:before {
+		border-right-style: none;
+	}
+}
+@media all and(orientation:portrait) {
+	.timeline.timeline {
+		width: 100%;
+		max-width: 100%;
+		.timeline-item {
+			padding-left: 72px;
+			padding-right: 0;
+			width: 100%;
+			margin-bottom: 20px;
+			&.timeline-item-right {
+				padding-left: 72px;
+				padding-right: 0;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 0;
+					+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+						margin-top: 0;
+					}
+				}
+			}
+			&:nth-of-type(even) {
+				margin-top: 0;
+				&:not(.timeline-item-left) {
+					padding-left: 72px;
+					padding-right: 0;
+				}
+			}
+			.timeline-event {
+				width: 100%;
+			}
+			> {
+				.timeline-event {
+					float: right!important;
+					&:after {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -14px!important;
+						border-right-width: 14px!important;
+					}
+					&:before {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -15px!important;
+						border-right-width: 15px!important;
+					}
+				}
+				.timeline-point {
+					//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+					transform: translateX(-50%);
+					left: 42px!important;
+					margin-left: 0;
+				}
+			}
+			&.timeline-item-left + .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+				margin-top: 0;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 0;
+				}
+			}
+		}
+		&:before {
+			left: 42px;
+			width: 0;
+			margin-left: -1px;
+		}
+		.timeline-label {
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: translateX(-50%);
+			margin: 0 0 20px 42px;
+			+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+				margin-top: 0;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+@media(max-width:768px) {
+	.timeline.timeline {
+		width: 100%;
+		max-width: 100%;
+		.timeline-item {
+			padding-left: 72px;
+			padding-right: 0;
+			width: 100%;
+			margin-bottom: 20px;
+			&.timeline-item-right {
+				padding-left: 72px;
+				padding-right: 0;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 0;
+					+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+						margin-top: 0;
+					}
+				}
+			}
+			&:nth-of-type(even) {
+				margin-top: 0;
+				&:not(.timeline-item-left) {
+					padding-left: 72px;
+					padding-right: 0;
+				}
+			}
+			.timeline-event {
+				width: 100%;
+			}
+			> {
+				.timeline-event {
+					float: right!important;
+					&:after {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -14px!important;
+						border-right-width: 14px!important;
+					}
+					&:before {
+						right: auto!important;
+						border-left-width: 0!important;
+						left: -15px!important;
+						border-right-width: 15px!important;
+					}
+				}
+				.timeline-point {
+					//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+					transform: translateX(-50%);
+					left: 42px!important;
+					margin-left: 0;
+				}
+			}
+			&.timeline-item-left + .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+				margin-top: 0;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 0;
+				}
+			}
+		}
+		&:before {
+			left: 42px;
+			width: 0;
+			margin-left: -1px;
+		}
+		.timeline-label {
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: translateX(-50%);
+			margin: 0 0 20px 42px;
+			+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+				margin-top: 0;
+				+ .timeline-item:not(.timeline-item-left):not(.timeline-item-right) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+.timeline-single-column.timeline .timeline-item {
+	> .timeline-event {
+		float: right!important;
+		&:after {
+			right: auto!important;
+			border-left-width: 0!important;
+			left: -14px!important;
+			border-right-width: 14px!important;
+		}
+		&:before {
+			right: auto!important;
+			border-left-width: 0!important;
+			left: -15px!important;
+			border-right-width: 15px!important;
+		}
+	}
+	&.timeline-item-arrow-lg > .timeline-event {
+		float: right!important;
+		&:after {
+			right: auto!important;
+			border-left-width: 0!important;
+			left: -17px!important;
+			border-right-width: 17px!important;
+		}
+		&:before {
+			right: auto!important;
+			border-left-width: 0!important;
+			left: -18px!important;
+			border-right-width: 18px!important;
+		}
+	}
+	&.timeline-item-arrow-md > .timeline-event {
+		float: right!important;
+		&:after {
+			right: auto!important;
+			border-left-width: 0!important;
+			left: -14px!important;
+			border-right-width: 14px!important;
+		}
+		&:before {
+			right: auto!important;
+			border-left-width: 0!important;
+			left: -15px!important;
+			border-right-width: 15px!important;
+		}
+	}
+	&.timeline-item-arrow-sm > .timeline-event {
+		float: right!important;
+		&:after {
+			right: auto!important;
+			border-left-width: 0!important;
+			left: -9px!important;
+			border-right-width: 9px!important;
+		}
+		&:before {
+			right: auto!important;
+			border-left-width: 0!important;
+			left: -10px!important;
+			border-right-width: 10px!important;
+		}
+	}
+}
