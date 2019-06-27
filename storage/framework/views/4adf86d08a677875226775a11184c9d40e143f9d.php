@@ -59,7 +59,7 @@
 				processing: true,
 				serverSide: true,
 				ajax: {
-					url: '<?php echo e(route('leads.data')); ?>',
+					url: console.log('<?php echo e(route('leads.data')); ?>'),
 					data: {
 						"filter": '<?php echo e($filter); ?>',
 					}

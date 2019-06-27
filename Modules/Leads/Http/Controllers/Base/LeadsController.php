@@ -349,7 +349,7 @@ abstract class LeadsController extends Controller {
     public function tableData() {
         $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
 
-        return DataTables::eloquent($model)->editColumn('name', function ($lead) {
+        dd( DataTables::eloquent($model)->editColumn('name', function ($lead) {
 
                 $str = '<a href="' . route('leads.view', $lead->id) . '">';
                 if ($lead->has_email) {
@@ -379,7 +379,7 @@ abstract class LeadsController extends Controller {
                 'chk',
                 'lead',
                 'email'
-            ])->make(true);
+            ])->make(true));
     }
 
     public function importGoogleContacts() {

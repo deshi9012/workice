@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7c0520f-514d-4eb0-9f2d-a143941ea56c" name="Default" comment="" />
+    <list default="true" id="b7c0520f-514d-4eb0-9f2d-a143941ea56c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/CSPwhOVQ3t3I4gBsGJf3XauznLsykljwb5heqq7Z" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/CSPwhOVQ3t3I4gBsGJf3XauznLsykljwb5heqq7Z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/4adf86d08a677875226775a11184c9d40e143f9d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/4adf86d08a677875226775a11184c9d40e143f9d.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,106 +20,85 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Dashboard/Resources/views/welcome.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Dashboard/Resources/views/_users/admin.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staff.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Dashboard/Resources/views/_users/staff.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updateCustom.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/_includes/updateCustom.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="11" column="70" lean-forward="true" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LeadsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="79" column="36" lean-forward="true" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
-              <folding>
-                <element signature="e#55#91#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="7" column="78" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1606">
+                  <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="view.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/routes.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="470">
+                  <caret line="23" column="75" lean-forward="true" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="LeadsController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="655">
+                  <caret line="381" column="28" lean-forward="true" selection-start-line="381" selection-start-column="28" selection-end-line="381" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#55#91#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Profile.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Modules/Users/Entities/Profile.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-501">
+                  <caret line="2" column="32" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="table_view.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="353">
+                  <caret line="74" column="61" lean-forward="true" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="table_view.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="164">
+                  <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>installer</find>
-      <find>dash</find>
       <find>dashboard</find>
       <find>install</find>
       <find>HTT</find>
@@ -136,11 +122,13 @@
       <find>Up</find>
       <find>crea</find>
       <find>table</find>
-      <find>data</find>
       <find>view</find>
       <find>Make Changes</find>
-      <find>email</find>
       <find>das</find>
+      <find>email</find>
+      <find>data</find>
+      <find>leads.da</find>
+      <find>tableDa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,14 +151,15 @@
         <option value="$PROJECT_DIR$/resources/views/partial/main_menu.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Helpers/App.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/_includes/updateCustom.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Dashboard/Resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Dashboard/Resources/views/_users/admin.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Users/Entities/Profile.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
       </list>
     </option>
   </component>
@@ -402,6 +391,70 @@
               <item name="workice" type="b2602c69:ProjectViewProjectNode" />
               <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Providers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Users" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Users" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entities" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Users" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Users" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Transformers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -445,12 +498,12 @@
       <workItem from="1560977876379" duration="2867000" />
       <workItem from="1561205158673" duration="11186000" />
       <workItem from="1561360624817" duration="17138000" />
-      <workItem from="1561477889705" duration="12474000" />
+      <workItem from="1561477889705" duration="14586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43665000" />
+    <option name="totallyTimeSpent" value="45777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
@@ -563,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Users/Entities/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="95" column="38" lean-forward="true" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Users/Entities/QuickAccess.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="718">
@@ -581,13 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
           <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Users/Entities/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -745,55 +784,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2204">
-          <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="78" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="79" column="36" lean-forward="true" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
-          <folding>
-            <element signature="e#55#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/_includes/updateCustom.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="11" column="70" lean-forward="true" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -816,15 +810,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Dashboard/Resources/views/_users/staff.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+        <state relative-caret-position="270">
+          <caret line="71" column="27" lean-forward="true" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="348">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/_includes/updateCustom.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1606">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="23" column="75" lean-forward="true" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Users/Entities/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Users/Entities/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-501">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="74" column="61" lean-forward="true" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="381" column="28" lean-forward="true" selection-start-line="381" selection-start-column="28" selection-end-line="381" selection-end-column="28" />
+          <folding>
+            <element signature="e#55#91#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
