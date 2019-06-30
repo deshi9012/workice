@@ -42,14 +42,14 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
-                    <div class="form-group col-md-6 no-gutter-left">
-                        <label><?php echo trans('app.'.'stage'); ?> <span class="text-danger">*</span></label>
-                        <select name="stage_id" class="form-control">
-                            <?php $__currentLoopData = App\Entities\Category::leads()->orderBy('order')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $stage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($stage->id); ?>"><?php echo e(ucfirst($stage->name)); ?></option>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </select>
-                    </div>
+                    
+                        
+                        
+                            
+                            
+                            
+                        
+                    
                     
                     <div class="row">
                         <div class="form-group col-md-6">

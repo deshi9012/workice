@@ -16,6 +16,8 @@ use Modules\Leads\Helpers\LeadCsvProcessor;
 use Modules\Leads\Http\Requests\BulkSendRequest;
 use Modules\Leads\Jobs\BulkDeleteLeads;
 use Modules\Messages\Entities\Emailing;
+use App\Entities\Category;
+use Carbon\Carbon;
 
 abstract class LeadsController extends Controller {
     /**
@@ -161,10 +163,10 @@ abstract class LeadsController extends Controller {
             }
             $csv_data = array_slice($data, 0, 2);
             $csv_data_file = \App\Entities\CsvData::create([
-                    'csv_filename' => $request->file('csvfile')->getClientOriginalName(),
-                    'csv_header'   => $request->has('header'),
-                    'csv_data'     => json_encode($data),
-                ]);
+                'csv_filename' => $request->file('csvfile')->getClientOriginalName(),
+                'csv_header'   => $request->has('header'),
+                'csv_data'     => json_encode($data),
+            ]);
         } else {
             return redirect()->back();
         }
@@ -187,10 +189,10 @@ abstract class LeadsController extends Controller {
 
     public function processImport() {
         \Validator::make(array_flip($this->request->fields), [
-                'name'    => 'required',
-                'company' => 'required',
-                'email'   => 'required',
-            ])->validate();
+            'name'    => 'required',
+            'company' => 'required',
+            'email'   => 'required',
+        ])->validate();
         (new LeadCsvProcessor)->import($this->request);
 
         $data['message'] = langapp('saved_successfully');
@@ -263,10 +265,10 @@ abstract class LeadsController extends Controller {
         ]);
         $data['message'] = langapp('sent_successfully');
         $data['redirect'] = route('leads.view', [
-                'id'     => $email->lead->id,
-                'tab'    => 'emails',
-                'action' => $request->reply_id,
-            ]);
+            'id'     => $email->lead->id,
+            'tab'    => 'emails',
+            'action' => $request->reply_id,
+        ]);
 
         return ajaxResponse($data);
     }
@@ -296,16 +298,16 @@ abstract class LeadsController extends Controller {
             foreach ($request->leads as $l) {
                 $lead = $this->lead->findOrFail($l);
                 $mail = $lead->emails()->create([
-                        'to'          => $lead->id,
-                        'from'        => \Auth::id(),
-                        'subject'     => $request->subject,
-                        'message'     => str_replace("{name}", $lead->name, $request->message),
-                        'reserved_at' => $when->toDateTimeString(),
-                        'meta'        => [
-                            'sender' => get_option('company_email'),
-                            'to'     => $lead->email,
-                        ],
-                    ]);
+                    'to'          => $lead->id,
+                    'from'        => \Auth::id(),
+                    'subject'     => $request->subject,
+                    'message'     => str_replace("{name}", $lead->name, $request->message),
+                    'reserved_at' => $when->toDateTimeString(),
+                    'meta'        => [
+                        'sender' => get_option('company_email'),
+                        'to'     => $lead->email,
+                    ],
+                ]);
                 \Mail::to($lead)->bcc(!empty($request->bcc) ? $request->bcc : [])->later($when, new LeadsBulkEmail($mail, \Auth::user()->profile->email_signature));
             }
         }
@@ -348,38 +350,60 @@ abstract class LeadsController extends Controller {
      */
     public function tableData() {
         $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
+        $sourceData = Category::whereModule('source')->get()->toArray();
 
-        dd( DataTables::eloquent($model)->editColumn('name', function ($lead) {
+        $allSources = [];
+        foreach ($sourceData as $key => $item) {
+            $allSources[$item['id']] = $item['name'];
+        }
+        $data = DataTables::eloquent($model)->editColumn('name', function ($lead) {
 
-                $str = '<a href="' . route('leads.view', $lead->id) . '">';
-                if ($lead->has_email) {
-                    $str .= '<i class="fas fa-envelope-open text-danger"></i> ';
-                }
-                return $str . str_limit($lead->name, 15) . '</a>';
-            })->editColumn('chk', function ($lead) {
-                return '<label><input type="checkbox" name="checked[]" value="' . $lead->id . '"><span class="label-text"></span></label>';
-            })->editColumn('mobile', function ($lead) {
-                return str_limit($lead->mobile, 15);
-            })->editColumn('email', function ($lead) {
-                $str = '<a href="' . route('leads.view', [
-                        'lead' => $lead->id,
-                        'tab'  => 'conversations'
-                    ]) . '">';
-                return $str . $lead->email . '</a>';
-            })->editColumn('lead_value', function ($lead) {
-                return formatCurrency(get_option('default_currency'), (float)$lead->lead_value);
-            })->editColumn('stage', function ($lead) {
-                return '<span class="text-dark">' . str_limit($lead->status->name, 15) . '</span>';
-            })->editColumn('sales_rep', function ($lead) {
-                return str_limit(optional($lead->agent)->name, 15);
-            })->rawColumns([
-                'name',
-                'mobile',
-                'stage',
-                'chk',
-                'lead',
-                'email'
-            ])->make(true));
+            $str = '<a href="' . route('leads.view', $lead->id) . '">';
+            if ($lead->has_email) {
+                $str .= '<i class="fas fa-envelope-open text-danger"></i> ';
+            }
+            return $str . str_limit($lead->name, 15) . '</a>';
+        })->editColumn('chk', function ($lead) {
+            return '<label><input type="checkbox" name="checked[]" value="' . $lead->id . '"><span class="label-text"></span></label>';
+        })->editColumn('mobile', function ($lead) {
+            return str_limit($lead->mobile, 15);
+        })->editColumn('email', function ($lead) {
+            $str = '<a href="' . route('leads.view', [
+                    'lead' => $lead->id,
+                    'tab'  => 'conversations'
+                ]) . '">';
+            return $str . $lead->email . '</a>';
+        })->editColumn('lead_value', function ($lead) {
+            return formatCurrency(get_option('default_currency'), (float)$lead->lead_value);
+        })->editColumn('stage', function ($lead) {
+            return '<span class="text-dark">' . str_limit($lead->status->name, 15) . '</span>';
+        })->editColumn('sales_rep', function ($lead) {
+            return str_limit(optional($lead->agent)->name, 15);
+        })->editColumn('source', function ($lead) use ($allSources) {
+            return $allSources[$lead->source];
+        })->editColumn('approx_time', function ($lead) {
+            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
+            return $carbon->tz($lead->timezone)->toTimeString();
+        })->editColumn('registration_time', function ($lead) {
+            return $lead->created_at->toDateTimeString();
+
+        })->editColumn('modified_time', function ($lead) {
+            return $lead->updated_at->toDateTimeString();
+
+        })->rawColumns([
+            'id',
+            'name',
+            'mobile',
+            'stage',
+            'chk',
+            'lead',
+            'email',
+            'language'
+        ])->make(true);
+        $now = Carbon::now();
+
+
+        return $data;
     }
 
     public function importGoogleContacts() {

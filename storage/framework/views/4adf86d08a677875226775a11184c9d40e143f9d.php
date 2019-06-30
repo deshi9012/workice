@@ -14,10 +14,16 @@
 								<span class="label-text"></span>
 							</label>
 						</th>
+						<th class="">ID</th>
 						<th class=""><?php echo trans('app.'.'name'); ?></th>
 
 						<th class=""><?php echo trans('app.'.'mobile'); ?></th>
-						<th class=""><?php echo trans('app.'.'stage'); ?></th>
+						<th class="">Country</th>
+						<th class="">Source</th>
+						<th class="">Approx time</th>
+						<th class="">Registration time</th>
+						<th class="">Modified at</th>
+						
 						<th class="col-currency"><?php echo trans('app.'.'lead_value'); ?></th>
 						<th class=""><?php echo trans('app.'.'sales_rep'); ?></th>
 						<th class=""><?php echo trans('app.'.'email'); ?></th>
@@ -59,7 +65,7 @@
 				processing: true,
 				serverSide: true,
 				ajax: {
-					url: console.log('<?php echo e(route('leads.data')); ?>'),
+					url: '<?php echo e(route('leads.data')); ?>',
 					data: {
 						"filter": '<?php echo e($filter); ?>',
 					}
@@ -68,15 +74,22 @@
 				columns: [
 					{data: 'id', name: 'id'},
 					{data: 'chk', name: 'chk', searchable: false},
+					{data: 'id', name: 'id'},
 					{data: 'name', name: 'name'},
 
 					{data: 'mobile', name: 'mobile'},
-					{data: 'stage', name: 'status.name'},
+					{data: 'country', name: 'country'},
+					{data: 'source', name: 'source'},
+					{data: 'approx_time', name: 'approx_time'},
+					{data: 'registration_time', name: 'registration_time'},
+					{data: 'modified_time', name: 'modified_time'},
+
 					{data: 'lead_value', name: 'lead_value'},
 					{data: 'sales_rep', name: 'agent.name'},
 					{data: 'email', name: 'email'}
 				]
 			});
+			//{data: 'stage', name: 'status.name'},
 			$("#frm-lead button").click(function (ev) {
 				ev.preventDefault();
 				if ($(this).attr("value") == "bulk-email") {

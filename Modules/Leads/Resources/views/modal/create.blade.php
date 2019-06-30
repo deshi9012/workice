@@ -41,14 +41,14 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group col-md-6 no-gutter-left">
-                        <label>@langapp('stage') @required</label>
-                        <select name="stage_id" class="form-control">
-                            @foreach (App\Entities\Category::leads()->orderBy('order')->get() as $stage)
-                            <option value="{{ $stage->id }}">{{ ucfirst($stage->name) }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                    {{--<div class="form-group col-md-6 no-gutter-left">--}}
+                        {{--<label>@langapp('stage') @required</label>--}}
+                        {{--<select name="stage_id" class="form-control">--}}
+                            {{--@foreach (App\Entities\Category::leads()->orderBy('order')->get() as $stage)--}}
+                            {{--<option value="{{ $stage->id }}">{{ ucfirst($stage->name) }}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
                     
                     <div class="row">
                         <div class="form-group col-md-6">

@@ -23,6 +23,7 @@
         "bepsvpt/secure-headers": "^5.2",
         "braintree/braintree_php": "^3.38",
         "cartalyst/stripe-laravel": "^9.0",
+        "cartalyst/stripe-laravel": "^9.0",
         "ddeboer/imap": "^1.0",
         "eluceo/ical": "^0.11",
         "fideloper/proxy": "^4.0",

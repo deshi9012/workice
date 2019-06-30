@@ -54,6 +54,7 @@
 				<nav class="nav-primary hidden-xs">
 					<ul class="nav">
 
+
 						<?php $__currentLoopData = mainMenu(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
 							<?php if(count($menu['children']) > 0): ?>
@@ -69,7 +70,7 @@
                                     <i class="fas fa-angle-up text-active"></i>
                                 </span>
 										<span>
-                                    <?php echo trans('app.'.$menu['name']); ?> 
+                                    <?php echo trans('app.'.$menu['name']); ?>
                                 </span>
 									</a>
 									<ul class="nav lt">
@@ -97,7 +98,11 @@
 											<b class="bg-<?php echo e(get_option('theme_color')); ?>"></b>
 										</i>
 										<span>
-                                    <?php echo trans('app.'.$menu['name']); ?> 
+											<?php if($menu['name'] == 'users'): ?>
+												Operators
+											<?php else: ?>
+												<?php echo trans('app.'.$menu['name']); ?>
+											<?php endif; ?>
                                 </span>
 									</a>
 								</li>

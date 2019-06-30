@@ -581,7 +581,6 @@ function mainMenu() {
             $menu['name'] == 'subscriptions' ) {
             unset($cacheMenus[$key]);
         }
-
     }
     return $cacheMenus;
 }

@@ -54,6 +54,7 @@
 				<nav class="nav-primary hidden-xs">
 					<ul class="nav">
 
+
 						@foreach (mainMenu() as $menu)
 
 							@if (count($menu['children']) > 0)
@@ -69,7 +70,7 @@
                                     <i class="fas fa-angle-up text-active"></i>
                                 </span>
 										<span>
-                                    @langapp($menu['name']) 
+                                    @langapp($menu['name'])
                                 </span>
 									</a>
 									<ul class="nav lt">
@@ -97,7 +98,11 @@
 											<b class="bg-{{ get_option('theme_color') }}"></b>
 										</i>
 										<span>
-                                    @langapp($menu['name']) 
+											@if($menu['name'] == 'users')
+												Operators
+											@else
+												@langapp($menu['name'])
+											@endif
                                 </span>
 									</a>
 								</li>
