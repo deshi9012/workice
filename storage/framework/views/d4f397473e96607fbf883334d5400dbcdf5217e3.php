@@ -5,7 +5,7 @@
                 <li class="<?php echo e($dashboard == 'invoices' ? 'active' : ''); ?>"><a href="<?php echo e(route('dashboard.index', ['dashboard' => 'invoices'])); ?>"><?php echo e(svg_image('solid/file-invoice-dollar')); ?> <?php echo trans('app.'.'invoicing'); ?></a></li>
                 <?php } ?>
                 <?php if (moduleActive('deals')) { ?>
-                <li class="<?php echo e($dashboard == 'deals' ? 'active' : ''); ?>"><a href="<?php echo e(route('dashboard.index', ['dashboard' => 'deals'])); ?>"><?php echo e(svg_image('solid/chart-line')); ?> <?php echo trans('app.'.'sales'); ?></a></li>
+                
                 <?php } ?>
                 <?php if (moduleActive('expenses')) { ?>
                 <li class="<?php echo e($dashboard == 'expenses' ? 'active' : ''); ?>"><a href="<?php echo e(route('dashboard.index', ['dashboard' => 'expenses'])); ?>"><?php echo e(svg_image('solid/shopping-basket')); ?> <?php echo trans('app.'.'expenses'); ?></a></li>

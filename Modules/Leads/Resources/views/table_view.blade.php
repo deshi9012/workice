@@ -18,14 +18,20 @@
 						<th class="">@langapp('name')</th>
 
 						<th class="">@langapp('mobile')</th>
-						<th class="">Country</th>
-						<th class="">Source</th>
-						<th class="">Approx time</th>
-						<th class="">Registration time</th>
-						<th class="">Modified at</th>
 						{{--<th class="">@langapp('stage')</th>--}}
-						<th class="col-currency">@langapp('lead_value')</th>
-						<th class="">@langapp('sales_rep')</th>
+						<th class="">Counntry</th>
+						<th class="">Source</th>
+						<th class="">Modified time</th>
+						<th class="">Registration time</th>
+						<th class="">Approx time</th>
+						<th class="">Language</th>
+						<th class="">Courses</th>
+						
+						<th class="col-currency">Sales rep</th>
+						<th class="col-currency">Sales status</th>
+						<th class="col-currency">Last login</th>
+						<th class="col-currency">Local time</th>
+						{{--<th class="">@langapp('sales_rep')</th>--}}
 						<th class="">@langapp('email')</th>
 					</tr>
 					</thead>
@@ -80,16 +86,21 @@
 					{data: 'mobile', name: 'mobile'},
 					{data: 'country', name: 'country'},
 					{data: 'source', name: 'source'},
-					{data: 'approx_time', name: 'approx_time'},
-					{data: 'registration_time', name: 'registration_time'},
 					{data: 'modified_time', name: 'modified_time'},
+					{data: 'registration_time', name: 'registration_time'},
+					{data: 'approx_time', name: 'approx_time'},
+					{data: 'language', name: 'language'},
+					{data: 'courses', name: 'courses'},
 
-					{data: 'lead_value', name: 'lead_value'},
+
 					{data: 'sales_rep', name: 'agent.name'},
+					{data: 'sales_status', name: 'sales_status'},
+					{data: 'last_login', name: 'last_login'},
+					{data: 'local_time', name: 'local_time'},
 					{data: 'email', name: 'email'}
 				]
 			});
-			//{data: 'stage', name: 'status.name'},
+
 			$("#frm-lead button").click(function (ev) {
 				ev.preventDefault();
 				if ($(this).attr("value") == "bulk-email") {

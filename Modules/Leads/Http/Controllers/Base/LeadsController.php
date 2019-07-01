@@ -349,6 +349,7 @@ abstract class LeadsController extends Controller {
      * @return \Illuminate\Http\JsonResponse
      */
     public function tableData() {
+
         $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
         $sourceData = Category::whereModule('source')->get()->toArray();
 
@@ -389,7 +390,9 @@ abstract class LeadsController extends Controller {
 
         })->editColumn('modified_time', function ($lead) {
             return $lead->updated_at->toDateTimeString();
-
+        })->editColumn('local_time', function ($lead) {
+            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
+            return $carbon->tz($lead->timezone)->toTimeString();
         })->rawColumns([
             'id',
             'name',
@@ -400,8 +403,6 @@ abstract class LeadsController extends Controller {
             'email',
             'language'
         ])->make(true);
-        $now = Carbon::now();
-
 
         return $data;
     }

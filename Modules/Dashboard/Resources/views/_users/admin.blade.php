@@ -5,7 +5,7 @@
                 <li class="{{ $dashboard == 'invoices' ? 'active' : '' }}"><a href="{{ route('dashboard.index', ['dashboard' => 'invoices']) }}">@icon('solid/file-invoice-dollar') @langapp('invoicing')</a></li>
                 @endmod
                 @modactive('deals')
-                <li class="{{ $dashboard == 'deals' ? 'active' : '' }}"><a href="{{ route('dashboard.index', ['dashboard' => 'deals']) }}">@svg('solid/chart-line') @langapp('sales')</a></li>
+                {{--<li class="{{ $dashboard == 'deals' ? 'active' : '' }}"><a href="{{ route('dashboard.index', ['dashboard' => 'deals']) }}">@svg('solid/chart-line') @langapp('sales')</a></li>--}}
                 @endmod
                 @modactive('expenses')
                 <li class="{{ $dashboard == 'expenses' ? 'active' : '' }}"><a href="{{ route('dashboard.index', ['dashboard' => 'expenses']) }}">@icon('solid/shopping-basket') @langapp('expenses')</a></li>
