@@ -16,7 +16,7 @@
 						</th>
 						<th class="">ID</th>
 						<th class="">@langapp('name')</th>
-
+						<th class="">@langapp('email')</th>
 						<th class="">@langapp('mobile')</th>
 						{{--<th class="">@langapp('stage')</th>--}}
 						<th class="">Counntry</th>
@@ -32,7 +32,7 @@
 						<th class="col-currency">Last login</th>
 						<th class="col-currency">Local time</th>
 						{{--<th class="">@langapp('sales_rep')</th>--}}
-						<th class="">@langapp('email')</th>
+
 					</tr>
 					</thead>
 				</table>
@@ -82,6 +82,7 @@
 					{data: 'chk', name: 'chk', searchable: false},
 					{data: 'id', name: 'id'},
 					{data: 'name', name: 'name'},
+					{data: 'email', name: 'email'},
 
 					{data: 'mobile', name: 'mobile'},
 					{data: 'country', name: 'country'},
@@ -97,7 +98,7 @@
 					{data: 'sales_status', name: 'sales_status'},
 					{data: 'last_login', name: 'last_login'},
 					{data: 'local_time', name: 'local_time'},
-					{data: 'email', name: 'email'}
+
 				]
 			});
 

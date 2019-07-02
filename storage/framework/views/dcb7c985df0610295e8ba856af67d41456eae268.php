@@ -60,6 +60,9 @@
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>Sales Status</label>
 						<input type="text" name="sales_status" class="input-sm form-control" value="<?php echo e($lead->sales_status); ?>">
+					</div><div class="form-group col-md-6 no-gutter-right">
+						<label>Change password</label>
+						<input type="text" name="change_password" class="input-sm form-control" value="">
 					</div>
 
 					<div class="row">

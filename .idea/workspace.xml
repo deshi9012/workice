@@ -2,29 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7c0520f-514d-4eb0-9f2d-a143941ea56c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Users/Http/Controllers/Base/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Users/Http/Controllers/Base/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Users/Resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Users/Resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Users/Resources/views/modal/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Users/Resources/views/modal/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Users/Resources/views/permissions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Users/Resources/views/permissions.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Users/Resources/views/tab/overview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Users/Resources/views/tab/overview.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Users/Resources/views/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Users/Resources/views/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/hBtnq1u5INltdxFDXErhAXxLsy2lXgi70pW7sKc3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/259cec41a5089b7733b1b04c2d4888906bc9e28a.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/259cec41a5089b7733b1b04c2d4888906bc9e28a.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/3aa0f49a450b122456190e37284c8c8e88e109b8.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/3aa0f49a450b122456190e37284c8c8e88e109b8.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/4adf86d08a677875226775a11184c9d40e143f9d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/4adf86d08a677875226775a11184c9d40e143f9d.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/5146a1ef0edb8a8f0ded7e491ef147899a5c8e5f.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/5146a1ef0edb8a8f0ded7e491ef147899a5c8e5f.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/528962cd61ec55eea168f8fa0ebfd5f95e5f0a2e.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/528962cd61ec55eea168f8fa0ebfd5f95e5f0a2e.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/aeea0700767922aec7facf732de3470f121463d7.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/aeea0700767922aec7facf732de3470f121463d7.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/wHwP6FIwi7bEjNpZBt1fWFvp8GuEMzRov38ZPVKP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/zeVMiERB0Vkr7n7cnDAMgWTuHLzZaSkmYH4uZBnY" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/dcb7c985df0610295e8ba856af67d41456eae268.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/dcb7c985df0610295e8ba856af67d41456eae268.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/eb29aa1a5aa3d46422c3154d29b969c549d6d286.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/eb29aa1a5aa3d46422c3154d29b969c549d6d286.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,14 +21,14 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.6522897">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="table_view.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="979">
-                  <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="65" />
+                <state relative-caret-position="405">
+                  <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
                 </state>
               </provider>
             </entry>
@@ -83,20 +67,29 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Lead.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
+          <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-5761">
-                  <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+                <state relative-caret-position="460">
+                  <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
+          <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
-                  <caret line="63" column="103" selection-start-line="63" selection-start-column="103" selection-end-line="63" selection-end-column="103" />
+                <state relative-caret-position="169">
+                  <caret line="152" column="32" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="292">
+                  <caret line="102" selection-start-line="100" selection-end-line="102" />
                 </state>
               </provider>
             </entry>
@@ -128,7 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>s</find>
       <find>edit</find>
       <find>edi</find>
       <find>make</find>
@@ -158,6 +150,7 @@
       <find>close</find>
       <find>save</find>
       <find>status</find>
+      <find>stage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,11 +186,12 @@
         <option value="$PROJECT_DIR$/Modules/Users/Resources/views/tab/overview.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Resources/views/view.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/create.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" />
       </list>
     </option>
   </component>
@@ -413,7 +407,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1177" />
@@ -601,15 +595,15 @@
       <workItem from="1561477889705" duration="17390000" />
       <workItem from="1561719871726" duration="116000" />
       <workItem from="1561720007999" duration="27202000" />
-      <workItem from="1562016629512" duration="3282000" />
+      <workItem from="1562016629512" duration="5034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79181000" />
+    <option name="totallyTimeSpent" value="80933000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -672,13 +666,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/CacheGarbageCollector.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-399" />
@@ -829,13 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-549">
-          <caret line="95" column="104" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Carbon.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1252">
@@ -969,13 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="979">
-          <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
@@ -1009,8 +982,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5761">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="986">
+          <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1026,8 +999,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="63" column="103" selection-start-line="63" selection-start-column="103" selection-end-line="63" selection-end-column="103" />
+        <state relative-caret-position="460">
+          <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="152" column="32" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="102" selection-start-line="100" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
         </state>
       </provider>
     </entry>
