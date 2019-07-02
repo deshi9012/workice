@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7c0520f-514d-4eb0-9f2d-a143941ea56c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Modules/Users/Resources/views/roles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Users/Resources/views/roles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,16 +79,16 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="169">
-                  <caret line="152" column="32" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
+                <state relative-caret-position="453">
+                  <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="292">
@@ -193,9 +193,9 @@
         <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Resources/views/roles.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php" />
       </list>
     </option>
   </component>
@@ -599,12 +599,12 @@
       <workItem from="1561477889705" duration="17390000" />
       <workItem from="1561719871726" duration="116000" />
       <workItem from="1561720007999" duration="27202000" />
-      <workItem from="1562016629512" duration="5512000" />
+      <workItem from="1562016629512" duration="5643000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81411000" />
+    <option name="totallyTimeSpent" value="81542000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
@@ -1003,13 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="152" column="32" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -1028,6 +1021,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Users/Resources/views/modal/update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
         </state>
       </provider>
     </entry>

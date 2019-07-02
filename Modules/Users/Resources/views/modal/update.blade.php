@@ -51,11 +51,11 @@
 
 
 				<div class="form-group">
-					{{--<div class="row">--}}
-						{{--<div class="col-md-6">--}}
-							{{--<label>@langapp('email') @required</label>--}}
-							{{--<input type="email" value="{{  $user->email  }}" name="email" class="form-control" required>--}}
-						{{--</div>--}}
+					<div class="row">
+						<div class="col-md-6">
+							<label>@langapp('email') @required</label>
+							<input type="email" value="{{  $user->email  }}" name="email" class="form-control" required>
+						</div>
 						{{--<div class="col-md-6">--}}
 							{{--<label>@langapp('company')</label>--}}
 
