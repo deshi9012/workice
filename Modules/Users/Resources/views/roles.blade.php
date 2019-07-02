@@ -7,7 +7,7 @@
             <header class="header panel-heading bg-white b-b b-light">
                 @can('menu_users')
                 <a href="{{ route('users.index') }}" class="btn btn-{{ get_option('theme_color') }} btn-sm">
-                    @icon('solid/user-circle') @langapp('users')
+                    @icon('solid/user-circle') Operators
                 </a>
                 @endcan
                 @can('roles_create')

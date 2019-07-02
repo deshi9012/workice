@@ -6,7 +6,7 @@
             <header class="header panel-heading bg-white b-b b-light">
                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('menu_users')): ?>
                 <a href="<?php echo e(route('users.index')); ?>" class="btn btn-<?php echo e(get_option('theme_color')); ?> btn-sm">
-                    <?php echo e(svg_image('solid/user-circle')); ?> <?php echo trans('app.'.'users'); ?>
+                    <?php echo e(svg_image('solid/user-circle')); ?> Operators
                 </a>
                 <?php endif; ?>
                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('roles_create')): ?>
