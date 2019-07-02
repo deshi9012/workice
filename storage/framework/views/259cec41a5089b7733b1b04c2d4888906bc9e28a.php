@@ -5,8 +5,6 @@
 
             <section class="vbox">
 
-
-
                 <header class="header panel-heading bg-white b-b b-light">
 
                     <?php if (\Illuminate\Support\Facades\Blade::check('admin')): ?>
@@ -94,9 +92,8 @@
                                     </th>
                                     <th class=""><?php echo trans('app.'.'name'); ?>  </th>
                                     <th class=""><?php echo trans('app.'.'email'); ?>  </th>
-                                    <th class=" "><?php echo trans('app.'.'job_title'); ?>  </th>
+                                    <th class=" ">Role </th>
                                     <th class=""><?php echo trans('app.'.'mobile'); ?>  </th>
-                                    <th class=""><?php echo trans('app.'.'city'); ?>  </th>
                                     <th class="col-date"><?php echo trans('app.'.'date'); ?>  </th>
                                 </tr>
                                 </thead>
@@ -160,9 +157,8 @@ $(function() {
             { data: 'chk', name: 'chk', orderable: false, searchable: false, sortable: false },
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
-            { data: 'job_title', name: 'profile.job_title' },
+            { data: 'role', name: 'role' },
             { data: 'mobile', name: 'profile.mobile' },
-            { data: 'city', name: 'profile.city' },
             { data: 'created_at', name: 'created_at' }
         ]
     });

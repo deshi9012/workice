@@ -106,6 +106,7 @@ abstract class LeadsController extends Controller {
      * @return \Illuminate\View\View
      */
     public function edit(Lead $lead) {
+
         $data['lead'] = $lead;
         return view('leads::modal.update')->with($data);
     }

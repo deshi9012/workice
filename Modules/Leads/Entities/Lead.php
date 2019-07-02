@@ -43,7 +43,7 @@ class Lead extends Model
         'city', 'state', 'zip_code', 'country', 'timezone', 'website', 'skype', 'facebook', 'twitter', 'linkedin',
         'sales_rep', 'lead_score', 'due_date', 'lead_value', 'computed_value', 'todo_percent', 'message',
         'has_email', 'has_activity', 'next_followup', 'unsubscribed_at', 'archived_at', 'converted_at', 'token',
-        'deleted_at',
+        'deleted_at','language','courses', 'last_login','sales_status'
     ];
 
     /**

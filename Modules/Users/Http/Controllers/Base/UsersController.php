@@ -42,6 +42,7 @@ abstract class UsersController extends Controller
      */
     public function index()
     {
+
         $data['filter'] = $this->request->filter;
         $data['page']   = $this->getPage();
 
@@ -50,6 +51,7 @@ abstract class UsersController extends Controller
 
     public function create()
     {
+
         return view('users::modal.create');
     }
 
@@ -208,7 +210,7 @@ abstract class UsersController extends Controller
     {
         $model = $this->applyFilter()->with(['profile:user_id,job_title,mobile,city,use_gravatar,avatar']);
 
-        return DataTables::eloquent($model)
+        $data =  DataTables::eloquent($model)
             ->editColumn(
                 'name',
                 function ($user) {
@@ -239,15 +241,18 @@ abstract class UsersController extends Controller
                 function ($user) {
                     return $user->profile->city;
                 }
-            )
-            ->editColumn(
+            )->editColumn(
                 'created_at',
                 function ($user) {
                     return dateFormatted($user->created_at);
                 }
-            )
+            )->editColumn('role',function($user){
+                return $user->roles->pluck('name');
+            })
             ->rawColumns(['name', 'chk', 'job_title', 'role', 'user'])
             ->make(true);
+
+        return $data;
     }
 
     protected function applyFilter()

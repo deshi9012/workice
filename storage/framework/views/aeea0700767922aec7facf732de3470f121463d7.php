@@ -32,16 +32,16 @@
     </div>
     <table class="table table-borderless table-xs content-group-sm">
         <tbody>
-            <?php if($user->profile->company > 0): ?>
-            <tr>
-                <td class="text-muted"><?php echo trans('app.'.'company'); ?></td>
-                <td class="text-right">
-                    <span class="pull-right">
-                        <a href="<?php echo e(route('clients.view', $user->profile->company)); ?>"><?php echo e($user->profile->business->name); ?></a>
-                    </span>
-                </td>
-            </tr>
-            <?php endif; ?>
+            
+            
+                
+                
+                    
+                        
+                    
+                
+            
+            
             
             <tr>
                 <td class="text-muted"><?php echo trans('app.'.'email'); ?></td>
@@ -59,10 +59,10 @@
                 <td class="text-muted"><?php echo trans('app.'.'role'); ?></td>
                 <td class="text-right"><?php echo e($user->roles->pluck('name')); ?></td>
             </tr>
-            <tr>
-                <td class="text-muted"><?php echo trans('app.'.'department'); ?></td>
-                <td class="text-right"><?php echo e($user->departments->pluck('department.deptname')); ?></td>
-            </tr>
+            
+                
+                
+            
             <tr>
                 <td class="text-muted"><?php echo trans('app.'.'mobile'); ?></td>
                 <td class="text-right"><?php echo e($user->profile->mobile); ?></td>
@@ -75,26 +75,26 @@
                 <td class="text-muted"><?php echo trans('app.'.'locale'); ?> </td>
                 <td class="text-right"><?php echo e(ucfirst($user->locale)); ?></td>
             </tr>
-            <tr>
-                <td class="text-muted"><?php echo trans('app.'.'hourly_rate'); ?> </td>
-                <td class="text-right"><?php echo e($user->profile->hourly_rate); ?>/hr</td>
-            </tr>
-            <tr>
-                <td class="text-muted"><?php echo trans('app.'.'city'); ?></td>
-                <td class="text-right"><?php echo e($user->profile->city); ?></td>
-            </tr>
-            <tr>
-                <td class="text-muted"><?php echo trans('app.'.'country'); ?></td>
-                <td class="text-right"><a href="#"><?php echo e($user->profile->country); ?></a></td>
-            </tr>
+            
+                
+                
+            
+            
+                
+                
+            
+            
+                
+                
+            
             <tr>
                 <td class="text-muted"><?php echo trans('app.'.'locale'); ?></td>
                 <td class="text-right"><a href="#"><?php echo e($user->profile->locale); ?></a></td>
             </tr>
-            <tr>
-                <td class="text-muted"><?php echo trans('app.'.'address'); ?></td>
-                <td class="text-right"><?php echo e($user->profile->address); ?></td>
-            </tr>
+            
+                
+                
+            
             <tr>
                 <td class="text-muted"><?php echo trans('app.'.'verified_at'); ?> </td>
                 <td class="text-right"><?php echo e($user->email_verified_at); ?></td>

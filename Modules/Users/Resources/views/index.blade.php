@@ -7,8 +7,6 @@
 
             <section class="vbox">
 
-
-
                 <header class="header panel-heading bg-white b-b b-light">
 
                     @admin
@@ -95,9 +93,8 @@
                                     </th>
                                     <th class="">@langapp('name')  </th>
                                     <th class="">@langapp('email')  </th>
-                                    <th class=" ">@langapp('job_title')  </th>
+                                    <th class=" ">Role </th>
                                     <th class="">@langapp('mobile')  </th>
-                                    <th class="">@langapp('city')  </th>
                                     <th class="col-date">@langapp('date')  </th>
                                 </tr>
                                 </thead>
@@ -161,9 +158,8 @@ $(function() {
             { data: 'chk', name: 'chk', orderable: false, searchable: false, sortable: false },
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
-            { data: 'job_title', name: 'profile.job_title' },
+            { data: 'role', name: 'role' },
             { data: 'mobile', name: 'profile.mobile' },
-            { data: 'city', name: 'profile.city' },
             { data: 'created_at', name: 'created_at' }
         ]
     });

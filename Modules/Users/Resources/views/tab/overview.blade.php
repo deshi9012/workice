@@ -31,17 +31,17 @@
     </div>
     <table class="table table-borderless table-xs content-group-sm">
         <tbody>
-            @if ($user->profile->company > 0)
-            <tr>
-                <td class="text-muted">@langapp('company')</td>
-                <td class="text-right">
-                    <span class="pull-right">
-                        <a href="{{ route('clients.view', $user->profile->company) }}">{{  $user->profile->business->name  }}</a>
-                    </span>
-                </td>
-            </tr>
-            @endif
-            
+            {{--@if ($user->profile->company > 0)--}}
+            {{--<tr>--}}
+                {{--<td class="text-muted">@langapp('company')</td>--}}
+                {{--<td class="text-right">--}}
+                    {{--<span class="pull-right">--}}
+                        {{--<a href="{{ route('clients.view', $user->profile->company) }}">{{  $user->profile->business->name  }}</a>--}}
+                    {{--</span>--}}
+                {{--</td>--}}
+            {{--</tr>--}}
+            {{--@endif--}}
+            {{----}}
             <tr>
                 <td class="text-muted">@langapp('email')</td>
                 <td class="text-right">{{  $user->email  }}</td>
@@ -58,10 +58,10 @@
                 <td class="text-muted">@langapp('role')</td>
                 <td class="text-right">{{  $user->roles->pluck('name')  }}</td>
             </tr>
-            <tr>
-                <td class="text-muted">@langapp('department')</td>
-                <td class="text-right">{{ $user->departments->pluck('department.deptname') }}</td>
-            </tr>
+            {{--<tr>--}}
+                {{--<td class="text-muted">@langapp('department')</td>--}}
+                {{--<td class="text-right">{{ $user->departments->pluck('department.deptname') }}</td>--}}
+            {{--</tr>--}}
             <tr>
                 <td class="text-muted">@langapp('mobile')</td>
                 <td class="text-right">{{  $user->profile->mobile  }}</td>
@@ -74,26 +74,26 @@
                 <td class="text-muted">@langapp('locale') </td>
                 <td class="text-right">{{  ucfirst($user->locale)  }}</td>
             </tr>
-            <tr>
-                <td class="text-muted">@langapp('hourly_rate') </td>
-                <td class="text-right">{{  $user->profile->hourly_rate  }}/hr</td>
-            </tr>
-            <tr>
-                <td class="text-muted">@langapp('city')</td>
-                <td class="text-right">{{  $user->profile->city  }}</td>
-            </tr>
-            <tr>
-                <td class="text-muted">@langapp('country')</td>
-                <td class="text-right"><a href="#">{{  $user->profile->country  }}</a></td>
-            </tr>
+            {{--<tr>--}}
+                {{--<td class="text-muted">@langapp('hourly_rate') </td>--}}
+                {{--<td class="text-right">{{  $user->profile->hourly_rate  }}/hr</td>--}}
+            {{--</tr>--}}
+            {{--<tr>--}}
+                {{--<td class="text-muted">@langapp('city')</td>--}}
+                {{--<td class="text-right">{{  $user->profile->city  }}</td>--}}
+            {{--</tr>--}}
+            {{--<tr>--}}
+                {{--<td class="text-muted">@langapp('country')</td>--}}
+                {{--<td class="text-right"><a href="#">{{  $user->profile->country  }}</a></td>--}}
+            {{--</tr>--}}
             <tr>
                 <td class="text-muted">@langapp('locale')</td>
                 <td class="text-right"><a href="#">{{  $user->profile->locale  }}</a></td>
             </tr>
-            <tr>
-                <td class="text-muted">@langapp('address')</td>
-                <td class="text-right">{{  $user->profile->address  }}</td>
-            </tr>
+            {{--<tr>--}}
+                {{--<td class="text-muted">@langapp('address')</td>--}}
+                {{--<td class="text-right">{{  $user->profile->address  }}</td>--}}
+            {{--</tr>--}}
             <tr>
                 <td class="text-muted">@langapp('verified_at') </td>
                 <td class="text-right">{{ $user->email_verified_at }}</td>

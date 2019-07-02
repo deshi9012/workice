@@ -3,7 +3,6 @@
 @section('content')
 
 
-
     <section id="content">
         <section class="hbox stretch">
 
@@ -81,11 +80,11 @@
                                         @icon('solid/life-ring') @langapp('tickets')
                                     </a>
                                 </li>
-                                <li class="{{ ($tab == 'projects') ? 'active' : '' }}">
-                                    <a href="{{ route('users.view', ['id' => $user->id, 'tab' => 'projects']) }}">
-                                    @icon('solid/clock') @langapp('projects')
-                                    </a>
-                                </li>
+                                {{--<li class="{{ ($tab == 'projects') ? 'active' : '' }}">--}}
+                                    {{--<a href="{{ route('users.view', ['id' => $user->id, 'tab' => 'projects']) }}">--}}
+                                    {{--@icon('solid/clock') @langapp('projects')--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
 
 
                                 <li class="{{ ($tab == 'timesheet') ? 'active' : '' }}">
@@ -95,11 +94,11 @@
                                 </li>
 
 
-                                <li class="{{ ($tab == 'deals') ? 'active' : '' }}">
-                                    <a href="{{ route('users.view', ['id' => $user->id, 'tab' => 'deals']) }}">
-                                        @icon('solid/euro-sign') @langapp('deals')
-                                    </a>
-                                </li>
+                                {{--<li class="{{ ($tab == 'deals') ? 'active' : '' }}">--}}
+                                    {{--<a href="{{ route('users.view', ['id' => $user->id, 'tab' => 'deals']) }}">--}}
+                                        {{--@icon('solid/euro-sign') @langapp('deals')--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
 
 
                             </ul>

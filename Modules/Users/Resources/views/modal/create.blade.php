@@ -39,125 +39,126 @@
                                 <input type="text" name="name" class="form-control" required>
                             </div>
                             <div class="col-md-6">
-                                <label>@langapp('job_title')  </label>
-                                <input type="text" name="job_title" class="form-control" placeholder="Sales Manager">
-                            </div>
-    
-                        </div>
-                    </div>
-    
-    
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
                                 <label>@langapp('email') @required</label>
                                 <input type="email" name="email" class="form-control" placeholder="you@domain.com" required>
                             </div>
-                            <div class="col-md-6">
-                                <label>@langapp('company')</label>
-    
-                                <select class="select2-option width100" name="company">
-                                        <option value="-">None</option>
-                                        @foreach (Modules\Clients\Entities\Client::select('id', 'name')->get() as $company)
-                                            <option value="{{ $company->id }}">{{  $company->name  }}</option>
-                                        @endforeach
-    
-    
-                                </select>
-    
-                            </div>
+                            {{--<div class="col-md-6">--}}
+                                {{--<label>@langapp('job_title')  </label>--}}
+                                {{--<input type="text" name="job_title" class="form-control" placeholder="Sales Manager">--}}
+                            {{--</div>--}}
+    {{----}}
                         </div>
                     </div>
     
     
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>@langapp('address')  </label>
-                                <input type="text" name="address" class="form-control">
-                            </div>
-                            <div class="col-md-6">
-                                <label>@langapp('country')  </label>
-                                <select class="select2-option form-control" name="country">
-                                    @foreach (DB::table('countries')->select('name')->get() as $country)
-                                        <option value="{{  $country->name  }}" {{ $country->name == get_option('company_country') ? 'selected' :'' }}>{{  $country->name  }}</option>
-                                    @endforeach
-    
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>@langapp('city')</label>
-                                <input type="text" name="city" class="form-control">
-                            </div>
-                            <div class="col-md-4">
-                                <label>@langapp('state')</label>
-                                <input type="text" name="state" class="form-control">
-                            </div>
-                            <div class="col-md-4">
-                                <label>@langapp('zipcode')</label>
-                                <input type="text" name="zip_code" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<div class="row">--}}
+
+                            {{--<div class="col-md-6">--}}
+                                {{--<label>@langapp('company')</label>--}}
+    {{----}}
+                                {{--<select class="select2-option width100" name="company">--}}
+                                        {{--<option value="-">None</option>--}}
+                                        {{--@foreach (Modules\Clients\Entities\Client::select('id', 'name')->get() as $company)--}}
+                                            {{--<option value="{{ $company->id }}">{{  $company->name  }}</option>--}}
+                                        {{--@endforeach--}}
+    {{----}}
+    {{----}}
+                                {{--</select>--}}
+    {{----}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
     
     
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>@langapp('phone')</label>
-                                <input type="text" name="phone" class="form-control">
-                            </div>
-                            <div class="col-md-6">
-                                <label>@langapp('mobile')</label>
-                                <input type="text" name="mobile" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<label>@langapp('address')  </label>--}}
+                                {{--<input type="text" name="address" class="form-control">--}}
+                            {{--</div>--}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<label>@langapp('country')  </label>--}}
+                                {{--<select class="select2-option form-control" name="country">--}}
+                                    {{--@foreach (DB::table('countries')->select('name')->get() as $country)--}}
+                                        {{--<option value="{{  $country->name  }}" {{ $country->name == get_option('company_country') ? 'selected' :'' }}>{{  $country->name  }}</option>--}}
+                                    {{--@endforeach--}}
+    {{----}}
+                                {{--</select>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+    
+                    {{--<div class="form-group">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-md-4">--}}
+                                {{--<label>@langapp('city')</label>--}}
+                                {{--<input type="text" name="city" class="form-control">--}}
+                            {{--</div>--}}
+                            {{--<div class="col-md-4">--}}
+                                {{--<label>@langapp('state')</label>--}}
+                                {{--<input type="text" name="state" class="form-control">--}}
+                            {{--</div>--}}
+                            {{--<div class="col-md-4">--}}
+                                {{--<label>@langapp('zipcode')</label>--}}
+                                {{--<input type="text" name="zip_code" class="form-control">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
     
     
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>@langapp('website')  </label>
-                                <input type="text" name="website" class="form-control" placeholder="https://workice.com">
-                            </div>
-                            <div class="col-md-6">
-                                <label>Twitter</label>
-                                <input type="text" name="twitter" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<label>@langapp('phone')</label>--}}
+                                {{--<input type="text" name="phone" class="form-control">--}}
+                            {{--</div>--}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<label>@langapp('mobile')</label>--}}
+                                {{--<input type="text" name="mobile" class="form-control">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+    {{----}}
+    
+                    {{--<div class="form-group">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<label>@langapp('website')  </label>--}}
+                                {{--<input type="text" name="website" class="form-control" placeholder="https://workice.com">--}}
+                            {{--</div>--}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<label>Twitter</label>--}}
+                                {{--<input type="text" name="twitter" class="form-control">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
     
     
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>@langapp('hourly_rate')  </label>
-    
-                                <input type="text" class="form-control" name="hourly_rate" placeholder="22">
-                            </div>
-    
-                            <div class="col-md-6">
-                                <label class="display-block">@langapp('department')  </label>
-    
-    
-                                <select name="department[]" class="select2-option form-control" multiple="multiple">
-                                        @foreach (App\Entities\Department::all() as $d)
-                                            <option value="{{  $d->deptid  }}">
-                                                {{  $d->deptname  }} 
-                                            </option>
-                                        @endforeach
-                                </select>
-    
-    
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<label>@langapp('hourly_rate')  </label>--}}
+    {{----}}
+                                {{--<input type="text" class="form-control" name="hourly_rate" placeholder="22">--}}
+                            {{--</div>--}}
+    {{----}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<label class="display-block">@langapp('department')  </label>--}}
+    {{----}}
+    {{----}}
+                                {{--<select name="department[]" class="select2-option form-control" multiple="multiple">--}}
+                                        {{--@foreach (App\Entities\Department::all() as $d)--}}
+                                            {{--<option value="{{  $d->deptid  }}">--}}
+                                                {{--{{  $d->deptname  }} --}}
+                                            {{--</option>--}}
+                                        {{--@endforeach--}}
+                                {{--</select>--}}
+    {{----}}
+    {{----}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
     
     
                     <div class="form-group">
@@ -173,11 +174,11 @@
 
                         </div>
 
-                        <div class="col-md-6">
-                            <label>Skype</label>
-                            <input type="text" placeholder="john.doe" name="skype" class="form-control">
+                        {{--<div class="col-md-6">--}}
+                            {{--<label>Skype</label>--}}
+                            {{--<input type="text" placeholder="john.doe" name="skype" class="form-control">--}}
 
-                        </div>
+                        {{--</div>--}}
                     </div>
                 </div>
 

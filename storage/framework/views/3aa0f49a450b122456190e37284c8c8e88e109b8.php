@@ -40,125 +40,126 @@
                                 <input type="text" name="name" class="form-control" required>
                             </div>
                             <div class="col-md-6">
-                                <label><?php echo trans('app.'.'job_title'); ?>  </label>
-                                <input type="text" name="job_title" class="form-control" placeholder="Sales Manager">
-                            </div>
-    
-                        </div>
-                    </div>
-    
-    
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
                                 <label><?php echo trans('app.'.'email'); ?> <span class="text-danger">*</span></label>
                                 <input type="email" name="email" class="form-control" placeholder="you@domain.com" required>
                             </div>
-                            <div class="col-md-6">
-                                <label><?php echo trans('app.'.'company'); ?></label>
+                            
+                                
+                                
+                            
     
-                                <select class="select2-option width100" name="company">
-                                        <option value="-">None</option>
-                                        <?php $__currentLoopData = Modules\Clients\Entities\Client::select('id', 'name')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $company): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option value="<?php echo e($company->id); ?>"><?php echo e($company->name); ?></option>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    
-    
-                                </select>
-    
-                            </div>
                         </div>
                     </div>
     
     
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label><?php echo trans('app.'.'address'); ?>  </label>
-                                <input type="text" name="address" class="form-control">
-                            </div>
-                            <div class="col-md-6">
-                                <label><?php echo trans('app.'.'country'); ?>  </label>
-                                <select class="select2-option form-control" name="country">
-                                    <?php $__currentLoopData = DB::table('countries')->select('name')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($country->name); ?>" <?php echo e($country->name == get_option('company_country') ? 'selected' :''); ?>><?php echo e($country->name); ?></option>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    
+                        
+
+                            
+                                
     
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label><?php echo trans('app.'.'city'); ?></label>
-                                <input type="text" name="city" class="form-control">
-                            </div>
-                            <div class="col-md-4">
-                                <label><?php echo trans('app.'.'state'); ?></label>
-                                <input type="text" name="state" class="form-control">
-                            </div>
-                            <div class="col-md-4">
-                                <label><?php echo trans('app.'.'zipcode'); ?></label>
-                                <input type="text" name="zip_code" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+                                
+                                        
+                                        
+                                            
+                                        
     
     
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label><?php echo trans('app.'.'phone'); ?></label>
-                                <input type="text" name="phone" class="form-control">
-                            </div>
-                            <div class="col-md-6">
-                                <label><?php echo trans('app.'.'mobile'); ?></label>
-                                <input type="text" name="mobile" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+                                
+    
+                            
+                        
+                    
     
     
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label><?php echo trans('app.'.'website'); ?>  </label>
-                                <input type="text" name="website" class="form-control" placeholder="https://workice.com">
-                            </div>
-                            <div class="col-md-6">
-                                <label>Twitter</label>
-                                <input type="text" name="twitter" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+                    
+                        
+                            
+                                
+                                
+                            
+                            
+                                
+                                
+                                    
+                                        
+                                    
+    
+                                
+                            
+                        
+                    
+    
+                    
+                        
+                            
+                                
+                                
+                            
+                            
+                                
+                                
+                            
+                            
+                                
+                                
+                            
+                        
+                    
     
     
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label><?php echo trans('app.'.'hourly_rate'); ?>  </label>
-    
-                                <input type="text" class="form-control" name="hourly_rate" placeholder="22">
-                            </div>
-    
-                            <div class="col-md-6">
-                                <label class="display-block"><?php echo trans('app.'.'department'); ?>  </label>
-    
-    
-                                <select name="department[]" class="select2-option form-control" multiple="multiple">
-                                        <?php $__currentLoopData = App\Entities\Department::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option value="<?php echo e($d->deptid); ?>">
-                                                <?php echo e($d->deptname); ?> 
-                                            </option>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                </select>
+                    
+                        
+                            
+                                
+                                
+                            
+                            
+                                
+                                
+                            
+                        
+                    
     
     
-                            </div>
-                        </div>
-                    </div>
+                    
+                        
+                            
+                                
+                                
+                            
+                            
+                                
+                                
+                            
+                        
+                    
+    
+    
+                    
+                        
+                            
+                                
+    
+                                
+                            
+    
+                            
+                                
+    
+    
+                                
+                                        
+                                            
+                                                
+                                            
+                                        
+                                
+    
+    
+                            
+                        
+                    
     
     
                     <div class="form-group">
@@ -174,11 +175,11 @@
 
                         </div>
 
-                        <div class="col-md-6">
-                            <label>Skype</label>
-                            <input type="text" placeholder="john.doe" name="skype" class="form-control">
+                        
+                            
+                            
 
-                        </div>
+                        
                     </div>
                 </div>
 

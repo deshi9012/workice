@@ -26,7 +26,7 @@
 						<th class="">Approx time</th>
 						<th class="">Language</th>
 						<th class="">Courses</th>
-						
+
 						<th class="col-currency">Sales rep</th>
 						<th class="col-currency">Sales status</th>
 						<th class="col-currency">Last login</th>

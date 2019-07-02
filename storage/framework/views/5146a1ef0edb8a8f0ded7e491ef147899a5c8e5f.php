@@ -1,7 +1,6 @@
 <?php $__env->startSection('content'); ?>
 
 
-
     <section id="content">
         <section class="hbox stretch">
 
@@ -79,11 +78,11 @@
                                         <?php echo e(svg_image('solid/life-ring')); ?> <?php echo trans('app.'.'tickets'); ?>
                                     </a>
                                 </li>
-                                <li class="<?php echo e(($tab == 'projects') ? 'active' : ''); ?>">
-                                    <a href="<?php echo e(route('users.view', ['id' => $user->id, 'tab' => 'projects'])); ?>">
-                                    <?php echo e(svg_image('solid/clock')); ?> <?php echo trans('app.'.'projects'); ?>
-                                    </a>
-                                </li>
+                                
+                                    
+                                    
+                                    
+                                
 
 
                                 <li class="<?php echo e(($tab == 'timesheet') ? 'active' : ''); ?>">
@@ -93,11 +92,11 @@
                                 </li>
 
 
-                                <li class="<?php echo e(($tab == 'deals') ? 'active' : ''); ?>">
-                                    <a href="<?php echo e(route('users.view', ['id' => $user->id, 'tab' => 'deals'])); ?>">
-                                        <?php echo e(svg_image('solid/euro-sign')); ?> <?php echo trans('app.'.'deals'); ?>
-                                    </a>
-                                </li>
+                                
+                                    
+                                        
+                                    
+                                
 
 
                             </ul>
