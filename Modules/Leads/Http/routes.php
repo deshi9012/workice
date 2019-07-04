@@ -11,6 +11,7 @@ Route::group(
         Route::get('/next-stage/{lead}', 'LeadCustomController@nextStage')->name('leads.nextstage')->middleware('can:leads_update');
         Route::get('/edit/{lead}', 'LeadCustomController@edit')->name('leads.edit')->middleware('can:leads_update');
 
+
         Route::post('bulk-delete', 'LeadCustomController@bulkDelete')->name('leads.bulk.delete')->middleware('can:leads_delete');
         Route::post('bulk-email', 'LeadCustomController@bulkEmail')->name('leads.bulk.email')->middleware('can:leads_update');
         Route::post('bulk-send', 'LeadCustomController@sendBulk')->name('leads.bulk.send');

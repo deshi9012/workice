@@ -8,7 +8,7 @@
 		<div class="modal-body">
 			<ul class="nav nav-tabs" role="tablist">
 				<li class="active"><a data-toggle="tab" href="#tab-lead-general">@langapp('general') </a></li>
-				<li><a data-toggle="tab" href="#tab-lead-location">@langapp('location')</a></li>
+				{{--<li><a data-toggle="tab" href="#tab-lead-location">@langapp('location')</a></li>--}}
 				{{--<li><a data-toggle="tab" href="#tab-lead-web">@langapp('web') </a></li>--}}
 				{{--<li><a data-toggle="tab" href="#tab-lead-message">@langapp('message') </a></li>--}}
 				{{--<li><a data-toggle="tab" href="#tab-lead-custom">@langapp('custom_fields') </a></li>--}}
@@ -92,6 +92,19 @@
 								@endforeach
 							</select>
 						</div>
+						<div class="form-group col-md-6">
+							<label>@langapp('state') </label>
+							<input type="text" value="{{ $lead->state }}" name="state" class="input-sm form-control">
+						</div>
+						<div class="form-group col-md-6">
+							<label>@langapp('country') </label>
+							<select class="form-control select2-option" name="country">
+								@foreach (countries() as $country)
+									<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}
+									</option>
+								@endforeach
+							</select>
+						</div>
 						<div class="form-group col-md-11">
 							<label>@langapp('tags') </label>
 							<select class="select2-tags form-control" name="tags[]" multiple="multiple">
@@ -131,19 +144,19 @@
 					{{--<input type="text" value="{{ $lead->zip_code }}" name="zip_code" class="input-sm form-control">--}}
 					{{--</div>--}}
 					<div class="row">
-						<div class="form-group col-md-6">
-							<label>@langapp('state') </label>
-							<input type="text" value="{{ $lead->state }}" name="state" class="input-sm form-control">
-						</div>
-						<div class="form-group col-md-6">
-							<label>@langapp('country') </label>
-							<select class="form-control select2-option" name="country">
-								@foreach (countries() as $country)
-									<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}
-									</option>
-								@endforeach
-							</select>
-						</div>
+						{{--<div class="form-group col-md-6">--}}
+							{{--<label>@langapp('state') </label>--}}
+							{{--<input type="text" value="{{ $lead->state }}" name="state" class="input-sm form-control">--}}
+						{{--</div>--}}
+						{{--<div class="form-group col-md-6">--}}
+							{{--<label>@langapp('country') </label>--}}
+							{{--<select class="form-control select2-option" name="country">--}}
+								{{--@foreach (countries() as $country)--}}
+									{{--<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}--}}
+									{{--</option>--}}
+								{{--@endforeach--}}
+							{{--</select>--}}
+						{{--</div>--}}
 					</div>
 				</div>
 				<div class="tab-pane fade in" id="tab-lead-web">

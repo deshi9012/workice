@@ -51,6 +51,7 @@ abstract class LeadsController extends Controller {
         $this->request = $request;
         $this->lead = $lead;
 
+
     }
 
     /**
@@ -148,12 +149,17 @@ abstract class LeadsController extends Controller {
     }
 
     public function parseImport(CSVRequest $request, \App\Helpers\ExcelImport $importer) {
+        ini_set('max_execution_time', 300);
+
         $dt['page'] = $this->getPage();
+
+
         $path = $request->file('csvfile')->getRealPath();
         if ($request->has('header')) {
             $data = $importer->getData($path);
         } else {
             $data = array_map('str_getcsv', file($path));
+
         }
         if (count($data) > 0) {
             if ($request->has('header')) {
@@ -359,6 +365,7 @@ abstract class LeadsController extends Controller {
             $allSources[$item['id']] = $item['name'];
         }
         $data = DataTables::eloquent($model)->editColumn('name', function ($lead) {
+            ini_set('max_execution_time', 300);
 
             $str = '<a href="' . route('leads.view', $lead->id) . '">';
             if ($lead->has_email) {
@@ -387,10 +394,14 @@ abstract class LeadsController extends Controller {
             $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
             return $carbon->tz($lead->timezone)->toTimeString();
         })->editColumn('registration_time', function ($lead) {
-            return $lead->created_at->toDateTimeString();
+            if($lead->created_at) {
+                return $lead->created_at->toDateTimeString();
+            }
 
         })->editColumn('modified_time', function ($lead) {
-            return $lead->updated_at->toDateTimeString();
+            if($lead->updated_at) {
+                return $lead->updated_at->toDateTimeString();
+            }
         })->editColumn('local_time', function ($lead) {
             $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
             return $carbon->tz($lead->timezone)->toTimeString();

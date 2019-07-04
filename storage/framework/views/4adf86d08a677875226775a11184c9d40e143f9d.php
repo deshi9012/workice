@@ -68,6 +68,26 @@
 	<script>
 		$(function () {
 			$('#leads-table').DataTable({
+				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+					if (aData['sales_status'] == 'voice mail' || aData['sales_status'] == null) {
+						$('td', nRow).css('background-color', '#fff7e5');
+					} else if (aData['sales_status'] == 'call back' || aData['sales_status'] == 'high potential') {
+						$('td', nRow).css('background-color', '#0303e275');
+					} else if (aData['sales_status'] == 'closed account' ||
+						aData['sales_status'] == 'test' ||
+						aData['sales_status'] == 'not qualified - economic status' ||
+						aData['sales_status'] == 'not qualified - under 18') {
+
+						$('td', nRow).css('background-color', '#f4645fd6');
+
+					} else if (aData['sales_status'] == 'converted') {
+						$('td', nRow).css('background-color', '#0aad0aad');
+					}
+					else {
+						$('td', nRow).css('background-color', '#fff7e5')
+
+					}
+				},
 				processing: true,
 				serverSide: true,
 				ajax: {
@@ -97,7 +117,7 @@
 					{data: 'sales_rep', name: 'agent.name'},
 					{data: 'sales_status', name: 'sales_status'},
 					{data: 'last_login', name: 'last_login'},
-					{data: 'local_time', name: 'local_time'},
+					{data: 'local_time', name: 'local_time'}
 
 				]
 			});

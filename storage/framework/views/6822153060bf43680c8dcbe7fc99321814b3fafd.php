@@ -52,11 +52,11 @@
 
 
 				<div class="form-group">
-					
-						
-							
-							
-						
+					<div class="row">
+						<div class="col-md-6">
+							<label><?php echo trans('app.'.'email'); ?> <span class="text-danger">*</span></label>
+							<input type="email" value="<?php echo e($user->email); ?>" name="email" class="form-control" required>
+						</div>
 						
 							
 
@@ -72,7 +72,7 @@
 							
 
 						
-					
+					</div>
 				</div>
 
 

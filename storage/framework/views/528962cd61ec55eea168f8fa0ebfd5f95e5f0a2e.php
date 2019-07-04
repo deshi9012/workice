@@ -10,7 +10,7 @@
 
 			<ul class="nav nav-tabs" role="tablist">
 				<li class="active"><a href="#tab-lead-general" data-toggle="tab"><?php echo trans('app.'.'general'); ?> </a></li>
-				<li><a href="#tab-lead-location" data-toggle="tab"><?php echo trans('app.'.'location'); ?></a></li>
+				
 				
 				
 				
@@ -85,13 +85,27 @@
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 							</select>
+
 						</div>
+
 
 						<div class="form-group col-md-6">
 							<label><?php echo trans('app.'.'timezone'); ?> </label>
 							<select class="form-control select2-option" name="timezone" required>
 								<?php $__currentLoopData = timezones(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $timezone => $description): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<option value="<?php echo e($timezone); ?>"<?php echo e(get_option('timezone') == $timezone ? ' selected="selected"' : ''); ?>><?php echo e($description); ?></option>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+							</select>
+						</div>
+						<div class="form-group col-md-6">
+							<label><?php echo trans('app.'.'state'); ?> </label>
+							<input type="text" value="" name="state" class="input-sm form-control">
+						</div>
+						<div class="form-group col-md-6">
+							<label><?php echo trans('app.'.'country'); ?></label>
+							<select class="form-control select2-option" name="country">
+								<?php $__currentLoopData = countries(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<option value="<?php echo e($country['name']); ?>" <?php echo e($country['name'] == get_option('company_country') ? 'selected' : ''); ?>><?php echo e($country['name']); ?></option>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							</select>
 						</div>
@@ -137,18 +151,18 @@
 					
 					
 					<div class="row">
-						<div class="form-group col-md-6">
-							<label><?php echo trans('app.'.'state'); ?> </label>
-							<input type="text" value="" name="state" class="input-sm form-control">
-						</div>
-						<div class="form-group col-md-6">
-							<label><?php echo trans('app.'.'country'); ?> </label>
-							<select class="form-control select2-option" name="country">
-								<?php $__currentLoopData = countries(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-									<option value="<?php echo e($country['name']); ?>" <?php echo e($country['name'] == get_option('company_country') ? 'selected' : ''); ?>><?php echo e($country['name']); ?></option>
-								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-							</select>
-						</div>
+						
+							
+							
+						
+						
+							
+							
+								
+									
+								
+							
+						
 					</div>
 
 				</div>

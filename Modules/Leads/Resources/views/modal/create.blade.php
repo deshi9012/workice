@@ -9,7 +9,7 @@
 
 			<ul class="nav nav-tabs" role="tablist">
 				<li class="active"><a href="#tab-lead-general" data-toggle="tab">@langapp('general') </a></li>
-				<li><a href="#tab-lead-location" data-toggle="tab">@langapp('location')</a></li>
+				{{--<li><a href="#tab-lead-location" data-toggle="tab">@langapp('location')</a></li>--}}
 				{{--<li><a href="#tab-lead-web" data-toggle="tab">@langapp('web') </a></li>--}}
 				{{--<li><a href="#tab-lead-message" data-toggle="tab">@langapp('message') </a></li>--}}
 				{{--<li><a href="#tab-lead-custom" data-toggle="tab">@langapp('custom_fields') </a></li>--}}
@@ -84,13 +84,27 @@
 								@endforeach
 
 							</select>
+
 						</div>
+
 
 						<div class="form-group col-md-6">
 							<label>@langapp('timezone') </label>
 							<select class="form-control select2-option" name="timezone" required>
 								@foreach (timezones() as $timezone => $description)
 									<option value="{{  $timezone  }}"{{  get_option('timezone') == $timezone ? ' selected="selected"' : ''  }}>{{  $description  }}</option>
+								@endforeach
+							</select>
+						</div>
+						<div class="form-group col-md-6">
+							<label>@langapp('state') </label>
+							<input type="text" value="" name="state" class="input-sm form-control">
+						</div>
+						<div class="form-group col-md-6">
+							<label>@langapp('country')</label>
+							<select class="form-control select2-option" name="country">
+								@foreach (countries() as $country)
+									<option value="{{ $country['name'] }}" {{ $country['name'] == get_option('company_country') ? 'selected' : '' }}>{{ $country['name'] }}</option>
 								@endforeach
 							</select>
 						</div>
@@ -136,18 +150,18 @@
 					{{--<input type="text" value="" name="zip_code" class="input-sm form-control">--}}
 					{{--</div>--}}
 					<div class="row">
-						<div class="form-group col-md-6">
-							<label>@langapp('state') </label>
-							<input type="text" value="" name="state" class="input-sm form-control">
-						</div>
-						<div class="form-group col-md-6">
-							<label>@langapp('country') </label>
-							<select class="form-control select2-option" name="country">
-								@foreach (countries() as $country)
-									<option value="{{ $country['name'] }}" {{ $country['name'] == get_option('company_country') ? 'selected' : '' }}>{{ $country['name'] }}</option>
-								@endforeach
-							</select>
-						</div>
+						{{--<div class="form-group col-md-6">--}}
+							{{--<label>@langapp('state') </label>--}}
+							{{--<input type="text" value="" name="state" class="input-sm form-control">--}}
+						{{--</div>--}}
+						{{--<div class="form-group col-md-6">--}}
+							{{--<label>@langapp('country')</label>--}}
+							{{--<select class="form-control select2-option" name="country">--}}
+								{{--@foreach (countries() as $country)--}}
+									{{--<option value="{{ $country['name'] }}" {{ $country['name'] == get_option('company_country') ? 'selected' : '' }}>{{ $country['name'] }}</option>--}}
+								{{--@endforeach--}}
+							{{--</select>--}}
+						{{--</div>--}}
 					</div>
 
 				</div>
