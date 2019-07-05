@@ -570,6 +570,7 @@ function mainMenu() {
             }
         })->toArray();
     });
+//    dd(Auth::user()->getAllPermissions());
     foreach ($cacheMenus as $key => $menu) {
         if ($menu['name'] == 'sales' ||
             $menu['name'] == 'deals' ||

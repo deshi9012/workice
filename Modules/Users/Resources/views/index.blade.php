@@ -94,6 +94,7 @@
                                     <th class="">@langapp('name')  </th>
                                     <th class="">@langapp('email')  </th>
                                     <th class=" ">Role </th>
+                                    <th class=" ">Desk </th>
                                     <th class="">@langapp('mobile')  </th>
                                     <th class="col-date">@langapp('date')  </th>
                                 </tr>
@@ -159,6 +160,7 @@ $(function() {
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
             { data: 'role', name: 'role' },
+            { data: 'desk', name: 'desk' },
             { data: 'mobile', name: 'profile.mobile' },
             { data: 'created_at', name: 'created_at' }
         ]

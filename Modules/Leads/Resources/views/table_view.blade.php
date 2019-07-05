@@ -21,6 +21,7 @@
 						{{--<th class="">@langapp('stage')</th>--}}
 						<th class="">Counntry</th>
 						<th class="">Source</th>
+						<th class="">Desk</th>
 						<th class="">Modified time</th>
 						<th class="">Registration time</th>
 						<th class="">Approx time</th>
@@ -69,7 +70,7 @@
 		$(function () {
 			$('#leads-table').DataTable({
 				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-					if (aData['sales_status'] == 'voice mail' || aData['sales_status'] == null) {
+					if (aData['sales_status'] == 'voice mail' || aData['sales_status'] == 'N/A') {
 						$('td', nRow).css('background-color', '#fff7e5');
 					} else if (aData['sales_status'] == 'call back' || aData['sales_status'] == 'high potential') {
 						$('td', nRow).css('background-color', '#0303e275');
@@ -107,6 +108,7 @@
 					{data: 'mobile', name: 'mobile'},
 					{data: 'country', name: 'country'},
 					{data: 'source', name: 'source'},
+					{data: 'desk', name: 'desk'},
 					{data: 'modified_time', name: 'modified_time'},
 					{data: 'registration_time', name: 'registration_time'},
 					{data: 'approx_time', name: 'approx_time'},

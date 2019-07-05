@@ -93,6 +93,7 @@
                                     <th class=""><?php echo trans('app.'.'name'); ?>  </th>
                                     <th class=""><?php echo trans('app.'.'email'); ?>  </th>
                                     <th class=" ">Role </th>
+                                    <th class=" ">Desk </th>
                                     <th class=""><?php echo trans('app.'.'mobile'); ?>  </th>
                                     <th class="col-date"><?php echo trans('app.'.'date'); ?>  </th>
                                 </tr>
@@ -158,6 +159,7 @@ $(function() {
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
             { data: 'role', name: 'role' },
+            { data: 'desk', name: 'desk' },
             { data: 'mobile', name: 'profile.mobile' },
             { data: 'created_at', name: 'created_at' }
         ]

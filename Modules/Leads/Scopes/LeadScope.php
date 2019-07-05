@@ -20,7 +20,7 @@ class LeadScope implements Scope
         if (Auth::check() && !isAdmin()) {
             $builder->where(
                 function ($q) {
-                    $q->orWhere('sales_rep', Auth::id());
+//                    $q->orWhere('sales_rep', Auth::id());
                 }
             );
         }

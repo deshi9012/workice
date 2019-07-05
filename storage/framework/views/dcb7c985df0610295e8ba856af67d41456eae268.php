@@ -59,7 +59,14 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>Sales Status</label>
-						<input type="text" name="sales_status" class="input-sm form-control" value="<?php echo e($lead->sales_status); ?>">
+						
+						<select class="form-control select2-option" name="sales_status" required>
+							
+							<?php $__currentLoopData = statuses(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $status): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<option value="<?php echo e($status); ?>"  <?php echo e($lead->sales_status == $status ? ' selected' : ''); ?> ><?php echo e($status); ?></option>
+
+							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+						</select>
 					</div><div class="form-group col-md-6 no-gutter-right">
 						<label>Change password</label>
 						<input type="text" name="change_password" class="input-sm form-control" value="">

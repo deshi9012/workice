@@ -23,6 +23,7 @@ class Authorize
      */
     public function __construct(Gate $gate)
     {
+
         $this->gate = $gate;
     }
 

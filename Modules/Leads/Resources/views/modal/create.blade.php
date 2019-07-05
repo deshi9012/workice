@@ -61,7 +61,12 @@
 					<div class="row">
 						<div class="form-group col-md-6">
 							<label>Sales Status</label>
-							<input type="text" name="sales_status" class="input-sm form-control">
+							{{--<input type="text" name="sales_status" class="input-sm form-control">--}}
+							<select class="form-control select2-option" name="sales_status" required>
+								@foreach (statuses() as $status)
+									<option value="{{  $status  }}" >{{  $status }}</option>
+								@endforeach
+							</select>
 						</div>
 					</div>
 

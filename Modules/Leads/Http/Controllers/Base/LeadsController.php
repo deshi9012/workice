@@ -18,6 +18,8 @@ use Modules\Leads\Jobs\BulkDeleteLeads;
 use Modules\Messages\Entities\Emailing;
 use App\Entities\Category;
 use Carbon\Carbon;
+use App\Entities\Desk;
+use Auth;
 
 abstract class LeadsController extends Controller {
     /**
@@ -356,14 +358,44 @@ abstract class LeadsController extends Controller {
      * @return \Illuminate\Http\JsonResponse
      */
     public function tableData() {
+        //Get current auth user
+        $user = Auth::user();
 
-        $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
+        if ($user->hasRole('admin')) {
+            //Get all leads
+            $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
+
+        } elseif ($user->hasRole('sales agent')) {
+            //Get all leads under him
+            $model = $this->applyFilter()->where('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+
+        } elseif ($user->hasRole('team leader')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        } elseif ($user->hasRole('team manager')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        } elseif ($user->hasRole('office manager')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        }
+
+        //Get leads which have the same desk_id as a autheticated user
+
+
+
+
         $sourceData = Category::whereModule('source')->get()->toArray();
-
+        $deskData = Desk::all()->toArray();
+        $allDesks = [];
         $allSources = [];
+        foreach ($deskData as $key => $desk) {
+            $allDesks[$desk['id']] = $desk['name'];
+        }
         foreach ($sourceData as $key => $item) {
             $allSources[$item['id']] = $item['name'];
         }
+
         $data = DataTables::eloquent($model)->editColumn('name', function ($lead) {
             ini_set('max_execution_time', 300);
 
@@ -390,16 +422,28 @@ abstract class LeadsController extends Controller {
             return str_limit(optional($lead->agent)->name, 15);
         })->editColumn('source', function ($lead) use ($allSources) {
             return $allSources[$lead->source];
+        })->editColumn('desk', function ($lead) use ($allDesks) {
+            if(!$lead->desk_id){
+                return 'Canada';
+            }
+            return $allDesks[$lead->desk_id];
         })->editColumn('approx_time', function ($lead) {
             $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
             return $carbon->tz($lead->timezone)->toTimeString();
         })->editColumn('registration_time', function ($lead) {
-            if($lead->created_at) {
+            if ($lead->created_at) {
                 return $lead->created_at->toDateTimeString();
             }
 
+        })->editColumn('sales_status', function ($lead) {
+            if (!$lead->sales_status) {
+                return $lead->sales_status = 'N/A';
+            } else {
+                return $lead->sales_status;
+            }
+
         })->editColumn('modified_time', function ($lead) {
-            if($lead->updated_at) {
+            if ($lead->updated_at) {
                 return $lead->updated_at->toDateTimeString();
             }
         })->editColumn('local_time', function ($lead) {

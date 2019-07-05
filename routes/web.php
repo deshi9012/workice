@@ -1,5 +1,5 @@
 <?php
-
+use Modules\Leads\Entities\Lead;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,7 @@
  */
 
 Route::get('/', 'Welcome@index')->middleware(['auth']);
+
 
 Auth::routes(['verify' => config('system.verification'), 'register' => settingEnabled('allow_client_registration')]);
 

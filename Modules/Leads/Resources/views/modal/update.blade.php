@@ -58,7 +58,14 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>Sales Status</label>
-						<input type="text" name="sales_status" class="input-sm form-control" value="{{ $lead->sales_status }}">
+						{{--<input type="text" name="sales_status" class="input-sm form-control" value="{{ $lead->sales_status }}">--}}
+						<select class="form-control select2-option" name="sales_status" required>
+
+							@foreach (statuses() as $status)
+								<option value="{{  $status  }}"  {{ $lead->sales_status == $status ? ' selected' : '' }} >{{  $status }}</option>
+
+							@endforeach
+						</select>
 					</div><div class="form-group col-md-6 no-gutter-right">
 						<label>Change password</label>
 						<input type="text" name="change_password" class="input-sm form-control" value="">

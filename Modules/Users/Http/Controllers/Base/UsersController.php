@@ -10,6 +10,7 @@ use Modules\Users\Entities\User;
 use Modules\Users\Exports\UsersExport;
 use Modules\Users\Jobs\BulkDeleteUsers;
 use Modules\Users\Jobs\GDPRExportData;
+use App\Entities\Desk;
 
 abstract class UsersController extends Controller
 {
@@ -208,6 +209,14 @@ abstract class UsersController extends Controller
      */
     public function tableData()
     {
+        //Get names of all desks
+        $tmpDesks = Desk::all()->toArray();
+        $allDesks = [];
+        //set $key to be id of every desk
+        foreach ($tmpDesks as $key => $desk) {
+            $allDesks[$desk['id']] = $desk['name'];
+        }
+
         $model = $this->applyFilter()->with(['profile:user_id,job_title,mobile,city,use_gravatar,avatar']);
 
         $data =  DataTables::eloquent($model)
@@ -248,6 +257,9 @@ abstract class UsersController extends Controller
                 }
             )->editColumn('role',function($user){
                 return $user->roles->pluck('name');
+            })->editColumn('desk',function($user) use ($allDesks){
+                //set desk name
+                return $allDesks[$user->desk_id];
             })
             ->rawColumns(['name', 'chk', 'job_title', 'role', 'user'])
             ->make(true);
