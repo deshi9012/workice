@@ -83,6 +83,9 @@
 					return true;
 
 				} else {
+
+					title = title.replace(/\s+/g, '_').toLowerCase();
+
 					$(this).html('<input class="search" type="text" id="' + title + '" placeholder="Search ' + title + '" />');
 
 					$('input', this).on('keyup change', function () {
@@ -113,6 +116,8 @@
 
 					} else if (aData['sales_status'] == 'converted') {
 						$('td', nRow).css('background-color', '#0aad0aad');
+					} else if(aData['sales_status'] == 'new'){
+						$('td', nRow).css('background-color', 'white');
 					}
 					else {
 						$('td', nRow).css('background-color', '#fff7e5')
@@ -128,7 +133,7 @@
 						data['searchFields'] = [];
 						$("input.search").map(function (index, value) {
 							if ($(value).val()) {
-								if ($(value).attr('id') == 'Name' || $(value).attr('id') == 'Email') {
+								if ($(value).attr('id') == 'name' || $(value).attr('id') == 'email') {
 
 									var name = $(value).attr('id').toLowerCase();
 

@@ -197,6 +197,7 @@ function timezones() {
 function statuses() {
     return [
         'voice mail',
+        'new',
         'callback',
         'test',
         'high potential',

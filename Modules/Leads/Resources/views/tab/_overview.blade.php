@@ -5,13 +5,21 @@
 			<section class="panel-body">
 
 				<div class="m-xs">
+					<span class="text-muted">ID:</span>
+					<span class="text-bold">{{ $lead->id }}</span>
+				</div>
+				<div class="m-xs">
 					<span class="text-muted">@langapp('created_at'):</span>
 					<span class="text-bold">{{  dateFormatted($lead->created_at)  }}</span>
 				</div>
 
 				<div class="m-xs">
-					<span class="text-muted">{{  langapp('stage')  }}:</span>
-					<span class="text-bold text-danger">{{  ucfirst($lead->status->name)  }}</span>
+					<span class="text-muted">Desk:</span>
+					<span class="text-bold text-danger">{{  ucfirst($lead->desk)  }}</span>
+				</div>
+				<div class="m-xs">
+					<span class="text-muted">Sales status:</span>
+					<span class="text-bold text-danger">{{  ucfirst($lead->sales_status)  }}</span>
 				</div>
 
 				<div class="m-xs">

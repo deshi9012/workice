@@ -5,13 +5,21 @@
 			<section class="panel-body">
 
 				<div class="m-xs">
+					<span class="text-muted">ID:</span>
+					<span class="text-bold"><?php echo e($lead->id); ?></span>
+				</div>
+				<div class="m-xs">
 					<span class="text-muted"><?php echo trans('app.'.'created_at'); ?>:</span>
 					<span class="text-bold"><?php echo e(dateFormatted($lead->created_at)); ?></span>
 				</div>
 
 				<div class="m-xs">
-					<span class="text-muted"><?php echo e(langapp('stage')); ?>:</span>
-					<span class="text-bold text-danger"><?php echo e(ucfirst($lead->status->name)); ?></span>
+					<span class="text-muted">Desk:</span>
+					<span class="text-bold text-danger"><?php echo e(ucfirst($lead->desk)); ?></span>
+				</div>
+				<div class="m-xs">
+					<span class="text-muted">Sales status:</span>
+					<span class="text-bold text-danger"><?php echo e(ucfirst($lead->sales_status)); ?></span>
 				</div>
 
 				<div class="m-xs">

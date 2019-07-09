@@ -255,6 +255,12 @@ class Lead extends Model {
     public function scopeEmail($query, $value) {
         return $query->where('email', 'LIKE', '%' . $value . '%');
     }
+    public function scopeMobile($query, $value) {
+        return $query->where('mobile', 'LIKE', '%' . $value . '%');
+    }
+    public function scopeCountry($query, $value) {
+        return $query->where('country', 'LIKE', '%' . $value . '%');
+    }
 
     public function getMapAttribute() {
         return urlencode($this->address1 . ',' . $this->state . ' ' . $this->zip_code . ',' . $this->city . ',' . $this->country);

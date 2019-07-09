@@ -109,6 +109,16 @@ abstract class LeadsController extends Controller {
         $data['page'] = $this->getPage();
         $data['lead'] = $lead;
         $data['option'] = $option;
+        if($tab = 'overview'){
+            $deskData = Desk::all()->toArray();
+            $allDesks = [];
+            $allSources = [];
+            foreach ($deskData as $key => $desk) {
+                $allDesks[$desk['id']] = $desk['name'];
+            }
+
+            $data['lead']->desk = $allDesks[$data['lead']->desk_id];
+        }
 
         return view('leads::view')->with($data);
     }
@@ -447,7 +457,7 @@ abstract class LeadsController extends Controller {
 
         })->editColumn('sales_status', function ($lead) {
             if (!$lead->sales_status) {
-                return $lead->sales_status = 'N/A';
+                return $lead->sales_status = 'new';
             } else {
                 return $lead->sales_status;
             }
