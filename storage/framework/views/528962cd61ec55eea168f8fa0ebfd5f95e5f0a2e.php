@@ -63,7 +63,7 @@
 						<div class="form-group col-md-6">
 							<label>Sales Status</label>
 							
-							<select class="form-control select2-option" name="timezone" required>
+							<select class="form-control select2-option" name="sales_status" required>
 								<?php $__currentLoopData = statuses(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $status): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<option value="<?php echo e($status); ?>" ><?php echo e($status); ?></option>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

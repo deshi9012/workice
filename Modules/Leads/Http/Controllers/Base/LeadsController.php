@@ -40,7 +40,12 @@ abstract class LeadsController extends Controller {
      * @var string
      */
     public $displayType;
-
+    /**
+     * Custom Search field -> value
+     *
+     * @var string
+     */
+    public $searchFields;
     public function __construct(Lead $lead, Request $request) {
         $this->middleware([
             'auth',
@@ -52,6 +57,11 @@ abstract class LeadsController extends Controller {
         $this->displayType = request('view', 'table');
         $this->request = $request;
         $this->lead = $lead;
+
+        $this->searchFields = $this->request->search;
+
+        unset($this->searchFields['regex']);
+        unset($this->searchFields['value']);
 
 
     }
@@ -355,9 +365,11 @@ abstract class LeadsController extends Controller {
     /**
      * Get leads for display in datatable
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponsedataTable.draw();
      */
-    public function tableData() {
+    public function tableData(Request $request) {
+
+
         //Get current auth user
         $user = Auth::user();
 
@@ -381,8 +393,6 @@ abstract class LeadsController extends Controller {
         }
 
         //Get leads which have the same desk_id as a autheticated user
-
-
 
 
         $sourceData = Category::whereModule('source')->get()->toArray();
@@ -503,15 +513,38 @@ abstract class LeadsController extends Controller {
     }
 
     protected function applyFilter() {
+
         if ($this->request->filter === 'converted') {
             return $this->lead->apply(['converted' => 1])->whereNull('archived_at');
         }
         if ($this->request->filter === 'archived') {
             return $this->lead->apply(['archived' => 1]);
         }
-        return $this->lead->query()->whereNull('archived_at');
+        if(empty($this->searchFields)){
+            return $this->lead->query()->whereNull('archived_at');
+        }else{
+            foreach ($this->searchFields as $searchField => $searchValue) {
+               $q =  $this->lead->query()->{$searchField}($searchValue)->whereNull('archived_at');
+            }
+            return $q;
+        }
+
     }
 
+    protected function applySearch() {
+
+        if(empty($this->searchFields)){
+            return true;
+        }
+
+        $q = Lead::query();
+
+        foreach ($this->searchFields as $searchField => $searchValue) {
+            $q->{$searchField}($searchValue);
+        }
+        return $q;
+
+    }
     protected function getDisplayType() {
 
         if (!is_null($this->request->view)) {

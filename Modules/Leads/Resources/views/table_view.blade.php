@@ -1,5 +1,6 @@
 <div class="col-lg-12">
 	<section class="panel panel-default">
+
 		<form id="frm-lead" action="{{ route('leads.bulk.email') }}" method="POST">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<input type="hidden" name="module" value="leads">
@@ -67,8 +68,37 @@
 @push('pagescript')
 	@include('stacks.js.datatables')
 	<script>
+
 		$(function () {
-			$('#leads-table').DataTable({
+
+			$('#leads-table thead tr').clone(true).appendTo('#leads-table thead');
+			var tableHeader = $('#leads-table thead tr:eq(1) th');
+			var removed = tableHeader.splice(0, 3);
+
+			tableHeader.each(function (i) {
+
+				var title = $(this).text();
+				if ($(this).attr('name') == 'select_all') {
+
+					return true;
+
+				} else {
+					$(this).html('<input class="search" type="text" id="' + title + '" placeholder="Search ' + title + '" />');
+
+					$('input', this).on('keyup change', function () {
+						if (table.column(i).search() !== this.value) {
+
+							table.draw();
+						}
+					});
+				}
+
+			});
+
+			var table = $('#leads-table').DataTable({
+				"searching": false,
+				orderCellsTop: true,
+				fixedHeader: true,
 				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 					if (aData['sales_status'] == 'voice mail' || aData['sales_status'] == 'N/A') {
 						$('td', nRow).css('background-color', '#fff7e5');
@@ -93,8 +123,20 @@
 				serverSide: true,
 				ajax: {
 					url: '{{ route('leads.data') }}',
-					data: {
-						"filter": '{{ $filter }}',
+					data: function (data) {
+
+						data['searchFields'] = [];
+						$("input.search").map(function (index, value) {
+							if ($(value).val()) {
+								if ($(value).attr('id') == 'Name' || $(value).attr('id') == 'Email') {
+
+									var name = $(value).attr('id').toLowerCase();
+
+									data.search[name] = $(value).val();
+								}
+							}
+						});
+						console.log(data)
 					}
 				},
 				order: [[0, "desc"]],
