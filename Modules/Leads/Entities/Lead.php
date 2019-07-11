@@ -249,6 +249,9 @@ class Lead extends Model {
         return $query->whereNotNull('archived_at');
     }
 
+    public function scopeId($query, $value) {
+        return $query->where('id', 'LIKE', '%' . $value . '%');
+    }
     public function scopeName($query, $value) {
         return $query->where('name', 'LIKE', '%' . $value . '%');
     }

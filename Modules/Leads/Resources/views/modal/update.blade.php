@@ -40,14 +40,14 @@
 							@endforeach
 						</select>
 					</div>
-					{{--<div class="form-group col-md-6 no-gutter-left">--}}
-					{{--<label>@langapp('stage')</label>--}}
-					{{--<select name="stage_id" class="form-control">--}}
-					{{--@foreach (App\Entities\Category::leads()->get() as $stage)--}}
-					{{--<option value="{{ $stage->id }}" {{ $stage->id == $lead->stage_id ? ' selected' : '' }}>{{ ucfirst($stage->name) }}</option>--}}
-					{{--@endforeach--}}
-					{{--</select>--}}
-					{{--</div>--}}
+					<div class="form-group col-md-6 no-gutter-left">
+						<label>@langapp('stage')</label>
+						<select name="stage_id" class="form-control">
+							@foreach (App\Entities\Category::leads()->get() as $stage)
+								<option value="{{ $stage->id }}" {{ $stage->id == $lead->stage_id ? ' selected' : '' }}>{{ ucfirst($stage->name) }}</option>
+							@endforeach
+						</select>
+					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>Language</label>
 						<input type="text" name="language" class="input-sm form-control" value="{{ $lead->language }}">
@@ -57,16 +57,17 @@
 						<input type="text" name="courses" class="input-sm form-control" value="{{ $lead->courses }}">
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
-						<label>Sales Status</label>
+						{{--<label>Sales Status</label>--}}
 						{{--<input type="text" name="sales_status" class="input-sm form-control" value="{{ $lead->sales_status }}">--}}
-						<select class="form-control select2-option" name="sales_status" required>
+						{{--<select class="form-control select2-option" name="sales_status" required>--}}
 
-							@foreach (statuses() as $status)
-								<option value="{{  $status  }}"  {{ $lead->sales_status == $status ? ' selected' : '' }} >{{  $status }}</option>
+						{{--@foreach (statuses() as $status)--}}
+						{{--<option value="{{  $status  }}"  {{ $lead->sales_status == $status ? ' selected' : '' }} >{{  $status }}</option>--}}
 
-							@endforeach
-						</select>
-					</div><div class="form-group col-md-6 no-gutter-right">
+						{{--@endforeach--}}
+						{{--</select>--}}
+					</div>
+					<div class="form-group col-md-6 no-gutter-right">
 						<label>Change password</label>
 						<input type="text" name="change_password" class="input-sm form-control" value="">
 					</div>
@@ -152,17 +153,17 @@
 					{{--</div>--}}
 					<div class="row">
 						{{--<div class="form-group col-md-6">--}}
-							{{--<label>@langapp('state') </label>--}}
-							{{--<input type="text" value="{{ $lead->state }}" name="state" class="input-sm form-control">--}}
+						{{--<label>@langapp('state') </label>--}}
+						{{--<input type="text" value="{{ $lead->state }}" name="state" class="input-sm form-control">--}}
 						{{--</div>--}}
 						{{--<div class="form-group col-md-6">--}}
-							{{--<label>@langapp('country') </label>--}}
-							{{--<select class="form-control select2-option" name="country">--}}
-								{{--@foreach (countries() as $country)--}}
-									{{--<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}--}}
-									{{--</option>--}}
-								{{--@endforeach--}}
-							{{--</select>--}}
+						{{--<label>@langapp('country') </label>--}}
+						{{--<select class="form-control select2-option" name="country">--}}
+						{{--@foreach (countries() as $country)--}}
+						{{--<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}--}}
+						{{--</option>--}}
+						{{--@endforeach--}}
+						{{--</select>--}}
 						{{--</div>--}}
 					</div>
 				</div>

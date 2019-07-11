@@ -41,14 +41,14 @@
 							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 						</select>
 					</div>
-					
-					
-					
-					
-					
-					
-					
-					
+					<div class="form-group col-md-6 no-gutter-left">
+						<label><?php echo trans('app.'.'stage'); ?></label>
+						<select name="stage_id" class="form-control">
+							<?php $__currentLoopData = App\Entities\Category::leads()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $stage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<option value="<?php echo e($stage->id); ?>" <?php echo e($stage->id == $lead->stage_id ? ' selected' : ''); ?>><?php echo e(ucfirst($stage->name)); ?></option>
+							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+						</select>
+					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>Language</label>
 						<input type="text" name="language" class="input-sm form-control" value="<?php echo e($lead->language); ?>">
@@ -58,16 +58,17 @@
 						<input type="text" name="courses" class="input-sm form-control" value="<?php echo e($lead->courses); ?>">
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
-						<label>Sales Status</label>
 						
-						<select class="form-control select2-option" name="sales_status" required>
-							
-							<?php $__currentLoopData = statuses(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $status): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-								<option value="<?php echo e($status); ?>"  <?php echo e($lead->sales_status == $status ? ' selected' : ''); ?> ><?php echo e($status); ?></option>
+						
+						
 
-							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-						</select>
-					</div><div class="form-group col-md-6 no-gutter-right">
+						
+						
+
+						
+						
+					</div>
+					<div class="form-group col-md-6 no-gutter-right">
 						<label>Change password</label>
 						<input type="text" name="change_password" class="input-sm form-control" value="">
 					</div>
@@ -155,17 +156,17 @@
 					
 					<div class="row">
 						
-							
-							
 						
 						
-							
-							
-								
-									
-									
-								
-							
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						
 					</div>
 				</div>

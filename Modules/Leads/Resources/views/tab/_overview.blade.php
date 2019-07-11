@@ -18,7 +18,7 @@
 					<span class="text-bold text-danger">{{  ucfirst($lead->desk)  }}</span>
 				</div>
 				<div class="m-xs">
-					<span class="text-muted">Sales status:</span>
+					<span class="text-muted">{{  langapp('stage')  }}:</</span>
 					<span class="text-bold text-danger">{{  ucfirst($lead->sales_status)  }}</span>
 				</div>
 

@@ -19,7 +19,7 @@
 						<th class="">@langapp('name')</th>
 						<th class="">@langapp('email')</th>
 						<th class="">@langapp('mobile')</th>
-						{{--<th class="">@langapp('stage')</th>--}}
+
 						<th class="">Counntry</th>
 						<th class="">Source</th>
 						<th class="">Desk</th>
@@ -30,7 +30,7 @@
 						<th class="">Courses</th>
 
 						<th class="col-currency">Sales rep</th>
-						<th class="col-currency">Sales status</th>
+						<th class="">@langapp('stage')</th>
 						<th class="col-currency">Last login</th>
 						<th class="col-currency">Local time</th>
 						{{--<th class="">@langapp('sales_rep')</th>--}}
@@ -73,7 +73,8 @@
 
 			$('#leads-table thead tr').clone(true).appendTo('#leads-table thead');
 			var tableHeader = $('#leads-table thead tr:eq(1) th');
-			var removed = tableHeader.splice(0, 3);
+			console.log(tableHeader);
+			var removed = tableHeader.splice(1, 1);
 
 			tableHeader.each(function (i) {
 
@@ -103,20 +104,20 @@
 				orderCellsTop: true,
 				fixedHeader: true,
 				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-					if (aData['sales_status'] == 'voice mail' || aData['sales_status'] == 'N/A') {
+					if (aData['stage_id'] == 43 || aData['stage_id'] == null) {
 						$('td', nRow).css('background-color', '#fff7e5');
-					} else if (aData['sales_status'] == 'call back' || aData['sales_status'] == 'high potential') {
+					} else if (aData['stage_id'] == 44 || aData['stage_id'] == 46) {
 						$('td', nRow).css('background-color', '#0303e275');
-					} else if (aData['sales_status'] == 'closed account' ||
-						aData['sales_status'] == 'test' ||
-						aData['sales_status'] == 'not qualified - economic status' ||
-						aData['sales_status'] == 'not qualified - under 18') {
+					} else if (aData['stage_id'] == 55 ||
+						aData['stage_id'] == 45 ||
+						aData['stage_id'] == 56 ||
+						aData['stage_id'] == 57) {
 
 						$('td', nRow).css('background-color', '#f4645fd6');
 
-					} else if (aData['sales_status'] == 'converted') {
+					} else if (aData['stage_id'] == 54) {
 						$('td', nRow).css('background-color', '#0aad0aad');
-					} else if(aData['sales_status'] == 'new'){
+					} else if(aData['stage_id'] == 42){
 						$('td', nRow).css('background-color', 'white');
 					}
 					else {
@@ -133,7 +134,11 @@
 						data['searchFields'] = [];
 						$("input.search").map(function (index, value) {
 							if ($(value).val()) {
-								if ($(value).attr('id') == 'name' || $(value).attr('id') == 'email') {
+
+								if ($(value).attr('id') == 'id' ||
+								    $(value).attr('id') == 'name' ||
+									$(value).attr('id') == 'email' ||
+									$(value).attr('id') == 'mobile') {
 
 									var name = $(value).attr('id').toLowerCase();
 
@@ -164,7 +169,7 @@
 
 
 					{data: 'sales_rep', name: 'agent.name'},
-					{data: 'sales_status', name: 'sales_status'},
+					{data: 'stage', name: 'stage'},
 					{data: 'last_login', name: 'last_login'},
 					{data: 'local_time', name: 'local_time'}
 

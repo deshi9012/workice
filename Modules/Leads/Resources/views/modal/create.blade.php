@@ -41,14 +41,14 @@
 							@endforeach
 						</select>
 					</div>
-					{{--<div class="form-group col-md-6 no-gutter-left">--}}
-						{{--<label>@langapp('stage') @required</label>--}}
-						{{--<select name="stage_id" class="form-control">--}}
-							{{--@foreach (App\Entities\Category::leads()->orderBy('order')->get() as $stage)--}}
-								{{--<option value="{{ $stage->id }}">{{ ucfirst($stage->name) }}</option>--}}
-							{{--@endforeach--}}
-						{{--</select>--}}
-					{{--</div>--}}
+					<div class="form-group col-md-6 no-gutter-left">
+						<label>@langapp('stage') @required</label>
+						<select name="stage_id" class="form-control">
+							@foreach (App\Entities\Category::leads()->orderBy('order')->get() as $stage)
+								<option value="{{ $stage->id }}">{{ ucfirst($stage->name) }}</option>
+							@endforeach
+						</select>
+					</div>
 					<div class="row">
 						<div class="form-group col-md-6">
 							<label>Language</label>
@@ -58,17 +58,17 @@
 							<input type="text" name="language" class="input-sm form-control">
 						</div>
 					</div>
-					<div class="row">
-						<div class="form-group col-md-6">
-							<label>Sales Status</label>
+					{{--<div class="row">--}}
+						{{--<div class="form-group col-md-6">--}}
+							{{--<label>Sales Status</label>--}}
 							{{--<input type="text" name="sales_status" class="input-sm form-control">--}}
-							<select class="form-control select2-option" name="sales_status" required>
-								@foreach (statuses() as $status)
-									<option value="{{  $status  }}" >{{  $status }}</option>
-								@endforeach
-							</select>
-						</div>
-					</div>
+							{{--<select class="form-control select2-option" name="sales_status" required>--}}
+								{{--@foreach (statuses() as $status)--}}
+									{{--<option value="{{  $status  }}" >{{  $status }}</option>--}}
+								{{--@endforeach--}}
+							{{--</select>--}}
+						{{--</div>--}}
+					{{--</div>--}}
 
 					<div class="row">
 						<div class="form-group col-md-6">

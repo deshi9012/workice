@@ -46,6 +46,7 @@ abstract class LeadsController extends Controller {
      * @var string
      */
     public $searchFields;
+
     public function __construct(Lead $lead, Request $request) {
         $this->middleware([
             'auth',
@@ -109,7 +110,7 @@ abstract class LeadsController extends Controller {
         $data['page'] = $this->getPage();
         $data['lead'] = $lead;
         $data['option'] = $option;
-        if($tab = 'overview'){
+        if ($tab = 'overview') {
             $deskData = Desk::all()->toArray();
             $allDesks = [];
             $allSources = [];
@@ -403,7 +404,7 @@ abstract class LeadsController extends Controller {
         }
 
         //Get leads which have the same desk_id as a autheticated user
-
+//        dd($model);
 
         $sourceData = Category::whereModule('source')->get()->toArray();
         $deskData = Desk::all()->toArray();
@@ -443,7 +444,7 @@ abstract class LeadsController extends Controller {
         })->editColumn('source', function ($lead) use ($allSources) {
             return $allSources[$lead->source];
         })->editColumn('desk', function ($lead) use ($allDesks) {
-            if(!$lead->desk_id){
+            if (!$lead->desk_id) {
                 return 'Canada';
             }
             return $allDesks[$lead->desk_id];
@@ -530,20 +531,30 @@ abstract class LeadsController extends Controller {
         if ($this->request->filter === 'archived') {
             return $this->lead->apply(['archived' => 1]);
         }
-        if(empty($this->searchFields)){
+        if (empty($this->searchFields)) {
             return $this->lead->query()->whereNull('archived_at');
-        }else{
+        } else {
+            $q = $this->lead->query()->whereNull('archived_at');
+//            if(isset($this->searchFields['name'])){
+//                $q->where('name', 'like', '%' . $this->searchFields['name'] . '%');
+//            }
+//            if(isset($this->searchFields['email'])){
+//                $q->where('email', 'like', '%' . $this->searchFields['email'] . '%');
+//            }
+//            dd($this->searchFields);
+
             foreach ($this->searchFields as $searchField => $searchValue) {
-               $q =  $this->lead->query()->{$searchField}($searchValue)->whereNull('archived_at');
+               $q->{$searchField}($searchValue);
             }
+
             return $q;
         }
 
     }
 
     protected function applySearch() {
-
-        if(empty($this->searchFields)){
+        dd($this->searchFields);
+        if (empty($this->searchFields)) {
             return true;
         }
 
@@ -555,6 +566,7 @@ abstract class LeadsController extends Controller {
         return $q;
 
     }
+
     protected function getDisplayType() {
 
         if (!is_null($this->request->view)) {

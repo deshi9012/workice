@@ -18,7 +18,7 @@
 					<span class="text-bold text-danger"><?php echo e(ucfirst($lead->desk)); ?></span>
 				</div>
 				<div class="m-xs">
-					<span class="text-muted">Sales status:</span>
+					<span class="text-muted"><?php echo e(langapp('stage')); ?>:</</span>
 					<span class="text-bold text-danger"><?php echo e(ucfirst($lead->sales_status)); ?></span>
 				</div>
 
