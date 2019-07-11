@@ -90,10 +90,8 @@
 					$(this).html('<input class="search" type="text" id="' + title + '" placeholder="Search ' + title + '" />');
 
 					$('input', this).on('keyup change', function () {
+						table.draw();
 
-						if (table.column(i).search() !== this.value) {
-							table.draw();
-						}
 					});
 				}
 
@@ -135,18 +133,11 @@
 						$("input.search").map(function (index, value) {
 
 							if ($(value).val()) {
-								if ($(value).attr('id') == 'id' ||
-								    $(value).attr('id') == 'name' ||
-									$(value).attr('id') == 'email' ||
-									$(value).attr('id') == 'country' ||
-									$(value).attr('id') == 'source' ||
-									$(value).attr('id') == 'desk' ||
-									$(value).attr('id') == 'mobile') {
 
 									var name = $(value).attr('id').toLowerCase();
 
 									data.search[name] = $(value).val();
-								}
+
 							}else{
 								console.log($(value).val());
 								var name = $(value).attr('id').toLowerCase();

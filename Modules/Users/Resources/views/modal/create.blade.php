@@ -42,6 +42,14 @@
                                 <label>@langapp('email') @required</label>
                                 <input type="email" name="email" class="form-control" placeholder="you@domain.com" required>
                             </div>
+                            <div class="col-md-6">
+                                <label>Desk </label>
+                                <select class="select2-option form-control" name="desk">
+                                    @foreach (App\Entities\Desk::all() as $desk)
+                                        <option value="{{  $desk->name  }}">{{  $desk->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             {{--<div class="col-md-6">--}}
                                 {{--<label>@langapp('job_title')  </label>--}}
                                 {{--<input type="text" name="job_title" class="form-control" placeholder="Sales Manager">--}}

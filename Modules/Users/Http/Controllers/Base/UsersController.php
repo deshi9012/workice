@@ -212,6 +212,7 @@ abstract class UsersController extends Controller
         //Get names of all desks
         $tmpDesks = Desk::all()->toArray();
         $allDesks = [];
+
         //set $key to be id of every desk
         foreach ($tmpDesks as $key => $desk) {
             $allDesks[$desk['id']] = $desk['name'];
