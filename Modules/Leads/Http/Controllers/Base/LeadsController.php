@@ -541,15 +541,17 @@ abstract class LeadsController extends Controller {
 //            if(isset($this->searchFields['email'])){
 //                $q->where('email', 'like', '%' . $this->searchFields['email'] . '%');
 //            }
-//            dd($this->searchFields);
 
+//            dd($this->searchFields);
             foreach ($this->searchFields as $searchField => $searchValue) {
-               $q->{$searchField}($searchValue);
+                if ($searchValue != 'false') {
+                    $q->{$searchField}($searchValue);
+                }
             }
 
             return $q;
         }
-
+        return $this->lead->query()->whereNull('archived_at');
     }
 
     protected function applySearch() {

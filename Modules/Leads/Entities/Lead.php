@@ -134,22 +134,22 @@ class Lead extends Model {
 
         if (request()->noPotential === '1') {
             $deal = Deal::create([
-                    'title'          => request('deal_title'),
-                    'stage_id'       => get_option('default_deal_stage'),
-                    'deal_value'     => $this->lead_value,
-                    'contact_person' => $contact->user_id,
-                    'organization'   => $contact->business->id,
-                    'currency'       => get_option('default_currency'),
-                    'user_id'        => get_option('default_deal_owner'),
-                    'due_date'       => now()->addDays(get_option('deal_rotting')),
-                    'source'         => $this->source,
-                    'pipeline'       => get_option('default_deal_pipeline'),
-                ]);
+                'title'          => request('deal_title'),
+                'stage_id'       => get_option('default_deal_stage'),
+                'deal_value'     => $this->lead_value,
+                'contact_person' => $contact->user_id,
+                'organization'   => $contact->business->id,
+                'currency'       => get_option('default_currency'),
+                'user_id'        => get_option('default_deal_owner'),
+                'due_date'       => now()->addDays(get_option('deal_rotting')),
+                'source'         => $this->source,
+                'pipeline'       => get_option('default_deal_pipeline'),
+            ]);
             foreach ($this->comments as $comment) {
                 $deal->comments()->create([
-                        'user_id' => \Auth::id(),
-                        'message' => $comment->message,
-                    ]);
+                    'user_id' => \Auth::id(),
+                    'message' => $comment->message,
+                ]);
             }
             $this->tags()->sync($deal->tags);
             // Transfer lead notes to deal
@@ -188,10 +188,10 @@ class Lead extends Model {
 
     public function compute() {
         $this->update([
-                'computed_value' => formatCurrency(get_option('default_currency'), $this->lead_value),
-                'has_email'      => $this->unreadMessages() ? 1 : 0,
-                'has_activity'   => $this->hasPendingActivity() ? 1 : 0,
-            ]);
+            'computed_value' => formatCurrency(get_option('default_currency'), $this->lead_value),
+            'has_email'      => $this->unreadMessages() ? 1 : 0,
+            'has_activity'   => $this->hasPendingActivity() ? 1 : 0,
+        ]);
     }
 
     public function createContactFromLead() {
@@ -200,37 +200,37 @@ class Lead extends Model {
             'name'     => $this->name
         ]);
         $account = \Modules\Clients\Entities\Client::firstOrCreate(['email' => $this->email], [
-                'name'            => $this->company,
-                'primary_contact' => $user->id,
-                'code'            => generateCode('clients'),
-                'website'         => $this->website,
-                'phone'           => $this->phone,
-                'address1'        => $this->address1,
-                'address2'        => $this->address2,
-                'city'            => $this->city,
-                'state'           => $this->state,
-                'currency'        => get_option('default_currency'),
-                'country'         => $this->country,
-                'zip_code'        => $this->zip_code,
-                'skype'           => $this->skype,
-                'linkedin'        => $this->linkedin,
-                'facebook'        => $this->facebook,
-                'twitter'         => $this->twitter,
-                'owner'           => \Auth::id(),
-            ]);
+            'name'            => $this->company,
+            'primary_contact' => $user->id,
+            'code'            => generateCode('clients'),
+            'website'         => $this->website,
+            'phone'           => $this->phone,
+            'address1'        => $this->address1,
+            'address2'        => $this->address2,
+            'city'            => $this->city,
+            'state'           => $this->state,
+            'currency'        => get_option('default_currency'),
+            'country'         => $this->country,
+            'zip_code'        => $this->zip_code,
+            'skype'           => $this->skype,
+            'linkedin'        => $this->linkedin,
+            'facebook'        => $this->facebook,
+            'twitter'         => $this->twitter,
+            'owner'           => \Auth::id(),
+        ]);
         $user->profile->update([
-                'company'   => $account->id,
-                'job_title' => $this->job_title,
-                'city'      => $this->city,
-                'country'   => $this->country,
-                'address'   => $this->address,
-                'phone'     => $this->phone,
-                'skype'     => $this->skype,
-                'state'     => $this->state,
-                'zip_code'  => $this->zip_code,
-                'website'   => $this->website,
-                'twitter'   => $this->twitter,
-            ]);
+            'company'   => $account->id,
+            'job_title' => $this->job_title,
+            'city'      => $this->city,
+            'country'   => $this->country,
+            'address'   => $this->address,
+            'phone'     => $this->phone,
+            'skype'     => $this->skype,
+            'state'     => $this->state,
+            'zip_code'  => $this->zip_code,
+            'website'   => $this->website,
+            'twitter'   => $this->twitter,
+        ]);
         // Transfer lead notes to client comments
         foreach ($this->notes as $note) {
             $account->comments()->create([
@@ -252,17 +252,27 @@ class Lead extends Model {
     public function scopeId($query, $value) {
         return $query->where('id', 'LIKE', '%' . $value . '%');
     }
+
     public function scopeName($query, $value) {
         return $query->where('name', 'LIKE', '%' . $value . '%');
     }
+
     public function scopeEmail($query, $value) {
         return $query->where('email', 'LIKE', '%' . $value . '%');
     }
+
     public function scopeMobile($query, $value) {
         return $query->where('mobile', 'LIKE', '%' . $value . '%');
     }
+
     public function scopeCountry($query, $value) {
         return $query->where('country', 'LIKE', '%' . $value . '%');
+    }
+
+    public function scopeSource($query, $value) {
+        return $query->with('asSource')->whereHas('asSource', function ($q) use ($value) {
+            $q->where('name', 'like', '%' . $value . '%');
+        });
     }
 
     public function getMapAttribute() {

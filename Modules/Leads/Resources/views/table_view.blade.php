@@ -20,7 +20,7 @@
 						<th class="">@langapp('email')</th>
 						<th class="">@langapp('mobile')</th>
 
-						<th class="">Counntry</th>
+						<th class="">Country</th>
 						<th class="">Source</th>
 						<th class="">Desk</th>
 						<th class="">Modified time</th>
@@ -73,7 +73,7 @@
 
 			$('#leads-table thead tr').clone(true).appendTo('#leads-table thead');
 			var tableHeader = $('#leads-table thead tr:eq(1) th');
-			console.log(tableHeader);
+
 			var removed = tableHeader.splice(1, 1);
 
 			tableHeader.each(function (i) {
@@ -90,8 +90,8 @@
 					$(this).html('<input class="search" type="text" id="' + title + '" placeholder="Search ' + title + '" />');
 
 					$('input', this).on('keyup change', function () {
-						if (table.column(i).search() !== this.value) {
 
+						if (table.column(i).search() !== this.value) {
 							table.draw();
 						}
 					});
@@ -133,20 +133,27 @@
 
 						data['searchFields'] = [];
 						$("input.search").map(function (index, value) {
-							if ($(value).val()) {
 
+							if ($(value).val()) {
 								if ($(value).attr('id') == 'id' ||
 								    $(value).attr('id') == 'name' ||
 									$(value).attr('id') == 'email' ||
+									$(value).attr('id') == 'country' ||
+									$(value).attr('id') == 'source' ||
+									$(value).attr('id') == 'desk' ||
 									$(value).attr('id') == 'mobile') {
 
 									var name = $(value).attr('id').toLowerCase();
 
 									data.search[name] = $(value).val();
 								}
+							}else{
+								console.log($(value).val());
+								var name = $(value).attr('id').toLowerCase();
+
+								data.search[name] = false;
 							}
 						});
-						console.log(data)
 					}
 				},
 				order: [[0, "desc"]],
