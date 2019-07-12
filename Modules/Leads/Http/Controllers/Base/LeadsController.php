@@ -542,9 +542,23 @@ abstract class LeadsController extends Controller {
 //                $q->where('email', 'like', '%' . $this->searchFields['email'] . '%');
 //            }
 
-//            dd($this->searchFields);
+
             foreach ($this->searchFields as $searchField => $searchValue) {
                 if ($searchValue != 'false') {
+                    //Check if field contains  time
+                    if((strpos($searchField, 'time') !== false)){
+
+                        $date = explode('/', $searchValue);
+                        $timeField = explode('_', $searchField);
+
+                        $searchField = $timeField[0] . 'Time';
+                        $q->{$searchField}($date);
+                        continue;
+                    }
+                    if($searchField == 'sales_rep'){
+                        $q->salesRep($searchValue);
+                        continue;
+                    }
                     $q->{$searchField}($searchValue);
                 }
             }

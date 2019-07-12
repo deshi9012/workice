@@ -274,6 +274,20 @@ class Lead extends Model {
             $q->where('name', 'like', '%' . $value . '%');
         });
     }
+    public function scopeSalesRep($query, $value) {
+        return $query->with('agent')->whereHas('agent', function ($q) use ($value) {
+            $q->where('name', 'like', '%' . $value . '%');
+        });
+    }
+
+
+    public function scopeModifiedTime($query, $value) {
+        return $query->whereBetween('updated_at', $value);
+    }
+    public function scopeRegistrationTime($query, $value) {
+        return $query->whereBetween('created_at', $value);
+    }
+
 
     public function getMapAttribute() {
         return urlencode($this->address1 . ',' . $this->state . ' ' . $this->zip_code . ',' . $this->city . ',' . $this->country);

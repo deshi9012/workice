@@ -46,7 +46,7 @@
                                 <label>Desk </label>
                                 <select class="select2-option form-control" name="desk">
                                     @foreach (App\Entities\Desk::all() as $desk)
-                                        <option value="{{  $desk->name  }}">{{  $desk->name }}</option>
+                                        <option value="{{  $desk->id  }}">{{  $desk->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

@@ -56,6 +56,14 @@
 							<label>@langapp('email') @required</label>
 							<input type="email" value="{{  $user->email  }}" name="email" class="form-control" required>
 						</div>
+						<div class="col-md-6">
+							<label>Desk </label>
+							<select class="select2-option form-control" name="desk">
+								@foreach (App\Entities\Desk::all() as $desk)
+									<option value="{{  $desk->id  }}" {{ $user->desk_id == $desk->id ? ' selected' : '' }}>{{  $desk->name }}</option>
+								@endforeach
+							</select>
+						</div>
 						{{--<div class="col-md-6">--}}
 							{{--<label>@langapp('company')</label>--}}
 

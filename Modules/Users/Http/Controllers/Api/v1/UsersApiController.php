@@ -28,6 +28,7 @@ class UsersApiController extends Controller
 
     public function __construct(Request $request)
     {
+
         $this->middleware('localize');
         $this->request = $request;
         $this->user    = new User;
@@ -56,8 +57,10 @@ class UsersApiController extends Controller
 
     public function save(UserRequest $request)
     {
+
         $this->checkPassword($request);
-        $userColumns = ['username', 'email', 'password', 'name', 'locale'];
+        $userColumns = ['username', 'email', 'password', 'name', 'locale', 'desk_id'];
+
         $user        = $this->user->create($request->only($userColumns));
         $user->update(['email_verified_at' => config('system.verification') ? null : now()]);
         $user->profile->update($request->except(['username', 'password', 'email', 'roles', 'department', 'name', 'locale']));

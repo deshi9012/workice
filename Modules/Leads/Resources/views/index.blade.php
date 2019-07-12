@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
 	<section id="content" class="bg">

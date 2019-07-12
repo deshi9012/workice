@@ -31,6 +31,7 @@ abstract class UsersController extends Controller
      */
     public function __construct(Request $request, User $user)
     {
+
         $this->middleware(['auth', 'verified', '2fa']);
         $this->request = $request;
         $this->user    = $user;

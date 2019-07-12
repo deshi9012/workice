@@ -25,7 +25,7 @@
 						<th class="">Desk</th>
 						<th class="">Modified time</th>
 						<th class="">Registration time</th>
-						<th class="">Approx time</th>
+
 						<th class="">Language</th>
 						<th class="">Courses</th>
 
@@ -87,10 +87,37 @@
 
 					title = title.replace(/\s+/g, '_').toLowerCase();
 
-					$(this).html('<input class="search" type="text" id="' + title + '" placeholder="Search ' + title + '" />');
+					if (title.indexOf('_') > -1 && (title.split('_')[1] == 'time' || title.split('_')[1] == 'login')) {
+						var field;
+						field = $(this).html('<input class="search" type="text" name="daterange" id="' + title + '" placeholder="Search ' + title + '" />').daterangepicker({
+							autoUpdateInput: false,
+							locale: {
+								cancelLabel: 'Clear'
+							}
+						});
 
-					$('input', this).on('keyup change', function () {
-						table.draw();
+						field.on('apply.daterangepicker', function (ev, picker) {
+
+							$(this).find('*').filter(':input:visible:first').val(picker.startDate.format('YYYY-MM-DD') + ' / ' + picker.endDate.format('YYYY-MM-DD'));
+							$(this).find('*').filter(':input:visible:first').change();
+						});
+						field.on('cancel.daterangepicker', function(ev, picker) {
+							$(this).find('*').filter(':input:visible:first').val('');
+							$(this).find('*').filter(':input:visible:first').change();
+						});
+
+
+					} else {
+
+						$(this).html('<input class="search" type="text" id="' + title + '" placeholder="Search ' + title + '" />');
+
+					}
+					$(this).find('*').filter(':input:visible:first').on('keyup change', function () {
+
+						if($(this).val().length > 3 || $(this).val().length == 0) {
+							table.draw();
+
+						}
 
 					});
 				}
@@ -98,6 +125,7 @@
 			});
 
 			var table = $('#leads-table').DataTable({
+
 				"searching": false,
 				orderCellsTop: true,
 				fixedHeader: true,
@@ -115,7 +143,7 @@
 
 					} else if (aData['stage_id'] == 54) {
 						$('td', nRow).css('background-color', '#0aad0aad');
-					} else if(aData['stage_id'] == 42){
+					} else if (aData['stage_id'] == 42) {
 						$('td', nRow).css('background-color', 'white');
 					}
 					else {
@@ -127,19 +155,22 @@
 				serverSide: true,
 				ajax: {
 					url: '{{ route('leads.data') }}',
+
+
 					data: function (data) {
 
 						data['searchFields'] = [];
 						$("input.search").map(function (index, value) {
 
+
 							if ($(value).val()) {
 
-									var name = $(value).attr('id').toLowerCase();
+								var name = $(value).attr('id').toLowerCase();
 
-									data.search[name] = $(value).val();
+								data.search[name] = $(value).val();
 
-							}else{
-								console.log($(value).val());
+							} else {
+
 								var name = $(value).attr('id').toLowerCase();
 
 								data.search[name] = false;
@@ -161,7 +192,7 @@
 					{data: 'desk', name: 'desk'},
 					{data: 'modified_time', name: 'modified_time'},
 					{data: 'registration_time', name: 'registration_time'},
-					{data: 'approx_time', name: 'approx_time'},
+
 					{data: 'language', name: 'language'},
 					{data: 'courses', name: 'courses'},
 
