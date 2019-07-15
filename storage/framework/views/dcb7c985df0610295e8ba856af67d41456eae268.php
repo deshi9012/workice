@@ -29,6 +29,14 @@
 						<label><?php echo trans('app.'.'mobile'); ?> </label>
 						<input type="text" name="mobile" class="input-sm form-control" value="<?php echo e($lead->mobile); ?>">
 					</div>
+					<div class="col-md-6">
+						<label>Desk <span class="text-danger">*</span></label>
+						<select class="select2-option form-control" name="desk">
+							<?php $__currentLoopData = App\Entities\Desk::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<option value="<?php echo e($desk->id); ?>" <?php echo e($desk->id == $lead->desk_id ? ' selected' : ''); ?>><?php echo e($desk->name); ?></option>
+							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+						</select>
+					</div>
 					
 					
 					

@@ -25,6 +25,7 @@ class LeadsRequest extends FormRequest
     {
         return [
             'email' => 'required|email',
+            'desk' => 'required',
             'stage_id' => 'sometimes|numeric',
             'source' => 'required|numeric',
             'sales_rep' => 'required|numeric',

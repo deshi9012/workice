@@ -54,7 +54,9 @@ class LeadsApiController extends Controller
      */
     public function show($id = null)
     {
+
         $lead = $this->lead->findOrFail($id);
+
         return response(new LeadResource($lead), Response::HTTP_OK);
     }
     /**
@@ -62,8 +64,12 @@ class LeadsApiController extends Controller
      */
     public function save(LeadsRequest $request)
     {
-        $lead = $this->lead->firstOrCreate(['email' => $request->email], $request->except(['custom', 'tags']));
+        if(!$request->desk){
+            $request->desk = 1;
+        }
+        $lead = $this->lead->firstOrCreate(['email' => $request->email, 'desk_id' => $request->desk], $request->except(['custom', 'tags']));
 
+        logger($lead);
         return ajaxResponse(
             [
                 'id'       => $lead->id,
@@ -82,6 +88,7 @@ class LeadsApiController extends Controller
         $request->validate(['email' => 'unique:leads,email,'.$id]);
         $lead = $this->lead->findOrFail($id);
         $lead->update($request->except(['custom', 'tags']));
+        $lead->update(['desk_id' => $request->all()['desk']]);
         return ajaxResponse(
             [
                 'id'       => $lead->id,

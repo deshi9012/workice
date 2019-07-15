@@ -50,6 +50,14 @@
 						</select>
 					</div>
 					<div class="row">
+						<div class="col-md-6">
+							<label>Desk @required</label>
+							<select class="select2-option form-control" name="desk">
+								@foreach (App\Entities\Desk::all() as $desk)
+									<option value="{{  $desk->id  }}">{{  $desk->name }}</option>
+								@endforeach
+							</select>
+						</div>
 						<div class="form-group col-md-6">
 							<label>Language</label>
 							<input type="text" name="language" class="input-sm form-control">

@@ -16,6 +16,7 @@
 							</label>
 						</th>
 						<th class="">ID</th>
+
 						<th class="">@langapp('name')</th>
 						<th class="">@langapp('email')</th>
 						<th class="">@langapp('mobile')</th>
@@ -101,7 +102,7 @@
 							$(this).find('*').filter(':input:visible:first').val(picker.startDate.format('YYYY-MM-DD') + ' / ' + picker.endDate.format('YYYY-MM-DD'));
 							$(this).find('*').filter(':input:visible:first').change();
 						});
-						field.on('cancel.daterangepicker', function(ev, picker) {
+						field.on('cancel.daterangepicker', function (ev, picker) {
 							$(this).find('*').filter(':input:visible:first').val('');
 							$(this).find('*').filter(':input:visible:first').change();
 						});
@@ -114,7 +115,7 @@
 					}
 					$(this).find('*').filter(':input:visible:first').on('keyup change', function () {
 
-						if($(this).val().length > 3 || $(this).val().length == 0) {
+						if ($(this).val().length > 3 || $(this).val().length == 0) {
 							table.draw();
 
 						}
@@ -130,6 +131,12 @@
 				orderCellsTop: true,
 				fixedHeader: true,
 				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+					if (aData['is_logged']) {
+						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;"><li style="color: green;">' + aData['name'] + '</li></ul>');
+					} else {
+						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;"><li style="color: red;">' + aData['name'] + '</li></ul>');
+					}
+
 					if (aData['stage_id'] == 43 || aData['stage_id'] == null) {
 						$('td', nRow).css('background-color', '#fff7e5');
 					} else if (aData['stage_id'] == 44 || aData['stage_id'] == 46) {

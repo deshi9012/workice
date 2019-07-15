@@ -28,6 +28,14 @@
 						<label>@langapp('mobile') </label>
 						<input type="text" name="mobile" class="input-sm form-control" value="{{ $lead->mobile }}">
 					</div>
+					<div class="col-md-6">
+						<label>Desk @required</label>
+						<select class="select2-option form-control" name="desk">
+							@foreach (App\Entities\Desk::all() as $desk)
+								<option value="{{  $desk->id  }}" {{ $desk->id == $lead->desk_id ? ' selected' : ''}}>{{  $desk->name }}</option>
+							@endforeach
+						</select>
+					</div>
 					{{--<div class="form-group col-md-6 no-gutter-right">--}}
 					{{--<label>@langapp('company_name')  </label>--}}
 					{{--<input type="text" name="company" class="input-sm form-control" value="{{ $lead->company }}">--}}

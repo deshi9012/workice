@@ -21,6 +21,10 @@ use Carbon\Carbon;
 use App\Entities\Desk;
 use Auth;
 
+
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+
 abstract class LeadsController extends Controller {
     /**
      * Lead model
@@ -114,9 +118,11 @@ abstract class LeadsController extends Controller {
             $deskData = Desk::all()->toArray();
             $allDesks = [];
             $allSources = [];
+
             foreach ($deskData as $key => $desk) {
                 $allDesks[$desk['id']] = $desk['name'];
             }
+
 
             $data['lead']->desk = $allDesks[$data['lead']->desk_id];
         }
@@ -380,6 +386,29 @@ abstract class LeadsController extends Controller {
      */
     public function tableData(Request $request) {
 
+        $client = new Client();
+        $loggedUsers = [];
+        try {
+
+            $headers = ['Content-Type' => 'application/json'];
+            $res = $client->request('GET', 'https://thebrokersacademy.com/getLoggedUsers.php?authTokenCRM=ahrnJBuscD0Gi23l8iPO');
+            $loggedUsers = json_decode($res->getBody(), 1);
+
+        } catch (ClientException $exception) {
+            logger($exception);
+
+        }
+
+
+
+        $loggedEmails = [];
+        foreach ($loggedUsers as $loggedUser) {
+            $loggedEmails[] = $loggedUser['user_email'];
+        }
+
+
+        $leads = Lead::whereIn('email',$loggedEmails)->update(['is_logged' => true]);
+
 
         //Get current auth user
         $user = Auth::user();
@@ -444,9 +473,7 @@ abstract class LeadsController extends Controller {
         })->editColumn('source', function ($lead) use ($allSources) {
             return $allSources[$lead->source];
         })->editColumn('desk', function ($lead) use ($allDesks) {
-            if (!$lead->desk_id) {
-                return 'Canada';
-            }
+
             return $allDesks[$lead->desk_id];
         })->editColumn('approx_time', function ($lead) {
             $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
@@ -478,7 +505,8 @@ abstract class LeadsController extends Controller {
             'chk',
             'lead',
             'email',
-            'language'
+            'language',
+            'is_logged'
         ])->make(true);
 
         return $data;
@@ -532,9 +560,10 @@ abstract class LeadsController extends Controller {
             return $this->lead->apply(['archived' => 1]);
         }
         if (empty($this->searchFields)) {
-            return $this->lead->query()->whereNull('archived_at');
+
+            return $this->lead->query()->whereNull('archived_at')->orderby('is_logged','desc');
         } else {
-            $q = $this->lead->query()->whereNull('archived_at');
+            $q = $this->lead->query()->whereNull('archived_at')->orderby('is_logged','desc');
 //            if(isset($this->searchFields['name'])){
 //                $q->where('name', 'like', '%' . $this->searchFields['name'] . '%');
 //            }
@@ -565,23 +594,9 @@ abstract class LeadsController extends Controller {
 
             return $q;
         }
-        return $this->lead->query()->whereNull('archived_at');
+        return $this->lead->query()->whereNull('archived_at')->groupby('is_logged');
     }
 
-    protected function applySearch() {
-        dd($this->searchFields);
-        if (empty($this->searchFields)) {
-            return true;
-        }
-
-        $q = Lead::query();
-
-        foreach ($this->searchFields as $searchField => $searchValue) {
-            $q->{$searchField}($searchValue);
-        }
-        return $q;
-
-    }
 
     protected function getDisplayType() {
 

@@ -51,6 +51,14 @@
 						</select>
 					</div>
 					<div class="row">
+						<div class="col-md-6">
+							<label>Desk <span class="text-danger">*</span></label>
+							<select class="select2-option form-control" name="desk">
+								<?php $__currentLoopData = App\Entities\Desk::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<option value="<?php echo e($desk->id); ?>"><?php echo e($desk->name); ?></option>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+							</select>
+						</div>
 						<div class="form-group col-md-6">
 							<label>Language</label>
 							<input type="text" name="language" class="input-sm form-control">
@@ -59,17 +67,17 @@
 							<input type="text" name="language" class="input-sm form-control">
 						</div>
 					</div>
-					<div class="row">
-						<div class="form-group col-md-6">
-							<label>Sales Status</label>
+					
+						
 							
-							<select class="form-control select2-option" name="sales_status" required>
-								<?php $__currentLoopData = statuses(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $status): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-									<option value="<?php echo e($status); ?>" ><?php echo e($status); ?></option>
-								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-							</select>
-						</div>
-					</div>
+							
+							
+								
+									
+								
+							
+						
+					
 
 					<div class="row">
 						<div class="form-group col-md-6">

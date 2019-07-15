@@ -76,7 +76,8 @@ class Lead extends Model {
         'courses',
         'last_login',
         'sales_status',
-        'desk_id'
+        'desk_id',
+        'is_logged'
     ];
 
     /**
