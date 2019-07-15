@@ -10,7 +10,7 @@
 		left: -0.8em;          /* Adjust this value so that it appears where you want. */
 		font-size: 3.3em;      /* Adjust this value so that it appears what size you want. */
 	}
-	.panel .table td, .panel .table th {
+	td{
 		padding-top: 0.5px!important;
 		padding-bottom: 0.5px!important;
 	}
