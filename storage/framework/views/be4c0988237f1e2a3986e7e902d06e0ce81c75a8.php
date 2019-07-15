@@ -1,3 +1,4 @@
+
 <div class="row">
 	<div class="col-lg-4 b-r">
 		<section class="panel panel-default">
@@ -19,7 +20,7 @@
 				</div>
 				<div class="m-xs">
 					<span class="text-muted"><?php echo e(langapp('stage')); ?>:</</span>
-					<span class="text-bold text-danger"><?php echo e(ucfirst($lead->sales_status)); ?></span>
+					<span class="text-bold text-danger"><?php echo e(ucfirst($lead->status->name)); ?></span>
 				</div>
 
 				<div class="m-xs">
