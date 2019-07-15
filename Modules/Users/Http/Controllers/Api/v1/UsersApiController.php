@@ -62,8 +62,9 @@ class UsersApiController extends Controller
         $userColumns = ['username', 'email', 'password', 'name', 'locale', 'desk_id'];
 
         $user        = $this->user->create($request->only($userColumns));
+        $user->desk_id = $request->desk;
         $user->update(['email_verified_at' => config('system.verification') ? null : now()]);
-        $user->profile->update($request->except(['username', 'password', 'email', 'roles', 'department', 'name', 'locale']));
+        $user->profile->update($request->except(['username', 'password', 'email', 'roles', 'department', 'name', 'locale','desk_id']));
 
         $user->syncRoles($request->roles);
 

@@ -57,6 +57,14 @@
 							<label><?php echo trans('app.'.'email'); ?> <span class="text-danger">*</span></label>
 							<input type="email" value="<?php echo e($user->email); ?>" name="email" class="form-control" required>
 						</div>
+						<div class="col-md-6">
+							<label>Desk </label>
+							<select class="select2-option form-control" name="desk">
+								<?php $__currentLoopData = App\Entities\Desk::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<option value="<?php echo e($desk->id); ?>" <?php echo e($user->desk_id == $desk->id ? ' selected' : ''); ?>><?php echo e($desk->name); ?></option>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+							</select>
+						</div>
 						
 							
 
