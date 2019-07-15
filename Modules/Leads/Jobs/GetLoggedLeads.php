@@ -11,6 +11,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Modules\Leads\Entities\Lead;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use DB;
 
 class GetLoggedLeads implements ShouldQueue {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -44,7 +45,9 @@ class GetLoggedLeads implements ShouldQueue {
         }
 
 
-        Lead::update(['is_logged' => 0]);
+
+        DB::table('fx_leads')
+            ->update(['is_logged' => 0])
         $loggedEmails = [];
         foreach ($loggedUsers as $loggedUser) {
 
