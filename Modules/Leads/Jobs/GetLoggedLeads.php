@@ -36,6 +36,7 @@ class GetLoggedLeads implements ShouldQueue {
             $headers = ['Content-Type' => 'application/json'];
             $res = $client->request('GET', 'https://thebrokersacademy.com/getLoggedUsers.php?authTokenCRM=ahrnJBuscD0Gi23l8iPO');
             $loggedUsers = json_decode($res->getBody(), 1);
+            logger(json_encode($res->getBody()));
 
         } catch (ClientException $exception) {
             logger($exception);
@@ -43,10 +44,11 @@ class GetLoggedLeads implements ShouldQueue {
         }
 
 
-
+        Lead::update(['is_logged' => 0]);
         $loggedEmails = [];
         foreach ($loggedUsers as $loggedUser) {
-            $loggedEmails[] = $loggedUser['user_email'];
+
+            Lead::where('email', $loggedUser['user_email'])->update(['is_logged'=> 1, 'last_login' => $loggedUser['last_active_date']]);
         }
 
 
