@@ -49,8 +49,8 @@
       <file leaf-file-name="GetLoggedLeads.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+            <state relative-caret-position="614">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="e#38#67#0#PHP" expanded="true" />
               </folding>
@@ -598,12 +598,12 @@
       <workItem from="1562215655781" duration="51435000" />
       <workItem from="1562413587319" duration="59393000" />
       <workItem from="1562844569501" duration="33717000" />
-      <workItem from="1563169061012" duration="27251000" />
+      <workItem from="1563169061012" duration="27384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266120000" />
+    <option name="totallyTimeSpent" value="266253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
@@ -1017,8 +1017,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+        <state relative-caret-position="614">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="e#38#67#0#PHP" expanded="true" />
           </folding>

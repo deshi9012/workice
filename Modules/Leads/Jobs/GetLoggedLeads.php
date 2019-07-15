@@ -52,8 +52,6 @@ class GetLoggedLeads implements ShouldQueue {
         }
 
 
-        $leads = Lead::whereIn('email',$loggedEmails)->update(['is_logged' => true]);
-
     }
 
     /**
