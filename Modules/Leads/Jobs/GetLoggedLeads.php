@@ -37,7 +37,9 @@ class GetLoggedLeads implements ShouldQueue {
             $headers = ['Content-Type' => 'application/json'];
             $res = $client->request('GET', 'https://thebrokersacademy.com/getLoggedUsers.php?authTokenCRM=ahrnJBuscD0Gi23l8iPO');
             $loggedUsers = json_decode($res->getBody(), 1);
-            logger(json_encode($res->getBody()));
+            logger('---');
+            logger($res->getBody());
+            logger('---');
 
         } catch (ClientException $exception) {
             logger($exception);
