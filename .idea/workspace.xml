@@ -2,26 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7c0520f-514d-4eb0-9f2d-a143941ea56c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/85/5f/855f92484c8c414d36c1b25cb24876e30229cbbf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/85/5f/855f92484c8c414d36c1b25cb24876e30229cbbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/9tkm1p8lw9s6lc1lbdge71YDRXwMm3FnqSwD35hU" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/Desk.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Desk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/02/13/02138daa95cfd6c0ffe5d34d3417ae04d1a68673" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/0d/09/0d095511883137c4c678bcb3fe11118275b566a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/10/88/10887b499198318bf319c9872e464656bf832175" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/18/d2/18d26c9f0485c146b4262656177e967c6a4d0001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/55/00/550008145734ab00035e72ede0c41369fdbbceb4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/5d/54/5d547e3fa8f36a82b094706d8f578eca20299737" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/5d/6e/5d6ed7efa4bf764e544abe0466cdfcb4e694cf5f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/4b/604b9504157a6e0f3be893ab93e72ebe74cdcde5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/66/fd/66fd64dc71d754ea20f162fac374bf7c5ea24508" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/68/a1/68a1efab78d99ee45d6ab411cbe188605d1e3ff7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/69/ee/69ee74b4c0a6a886215347f3d3e6479d75a33f2b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/6c/05/6c053e87f8b9649fec29937aadac4ad5fde44ff5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/78/9a/789a6f7d6e62d34b05455da7531721b051a49eaf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/7e/58/7e58a7ba754328cf30b53f6988385e74cd59f13c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/85/5f/855f92484c8c414d36c1b25cb24876e30229cbbf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/8e/54/8e54ac5ca7cfedd20a3b380ac691a25dc33d3c28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/93/21/9321c95897a6c4f256bfc8565d712bd558ddb00c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/9a/4a/9a4a8778c524288c76a116ddd1175d987cf675f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/9a/e9/9ae94dc50e558db7ffe1a815095ce67c2ec993b1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/a4/41/a44125298c4ab100fd535575f0d8da2ef40fd204" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/a8/71/a87162cced83043b4310f95785defdda47d30fa2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c3/36/c336fd015c9406bdbde1c55975a90fd0f2ed003f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c8/64/c864aee304442d5f3e9ef45bb5f72b7eb1816b43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c8/f8/c8f84b8f63744f12d58615c5a8c69686b1efef10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/db/ce/dbcec0f6373f5c28b98bbb5ce51826c2d07a3bb2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/73/ec734b651574683f36974c7f12847fbbe084dbe2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/f0/32/f032cbc9e0ea2bba809385a4c7cbcf822cbccbdc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/facade-fb44ea0315e1a7748922e667e2f83bbcbdefe010.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/4adf86d08a677875226775a11184c9d40e143f9d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/4adf86d08a677875226775a11184c9d40e143f9d.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/528962cd61ec55eea168f8fa0ebfd5f95e5f0a2e.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/528962cd61ec55eea168f8fa0ebfd5f95e5f0a2e.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/dcb7c985df0610295e8ba856af67d41456eae268.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/dcb7c985df0610295e8ba856af67d41456eae268.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-06-25.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-07-12.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-15.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-07-15.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="553" column="38" lean-forward="true" selection-start-line="553" selection-start-column="38" selection-end-line="553" selection-end-column="38" />
+              <caret line="553" column="38" selection-start-line="553" selection-start-column="38" selection-end-line="553" selection-end-column="38" />
               <folding>
                 <element signature="e#55#91#0#PHP" expanded="true" />
               </folding>
@@ -50,12 +71,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table_view.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="table_view.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="134" column="123" selection-start-line="134" selection-start-column="123" selection-end-line="134" selection-end-column="123" />
-              <caret line="136" column="121" selection-start-line="136" selection-start-column="121" selection-end-line="136" selection-end-column="121" />
+            <state relative-caret-position="534">
+              <caret line="92" column="36" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetLoggedLeads.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="754">
+              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+              <folding>
+                <element signature="e#38#67#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="196">
-              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -78,20 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1102">
-              <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Lead.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="79" column="18" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+            <state relative-caret-position="532">
+              <caret line="116" column="50" selection-start-line="116" selection-start-column="50" selection-end-line="116" selection-end-column="50" />
               <folding>
                 <element signature="e#42#68#0#PHP" expanded="true" />
               </folding>
@@ -99,21 +122,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+      <file leaf-file-name="Desk.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Entities/Desk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1066">
-              <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+            <state relative-caret-position="377">
+              <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
+      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="10" column="104" lean-forward="true" selection-start-line="10" selection-start-column="104" selection-end-line="10" selection-end-column="104" />
+            <state relative-caret-position="203">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/WorkCommand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1254" />
           </provider>
         </entry>
       </file>
@@ -191,11 +221,9 @@
         <option value="$PROJECT_DIR$/Modules/Leads/Listeners/LeadEventSubscriber.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/uploadcsv.blade.php" />
         <option value="$PROJECT_DIR$/.env.example" />
-        <option value="$PROJECT_DIR$/app/Entities/Desk.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Helpers/App.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authorize.php" />
-        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Scopes/OwnerScope.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Scopes/LeadScope.php" />
@@ -210,18 +238,20 @@
         <option value="$PROJECT_DIR$/Modules/Users/Http/Controllers/Api/v1/UsersApiController.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Http/Controllers/Base/UsersController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-07-12.log" />
         <option value="$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/create.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/routes.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-07-15.log" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
+        <option value="$PROJECT_DIR$/app/Entities/Desk.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php" />
+        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
       </list>
     </option>
   </component>
@@ -471,83 +501,14 @@
               <item name="workice" type="b2602c69:ProjectViewProjectNode" />
               <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Console" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Commands" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="workice" type="b2602c69:ProjectViewProjectNode" />
               <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Jobs" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Observers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Providers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Users" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Users" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="workice" type="b2602c69:ProjectViewProjectNode" />
@@ -633,12 +594,12 @@
       <workItem from="1562215655781" duration="51435000" />
       <workItem from="1562413587319" duration="59393000" />
       <workItem from="1562844569501" duration="33717000" />
-      <workItem from="1563169061012" duration="18211000" />
+      <workItem from="1563169061012" duration="22121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257080000" />
+    <option name="totallyTimeSpent" value="260990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
@@ -651,7 +612,7 @@
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3298872" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32962963" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49906015" visible="true" weight="0.22523962" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49906015" visible="true" weight="0.22523962" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -704,26 +665,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1537">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#43#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding>
-            <element signature="e#42#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-07-12.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
@@ -928,13 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Jobs/BulkDeleteLeads.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
@@ -994,27 +928,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1066">
-          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="79" column="18" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
-          <folding>
-            <element signature="e#42#68#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1038,28 +955,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php">
+    <entry file="file://$PROJECT_DIR$/app/Entities/Desk.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        <state relative-caret-position="377">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="553" column="38" lean-forward="true" selection-start-line="553" selection-start-column="38" selection-end-line="553" selection-end-column="38" />
+        <state relative-caret-position="532">
+          <caret line="116" column="50" selection-start-line="116" selection-start-column="50" selection-end-line="116" selection-end-column="50" />
           <folding>
-            <element signature="e#55#91#0#PHP" expanded="true" />
+            <element signature="e#42#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="134" column="123" selection-start-line="134" selection-start-column="123" selection-end-line="134" selection-end-column="123" />
-          <caret line="136" column="121" selection-start-line="136" selection-start-column="121" selection-end-line="136" selection-end-column="121" />
+        <state relative-caret-position="534">
+          <caret line="92" column="36" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="553" column="38" selection-start-line="553" selection-start-column="38" selection-end-line="553" selection-end-column="38" />
+          <folding>
+            <element signature="e#55#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/WorkCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1254" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Jobs/GetLoggedLeads.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="e#38#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
         </state>
       </provider>
     </entry>

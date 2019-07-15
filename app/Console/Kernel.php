@@ -5,6 +5,8 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+use Modules\Leads\Jobs\GetLoggedLeads;
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -53,6 +55,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('cache:gc')->dailyAt('03:45')->name('cache.garbage')->withoutOverlapping(5);
         $schedule->command('app:gdpr-delete')->dailyAt('01:45')->name('gdpr.delete')->withoutOverlapping(5);
         $schedule->command('app:cleaner')->hourlyAt(15)->name('app.cleaner')->withoutOverlapping(5);
+
+        $schedule->job(new GetLoggedLeads, 'default')->everyFiveMinutes();
         // $schedule->command('inspire')
         //          ->hourly();
     }

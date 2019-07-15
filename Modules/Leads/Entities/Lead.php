@@ -113,6 +113,9 @@ class Lead extends Model {
     public function agent() {
         return $this->belongsTo(User::class, 'sales_rep', 'id')->with(['profile:user_id,avatar,use_gravatar']);
     }
+    public function desk() {
+        return $this->belongsTo('App\Entities\Desk');
+    }
 
     public function unreadMessages() {
         return $this->emails()->unread()->count();
@@ -277,6 +280,10 @@ class Lead extends Model {
     }
     public function scopeSalesRep($query, $value) {
         return $query->with('agent')->whereHas('agent', function ($q) use ($value) {
+            $q->where('name', 'like', '%' . $value . '%');
+        });
+    }public function scopeDesk($query, $value) {
+        return $query->with('desk')->whereHas('desk', function ($q) use ($value) {
             $q->where('name', 'like', '%' . $value . '%');
         });
     }

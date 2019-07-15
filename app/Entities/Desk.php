@@ -9,4 +9,8 @@ class Desk extends Model {
     public $timestamps = false;
     public $primaryKey = 'id';
     protected $table = 'desks';
+
+    public function leads() {
+        return $this->hasMany('App\Entities\Lead');
+    }
 }

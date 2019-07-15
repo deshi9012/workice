@@ -386,28 +386,28 @@ abstract class LeadsController extends Controller {
      */
     public function tableData(Request $request) {
 
-        $client = new Client();
-        $loggedUsers = [];
-        try {
-
-            $headers = ['Content-Type' => 'application/json'];
-            $res = $client->request('GET', 'https://thebrokersacademy.com/getLoggedUsers.php?authTokenCRM=ahrnJBuscD0Gi23l8iPO');
-            $loggedUsers = json_decode($res->getBody(), 1);
-
-        } catch (ClientException $exception) {
-            logger($exception);
-
-        }
-
-
-
-        $loggedEmails = [];
-        foreach ($loggedUsers as $loggedUser) {
-            $loggedEmails[] = $loggedUser['user_email'];
-        }
-
-
-        $leads = Lead::whereIn('email',$loggedEmails)->update(['is_logged' => true]);
+//        $client = new Client();
+//        $loggedUsers = [];
+//        try {
+//
+//            $headers = ['Content-Type' => 'application/json'];
+//            $res = $client->request('GET', 'https://thebrokersacademy.com/getLoggedUsers.php?authTokenCRM=ahrnJBuscD0Gi23l8iPO');
+//            $loggedUsers = json_decode($res->getBody(), 1);
+//
+//        } catch (ClientException $exception) {
+//            logger($exception);
+//
+//        }
+//
+//
+//
+//        $loggedEmails = [];
+//        foreach ($loggedUsers as $loggedUser) {
+//            $loggedEmails[] = $loggedUser['user_email'];
+//        }
+//
+//
+//        $leads = Lead::whereIn('email',$loggedEmails)->update(['is_logged' => true]);
 
 
         //Get current auth user

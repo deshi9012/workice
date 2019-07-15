@@ -87,7 +87,11 @@
 				} else {
 
 					title = title.replace(/\s+/g, '_').toLowerCase();
-
+					console.log(title);
+					if (title == 'last_login' || title == 'local_time'){
+						$(this).html('&nbsp');
+						return true;
+					}
 					if (title.indexOf('_') > -1 && (title.split('_')[1] == 'time' || title.split('_')[1] == 'login')) {
 						var field;
 						field = $(this).html('<input class="search" type="text" name="daterange" id="' + title + '" placeholder="Search ' + title + '" />').daterangepicker({
