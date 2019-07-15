@@ -46,7 +46,7 @@ class GetLoggedLeads implements ShouldQueue {
 
 
 
-        DB::table('fx_leads')
+        DB::table('leads')
             ->update(['is_logged' => 0]);
         $loggedEmails = [];
         foreach ($loggedUsers as $loggedUser) {
