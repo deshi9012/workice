@@ -11,8 +11,8 @@
 		font-size: 3.3em;      /* Adjust this value so that it appears what size you want. */
 	}
 	td{
-		padding-top: 0.5px!important;
-		padding-bottom: 0.5px!important;
+		padding-top: 1px!important;
+		padding-bottom: 1px!important;
 	}
 </style>
 <div class="col-lg-12">
