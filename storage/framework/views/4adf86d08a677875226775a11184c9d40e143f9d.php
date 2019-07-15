@@ -119,7 +119,7 @@
 					}
 					$(this).find('*').filter(':input:visible:first').on('keyup change', function () {
 
-						if ($(this).val().length > 3 || $(this).val().length == 0) {
+						if ($(this).val().length >= 2 || $(this).val().length == 0) {
 							table.draw();
 
 						}
