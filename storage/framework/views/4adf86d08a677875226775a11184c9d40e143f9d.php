@@ -1,3 +1,20 @@
+<style> li {
+		list-style-type: none;
+		position: relative;    /* It is required for setting position to absolute in the next rule. */
+	}
+
+	li::before {
+		content: '\2022';      /* Unicode for • character */
+		position: absolute;
+		bottom: -0.4em;
+		left: -0.8em;          /* Adjust this value so that it appears where you want. */
+		font-size: 3.3em;      /* Adjust this value so that it appears what size you want. */
+	}
+	.panel .table td, .panel .table th {
+		padding-top: 0.5px!important;
+		padding-bottom: 0.5px!important;
+	}
+</style>
 <div class="col-lg-12">
 	<section class="panel panel-default">
 
@@ -40,6 +57,7 @@
 					</thead>
 				</table>
 			</div>
+
 			<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('leads_create')): ?>
 				<button type="submit" id="button" class="btn btn-sm btn-<?php echo e(get_option('theme_color')); ?> m-xs"
 						value="bulk-email">
@@ -136,24 +154,24 @@
 				fixedHeader: true,
 				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 					if (aData['is_logged']) {
-						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;"><li style="color: green;">' + aData['name'] + '</li></ul>');
+						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;margin-bottom: 0px;"><li style="color: green;">' + aData['name'] + '</li></ul>');
 					} else {
-						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;"><li style="color: red;">' + aData['name'] + '</li></ul>');
+						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;margin-bottom: 0px;"><li style="color: red;">' + aData['name'] + '</li></ul>');
 					}
 
 					if (aData['stage_id'] == 43 || aData['stage_id'] == null) {
-						$('td', nRow).css('background-color', '#fff7e5');
+						$('td', nRow).css('background-color', '#FCEFD8');
 					} else if (aData['stage_id'] == 44 || aData['stage_id'] == 46) {
-						$('td', nRow).css('background-color', '#0303e275');
+						$('td', nRow).css('background-color', '#DCECFB');
 					} else if (aData['stage_id'] == 55 ||
 						aData['stage_id'] == 45 ||
 						aData['stage_id'] == 56 ||
 						aData['stage_id'] == 57) {
 
-						$('td', nRow).css('background-color', '#f4645fd6');
+						$('td', nRow).css('background-color', '#F9E1E0');
 
 					} else if (aData['stage_id'] == 54) {
-						$('td', nRow).css('background-color', '#0aad0aad');
+						$('td', nRow).css('background-color', '#F2FEE5');
 					} else if (aData['stage_id'] == 42) {
 						$('td', nRow).css('background-color', 'white');
 					}
