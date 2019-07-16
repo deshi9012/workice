@@ -1,19 +1,20 @@
-<style> li {
-		list-style-type: none;
-		position: relative;    /* It is required for setting position to absolute in the next rule. */
-	}
+<style>
+	/*li {*/
+		/*list-style-type: none;*/
+		/*position: relative;    !* It is required for setting position to absolute in the next rule. *!*/
+	/*}*/
 
-	li::before {
-		content: '\2022';      /* Unicode for • character */
-		position: absolute;
-		bottom: -0.4em;
-		left: -0.8em;          /* Adjust this value so that it appears where you want. */
-		font-size: 3.3em;      /* Adjust this value so that it appears what size you want. */
-	}
-	.panel .table td, .panel .table th {
-		padding-top: 0.5px!important;
-		padding-bottom: 0.5px!important;
-	}
+	/*li::before {*/
+		/*content: '\2022';      !* Unicode for • character *!*/
+		/*position: absolute;*/
+		/*bottom: -0.4em;*/
+		/*left: -0.8em;          !* Adjust this value so that it appears where you want. *!*/
+		/*font-size: 3.3em;      !* Adjust this value so that it appears what size you want. *!*/
+	/*}*/
+	/*td{*/
+		/*padding-top: 1px!important;*/
+		/*padding-bottom: 1px!important;*/
+	/*}*/
 </style>
 <div class="col-lg-12">
 	<section class="panel panel-default">
@@ -154,9 +155,9 @@
 				fixedHeader: true,
 				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 					if (aData['is_logged']) {
-						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;margin-bottom: 0px;"><li style="color: green;">' + aData['name'] + '</li></ul>');
+						$("td:eq(2)", nRow).html('<ul"><li style="color: green;">' + aData['name'] + '</li></ul>');
 					} else {
-						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;margin-bottom: 0px;"><li style="color: red;">' + aData['name'] + '</li></ul>');
+						$("td:eq(2)", nRow).html('<ul "><li style="color: red;">' + aData['name'] + '</li></ul>');
 					}
 
 					if (aData['stage_id'] == 43 || aData['stage_id'] == null) {
