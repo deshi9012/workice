@@ -1,9 +1,6 @@
 <style>
-	li {
-		list-style-type: none;
-		position: relative;    /* It is required for setting position to absolute in the next rule. */
-	}
-	
+	/*li */
+
 	/*li::before {*/
 		/*content: '\2022';      !* Unicode for • character *!*/
 		/*position: absolute;*/
@@ -15,7 +12,10 @@
 		/*padding-top: 1px!important;*/
 		/*padding-bottom: 1px!important;*/
 	/*}*/
-</style>
+</style>{*/
+/*list-style-type: none;*/
+/*position: relative;    !* It is required for setting position to absolute in the next rule. *!*/
+/*}
 <div class="col-lg-12">
 	<section class="panel panel-default">
 
