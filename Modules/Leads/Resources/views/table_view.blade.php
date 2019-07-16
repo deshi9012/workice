@@ -1,17 +1,20 @@
 <style>
 	li {
 		list-style-type: none;
-		position: relative;
+		position: relative;    /* It is required for setting position to absolute in the next rule. */
 	}
 
 	li::before {
-		content: '\2022';
+		content: '\2022';      /* Unicode for • character */
 		position: absolute;
 		bottom: -0.4em;
-		left: -0.8em;
-		font-size: 3.3em;
+		left: -0.8em;          /* Adjust this value so that it appears where you want. */
+		font-size: 3.3em;      /* Adjust this value so that it appears what size you want. */
 	}
-	
+	/*td{*/
+		/*padding-top: 1px!important;*/
+		/*padding-bottom: 1px!important;*/
+	/*}*/
 </style>
 <div class="col-lg-12">
 	<section class="panel panel-default">
@@ -103,7 +106,7 @@
 				} else {
 
 					title = title.replace(/\s+/g, '_').toLowerCase();
-					console.log(title);
+					
 					if (title == 'last_login' || title == 'local_time'){
 						$(this).html('&nbsp');
 						return true;
