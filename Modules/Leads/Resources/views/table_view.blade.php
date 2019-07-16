@@ -155,9 +155,9 @@
 				fixedHeader: true,
 				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 					if (aData['is_logged']) {
-						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;margin-bottom: 0px;"><li style="color: green;">' + aData['name'] + '</li></ul>');
+						$("td:eq(2)", nRow).html('<ul><li style="color: green;">' + aData['name'] + '</li></ul>');
 					} else {
-						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;margin-bottom: 0px;"><li style="color: red;">' + aData['name'] + '</li></ul>');
+						$("td:eq(2)", nRow).html('<ul><li style="color: red;">' + aData['name'] + '</li></ul>');
 					}
 
 					if (aData['stage_id'] == 43 || aData['stage_id'] == null) {
