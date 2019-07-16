@@ -106,7 +106,7 @@
 				} else {
 
 					title = title.replace(/\s+/g, '_').toLowerCase();
-					console.log(title);
+					
 					if (title == 'last_login' || title == 'local_time'){
 						$(this).html('&nbsp');
 						return true;
