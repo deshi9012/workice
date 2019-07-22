@@ -210,6 +210,8 @@ class User extends Authenticatable implements HasLocalePreference, MustVerifyEma
 
     public function appointments()
     {
+
+
         return $this->hasMany(Appointment::class)->where(
             function ($query) {
                 $query->whereDate('start_time', '>=', today()->toDateString());

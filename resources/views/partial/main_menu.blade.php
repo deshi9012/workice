@@ -54,13 +54,13 @@
 				<nav class="nav-primary hidden-xs">
 					<ul class="nav">
 
-
 						@foreach (mainMenu() as $menu)
 
 							@if (count($menu['children']) > 0)
 
 								<li class="nav-w-children {{ $page == langapp($menu['name']) && (in_array($menu['module'], array_pluck($menu['children'], 'parent'))) ? 'active'  : '' }}"
 									id="{{ $menu['module'] }}">
+
 									<a href="{{ site_url($menu['route']) }}">
 										<i class="{{ $menu['icon'] }} icon">
 											<b class="bg-{{ get_option('theme_color') }}"></b>
@@ -93,18 +93,33 @@
 								</li>
 							@else
 								<li class="{{ $page === langapp($menu['name']) ? 'active' : '' }}">
-									<a href="{{ site_url($menu['route']) }}">
-										<i class="{{ $menu['icon'] }} icon">
-											<b class="bg-{{ get_option('theme_color') }}"></b>
-										</i>
-										<span>
+									@if($menu['name'] == 'calendar')
+										<a href="calendar/appointments">
+											<i class="{{ $menu['icon'] }} icon">
+												<b class="bg-{{ get_option('theme_color') }}"></b>
+											</i>
+											<span>
 											@if($menu['name'] == 'users')
-												Operators
-											@else
-												@langapp($menu['name'])
-											@endif
+													Operators
+												@else
+													@langapp($menu['name'])
+												@endif
                                 </span>
-									</a>
+										</a>
+									@else
+										<a href="{{ site_url($menu['route']) }}">
+											<i class="{{ $menu['icon'] }} icon">
+												<b class="bg-{{ get_option('theme_color') }}"></b>
+											</i>
+											<span>
+											@if($menu['name'] == 'users')
+													Operators
+												@else
+													@langapp($menu['name'])
+												@endif
+                                </span>
+										</a>
+									@endif
 								</li>
 							@endif
 

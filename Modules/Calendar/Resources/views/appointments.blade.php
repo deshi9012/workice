@@ -3,6 +3,7 @@
 @section('content')
 
 <section id="content">
+
     <section class="hbox stretch">
 
         <aside>
@@ -61,7 +62,7 @@
             eventSources: [
                 {
                     events: [
-                        @foreach (Auth::user()->appointments as $event) 
+                        @foreach (Auth::user()->appointments as $event)
                         {
                             title: '{{ addslashes($event->name) }}',
                             start: '{{ date('Y-m-d H:i:s', strtotime($event->start_time)) }}',

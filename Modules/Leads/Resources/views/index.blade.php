@@ -54,26 +54,27 @@
 				</a>
 				@endadmin
 
-				@can('leads_create')
-					<div class="btn-group">
-						<button class="btn btn-{{ get_option('theme_color') }} btn-sm dropdown-toggle"
-								data-toggle="dropdown" aria-expanded="false">@langapp('import') <span
-									class="caret"></span></button>
-						<ul class="dropdown-menu">
-							<li><a href="{{ route('leads.import', ['type' => 'leads']) }}" data-toggle="ajaxModal">@langapp('csv_file')</a>
-							</li>
-							<li><a href="{{ route('leads.import', ['type' => 'google']) }}">Google
-									@langapp('contacts')</a></li>
-						</ul>
-					</div>
+				{{--				@can('leads_create')--}}
+				@admin
+				<div class="btn-group">
+					<button class="btn btn-{{ get_option('theme_color') }} btn-sm dropdown-toggle"
+							data-toggle="dropdown" aria-expanded="false">@langapp('import') <span
+								class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="{{ route('leads.import', ['type' => 'leads']) }}" data-toggle="ajaxModal">@langapp('csv_file')</a>
+						</li>
+						<li><a href="{{ route('leads.import', ['type' => 'google']) }}">Google
+								@langapp('contacts')</a></li>
+					</ul>
+				</div>
 
 
-					<a href="{{  route('leads.export')  }}" title="@langapp('export')  "
-					   class="btn btn-sm btn-{{ get_option('theme_color') }}">
-						@icon('solid/file-csv') CSV
-					</a>
-
-				@endcan
+				<a href="{{  route('leads.export')  }}" title="@langapp('export')  "
+				   class="btn btn-sm btn-{{ get_option('theme_color') }}">
+					@icon('solid/file-csv') CSV
+				</a>
+				@endadmin
+				{{--@endcan--}}
 
 
 			</header>

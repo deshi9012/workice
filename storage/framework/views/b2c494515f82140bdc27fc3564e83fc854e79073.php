@@ -54,13 +54,13 @@
 				<nav class="nav-primary hidden-xs">
 					<ul class="nav">
 
-
 						<?php $__currentLoopData = mainMenu(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
 							<?php if(count($menu['children']) > 0): ?>
 
 								<li class="nav-w-children <?php echo e($page == langapp($menu['name']) && (in_array($menu['module'], array_pluck($menu['children'], 'parent'))) ? 'active'  : ''); ?>"
 									id="<?php echo e($menu['module']); ?>">
+
 									<a href="<?php echo e(site_url($menu['route'])); ?>">
 										<i class="<?php echo e($menu['icon']); ?> icon">
 											<b class="bg-<?php echo e(get_option('theme_color')); ?>"></b>
@@ -93,18 +93,33 @@
 								</li>
 							<?php else: ?>
 								<li class="<?php echo e($page === langapp($menu['name']) ? 'active' : ''); ?>">
-									<a href="<?php echo e(site_url($menu['route'])); ?>">
-										<i class="<?php echo e($menu['icon']); ?> icon">
-											<b class="bg-<?php echo e(get_option('theme_color')); ?>"></b>
-										</i>
-										<span>
+									<?php if($menu['name'] == 'calendar'): ?>
+										<a href="calendar/appointments">
+											<i class="<?php echo e($menu['icon']); ?> icon">
+												<b class="bg-<?php echo e(get_option('theme_color')); ?>"></b>
+											</i>
+											<span>
 											<?php if($menu['name'] == 'users'): ?>
-												Operators
-											<?php else: ?>
-												<?php echo trans('app.'.$menu['name']); ?>
-											<?php endif; ?>
+													Operators
+												<?php else: ?>
+													<?php echo trans('app.'.$menu['name']); ?>
+												<?php endif; ?>
                                 </span>
-									</a>
+										</a>
+									<?php else: ?>
+										<a href="<?php echo e(site_url($menu['route'])); ?>">
+											<i class="<?php echo e($menu['icon']); ?> icon">
+												<b class="bg-<?php echo e(get_option('theme_color')); ?>"></b>
+											</i>
+											<span>
+											<?php if($menu['name'] == 'users'): ?>
+													Operators
+												<?php else: ?>
+													<?php echo trans('app.'.$menu['name']); ?>
+												<?php endif; ?>
+                                </span>
+										</a>
+									<?php endif; ?>
 								</li>
 							<?php endif; ?>
 

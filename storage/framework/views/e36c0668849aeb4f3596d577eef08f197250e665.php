@@ -1,6 +1,7 @@
 <?php $__env->startSection('content'); ?>
 
 <section id="content">
+
     <section class="hbox stretch">
 
         <aside>
@@ -59,7 +60,7 @@
             eventSources: [
                 {
                     events: [
-                        <?php $__currentLoopData = Auth::user()->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                        <?php $__currentLoopData = Auth::user()->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         {
                             title: '<?php echo e(addslashes($event->name)); ?>',
                             start: '<?php echo e(date('Y-m-d H:i:s', strtotime($event->start_time))); ?>',

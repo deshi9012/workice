@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="<?php echo e(getAsset('plugins/colorpicker/colorpicker.min.css')); ?>" type="text/css"/>

@@ -53,26 +53,27 @@
 				</a>
 				<?php endif; ?>
 
-				<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('leads_create')): ?>
-					<div class="btn-group">
-						<button class="btn btn-<?php echo e(get_option('theme_color')); ?> btn-sm dropdown-toggle"
-								data-toggle="dropdown" aria-expanded="false"><?php echo trans('app.'.'import'); ?> <span
-									class="caret"></span></button>
-						<ul class="dropdown-menu">
-							<li><a href="<?php echo e(route('leads.import', ['type' => 'leads'])); ?>" data-toggle="ajaxModal"><?php echo trans('app.'.'csv_file'); ?></a>
-							</li>
-							<li><a href="<?php echo e(route('leads.import', ['type' => 'google'])); ?>">Google
-									<?php echo trans('app.'.'contacts'); ?></a></li>
-						</ul>
-					</div>
+				
+				<?php if (\Illuminate\Support\Facades\Blade::check('admin')): ?>
+				<div class="btn-group">
+					<button class="btn btn-<?php echo e(get_option('theme_color')); ?> btn-sm dropdown-toggle"
+							data-toggle="dropdown" aria-expanded="false"><?php echo trans('app.'.'import'); ?> <span
+								class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="<?php echo e(route('leads.import', ['type' => 'leads'])); ?>" data-toggle="ajaxModal"><?php echo trans('app.'.'csv_file'); ?></a>
+						</li>
+						<li><a href="<?php echo e(route('leads.import', ['type' => 'google'])); ?>">Google
+								<?php echo trans('app.'.'contacts'); ?></a></li>
+					</ul>
+				</div>
 
 
-					<a href="<?php echo e(route('leads.export')); ?>" title="<?php echo trans('app.'.'export'); ?>  "
-					   class="btn btn-sm btn-<?php echo e(get_option('theme_color')); ?>">
-						<?php echo e(svg_image('solid/file-csv')); ?> CSV
-					</a>
-
+				<a href="<?php echo e(route('leads.export')); ?>" title="<?php echo trans('app.'.'export'); ?>  "
+				   class="btn btn-sm btn-<?php echo e(get_option('theme_color')); ?>">
+					<?php echo e(svg_image('solid/file-csv')); ?> CSV
+				</a>
 				<?php endif; ?>
+				
 
 
 			</header>

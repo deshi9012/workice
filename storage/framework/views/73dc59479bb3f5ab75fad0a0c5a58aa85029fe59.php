@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+
 <section id="content" class="bg">
     <section class="vbox">
         <header class="header bg-white b-b clearfix">

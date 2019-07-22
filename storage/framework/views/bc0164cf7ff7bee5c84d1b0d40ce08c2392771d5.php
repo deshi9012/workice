@@ -1,0 +1,1 @@
+<script src="<?php echo e(getAsset('plugins/colorpicker/colorpicker.min.js')); ?>"></script>

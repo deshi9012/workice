@@ -17,24 +17,49 @@
 				<div class="tab-pane fade in active" id="tab-lead-general">
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>@langapp('fullname') @required</label>
-						<input type="text" name="name" value="{{ $lead->name }}" class="input-sm form-control" required>
+						@if( Auth::user()->hasRole('admin') )
+							<input type="text" name="name" value="{{ $lead->name }}" class="input-sm form-control"
+								   required>
+						@else
+							<input type="text" name="name" value="{{ $lead->name }}" class="input-sm form-control"
+								   readonly>
+						@endif
 					</div>
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>@langapp('email') @required</label>
-						<input type="email" name="email" value="{{ $lead->email }}" class="input-sm form-control"
-							   required>
+						@if( Auth::user()->hasRole('admin') )
+							<input type="email" name="email" value="{{ $lead->email }}" class="input-sm form-control"
+								   required>
+						@else
+							<input type="email" name="email" value="{{ $lead->email }}" class="input-sm form-control"
+								   readonly>
+						@endif
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>@langapp('mobile') </label>
-						<input type="text" name="mobile" class="input-sm form-control" value="{{ $lead->mobile }}">
+						@if( Auth::user()->hasRole('admin') )
+							<input type="text" name="mobile" class="input-sm form-control" value="{{ $lead->mobile }}">
+						@else
+							<input type="text" name="mobile" class="input-sm form-control" value="{{ $lead->mobile }}"
+								   readonly>
+						@endif
 					</div>
 					<div class="col-md-6">
 						<label>Desk @required</label>
-						<select class="select2-option form-control" name="desk">
-							@foreach (App\Entities\Desk::all() as $desk)
-								<option value="{{  $desk->id  }}" {{ $desk->id == $lead->desk_id ? ' selected' : ''}}>{{  $desk->name }}</option>
-							@endforeach
-						</select>
+						@if( Auth::user()->hasRole('admin') )
+							<select class="select2-option form-control" name="desk">
+								@foreach (App\Entities\Desk::all() as $desk)
+									<option value="{{  $desk->id  }}" {{ $desk->id == $lead->desk_id ? ' selected' : ''}}>{{  $desk->name }}</option>
+								@endforeach
+							</select>
+						@else
+							<select class="select2-option form-control" name="desk" disabled>
+								@foreach (App\Entities\Desk::all() as $desk)
+									<option value="{{  $desk->id  }}"
+											{{ $desk->id == $lead->desk_id ? ' selected' : ''}} > {{  $desk->name }}</option>
+								@endforeach
+							</select>
+						@endif
 					</div>
 					{{--<div class="form-group col-md-6 no-gutter-right">--}}
 					{{--<label>@langapp('company_name')  </label>--}}
@@ -42,11 +67,19 @@
 					{{--</div>--}}
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>@langapp('source') </label>
-						<select name="source" class="form-control">
-							@foreach (App\Entities\Category::select('id', 'name')->whereModule('source')->get() as $source)
-								<option value="{{ $source->id }}" {{ $source->id == $lead->source ? ' selected' : '' }}>{{ $source->name }}</option>
-							@endforeach
-						</select>
+						@if( Auth::user()->hasRole('admin') )
+							<select name="source" class="form-control">
+								@foreach (App\Entities\Category::select('id', 'name')->whereModule('source')->get() as $source)
+									<option value="{{ $source->id }}" {{ $source->id == $lead->source ? ' selected' : '' }}>{{ $source->name }}</option>
+								@endforeach
+							</select>
+						@else
+							<select name="source" class="form-control" disabled>
+								@foreach (App\Entities\Category::select('id', 'name')->whereModule('source')->get() as $source)
+									<option value="{{ $source->id }}" {{ $source->id == $lead->source ? ' selected' : '' }}>{{ $source->name }}</option>
+								@endforeach
+							</select>
+						@endif
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>@langapp('stage')</label>
@@ -56,10 +89,17 @@
 							@endforeach
 						</select>
 					</div>
-					<div class="form-group col-md-6 no-gutter-left">
+					<div class="form-group col-md-6 no-gutter-right">
 						<label>Language</label>
-						<input type="text" name="language" class="input-sm form-control" value="{{ $lead->language }}">
+						@if( Auth::user()->hasRole('admin') )
+							<input type="text" name="language" class="input-sm form-control"
+								   value="{{ $lead->language }}">
+						@else
+							<input type="text" name="language" class="input-sm form-control"
+								   value="{{ $lead->language }}" readonly>
+						@endif
 					</div>
+
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>Courses</label>
 						<input type="text" name="courses" class="input-sm form-control" value="{{ $lead->courses }}">
@@ -114,12 +154,22 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label>@langapp('country') </label>
-							<select class="form-control select2-option" name="country">
-								@foreach (countries() as $country)
-									<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}
-									</option>
-								@endforeach
-							</select>
+							@if( Auth::user()->hasRole('admin') )
+								<select class="form-control select2-option" name="country">
+									@foreach (countries() as $country)
+										<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}
+										</option>
+									@endforeach
+								</select>
+							@else
+								<select class="form-control select2-option" name="country" disabled>
+									@foreach (countries() as $country)
+										<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}
+										</option>
+									@endforeach
+								</select>
+							@endif
+
 						</div>
 						<div class="form-group col-md-11">
 							<label>@langapp('tags') </label>

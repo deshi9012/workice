@@ -432,6 +432,9 @@ abstract class LeadsController extends Controller {
         } elseif ($user->hasRole('office manager')) {
             //Get all leads under him and under his desk
             $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        } elseif ($user->hasRole('sales team leader')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
         }
 
         //Get leads which have the same desk_id as a autheticated user
