@@ -46,7 +46,8 @@
       <img src="{{ $appointment->user->profile->photo }}" class="img-rounded image-radius">
 
           </a> <label class="label label-default">{{  $appointment->user->name  }}</label></span>
-                        @langapp('user')  
+                        {{--@langapp('user')  --}}
+                        Operator - creator
                     </li>
 
                 @if ($appointment->lead_id > 0) 
@@ -65,6 +66,8 @@
                 @parsedown($appointment->comments)
 
 
+                <div class="line line-dashed line-lg pull-in"></div>
+                Operator assigned for this appointment:
                 <div class="line line-dashed line-lg pull-in"></div>
 
 

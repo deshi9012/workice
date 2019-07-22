@@ -43,6 +43,7 @@ use Modules\Users\Entities\Profile;
 use Modules\Users\Entities\QuickAccess;
 use Modules\Users\Observers\UserObserver;
 use Spatie\Permission\Traits\HasRoles;
+use Auth;
 
 class User extends Authenticatable implements HasLocalePreference, MustVerifyEmail
 {
@@ -210,13 +211,11 @@ class User extends Authenticatable implements HasLocalePreference, MustVerifyEma
 
     public function appointments()
     {
-
-
         return $this->hasMany(Appointment::class)->where(
             function ($query) {
                 $query->whereDate('start_time', '>=', today()->toDateString());
             }
-        )->orderByDesc('id');
+        )->orWhere('attendee_id',Auth::user()->id)->orderByDesc('id');
     }
 
     public function schedules()

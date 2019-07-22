@@ -47,7 +47,8 @@
       <img src="<?php echo e($appointment->user->profile->photo); ?>" class="img-rounded image-radius">
 
           </a> <label class="label label-default"><?php echo e($appointment->user->name); ?></label></span>
-                        <?php echo trans('app.'.'user'); ?>  
+                        
+                        Operator - creator
                     </li>
 
                 <?php if($appointment->lead_id > 0): ?> 
@@ -67,6 +68,8 @@
                 <?php echo parsedown($appointment->comments); ?>
 
 
+                <div class="line line-dashed line-lg pull-in"></div>
+                Operator assigned for this appointment:
                 <div class="line line-dashed line-lg pull-in"></div>
 
 
