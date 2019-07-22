@@ -412,6 +412,8 @@ abstract class LeadsController extends Controller {
 
         //Get current auth user
         $user = Auth::user();
+        $local_timezone = get_local_time();
+
 
         if ($user->hasRole('admin')) {
             //Get all leads
@@ -490,13 +492,22 @@ abstract class LeadsController extends Controller {
                 return $lead->sales_status;
             }
 
-        })->editColumn('modified_time', function ($lead) {
+        })->editColumn('modified_time', function ($lead) use ($local_timezone) {
             if ($lead->updated_at) {
-                return $lead->updated_at->toDateTimeString();
+                $carbon = Carbon::createFromFormat('Y-m-d H:i:s', $lead->updated_at, $local_timezone);
+//                logger($carbon->tz($lead->timezone)->toTimeString());
+//                logger($lead->updated_at->toDateTimeString());
+
+//                return $carbon->tz(get_local_time())->toDateTimeString();
+//                return $lead->updated_at->toDateTimeString();
+                return $carbon;
             }
         })->editColumn('local_time', function ($lead) {
-            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
-            return $carbon->tz($lead->timezone)->toTimeString();
+
+//            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()->setTimezone($lead->timezone))->format('H:i:s');
+            $carbon = Carbon::now()->tz($lead->timezone)->format('H:i:s');
+            return $carbon;
+//            return $carbon->tz($lead->timezone)->toTimeString();
         })->rawColumns([
             'id',
             'name',
@@ -561,9 +572,9 @@ abstract class LeadsController extends Controller {
         }
         if (empty($this->searchFields)) {
 
-            return $this->lead->query()->whereNull('archived_at')->orderby('is_logged','desc');
+            return $this->lead->query()->whereNull('archived_at')->orderby('is_logged', 'desc');
         } else {
-            $q = $this->lead->query()->whereNull('archived_at')->orderby('is_logged','desc');
+            $q = $this->lead->query()->whereNull('archived_at')->orderby('is_logged', 'desc');
 //            if(isset($this->searchFields['name'])){
 //                $q->where('name', 'like', '%' . $this->searchFields['name'] . '%');
 //            }
@@ -575,7 +586,7 @@ abstract class LeadsController extends Controller {
             foreach ($this->searchFields as $searchField => $searchValue) {
                 if ($searchValue != 'false') {
                     //Check if field contains  time
-                    if((strpos($searchField, 'time') !== false)){
+                    if ((strpos($searchField, 'time') !== false)) {
 
                         $date = explode('/', $searchValue);
                         $timeField = explode('_', $searchField);
@@ -584,7 +595,7 @@ abstract class LeadsController extends Controller {
                         $q->{$searchField}($date);
                         continue;
                     }
-                    if($searchField == 'sales_rep'){
+                    if ($searchField == 'sales_rep') {
                         $q->salesRep($searchValue);
                         continue;
                     }

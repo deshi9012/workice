@@ -1,20 +1,42 @@
+
 <style>
-	/*li {*/
-		/*list-style-type: none;*/
-		/*position: relative;    !* It is required for setting position to absolute in the next rule. *!*/
+	input#id, input#desk,input#source, input#language,input#courses, input#sales_rep{
+		width: 50px;
+	}
+	input#name{
+		width: 170px;
+	}
+	input#stage{
+		width:100px;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li.red, li.green {
+		padding-left: 1em;
+		text-indent: -.3em;
+	}
+	.red::before {
+		content: "• ";
+		color: red; /* or whatever color you prefer */
+		font-size: 1.7em;
+	}
+	.green::before {
+		content: "• ";
+		color: green; /* or whatever color you prefer */
+		font-size: 170%;
+	}
+	.table-responsive{
+		max-height: 80vh;
+	}
+	/*table#leads-table{*/
+		/*max-height: 50vh;*/
 	/*}*/
 
-	/*li::before {*/
-		/*content: '\2022';      !* Unicode for • character *!*/
-		/*position: absolute;*/
-		/*bottom: -0.4em;*/
-		/*left: -0.8em;          !* Adjust this value so that it appears where you want. *!*/
-		/*font-size: 3.3em;      !* Adjust this value so that it appears what size you want. *!*/
-	/*}*/
-	/*td{*/
-		/*padding-top: 1px!important;*/
-		/*padding-bottom: 1px!important;*/
-	/*}*/
+
 </style>
 <div class="col-lg-12">
 	<section class="panel panel-default">
@@ -107,13 +129,13 @@
 
 					title = title.replace(/\s+/g, '_').toLowerCase();
 
-					if (title == 'last_login' || title == 'local_time'){
+					if (title == 'local_time'){
 						$(this).html('&nbsp');
 						return true;
 					}
 					if (title.indexOf('_') > -1 && (title.split('_')[1] == 'time' || title.split('_')[1] == 'login')) {
 						var field;
-						field = $(this).html('<input class="search" type="text" name="daterange" id="' + title + '" placeholder="Search ' + title + '" />').daterangepicker({
+						field = $(this).html('<input class="search" type="text" name="daterange" id="' + title + '" placeholder="' + title + '" />').daterangepicker({
 							autoUpdateInput: false,
 							locale: {
 								cancelLabel: 'Clear'
@@ -133,13 +155,13 @@
 
 					} else {
 
-						$(this).html('<input class="search" type="text" id="' + title + '" placeholder="Search ' + title + '" />');
+						$(this).html('<input class="search" type="text" id="' + title + '" placeholder="' + title + '" />');
 
 					}
 					$(this).find('*').filter(':input:visible:first').on('keyup change', function () {
 
 						if ($(this).val().length >= 2 || $(this).val().length == 0) {
-							table.draw();
+							table.columns.adjust().draw();
 
 						}
 
@@ -149,15 +171,16 @@
 			});
 
 			var table = $('#leads-table').DataTable({
+				"autoWidth": true,
 
 				"searching": false,
 				orderCellsTop: true,
 				fixedHeader: true,
 				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 					if (aData['is_logged']) {
-						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;margin-bottom: 0px;"><li style="color: green;">' + aData['name'] + '</li></ul>');
+						$("td:eq(2)", nRow).html('<ul><li class="green">' + aData['name'] + '</li></ul>');
 					} else {
-						$("td:eq(2)", nRow).html('<ul style="padding-left: 20px;margin-bottom: 0px;"><li style="color: red;">' + aData['name'] + '</li></ul>');
+						$("td:eq(2)", nRow).html('<ul><li class="red">' + aData['name'] + '</li></ul>');
 					}
 
 					if (aData['stage_id'] == 43 || aData['stage_id'] == null) {
@@ -233,7 +256,7 @@
 					{data: 'local_time', name: 'local_time'}
 
 				]
-			});
+			}).columns.adjust();
 
 			$("#frm-lead button").click(function (ev) {
 				ev.preventDefault();
