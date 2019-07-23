@@ -17,7 +17,7 @@
 				<div class="tab-pane fade in active" id="tab-lead-general">
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>@langapp('fullname') @required</label>
-						@if( Auth::user()->hasRole('admin') )
+						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager'))
 							<input type="text" name="name" value="{{ $lead->name }}" class="input-sm form-control"
 								   required>
 						@else
@@ -27,7 +27,7 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>@langapp('email') @required</label>
-						@if( Auth::user()->hasRole('admin') )
+						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager'))
 							<input type="email" name="email" value="{{ $lead->email }}" class="input-sm form-control"
 								   required>
 						@else
@@ -37,7 +37,7 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						<label>@langapp('mobile') </label>
-						@if( Auth::user()->hasRole('admin') )
+						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
 							<input type="text" name="mobile" class="input-sm form-control" value="{{ $lead->mobile }}">
 						@else
 							<input type="text" name="mobile" class="input-sm form-control" value="{{ $lead->mobile }}"
@@ -46,7 +46,7 @@
 					</div>
 					<div class="col-md-6">
 						<label>Desk @required</label>
-						@if( Auth::user()->hasRole('admin') )
+						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
 							<select class="select2-option form-control" name="desk">
 								@foreach (App\Entities\Desk::all() as $desk)
 									<option value="{{  $desk->id  }}" {{ $desk->id == $lead->desk_id ? ' selected' : ''}}>{{  $desk->name }}</option>
@@ -67,7 +67,7 @@
 					{{--</div>--}}
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>@langapp('source') </label>
-						@if( Auth::user()->hasRole('admin') )
+						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
 							<select name="source" class="form-control">
 								@foreach (App\Entities\Category::select('id', 'name')->whereModule('source')->get() as $source)
 									<option value="{{ $source->id }}" {{ $source->id == $lead->source ? ' selected' : '' }}>{{ $source->name }}</option>
@@ -91,7 +91,7 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>Language</label>
-						@if( Auth::user()->hasRole('admin') )
+						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
 							<input type="text" name="language" class="input-sm form-control"
 								   value="{{ $lead->language }}">
 						@else
@@ -102,7 +102,13 @@
 
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>Courses</label>
-						<input type="text" name="courses" class="input-sm form-control" value="{{ $lead->courses }}">
+						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
+							<input type="text" name="courses" class="input-sm form-control"
+								   value="{{ $lead->courses }}">
+						@else
+							<input type="text" name="courses" class="input-sm form-control" value="{{ $lead->courses }}"
+								   readonly>
+						@endif
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						{{--<label>Sales Status</label>--}}
@@ -117,7 +123,11 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>Change password</label>
-						<input type="text" name="change_password" class="input-sm form-control" value="">
+						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
+							<input type="text" name="change_password" class="input-sm form-control" value="">
+						@else
+							<input type="text" name="change_password" class="input-sm form-control" value="" readonly>
+						@endif
 					</div>
 
 					<div class="row">
@@ -134,27 +144,49 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label>@langapp('sales_rep')</label>
-							<select class="select2-option form-control" name="sales_rep" required>
-								@foreach (app('user')->permission('leads_create')->offHoliday()->get() as $user)
-									<option value="{{ $user->id }}" {{ $user->id == $lead->sales_rep ? ' selected' : '' }}>{{  $user->name }}</option>
-								@endforeach
-							</select>
+							@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('sales team leader') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager'))
+								<select class="select2-option form-control" name="sales_rep" required>
+									@foreach (app('user')->permission('leads_create')->offHoliday()->get() as $user)
+										<option value="{{ $user->id }}" {{ $user->id == $lead->sales_rep ? ' selected' : '' }}>{{  $user->name }}</option>
+									@endforeach
+								</select>
+							@else
+								<select class="select2-option form-control" name="sales_rep" required disabled>
+									@foreach (app('user')->permission('leads_create')->offHoliday()->get() as $user)
+										<option value="{{ $user->id }}" {{ $user->id == $lead->sales_rep ? ' selected' : '' }}>{{  $user->name }}</option>
+									@endforeach
+								</select>
+							@endif
 						</div>
 						<div class="form-group col-md-6">
 							<label>{{ langapp('timezone') }} </label>
-							<select class="select2-option form-control" name="timezone" required>
-								@foreach (timezones() as $timezone => $description)
-									<option value="{{ $timezone }}"{{  $lead->timezone == $timezone ? ' selected' : ''  }}>{{  $description  }}</option>
-								@endforeach
-							</select>
+							@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
+								<select class="select2-option form-control" name="timezone" required>
+									@foreach (timezones() as $timezone => $description)
+										<option value="{{ $timezone }}"{{  $lead->timezone == $timezone ? ' selected' : ''  }}>{{  $description  }}</option>
+									@endforeach
+								</select>
+							@else
+								<select class="select2-option form-control" name="timezone" disabled>
+									@foreach (timezones() as $timezone => $description)
+										<option value="{{ $timezone }}"{{  $lead->timezone == $timezone ? ' selected' : ''  }}>{{  $description  }}</option>
+									@endforeach
+								</select>
+							@endif
 						</div>
 						<div class="form-group col-md-6">
 							<label>@langapp('state') </label>
-							<input type="text" value="{{ $lead->state }}" name="state" class="input-sm form-control">
+							@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
+								<input type="text" value="{{ $lead->state }}" name="state"
+									   class="input-sm form-control">
+							@else
+								<input type="text" value="{{ $lead->state }}" name="state" class="input-sm form-control"
+									   readonly>
+							@endif
 						</div>
 						<div class="form-group col-md-6">
 							<label>@langapp('country') </label>
-							@if( Auth::user()->hasRole('admin') )
+							@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
 								<select class="form-control select2-option" name="country">
 									@foreach (countries() as $country)
 										<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}

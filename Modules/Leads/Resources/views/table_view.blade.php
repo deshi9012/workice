@@ -1,14 +1,16 @@
-
 <style>
-	input#id, input#desk,input#source, input#language,input#courses, input#sales_rep{
+	input#id, input#desk, input#source, input#language, input#courses, input#sales_rep {
 		width: 50px;
 	}
-	input#name{
+
+	input#name {
 		width: 170px;
 	}
-	input#stage{
-		width:100px;
+
+	input#stage {
+		width: 100px;
 	}
+
 	ul {
 		list-style: none;
 		padding: 0;
@@ -19,21 +21,25 @@
 		padding-left: 1em;
 		text-indent: -.3em;
 	}
+
 	.red::before {
 		content: "• ";
 		color: red; /* or whatever color you prefer */
 		font-size: 1.7em;
 	}
+
 	.green::before {
 		content: "• ";
 		color: green; /* or whatever color you prefer */
 		font-size: 170%;
 	}
-	.table-responsive{
+
+	.table-responsive {
 		max-height: 80vh;
 	}
+
 	/*table#leads-table{*/
-		/*max-height: 50vh;*/
+	/*max-height: 50vh;*/
 	/*}*/
 
 
@@ -81,27 +87,28 @@
 					</thead>
 				</table>
 			</div>
-
-			@can('leads_create')
+			@if(!(Auth::user()->hasRole('sales agent') || Auth::user()->hasRole('sales team leader')))
+				{{--@can('leads_create')--}}
 				<button type="submit" id="button" class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs"
 						value="bulk-email">
 					<span class="">@icon('solid/mail-bulk') @langapp('send_email')</span>
 				</button>
-			@endcan
-			@can('leads_update')
+				{{--@endcan--}}
+				{{--			@can('leads_update')--}}
 				<button type="submit" id="button" class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs"
 						value="bulk-archive">
 					<span class="">@icon('solid/archive') @langapp('archive')</span>
 				</button>
-			@endcan
+				{{--@endcan--}}
 
-			@can('leads_delete')
+				{{--			@can('leads_delete')--}}
 				<button type="submit" id="button" class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs"
 						value="bulk-delete">
 					<span class="">@icon('solid/trash-alt') @langapp('delete')</span>
 				</button>
-			@endcan
+				{{--@endcan--}}
 
+			@endif
 		</form>
 	</section>
 </div>
@@ -130,7 +137,7 @@
 
 					title = title.replace(/\s+/g, '_').toLowerCase();
 
-					if (title == 'local_time'){
+					if (title == 'local_time') {
 						$(this).html('&nbsp');
 						return true;
 					}

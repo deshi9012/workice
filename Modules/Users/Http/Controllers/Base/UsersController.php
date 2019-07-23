@@ -272,8 +272,13 @@ abstract class UsersController extends Controller
     protected function applyFilter()
     {
         if ($this->request->filled('filter')) {
+
             return $this->user->role($this->request->filter);
         }
+        if(Auth::user()->hasRole('desk manager')){
+            return $this->user->role('desk manager');
+        }
+
         return $this->user->query();
     }
 

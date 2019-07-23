@@ -29,6 +29,7 @@ use Modules\Leads\Scopes\LeadScope;
 use Modules\Todos\Entities\Todo;
 use Modules\Users\Entities\Profile;
 use Modules\Users\Entities\User;
+use Modules\Calendar\Entities\Appointment;
 
 class Lead extends Model {
     use Notifiable, Commentable, Todoable, Taggable, Actionable, SoftDeletes, Customizable, Observable, Noteable, Eventable, Uploadable, Remindable, Phoneable, Searchable, Emailable;
@@ -101,6 +102,10 @@ class Lead extends Model {
         'map',
         'map_link'
     ];
+
+    public function appointments() {
+        return $this->hasMany(Appointment::class);
+    }
 
     public function status() {
         return $this->belongsTo(Category::class, 'stage_id', 'id');

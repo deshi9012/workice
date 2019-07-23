@@ -415,7 +415,7 @@ abstract class LeadsController extends Controller {
         $local_timezone = get_local_time();
 
 
-        if ($user->hasRole('admin')) {
+        if ($user->hasRole('admin') || $user->hasRole('office manager')) {
             //Get all leads
             $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
 
@@ -427,6 +427,9 @@ abstract class LeadsController extends Controller {
             //Get all leads under him and under his desk
             $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
         } elseif ($user->hasRole('team manager')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        } elseif ($user->hasRole('desk manager')) {
             //Get all leads under him and under his desk
             $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
         } elseif ($user->hasRole('office manager')) {

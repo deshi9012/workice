@@ -18,7 +18,7 @@
 				<div class="tab-pane fade in active" id="tab-lead-general">
 					<div class="form-group col-md-6 no-gutter-left">
 						<label><?php echo trans('app.'.'fullname'); ?> <span class="text-danger">*</span></label>
-						<?php if( Auth::user()->hasRole('admin') ): ?>
+						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')): ?>
 							<input type="text" name="name" value="<?php echo e($lead->name); ?>" class="input-sm form-control"
 								   required>
 						<?php else: ?>
@@ -28,7 +28,7 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-right">
 						<label><?php echo trans('app.'.'email'); ?> <span class="text-danger">*</span></label>
-						<?php if( Auth::user()->hasRole('admin') ): ?>
+						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')): ?>
 							<input type="email" name="email" value="<?php echo e($lead->email); ?>" class="input-sm form-control"
 								   required>
 						<?php else: ?>
@@ -38,7 +38,7 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						<label><?php echo trans('app.'.'mobile'); ?> </label>
-						<?php if( Auth::user()->hasRole('admin') ): ?>
+						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
 							<input type="text" name="mobile" class="input-sm form-control" value="<?php echo e($lead->mobile); ?>">
 						<?php else: ?>
 							<input type="text" name="mobile" class="input-sm form-control" value="<?php echo e($lead->mobile); ?>"
@@ -47,7 +47,7 @@
 					</div>
 					<div class="col-md-6">
 						<label>Desk <span class="text-danger">*</span></label>
-						<?php if( Auth::user()->hasRole('admin') ): ?>
+						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
 							<select class="select2-option form-control" name="desk">
 								<?php $__currentLoopData = App\Entities\Desk::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<option value="<?php echo e($desk->id); ?>" <?php echo e($desk->id == $lead->desk_id ? ' selected' : ''); ?>><?php echo e($desk->name); ?></option>
@@ -68,7 +68,7 @@
 					
 					<div class="form-group col-md-6 no-gutter-right">
 						<label><?php echo trans('app.'.'source'); ?> </label>
-						<?php if( Auth::user()->hasRole('admin') ): ?>
+						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
 							<select name="source" class="form-control">
 								<?php $__currentLoopData = App\Entities\Category::select('id', 'name')->whereModule('source')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $source): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<option value="<?php echo e($source->id); ?>" <?php echo e($source->id == $lead->source ? ' selected' : ''); ?>><?php echo e($source->name); ?></option>
@@ -92,7 +92,7 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>Language</label>
-						<?php if( Auth::user()->hasRole('admin') ): ?>
+						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
 							<input type="text" name="language" class="input-sm form-control"
 								   value="<?php echo e($lead->language); ?>">
 						<?php else: ?>
@@ -100,10 +100,16 @@
 								   value="<?php echo e($lead->language); ?>" readonly>
 						<?php endif; ?>
 					</div>
-					f
+
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>Courses</label>
-						<input type="text" name="courses" class="input-sm form-control" value="<?php echo e($lead->courses); ?>">
+						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
+							<input type="text" name="courses" class="input-sm form-control"
+								   value="<?php echo e($lead->courses); ?>">
+						<?php else: ?>
+							<input type="text" name="courses" class="input-sm form-control" value="<?php echo e($lead->courses); ?>"
+								   readonly>
+						<?php endif; ?>
 					</div>
 					<div class="form-group col-md-6 no-gutter-left">
 						
@@ -118,7 +124,11 @@
 					</div>
 					<div class="form-group col-md-6 no-gutter-right">
 						<label>Change password</label>
-						<input type="text" name="change_password" class="input-sm form-control" value="">
+						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
+							<input type="text" name="change_password" class="input-sm form-control" value="">
+						<?php else: ?>
+							<input type="text" name="change_password" class="input-sm form-control" value="" readonly>
+						<?php endif; ?>
 					</div>
 
 					<div class="row">
@@ -135,27 +145,49 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label><?php echo trans('app.'.'sales_rep'); ?></label>
-							<select class="select2-option form-control" name="sales_rep" required>
-								<?php $__currentLoopData = app('user')->permission('leads_create')->offHoliday()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-									<option value="<?php echo e($user->id); ?>" <?php echo e($user->id == $lead->sales_rep ? ' selected' : ''); ?>><?php echo e($user->name); ?></option>
-								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-							</select>
+							<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('sales team leader') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')): ?>
+								<select class="select2-option form-control" name="sales_rep" required>
+									<?php $__currentLoopData = app('user')->permission('leads_create')->offHoliday()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<option value="<?php echo e($user->id); ?>" <?php echo e($user->id == $lead->sales_rep ? ' selected' : ''); ?>><?php echo e($user->name); ?></option>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</select>
+							<?php else: ?>
+								<select class="select2-option form-control" name="sales_rep" required disabled>
+									<?php $__currentLoopData = app('user')->permission('leads_create')->offHoliday()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<option value="<?php echo e($user->id); ?>" <?php echo e($user->id == $lead->sales_rep ? ' selected' : ''); ?>><?php echo e($user->name); ?></option>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</select>
+							<?php endif; ?>
 						</div>
 						<div class="form-group col-md-6">
 							<label><?php echo e(langapp('timezone')); ?> </label>
-							<select class="select2-option form-control" name="timezone" required>
-								<?php $__currentLoopData = timezones(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $timezone => $description): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-									<option value="<?php echo e($timezone); ?>"<?php echo e($lead->timezone == $timezone ? ' selected' : ''); ?>><?php echo e($description); ?></option>
-								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-							</select>
+							<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
+								<select class="select2-option form-control" name="timezone" required>
+									<?php $__currentLoopData = timezones(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $timezone => $description): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<option value="<?php echo e($timezone); ?>"<?php echo e($lead->timezone == $timezone ? ' selected' : ''); ?>><?php echo e($description); ?></option>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</select>
+							<?php else: ?>
+								<select class="select2-option form-control" name="timezone" disabled>
+									<?php $__currentLoopData = timezones(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $timezone => $description): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<option value="<?php echo e($timezone); ?>"<?php echo e($lead->timezone == $timezone ? ' selected' : ''); ?>><?php echo e($description); ?></option>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</select>
+							<?php endif; ?>
 						</div>
 						<div class="form-group col-md-6">
 							<label><?php echo trans('app.'.'state'); ?> </label>
-							<input type="text" value="<?php echo e($lead->state); ?>" name="state" class="input-sm form-control">
+							<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
+								<input type="text" value="<?php echo e($lead->state); ?>" name="state"
+									   class="input-sm form-control">
+							<?php else: ?>
+								<input type="text" value="<?php echo e($lead->state); ?>" name="state" class="input-sm form-control"
+									   readonly>
+							<?php endif; ?>
 						</div>
 						<div class="form-group col-md-6">
 							<label><?php echo trans('app.'.'country'); ?> </label>
-							<?php if( Auth::user()->hasRole('admin') ): ?>
+							<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
 								<select class="form-control select2-option" name="country">
 									<?php $__currentLoopData = countries(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<option value="<?php echo e($country['name']); ?>" <?php echo e($country['name'] == $lead->country ? 'selected' : ''); ?>><?php echo e($country['name']); ?>

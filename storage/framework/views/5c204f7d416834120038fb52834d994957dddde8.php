@@ -17,6 +17,7 @@
 					</a>
 				</div>
 
+				<?php if(!(Auth::user()->hasRole('sales agent') || Auth::user()->hasRole('sales team leader'))): ?>
 				<div class="btn-group">
 					<button class="btn btn-<?php echo e(get_option('theme_color')); ?> btn-sm dropdown-toggle"
 							data-toggle="dropdown"> <?php echo trans('app.'.'filter'); ?>
@@ -40,10 +41,13 @@
 						</li>
 					</ul>
 				</div>
+				<?php endif; ?>
+				<?php if(!Auth::user()->hasRole('sales agent')): ?>
 				<a href="<?php echo e(route('leads.create')); ?>" data-toggle="ajaxModal" data-rel="tooltip"
 				   title="<?php echo trans('app.'.'create'); ?>" class="btn btn-sm btn-<?php echo e(get_option('theme_color')); ?>">
 					<?php echo e(svg_image('solid/plus')); ?> <?php echo trans('app.'.'create'); ?>
 				</a>
+				<?php endif; ?>
 
 				<?php if (\Illuminate\Support\Facades\Blade::check('admin')): ?>
 				<a href="<?php echo e(route('settings.stages.show', 'leads')); ?>" data-toggle="ajaxModal"

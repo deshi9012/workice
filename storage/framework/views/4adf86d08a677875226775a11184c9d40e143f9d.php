@@ -1,14 +1,16 @@
-
 <style>
-	input#id, input#desk,input#source, input#language,input#courses, input#sales_rep{
+	input#id, input#desk, input#source, input#language, input#courses, input#sales_rep {
 		width: 50px;
 	}
-	input#name{
+
+	input#name {
 		width: 170px;
 	}
-	input#stage{
-		width:100px;
+
+	input#stage {
+		width: 100px;
 	}
+
 	ul {
 		list-style: none;
 		padding: 0;
@@ -19,21 +21,25 @@
 		padding-left: 1em;
 		text-indent: -.3em;
 	}
+
 	.red::before {
 		content: "• ";
 		color: red; /* or whatever color you prefer */
 		font-size: 1.7em;
 	}
+
 	.green::before {
 		content: "• ";
 		color: green; /* or whatever color you prefer */
 		font-size: 170%;
 	}
-	.table-responsive{
+
+	.table-responsive {
 		max-height: 80vh;
 	}
+
 	/*table#leads-table{*/
-		/*max-height: 50vh;*/
+	/*max-height: 50vh;*/
 	/*}*/
 
 
@@ -81,27 +87,28 @@
 					</thead>
 				</table>
 			</div>
-
-			<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('leads_create')): ?>
+			<?php if(!(Auth::user()->hasRole('sales agent') || Auth::user()->hasRole('sales team leader'))): ?>
+				
 				<button type="submit" id="button" class="btn btn-sm btn-<?php echo e(get_option('theme_color')); ?> m-xs"
 						value="bulk-email">
 					<span class=""><?php echo e(svg_image('solid/mail-bulk')); ?> <?php echo trans('app.'.'send_email'); ?></span>
 				</button>
-			<?php endif; ?>
-			<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('leads_update')): ?>
+				
+				
 				<button type="submit" id="button" class="btn btn-sm btn-<?php echo e(get_option('theme_color')); ?> m-xs"
 						value="bulk-archive">
 					<span class=""><?php echo e(svg_image('solid/archive')); ?> <?php echo trans('app.'.'archive'); ?></span>
 				</button>
-			<?php endif; ?>
+				
 
-			<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('leads_delete')): ?>
+				
 				<button type="submit" id="button" class="btn btn-sm btn-<?php echo e(get_option('theme_color')); ?> m-xs"
 						value="bulk-delete">
 					<span class=""><?php echo e(svg_image('solid/trash-alt')); ?> <?php echo trans('app.'.'delete'); ?></span>
 				</button>
-			<?php endif; ?>
+				
 
+			<?php endif; ?>
 		</form>
 	</section>
 </div>
@@ -130,7 +137,7 @@
 
 					title = title.replace(/\s+/g, '_').toLowerCase();
 
-					if (title == 'local_time'){
+					if (title == 'local_time') {
 						$(this).html('&nbsp');
 						return true;
 					}

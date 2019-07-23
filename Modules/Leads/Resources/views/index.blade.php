@@ -18,6 +18,7 @@
 					</a>
 				</div>
 
+				@if(!(Auth::user()->hasRole('sales agent') || Auth::user()->hasRole('sales team leader')))
 				<div class="btn-group">
 					<button class="btn btn-{{ get_option('theme_color') }} btn-sm dropdown-toggle"
 							data-toggle="dropdown"> @langapp('filter')
@@ -41,10 +42,13 @@
 						</li>
 					</ul>
 				</div>
+				@endif
+				@if(!Auth::user()->hasRole('sales agent'))
 				<a href="{{  route('leads.create')  }}" data-toggle="ajaxModal" data-rel="tooltip"
 				   title="@langapp('create')" class="btn btn-sm btn-{{ get_option('theme_color') }}">
 					@icon('solid/plus') @langapp('create')
 				</a>
+				@endif
 
 				@admin
 				<a href="{{ route('settings.stages.show', 'leads') }}" data-toggle="ajaxModal"

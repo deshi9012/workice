@@ -52,6 +52,7 @@ class UsersApiController extends Controller
     public function show($id = null)
     {
         $user = $this->user->findOrFail($id);
+
         return response(new UserResource($user), Response::HTTP_OK);
     }
 
@@ -81,9 +82,12 @@ class UsersApiController extends Controller
 
     public function update(UserRequest $request, $id = null)
     {
+        logger($request->all());
         $this->checkPassword($request);
         $user = $this->user->findOrFail($id);
         $user->update($request->all());
+        $user->desk_id = $request->all()['desk'];
+        $user->save();
         $user->profile->update($request->all());
         $user->syncRoles($request->roles);
         event(new UserUpdated($user));
