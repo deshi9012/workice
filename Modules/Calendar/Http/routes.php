@@ -12,7 +12,7 @@ Route::group(
         Route::get('feed/{token}', 'FeedController@feed')->name('calendar.feed');
         Route::get('ical', 'CalendarCustomController@ical')->name('calendar.ical');
         Route::get('appointments', 'CalendarCustomController@appointments')->name('calendar.appointments')->middleware('can:menu_calendar');
-        Route::get('appointments/create', 'CalendarCustomController@createAppointment')->name('calendar.create.appointment')->middleware('can:menu_calendar');
+        Route::get('appointments/create/{lead_id?}', 'CalendarCustomController@createAppointment')->name('calendar.create.appointment')->middleware('can:menu_calendar');
         Route::get('appointments/edit/{id}', 'CalendarCustomController@editAppointment')->name('calendar.edit.appointment')->middleware('can:menu_calendar');
         Route::get('appointments/view/{id}', 'CalendarCustomController@viewAppointment')->name('calendar.view.appointment')->middleware('can:menu_calendar');
 

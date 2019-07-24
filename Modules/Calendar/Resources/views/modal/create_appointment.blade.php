@@ -2,7 +2,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">@langapp('appointments')  </h4>
+            <h4 class="modal-title">@langapp('appointments') </h4>
         </div>
         {!! Form::open(['route' => 'appointments.api.save', 'class' => 'bs-example form-horizontal ajaxifyForm', 'data-toggle' => 'validator']) !!}
         
@@ -38,7 +38,8 @@
                     <select class="select2-option form-control" name="lead_id">
                         <option value="0">---None---</option>
                         @foreach (Modules\Leads\Entities\Lead::select('id', 'name')->whereNull('archived_at')->get() as $lead)
-                        <option value="{{  $lead->id  }}">{{  $lead->name }}</option>
+                        <option value="{{  $lead->id  }}" {{$lead->id == $lead_id ? 'selected' : '' }}>{{  $lead->name }}</option>
+
                         @endforeach
                     </select>
                 </div>

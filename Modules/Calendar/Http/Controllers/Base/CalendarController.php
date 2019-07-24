@@ -56,8 +56,10 @@ abstract class CalendarController extends Controller {
         return view('calendar::modal.create')->with($data);
     }
 
-    public function createAppointment() {
-        return view('calendar::modal.create_appointment');
+    public function createAppointment($id = null) {
+
+
+        return view('calendar::modal.create_appointment')->with(['lead_id'=>$id]);
     }
 
     public function viewAppointment($id = null) {

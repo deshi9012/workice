@@ -4,13 +4,21 @@
 
 			@can('events_create')
 
-				<a href="{{  route('calendar.create', ['module' => 'leads', 'id' => $lead->id])  }}"
-				   class="btn btn-xs btn-{{ get_option('theme_color') }} pull-right" data-toggle="ajaxModal">
-					@icon('solid/calendar-plus') @langapp('schedule_event') </a>
+				{{--<a href="{{  route('calendar.create', ['module' => 'leads', 'id' => $lead->id])  }}"--}}
+				   {{--class="btn btn-xs btn-{{ get_option('theme_color') }} pull-right" data-toggle="ajaxModal">--}}
+					{{--@icon('solid/calendar-plus') @langapp('schedule_event')ssss</a>--}}
+
+
+				<a href="/calendar/appointments/create/{{$lead->id}}" data-toggle="ajaxModal"
+				   class="btn btn-sm btn-{{ get_option('theme_color') }}">
+					@icon('solid/calendar-plus') @langapp('add_appointment')</a>
+
+				{{--<a href="{{ route('calendar.create.appointment') }}" data-toggle="ajaxModal"--}}
+				   {{--class="btn btn-sm btn-{{ get_option('theme_color') }}">--}}
 
 			@endcan
 
-			@icon('solid/calendar-alt') @langapp('calendar')
+			{{--@icon('solid/calendar-alt') @langapp('calendar')--}}
 		</header>
 
 		<section class="panel panel-body">

@@ -4,13 +4,21 @@
 
 			<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('events_create')): ?>
 
-				<a href="<?php echo e(route('calendar.create', ['module' => 'leads', 'id' => $lead->id])); ?>"
-				   class="btn btn-xs btn-<?php echo e(get_option('theme_color')); ?> pull-right" data-toggle="ajaxModal">
-					<?php echo e(svg_image('solid/calendar-plus')); ?> <?php echo trans('app.'.'schedule_event'); ?> </a>
+				
+				   
+					
+
+
+				<a href="/calendar/appointments/create/<?php echo e($lead->id); ?>" data-toggle="ajaxModal"
+				   class="btn btn-sm btn-<?php echo e(get_option('theme_color')); ?>">
+					<?php echo e(svg_image('solid/calendar-plus')); ?> <?php echo trans('app.'.'add_appointment'); ?></a>
+
+				
+				   
 
 			<?php endif; ?>
 
-			<?php echo e(svg_image('solid/calendar-alt')); ?> <?php echo trans('app.'.'calendar'); ?>
+			
 		</header>
 
 		<section class="panel panel-body">

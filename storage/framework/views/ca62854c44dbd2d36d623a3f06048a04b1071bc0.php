@@ -2,7 +2,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><?php echo trans('app.'.'appointments'); ?>  </h4>
+            <h4 class="modal-title"><?php echo trans('app.'.'appointments'); ?> </h4>
         </div>
         <?php echo Form::open(['route' => 'appointments.api.save', 'class' => 'bs-example form-horizontal ajaxifyForm', 'data-toggle' => 'validator']); ?>
 
@@ -39,7 +39,8 @@
                     <select class="select2-option form-control" name="lead_id">
                         <option value="0">---None---</option>
                         <?php $__currentLoopData = Modules\Leads\Entities\Lead::select('id', 'name')->whereNull('archived_at')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lead): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($lead->id); ?>"><?php echo e($lead->name); ?></option>
+                        <option value="<?php echo e($lead->id); ?>" <?php echo e($lead->id == $lead_id ? 'selected' : ''); ?>><?php echo e($lead->name); ?></option>
+
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </div>
