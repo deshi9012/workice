@@ -588,7 +588,6 @@ abstract class LeadsController extends Controller {
 //                $q->where('email', 'like', '%' . $this->searchFields['email'] . '%');
 //            }
 
-
             foreach ($this->searchFields as $searchField => $searchValue) {
                 if ($searchValue != 'false') {
                     //Check if field contains  time

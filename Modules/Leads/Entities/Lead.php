@@ -287,7 +287,14 @@ class Lead extends Model {
         return $query->with('agent')->whereHas('agent', function ($q) use ($value) {
             $q->where('name', 'like', '%' . $value . '%');
         });
-    }public function scopeDesk($query, $value) {
+    }
+    public function scopeStage($query, $value) {
+        return $query->with('status')->whereHas('status', function ($q) use ($value) {
+            $q->where('name', 'like', '%' . $value . '%');
+        });
+    }
+
+    public function scopeDesk($query, $value) {
         return $query->with('desk')->whereHas('desk', function ($q) use ($value) {
             $q->where('name', 'like', '%' . $value . '%');
         });

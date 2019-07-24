@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7c0520f-514d-4eb0-9f2d-a143941ea56c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Calendar/Http/Controllers/Base/CalendarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Calendar/Http/Controllers/Base/CalendarController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Calendar/Http/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Calendar/Http/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Calendar/Resources/views/modal/create_appointment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Calendar/Resources/views/modal/create_appointment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_calendar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_calendar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/NhLvoY1SmW0ysrBvzkIJdpTARLDbqcMiUiobDPYx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/09c64686ae30afd6b074bbdd22c23f49fd13cdcf.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/09c64686ae30afd6b074bbdd22c23f49fd13cdcf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/ca62854c44dbd2d36d623a3f06048a04b1071bc0.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/ca62854c44dbd2d36d623a3f06048a04b1071bc0.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-01.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/4SNQ5yoJh9gOVVP0UttVog0CHNm6HYRf4Wm0XZUS" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/4SNQ5yoJh9gOVVP0UttVog0CHNm6HYRf4Wm0XZUS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-24.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-07-24.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UsersApiController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Users/Http/Controllers/Api/v1/UsersApiController.php">
+      <file leaf-file-name="LeadsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="231">
+              <caret line="589" selection-start-line="589" selection-end-line="589" />
             </state>
           </provider>
         </entry>
@@ -41,8 +36,8 @@
       <file leaf-file-name="Lead.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2370">
-              <caret line="106" column="50" selection-start-line="106" selection-start-column="50" selection-end-line="106" selection-end-column="50" />
+            <state relative-caret-position="5927">
+              <caret line="291" column="55" selection-start-line="291" selection-start-column="55" selection-end-line="291" selection-end-column="55" />
               <folding>
                 <element signature="e#42#68#0#PHP" expanded="true" />
               </folding>
@@ -83,7 +78,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_calendar.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_calendar.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_calendar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="630">
@@ -132,12 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DataTa</find>
-      <find>datatable</find>
-      <find>datatabl</find>
-      <find>scroll</find>
-      <find>view(</find>
-      <find>main</find>
       <find>DataTables</find>
       <find>countr</find>
       <find>langu</find>
@@ -148,7 +137,6 @@
       <find>user</find>
       <find>delete</find>
       <find>select</find>
-      <find>sales</find>
       <find>timezone</find>
       <find>save</find>
       <find>update</find>
@@ -162,6 +150,13 @@
       <find>lead</find>
       <find>appointm</find>
       <find>create</find>
+      <find>dataTa</find>
+      <find>datata</find>
+      <find>sales</find>
+      <find>scope</find>
+      <find>agent</find>
+      <find>stage</find>
+      <find>Stage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -214,13 +209,13 @@
         <option value="$PROJECT_DIR$/Modules/Users/Http/Controllers/Api/v1/UsersApiController.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Http/Controllers/Base/UsersController.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Resources/views/index.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" />
         <option value="$PROJECT_DIR$/Modules/Calendar/Http/routes.php" />
         <option value="$PROJECT_DIR$/Modules/Calendar/Http/Controllers/Base/CalendarController.php" />
         <option value="$PROJECT_DIR$/Modules/Calendar/Resources/views/modal/create_appointment.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_calendar.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" />
       </list>
     </option>
   </component>
@@ -615,12 +610,12 @@
       <workItem from="1562844569501" duration="33717000" />
       <workItem from="1563169061012" duration="46286000" />
       <workItem from="1563777642639" duration="47182000" />
-      <workItem from="1563980552662" duration="2163000" />
+      <workItem from="1563980552662" duration="3452000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334500000" />
+    <option name="totallyTimeSpent" value="335789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
@@ -979,13 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11880">
-          <caret line="417" column="69" selection-start-line="417" selection-start-column="69" selection-end-line="417" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Users/Http/Controllers/Api/v1/UsersApiController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
@@ -1006,16 +994,6 @@
           <caret line="20" column="13" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="13" />
           <folding>
             <element signature="e#45#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2370">
-          <caret line="106" column="50" selection-start-line="106" selection-start-column="50" selection-end-line="106" selection-end-column="50" />
-          <folding>
-            <element signature="e#42#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1069,6 +1047,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Entities/Lead.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5927">
+          <caret line="291" column="55" selection-start-line="291" selection-start-column="55" selection-end-line="291" selection-end-column="55" />
+          <folding>
+            <element signature="e#42#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="589" selection-start-line="589" selection-end-line="589" />
         </state>
       </provider>
     </entry>
