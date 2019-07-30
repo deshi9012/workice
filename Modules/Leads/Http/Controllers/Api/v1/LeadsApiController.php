@@ -64,6 +64,9 @@ class LeadsApiController extends Controller
      */
     public function save(LeadsRequest $request)
     {
+        logger('api start');
+        logger($request->all());
+        logger('api end');
         if(!$request->desk){
             $request->desk = 1;
         }
