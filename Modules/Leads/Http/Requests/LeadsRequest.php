@@ -23,6 +23,7 @@ class LeadsRequest extends FormRequest
      */
     public function rules()
     {
+        
         return [
             'email' => 'required|email',
             'desk' => 'required',

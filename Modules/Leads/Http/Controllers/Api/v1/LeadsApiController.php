@@ -65,7 +65,7 @@ class LeadsApiController extends Controller
     public function save(LeadsRequest $request)
     {
         logger('api start');
-        logger($request->all());
+        logger($request);
         logger('api end');
         if(!$request->desk){
             $request->desk = 1;
@@ -88,6 +88,7 @@ class LeadsApiController extends Controller
      */
     public function update(LeadsRequest $request, $id = null)
     {
+
         $request->validate(['email' => 'unique:leads,email,'.$id]);
         $lead = $this->lead->findOrFail($id);
         $lead->update($request->except(['custom', 'tags']));

@@ -54,7 +54,7 @@
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							</select>
 						<?php else: ?>
-							<select class="select2-option form-control" name="desk" disabled>
+							<select class="select2-option form-control" name="desk" readonly="readonly">
 								<?php $__currentLoopData = App\Entities\Desk::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<option value="<?php echo e($desk->id); ?>"
 											<?php echo e($desk->id == $lead->desk_id ? ' selected' : ''); ?> > <?php echo e($desk->name); ?></option>
@@ -75,7 +75,7 @@
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							</select>
 						<?php else: ?>
-							<select name="source" class="form-control" disabled>
+							<select name="source" class="form-control" readonly="readonly">
 								<?php $__currentLoopData = App\Entities\Category::select('id', 'name')->whereModule('source')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $source): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<option value="<?php echo e($source->id); ?>" <?php echo e($source->id == $lead->source ? ' selected' : ''); ?>><?php echo e($source->name); ?></option>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -152,7 +152,7 @@
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</select>
 							<?php else: ?>
-								<select class="select2-option form-control" name="sales_rep" required disabled>
+								<select class="select2-option form-control" name="sales_rep" required readonly="readonly">
 									<?php $__currentLoopData = app('user')->permission('leads_create')->offHoliday()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<option value="<?php echo e($user->id); ?>" <?php echo e($user->id == $lead->sales_rep ? ' selected' : ''); ?>><?php echo e($user->name); ?></option>
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -168,7 +168,7 @@
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</select>
 							<?php else: ?>
-								<select class="select2-option form-control" name="timezone" disabled>
+								<select class="select2-option form-control" name="timezone" readonly="readonly">
 									<?php $__currentLoopData = timezones(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $timezone => $description): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<option value="<?php echo e($timezone); ?>"<?php echo e($lead->timezone == $timezone ? ' selected' : ''); ?>><?php echo e($description); ?></option>
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -196,7 +196,7 @@
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</select>
 							<?php else: ?>
-								<select class="form-control select2-option" name="country" disabled>
+								<select class="form-control select2-option" name="country" readonly="readonly">
 									<?php $__currentLoopData = countries(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<option value="<?php echo e($country['name']); ?>" <?php echo e($country['name'] == $lead->country ? 'selected' : ''); ?>><?php echo e($country['name']); ?>
 

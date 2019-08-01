@@ -4,15 +4,18 @@
     <list default="true" id="b7c0520f-514d-4eb0-9f2d-a143941ea56c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/55/00/550008145734ab00035e72ede0c41369fdbbceb4" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/55/00/550008145734ab00035e72ede0c41369fdbbceb4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/69/ee/69ee74b4c0a6a886215347f3d3e6479d75a33f2b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/69/ee/69ee74b4c0a6a886215347f3d3e6479d75a33f2b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/6c/05/6c053e87f8b9649fec29937aadac4ad5fde44ff5" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/6c/05/6c053e87f8b9649fec29937aadac4ad5fde44ff5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/55/00/550008145734ab00035e72ede0c41369fdbbceb4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/78/9a/789a6f7d6e62d34b05455da7531721b051a49eaf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/78/9a/789a6f7d6e62d34b05455da7531721b051a49eaf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/85/5f/855f92484c8c414d36c1b25cb24876e30229cbbf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/85/5f/855f92484c8c414d36c1b25cb24876e30229cbbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/9a/e9/9ae94dc50e558db7ffe1a815095ce67c2ec993b1" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/9a/e9/9ae94dc50e558db7ffe1a815095ce67c2ec993b1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/73/ec734b651574683f36974c7f12847fbbe084dbe2" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/73/ec734b651574683f36974c7f12847fbbe084dbe2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-02.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/9a/e9/9ae94dc50e558db7ffe1a815095ce67c2ec993b1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/a8/71/a87162cced83043b4310f95785defdda47d30fa2" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/a8/71/a87162cced83043b4310f95785defdda47d30fa2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c8/f8/c8f84b8f63744f12d58615c5a8c69686b1efef10" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c8/f8/c8f84b8f63744f12d58615c5a8c69686b1efef10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/dcb7c985df0610295e8ba856af67d41456eae268.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/dcb7c985df0610295e8ba856af67d41456eae268.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-07-30.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,17 +35,35 @@
       <file leaf-file-name="LeadsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1316">
-              <caret line="603" column="51" lean-forward="true" selection-start-line="603" selection-start-column="51" selection-end-line="603" selection-end-column="51" />
+            <state relative-caret-position="331">
+              <caret line="287" column="35" selection-start-line="287" selection-start-column="31" selection-end-line="287" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeadsApiController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LeadsApiController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+            <state relative-caret-position="771">
+              <caret line="88" column="37" lean-forward="true" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeadsRequest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="715">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="196" column="110" selection-start-line="196" selection-start-column="110" selection-end-line="196" selection-end-column="110" />
             </state>
           </provider>
         </entry>
@@ -51,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/api.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -59,8 +80,8 @@
       <file leaf-file-name="LeadObserver.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+            <state relative-caret-position="1410">
+              <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -73,15 +94,6 @@
               <folding>
                 <element signature="e#42#68#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="table_view.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3450">
-              <caret line="115" column="37" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -113,20 +125,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalendarController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Calendar/Http/Controllers/Base/CalendarController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1740">
-              <caret line="61" column="76" selection-start-line="61" selection-start-column="76" selection-end-line="61" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DataTables</find>
       <find>countr</find>
       <find>langu</find>
       <find>view</find>
@@ -137,8 +139,6 @@
       <find>delete</find>
       <find>select</find>
       <find>timezone</find>
-      <find>save</find>
-      <find>update</find>
       <find>app</find>
       <find>f</find>
       <find>filter</find>
@@ -156,6 +156,9 @@
       <find>agent</find>
       <find>stage</find>
       <find>Stage</find>
+      <find>save</find>
+      <find>update</find>
+      <find>disabled</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Modules/Users/Resources/views/permissions.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Resources/views/tab/overview.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Resources/views/view.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Resources/views/roles.blade.php" />
@@ -183,7 +185,6 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-07-12.log" />
         <option value="$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/create.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Entities/Desk.php" />
@@ -207,14 +208,16 @@
         <option value="$PROJECT_DIR$/Modules/Users/Http/Controllers/Api/v1/UsersApiController.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Http/Controllers/Base/UsersController.php" />
         <option value="$PROJECT_DIR$/Modules/Users/Resources/views/index.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Calendar/Http/routes.php" />
         <option value="$PROJECT_DIR$/Modules/Calendar/Http/Controllers/Base/CalendarController.php" />
         <option value="$PROJECT_DIR$/Modules/Calendar/Resources/views/modal/create_appointment.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_calendar.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Entities/Lead.php" />
+        <option value="$PROJECT_DIR$/storage/logs/laravel-2019-07-30.log" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php" />
       </list>
     </option>
   </component>
@@ -441,6 +444,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -457,35 +461,20 @@
               <item name="workice" type="b2602c69:ProjectViewProjectNode" />
               <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Calendar" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="workice" type="b2602c69:ProjectViewProjectNode" />
               <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Calendar" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Calendar" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Calendar" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="workice" type="b2602c69:ProjectViewProjectNode" />
               <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Calendar" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
@@ -493,7 +482,7 @@
               <item name="workice" type="b2602c69:ProjectViewProjectNode" />
               <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Calendar" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Leads" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="modal" type="2a2b976b:PhpTreeStructureProvider$1" />
@@ -555,11 +544,21 @@
               <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workice" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="logs" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -610,12 +609,13 @@
       <workItem from="1563169061012" duration="46286000" />
       <workItem from="1563777642639" duration="47182000" />
       <workItem from="1563980552662" duration="5183000" />
-      <workItem from="1564483268628" duration="2434000" />
+      <workItem from="1564483268628" duration="4910000" />
+      <workItem from="1564654904116" duration="624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="339954000" />
+    <option name="totallyTimeSpent" value="343054000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
@@ -628,7 +628,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32962963" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4981203" visible="true" weight="0.23162939" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4981203" visible="true" weight="0.23375931" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -647,22 +647,22 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4981203" visible="true" weight="0.22736955" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3298872" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32962963" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3298872" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="3" sideWeight="0.5018797" side_tool="true" weight="0.22736955" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,10 +703,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Modules/Calendar/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="121" selection-start-line="16" selection-start-column="96" selection-end-line="16" selection-end-column="121" />
+        <state relative-caret-position="1710">
+          <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -953,20 +953,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2965">
-          <caret line="188" column="147" selection-start-line="188" selection-start-column="147" selection-end-line="188" selection-end-column="147" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Calendar/Entities/Appointment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="e#45#74#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -974,9 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7980">
           <caret line="274" selection-start-line="274" selection-end-line="274" />
-          <folding>
-            <element signature="e#55#91#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,38 +1019,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1316">
-          <caret line="603" column="51" lean-forward="true" selection-start-line="603" selection-start-column="51" selection-end-line="603" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+        <state relative-caret-position="1410">
+          <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php">
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="331">
+          <caret line="287" column="35" selection-start-line="287" selection-start-column="31" selection-end-line="287" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+        <state relative-caret-position="771">
+          <caret line="88" column="37" lean-forward="true" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="196" column="110" selection-start-line="196" selection-start-column="110" selection-end-line="196" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Requests/LeadsRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
         </state>
       </provider>
     </entry>

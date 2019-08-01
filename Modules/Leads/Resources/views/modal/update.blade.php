@@ -53,7 +53,7 @@
 								@endforeach
 							</select>
 						@else
-							<select class="select2-option form-control" name="desk" disabled>
+							<select class="select2-option form-control" name="desk" readonly="readonly">
 								@foreach (App\Entities\Desk::all() as $desk)
 									<option value="{{  $desk->id  }}"
 											{{ $desk->id == $lead->desk_id ? ' selected' : ''}} > {{  $desk->name }}</option>
@@ -74,7 +74,7 @@
 								@endforeach
 							</select>
 						@else
-							<select name="source" class="form-control" disabled>
+							<select name="source" class="form-control" readonly="readonly">
 								@foreach (App\Entities\Category::select('id', 'name')->whereModule('source')->get() as $source)
 									<option value="{{ $source->id }}" {{ $source->id == $lead->source ? ' selected' : '' }}>{{ $source->name }}</option>
 								@endforeach
@@ -151,7 +151,7 @@
 									@endforeach
 								</select>
 							@else
-								<select class="select2-option form-control" name="sales_rep" required disabled>
+								<select class="select2-option form-control" name="sales_rep" required readonly="readonly">
 									@foreach (app('user')->permission('leads_create')->offHoliday()->get() as $user)
 										<option value="{{ $user->id }}" {{ $user->id == $lead->sales_rep ? ' selected' : '' }}>{{  $user->name }}</option>
 									@endforeach
@@ -167,7 +167,7 @@
 									@endforeach
 								</select>
 							@else
-								<select class="select2-option form-control" name="timezone" disabled>
+								<select class="select2-option form-control" name="timezone" readonly="readonly">
 									@foreach (timezones() as $timezone => $description)
 										<option value="{{ $timezone }}"{{  $lead->timezone == $timezone ? ' selected' : ''  }}>{{  $description  }}</option>
 									@endforeach
@@ -194,7 +194,7 @@
 									@endforeach
 								</select>
 							@else
-								<select class="form-control select2-option" name="country" disabled>
+								<select class="form-control select2-option" name="country" readonly="readonly">
 									@foreach (countries() as $country)
 										<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}
 										</option>
