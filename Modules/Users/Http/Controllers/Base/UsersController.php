@@ -276,7 +276,7 @@ abstract class UsersController extends Controller
             return $this->user->role($this->request->filter);
         }
         if(Auth::user()->hasRole('desk manager')){
-            return $this->user->role('desk manager');
+            return $this->user->role('desk manager')->where('desk_id',Auth::user()->desk_id);
         }
 
         return $this->user->query();
