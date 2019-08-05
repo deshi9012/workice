@@ -2082,3 +2082,5 @@ Stack trace:
 #63 /home/vagrant/code/workice/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #64 {main}
 "} 
+[2019-08-05 19:06:36] development.DEBUG: Europe/Malta  
+[2019-08-05 19:06:36] development.DEBUG: 18:06:36  
