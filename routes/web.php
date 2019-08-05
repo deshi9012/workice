@@ -11,6 +11,7 @@ use Modules\Leads\Entities\Lead;
 |
  */
 
+
 Route::get('/', 'Welcome@index')->middleware(['auth']);
 
 

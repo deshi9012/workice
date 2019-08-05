@@ -512,6 +512,10 @@ abstract class LeadsController extends Controller {
 
 //            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()->setTimezone($lead->timezone))->format('H:i:s');
             $carbon = Carbon::now()->tz($lead->timezone)->format('H:i:s');
+            if($lead->timezone == 'Europe/Malta') {
+                logger($lead->timezone);
+                logger($carbon);
+            }
             return $carbon;
 //            return $carbon->tz($lead->timezone)->toTimeString();
         })->rawColumns([

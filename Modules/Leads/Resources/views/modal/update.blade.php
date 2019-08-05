@@ -46,14 +46,18 @@
 					</div>
 					<div class="col-md-6">
 						<label>Desk @required</label>
-						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
+
+						@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager'))
+
 							<select class="select2-option form-control" name="desk">
 								@foreach (App\Entities\Desk::all() as $desk)
-									<option value="{{  $desk->id  }}" {{ $desk->id == $lead->desk_id ? ' selected' : ''}}>{{  $desk->name }}</option>
+									<option value="{{  $desk->id  }}" {{ $desk->id == $lead->desk_id ? 'selected' : ''}}>{{  $desk->name }}</option>
 								@endforeach
 							</select>
 						@else
-							<select class="select2-option form-control" name="desk" readonly="readonly">
+							<input type="hidden" name="desk" value={{$lead->desk_id}}/>
+
+							<select class="select2-option form-control" name="desk" disabled>
 								@foreach (App\Entities\Desk::all() as $desk)
 									<option value="{{  $desk->id  }}"
 											{{ $desk->id == $lead->desk_id ? ' selected' : ''}} > {{  $desk->name }}</option>
@@ -144,16 +148,19 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label>@langapp('sales_rep')</label>
+
 							@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('sales team leader') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager'))
 								<select class="select2-option form-control" name="sales_rep" required>
-									@foreach (app('user')->permission('leads_create')->offHoliday()->get() as $user)
+									@foreach (app('user')->get() as $user)
 										<option value="{{ $user->id }}" {{ $user->id == $lead->sales_rep ? ' selected' : '' }}>{{  $user->name }}</option>
 									@endforeach
 								</select>
 							@else
-								<select class="select2-option form-control" name="sales_rep" required readonly="readonly">
-									@foreach (app('user')->permission('leads_create')->offHoliday()->get() as $user)
-										<option value="{{ $user->id }}" {{ $user->id == $lead->sales_rep ? ' selected' : '' }}>{{  $user->name }}</option>
+								<input type="hidden" name="sales_rep" value={{$lead->sales_rep}}/>
+								<select class="select2-option form-control" name="sales_rep" required disabled>
+									@foreach (app('user')->get() as $user)
+
+										<option value="{{ $user->id }}"{{ $lead->sales_rep == $user->id ? ' selected' : '' }}>{{  $user->name }}</option>
 									@endforeach
 								</select>
 							@endif
@@ -167,7 +174,8 @@
 									@endforeach
 								</select>
 							@else
-								<select class="select2-option form-control" name="timezone" readonly="readonly">
+								<input type="hidden" name="timezone" value={{$lead->timezone}} >
+								<select class="select2-option form-control" name="timezone" disabled>
 									@foreach (timezones() as $timezone => $description)
 										<option value="{{ $timezone }}"{{  $lead->timezone == $timezone ? ' selected' : ''  }}>{{  $description  }}</option>
 									@endforeach
@@ -194,7 +202,9 @@
 									@endforeach
 								</select>
 							@else
-								<select class="form-control select2-option" name="country" readonly="readonly">
+								<input type="hidden" name="country" value={{$lead->country}}/>
+
+								<select class="form-control select2-option" name="country" disabled>
 									@foreach (countries() as $country)
 										<option value="{{ $country['name'] }}" {{ $country['name'] == $lead->country ? 'selected' : '' }}>{{ $country['name'] }}
 										</option>
@@ -205,6 +215,7 @@
 						</div>
 						<div class="form-group col-md-11">
 							<label>@langapp('tags') </label>
+							@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
 							<select class="select2-tags form-control" name="tags[]" multiple="multiple">
 								@foreach (App\Entities\Tag::all() as $tag)
 									<option value="{{ $tag->name }}" {{ in_array($tag->id, array_pluck($lead->tags->toArray(), 'id')) ? ' selected' : '' }}>
@@ -212,6 +223,18 @@
 									</option>
 								@endforeach
 							</select>
+							@else
+								<input type="hidden" name="country" value={{$lead->country}}/>
+
+
+								<select class="select2-tags form-control" name="tags[]" multiple="multiple" disabled>
+									@foreach (App\Entities\Tag::all() as $tag)
+										<option value="{{ $tag->name }}" {{ in_array($tag->id, array_pluck($lead->tags->toArray(), 'id')) ? ' selected' : '' }}>
+											{{ $tag->name }}
+										</option>
+									@endforeach
+								</select>
+							@endif
 						</div>
 					</div>
 				</div>

@@ -23,13 +23,13 @@ class LeadsRequest extends FormRequest
      */
     public function rules()
     {
-        
+
         return [
             'email' => 'required|email',
             'desk' => 'required',
             'stage_id' => 'sometimes|numeric',
             'source' => 'required|numeric',
-            'sales_rep' => 'required|numeric',
+            'sales_rep' => 'required',
             'lead_score' => 'sometimes|integer',
             'website' => 'sometimes|url',
         ];

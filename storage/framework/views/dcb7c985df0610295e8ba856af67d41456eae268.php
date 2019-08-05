@@ -47,14 +47,18 @@
 					</div>
 					<div class="col-md-6">
 						<label>Desk <span class="text-danger">*</span></label>
-						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
+
+						<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')): ?>
+
 							<select class="select2-option form-control" name="desk">
 								<?php $__currentLoopData = App\Entities\Desk::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-									<option value="<?php echo e($desk->id); ?>" <?php echo e($desk->id == $lead->desk_id ? ' selected' : ''); ?>><?php echo e($desk->name); ?></option>
+									<option value="<?php echo e($desk->id); ?>" <?php echo e($desk->id == $lead->desk_id ? 'selected' : ''); ?>><?php echo e($desk->name); ?></option>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							</select>
 						<?php else: ?>
-							<select class="select2-option form-control" name="desk" readonly="readonly">
+							<input type="hidden" name="desk" value=<?php echo e($lead->desk_id); ?>/>
+
+							<select class="select2-option form-control" name="desk" disabled>
 								<?php $__currentLoopData = App\Entities\Desk::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<option value="<?php echo e($desk->id); ?>"
 											<?php echo e($desk->id == $lead->desk_id ? ' selected' : ''); ?> > <?php echo e($desk->name); ?></option>
@@ -145,16 +149,19 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label><?php echo trans('app.'.'sales_rep'); ?></label>
+
 							<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('sales team leader') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')): ?>
 								<select class="select2-option form-control" name="sales_rep" required>
-									<?php $__currentLoopData = app('user')->permission('leads_create')->offHoliday()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<?php $__currentLoopData = app('user')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<option value="<?php echo e($user->id); ?>" <?php echo e($user->id == $lead->sales_rep ? ' selected' : ''); ?>><?php echo e($user->name); ?></option>
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</select>
 							<?php else: ?>
-								<select class="select2-option form-control" name="sales_rep" required readonly="readonly">
-									<?php $__currentLoopData = app('user')->permission('leads_create')->offHoliday()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-										<option value="<?php echo e($user->id); ?>" <?php echo e($user->id == $lead->sales_rep ? ' selected' : ''); ?>><?php echo e($user->name); ?></option>
+								<input type="hidden" name="sales_rep" value=<?php echo e($lead->sales_rep); ?>/>
+								<select class="select2-option form-control" name="sales_rep" required disabled>
+									<?php $__currentLoopData = app('user')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										
+										<option value="<?php echo e($user->id); ?>"<?php echo e($lead->sales_rep == $user->id ? ' selected' : ''); ?>><?php echo e($user->name); ?></option>
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</select>
 							<?php endif; ?>
@@ -168,7 +175,8 @@
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</select>
 							<?php else: ?>
-								<select class="select2-option form-control" name="timezone" readonly="readonly">
+								<input type="hidden" name="timezone" value=<?php echo e($lead->timezone); ?> >
+								<select class="select2-option form-control" name="timezone" disabled>
 									<?php $__currentLoopData = timezones(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $timezone => $description): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<option value="<?php echo e($timezone); ?>"<?php echo e($lead->timezone == $timezone ? ' selected' : ''); ?>><?php echo e($description); ?></option>
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -196,7 +204,9 @@
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</select>
 							<?php else: ?>
-								<select class="form-control select2-option" name="country" readonly="readonly">
+								<input type="hidden" name="country" value=<?php echo e($lead->country); ?>/>
+
+								<select class="form-control select2-option" name="country" disabled>
 									<?php $__currentLoopData = countries(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<option value="<?php echo e($country['name']); ?>" <?php echo e($country['name'] == $lead->country ? 'selected' : ''); ?>><?php echo e($country['name']); ?>
 
@@ -208,6 +218,7 @@
 						</div>
 						<div class="form-group col-md-11">
 							<label><?php echo trans('app.'.'tags'); ?> </label>
+							<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
 							<select class="select2-tags form-control" name="tags[]" multiple="multiple">
 								<?php $__currentLoopData = App\Entities\Tag::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<option value="<?php echo e($tag->name); ?>" <?php echo e(in_array($tag->id, array_pluck($lead->tags->toArray(), 'id')) ? ' selected' : ''); ?>>
@@ -216,6 +227,19 @@
 									</option>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							</select>
+							<?php else: ?>
+								<input type="hidden" name="country" value=<?php echo e($lead->country); ?>/>
+
+
+								<select class="select2-tags form-control" name="tags[]" multiple="multiple" disabled>
+									<?php $__currentLoopData = App\Entities\Tag::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<option value="<?php echo e($tag->name); ?>" <?php echo e(in_array($tag->id, array_pluck($lead->tags->toArray(), 'id')) ? ' selected' : ''); ?>>
+											<?php echo e($tag->name); ?>
+
+										</option>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</select>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
