@@ -139,8 +139,13 @@
 						<div class="form-group col-md-6">
 							<label><?php echo trans('app.'.'lead_score'); ?> <span class="text-muted">(In % Ex. 50)</span>
 							</label>
-							<input type="text" value="<?php echo e($lead->lead_score); ?>" name="lead_score"
-								   class="input-sm form-control">
+							<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')): ?>
+								<input type="text" value="<?php echo e($lead->lead_score); ?>" name="lead_score"
+									   class="input-sm form-control">
+							<?php else: ?>
+								<input type="text" value="<?php echo e($lead->lead_score); ?>" name="lead_score"
+									   class="input-sm form-control" readonly>
+							<?php endif; ?>
 						</div>
 						<div class="form-group col-md-6">
 							<label><?php echo trans('app.'.'lead_value'); ?></label>
@@ -219,14 +224,14 @@
 						<div class="form-group col-md-11">
 							<label><?php echo trans('app.'.'tags'); ?> </label>
 							<?php if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager')): ?>
-							<select class="select2-tags form-control" name="tags[]" multiple="multiple">
-								<?php $__currentLoopData = App\Entities\Tag::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-									<option value="<?php echo e($tag->name); ?>" <?php echo e(in_array($tag->id, array_pluck($lead->tags->toArray(), 'id')) ? ' selected' : ''); ?>>
-										<?php echo e($tag->name); ?>
+								<select class="select2-tags form-control" name="tags[]" multiple="multiple">
+									<?php $__currentLoopData = App\Entities\Tag::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<option value="<?php echo e($tag->name); ?>" <?php echo e(in_array($tag->id, array_pluck($lead->tags->toArray(), 'id')) ? ' selected' : ''); ?>>
+											<?php echo e($tag->name); ?>
 
-									</option>
-								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-							</select>
+										</option>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</select>
 							<?php else: ?>
 								<input type="hidden" name="country" value=<?php echo e($lead->country); ?>/>
 

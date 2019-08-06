@@ -138,8 +138,13 @@
 						<div class="form-group col-md-6">
 							<label>@langapp('lead_score') <span class="text-muted">(In % Ex. 50)</span>
 							</label>
-							<input type="text" value="{{ $lead->lead_score }}" name="lead_score"
-								   class="input-sm form-control">
+							@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager'))
+								<input type="text" value="{{ $lead->lead_score }}" name="lead_score"
+									   class="input-sm form-control">
+							@else
+								<input type="text" value="{{ $lead->lead_score }}" name="lead_score"
+									   class="input-sm form-control" readonly>
+							@endif
 						</div>
 						<div class="form-group col-md-6">
 							<label>@langapp('lead_value')</label>
@@ -216,13 +221,13 @@
 						<div class="form-group col-md-11">
 							<label>@langapp('tags') </label>
 							@if( Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager')|| Auth::user()->hasRole('office manager'))
-							<select class="select2-tags form-control" name="tags[]" multiple="multiple">
-								@foreach (App\Entities\Tag::all() as $tag)
-									<option value="{{ $tag->name }}" {{ in_array($tag->id, array_pluck($lead->tags->toArray(), 'id')) ? ' selected' : '' }}>
-										{{ $tag->name }}
-									</option>
-								@endforeach
-							</select>
+								<select class="select2-tags form-control" name="tags[]" multiple="multiple">
+									@foreach (App\Entities\Tag::all() as $tag)
+										<option value="{{ $tag->name }}" {{ in_array($tag->id, array_pluck($lead->tags->toArray(), 'id')) ? ' selected' : '' }}>
+											{{ $tag->name }}
+										</option>
+									@endforeach
+								</select>
 							@else
 								<input type="hidden" name="country" value={{$lead->country}}/>
 

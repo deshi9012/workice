@@ -179,7 +179,7 @@
 							url: "/users/usersData",
 							type: 'GET',
 							success: function (res) {
-								
+
 								self.html(
 									'<select class="select2-option form-control search"  id="' + title + '" name="stage" required>'+
 									'<option value="">Choose: </option>' +
