@@ -146,6 +146,7 @@
 									   class="input-sm form-control" readonly>
 							@endif
 						</div>
+						
 						<div class="form-group col-md-6">
 							<label>@langapp('lead_value')</label>
 							<input type="text" value="{{ $lead->lead_value }}" name="lead_value"
