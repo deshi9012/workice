@@ -3,6 +3,7 @@
 Route::group(
     ['middleware' => 'web', 'prefix' => 'users', 'namespace' => 'Modules\Users\Http\Controllers'],
     function () {
+        Route::get('/usersData', 'UserCustomController@usersData');
         Route::get('/', 'UserCustomController@index')->name('users.index')->middleware('can:menu_users');
 
         Route::get('edit/{user}', 'UserCustomController@edit')->name('users.edit')->middleware('can:users_update');

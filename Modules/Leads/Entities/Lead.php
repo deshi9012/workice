@@ -277,6 +277,9 @@ class Lead extends Model {
     public function scopeCountry($query, $value) {
         return $query->where('country', 'LIKE', '%' . $value . '%');
     }
+    public function scopeLanguage($query, $value) {
+        return $query->where('language', 'LIKE', '%' . $value . '%');
+    }
 
     public function scopeSource($query, $value) {
         return $query->with('asSource')->whereHas('asSource', function ($q) use ($value) {

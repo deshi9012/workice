@@ -160,7 +160,7 @@
 								<input type="hidden" name="sales_rep" value=<?php echo e($lead->sales_rep); ?>/>
 								<select class="select2-option form-control" name="sales_rep" required disabled>
 									<?php $__currentLoopData = app('user')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-										
+
 										<option value="<?php echo e($user->id); ?>"<?php echo e($lead->sales_rep == $user->id ? ' selected' : ''); ?>><?php echo e($user->name); ?></option>
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</select>

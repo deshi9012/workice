@@ -119,6 +119,7 @@
 	<?php echo $__env->make('stacks.js.datatables', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<script>
 
+
 		$(function () {
 
 			$('#leads-table thead tr').clone(true).appendTo('#leads-table thead');
@@ -126,13 +127,11 @@
 
 			var removed = tableHeader.splice(1, 1);
 
-			tableHeader.each(function (i) {
+			tableHeader.each(async function (i) {
 
 				var title = $(this).text();
 				if ($(this).attr('name') == 'select_all') {
-
 					return true;
-
 				} else {
 
 					title = title.replace(/\s+/g, '_').toLowerCase();
@@ -161,12 +160,61 @@
 						});
 
 
+					} else if (title == 'stage') {
+						$(this).html('<select class="select2-option form-control search"  id="' + title + '" name="stage" required>' +
+							'<option value="">Choose: </option>' +
+							'<option value="new">New</option>' +
+							'<option value="voice mail">Voice Mail</option>' +
+							'<option value="callback">Callback</option>' +
+							'<option value="high potential">High potential</option>' +
+							'<option value="converted">Converted</option>' +
+							'<option value="closed account">Closed account</option>' +
+							'<option value="not qualified - economic status">Not qualified - economic status</option>' +
+							'<option value="not qualified - under 18">Not qualified - under 18</option>' +
+							'</select>')
+
+					} else if (title == 'sales_rep') {
+						var self = $(this);
+						await $.ajax({
+							url: "/users/usersData",
+							type: 'GET',
+							success: function (res) {
+								console.log(res);
+								self.html(
+									'<select class="select2-option form-control search"  id="' + title + '" name="stage" required>'+
+									'<option value="">Choose: </option>' +
+										res.map(function(value){
+											return '<option value="'+value+ '">'+value+'</option>';
+										}) +
+									'</select>'
+							);
+
+							}
+						});
+
 					} else {
 
 						$(this).html('<input class="search" type="text" id="' + title + '" placeholder="' + title + '" />');
 
 					}
 					$(this).find('*').filter(':input:visible:first').on('keyup change', function () {
+
+						if ($(this).val().length >= 2 || $(this).val().length == 0) {
+							table.columns.adjust().draw();
+
+						}
+
+					});
+					$(this).find('select').on('change', function () {
+
+						if ($(this).val().length >= 2 || $(this).val().length == 0) {
+							table.columns.adjust().draw();
+
+						}
+
+					});
+					$(this).find('#sales_rep').on('change', function () {
+						console.log('changed');
 
 						if ($(this).val().length >= 2 || $(this).val().length == 0) {
 							table.columns.adjust().draw();
@@ -223,6 +271,22 @@
 
 						data['searchFields'] = [];
 						$("input.search").map(function (index, value) {
+
+
+							if ($(value).val()) {
+
+								var name = $(value).attr('id').toLowerCase();
+
+								data.search[name] = $(value).val();
+
+							} else {
+
+								var name = $(value).attr('id').toLowerCase();
+
+								data.search[name] = false;
+							}
+						});
+						$("select.search").map(function (index, value) {
 
 
 							if ($(value).val()) {

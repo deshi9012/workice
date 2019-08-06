@@ -286,4 +286,16 @@ abstract class UsersController extends Controller
     {
         return langapp('users');
     }
+
+    public function usersData() {
+        if(Auth::user()->hasRole('sales agent')){
+            return User::where('id',Auth::user()->id)->get()->pluck('name');
+        }
+        if(Auth::user()->hasRole('sales team leader') || Auth::user()->hasRole('desk manager')){
+            return User::where('desk_id',Auth::user()->desk_id)->get()->pluck('name');
+        }else{
+            return User::all()->pluck('name');
+        }
+        return 'users';
+    }
 }
