@@ -97,9 +97,9 @@
                 <?php echo renderButton(langapp('sign_in')); ?>
 
                 
-                <a class="btn btn-link pull-right m-t-xs" href="<?php echo e(route('password.request')); ?>">
-                    <?php echo trans('app.'.'forgot_password'); ?>
-                </a>
+                
+                    
+                
                 
             </div>
             <?php if(settingEnabled('social_login')): ?>

@@ -502,7 +502,7 @@ abstract class LeadsController extends Controller {
             if ($lead->updated_at) {
                 $carbon = Carbon::createFromFormat('Y-m-d H:i:s', $lead->updated_at, $local_timezone);
 //                logger($carbon->tz($lead->timezone)->toTimeString());
-//                logger($lead->updated_at->toDateTimeString());
+//                logger($lead->updated_at->toDateTimeString(V));
 
 //                return $carbon->tz(get_local_time())->toDateTimeString();
 //                return $lead->updated_at->toDateTimeString();

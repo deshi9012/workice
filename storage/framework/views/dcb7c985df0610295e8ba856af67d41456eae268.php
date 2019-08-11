@@ -147,6 +147,7 @@
 									   class="input-sm form-control" readonly>
 							<?php endif; ?>
 						</div>
+
 						<div class="form-group col-md-6">
 							<label><?php echo trans('app.'.'lead_value'); ?></label>
 							<input type="text" value="<?php echo e($lead->lead_value); ?>" name="lead_value"

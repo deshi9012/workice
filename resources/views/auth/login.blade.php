@@ -92,9 +92,9 @@
             <div class="form-group">
                 {!! renderButton(langapp('sign_in')) !!}
                 
-                <a class="btn btn-link pull-right m-t-xs" href="{{ route('password.request') }}">
-                    @langapp('forgot_password')
-                </a>
+                {{--<a class="btn btn-link pull-right m-t-xs" href="{{ route('password.request') }}">--}}
+                    {{--@langapp('forgot_password')--}}
+                {{--</a>--}}
                 
             </div>
             @if (settingEnabled('social_login'))
