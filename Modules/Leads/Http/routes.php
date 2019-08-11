@@ -9,6 +9,8 @@ Route::group([
 
     Route::get('/', 'LeadCustomController@index')->name('leads.index')->middleware('can:menu_leads');
     Route::get('/create', 'LeadCustomController@create')->name('leads.create')->middleware('can:leads_create');
+    Route::put('/update-stage', 'LeadCustomController@updateStage')->name('leads.update-stage')->middleware('can:leads_update');
+
     Route::get('/view/{lead}/{tab?}/{option?}', 'LeadCustomController@view')->name('leads.view');
     Route::get('/delete/{lead}', 'LeadCustomController@delete')->name('leads.delete')->middleware('can:leads_delete');
 

@@ -2,78 +2,83 @@
 <html lang="<?php echo e(app()->getLocale()); ?>" dir="<?php echo e(get_option('rtl') == 'TRUE' ? 'rtl' : 'ltr'); ?>" class="app">
 <head>
 
-    <meta charset="utf-8"/>
-    <meta name="author" content="<?php echo e(get_option('site_author')); ?>">
-    <meta name="keywords" content="<?php echo e(get_option('site_keywords')); ?>">
-    <meta name="description" content="<?php echo e(get_option('site_desc')); ?>">
-    
+	<meta charset="utf-8"/>
+	<meta name="author" content="<?php echo e(get_option('site_author')); ?>">
+	<meta name="keywords" content="<?php echo e(get_option('site_keywords')); ?>">
+	<meta name="description" content="<?php echo e(get_option('site_desc')); ?>">
+
     <?php $favicon = get_option('site_favicon');
     $ext = substr($favicon, -4); ?>
-    <?php if($ext == '.ico'): ?>
-        <link rel="shortcut icon" href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_favicon'))); ?>">
-    <?php endif; ?>
-    <?php if($ext == '.png'): ?> 
-        <link rel="icon" type="image/png" href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_favicon'))); ?>">
-    <?php endif; ?>
-    <?php if($ext == '.jpg' || $ext == 'jpeg'): ?> 
-        <link rel="icon" type="image/jpeg" href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_favicon'))); ?>">
-    <?php endif; ?>
-    <?php if(get_option('site_appleicon') != ''): ?>
-        <link rel="apple-touch-icon" href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_appleicon'))); ?>"/>
-        <link rel="apple-touch-icon" sizes="72x72"
-              href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_appleicon'))); ?>"/>
-        <link rel="apple-touch-icon" sizes="114x114"
-              href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_appleicon'))); ?>"/>
-        <link rel="apple-touch-icon" sizes="144x144"
-              href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_appleicon'))); ?>"/>
-    <?php endif; ?>
+	<?php if($ext == '.ico'): ?>
+		<link rel="shortcut icon" href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_favicon'))); ?>">
+	<?php endif; ?>
+	<?php if($ext == '.png'): ?>
+		<link rel="icon" type="image/png"
+			  href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_favicon'))); ?>">
+	<?php endif; ?>
+	<?php if($ext == '.jpg' || $ext == 'jpeg'): ?>
+		<link rel="icon" type="image/jpeg"
+			  href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_favicon'))); ?>">
+	<?php endif; ?>
+	<?php if(get_option('site_appleicon') != ''): ?>
+		<link rel="apple-touch-icon"
+			  href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_appleicon'))); ?>"/>
+		<link rel="apple-touch-icon" sizes="72x72"
+			  href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_appleicon'))); ?>"/>
+		<link rel="apple-touch-icon" sizes="114x114"
+			  href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_appleicon'))); ?>"/>
+		<link rel="apple-touch-icon" sizes="144x144"
+			  href="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('site_appleicon'))); ?>"/>
+	<?php endif; ?>
 
-    <meta name="userId" content="<?php echo e(Auth::check() ? Auth::id() : ''); ?>">
+	<meta name="userId" content="<?php echo e(Auth::check() ? Auth::id() : ''); ?>">
 
-    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-    
-    <title><?php echo e(count(Auth::user()->unreadNotifications) > 0 ? '('.count(Auth::user()->unreadNotifications).')' : ''); ?> <?php echo e(get_option('company_name')); ?> - <?php echo e($page); ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <link rel="stylesheet" href="<?php echo e(getAsset('css/theme.css')); ?>" type="text/css"/>
-    
-    <link rel="stylesheet" href="<?php echo e(getAsset('plugins/apps/pace.css')); ?>" type="text/css"/>
+	<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <?php if(config('system.material_design')): ?>
-    <link rel="stylesheet" href="<?php echo e(getAsset('css/propeller.min.css')); ?>" type="text/css"/>
-    <?php endif; ?>
-    <?php if(isset($sign)): ?>
-    <link href="//fonts.googleapis.com/css?family=Mr+Dafoe" rel="stylesheet">
-    <?php endif; ?>
-    <?php if(isset($help)): ?> 
-    <link rel="stylesheet" href="<?php echo e(getAsset('plugins/intro/introjs.min.css')); ?>" type="text/css"/>
-    <?php endif; ?>
-    <?php if(isset($signature)): ?> 
-        <link href="//fonts.googleapis.com/css?family=Dawning+of+a+New+Day" rel="stylesheet">
-    <?php endif; ?>
-    <?php if(config('system.drift_enabled')): ?>
-        <?php echo $__env->make('partial.drift', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <?php endif; ?>
-    <?php if(config('system.crisp_enabled')): ?>
-        <?php echo $__env->make('partial.crisp', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <?php endif; ?>
-    <?php if(config('system.enable_onesignal')): ?>
-        <?php echo $__env->make('partial.onesignal', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <?php endif; ?>
+	<title><?php echo e(count(Auth::user()->unreadNotifications) > 0 ? '('.count(Auth::user()->unreadNotifications).')' : ''); ?> <?php echo e(get_option('company_name')); ?>
 
-    <?php if(config('system.enable_tawk')): ?>
-        <?php echo $__env->make('partial.tawk', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <?php endif; ?>
+		- <?php echo e($page); ?></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<link rel="stylesheet" href="<?php echo e(getAsset('css/theme.css')); ?>" type="text/css"/>
+
+	<link rel="stylesheet" href="<?php echo e(getAsset('plugins/apps/pace.css')); ?>" type="text/css"/>
+
+	<?php if(config('system.material_design')): ?>
+		<link rel="stylesheet" href="<?php echo e(getAsset('css/propeller.min.css')); ?>" type="text/css"/>
+	<?php endif; ?>
+	<?php if(isset($sign)): ?>
+		<link href="//fonts.googleapis.com/css?family=Mr+Dafoe" rel="stylesheet">
+	<?php endif; ?>
+	<?php if(isset($help)): ?>
+		<link rel="stylesheet" href="<?php echo e(getAsset('plugins/intro/introjs.min.css')); ?>" type="text/css"/>
+	<?php endif; ?>
+	<?php if(isset($signature)): ?>
+		<link href="//fonts.googleapis.com/css?family=Dawning+of+a+New+Day" rel="stylesheet">
+	<?php endif; ?>
+	<?php if(config('system.drift_enabled')): ?>
+		<?php echo $__env->make('partial.drift', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php endif; ?>
+	<?php if(config('system.crisp_enabled')): ?>
+		<?php echo $__env->make('partial.crisp', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php endif; ?>
+	<?php if(config('system.enable_onesignal')): ?>
+		<?php echo $__env->make('partial.onesignal', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php endif; ?>
+
+	<?php if(config('system.enable_tawk')): ?>
+		<?php echo $__env->make('partial.tawk', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php endif; ?>
 
 
-    <?php echo $__env->yieldPushContent('pagestyle'); ?>
+	<?php echo $__env->yieldPushContent('pagestyle'); ?>
 
-    <link rel="stylesheet" href="<?php echo e(getAsset('css/app.css')); ?>" type="text/css"/>
+	<link rel="stylesheet" href="<?php echo e(getAsset('css/app.css')); ?>" type="text/css"/>
 
-    <link rel="stylesheet" href="<?php echo e(getAsset('storage/css/style.css')); ?>" type="text/css"/>
-    <link rel="stylesheet" href="<?php echo e(getAsset('css/lato.css')); ?>" type="text/css"/>
+	<link rel="stylesheet" href="<?php echo e(getAsset('storage/css/style.css')); ?>" type="text/css"/>
+	<link rel="stylesheet" href="<?php echo e(getAsset('css/lato.css')); ?>" type="text/css"/>
 
-    <?php echo $__env->make('partial.custom', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('partial.custom', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
     <?php
     $family = 'Default';
@@ -127,81 +132,91 @@
     ?>
 
 
-    <style type="text/css">
-        body {
-            font-family: '<?php echo e($family); ?>';
-        }
-        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-            font-family: '<?php echo e($family); ?>', sans-serif;
-        }
-        .inv-bg { background-color: <?php echo e(get_option('invoice_color')); ?>; }
-        .est-bg { background-color: <?php echo e(get_option('estimate_color')); ?>; color: #fff; }
-    </style>
+	<style type="text/css">
+		body {
+			font-family: '<?php echo e($family); ?>';
+		}
+
+		h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+			font-family: '<?php echo e($family); ?>', sans-serif;
+		}
+
+		.inv-bg {
+			background-color: <?php echo e(get_option('invoice_color')); ?>;
+		}
+
+		.est-bg {
+			background-color: <?php echo e(get_option('estimate_color')); ?>;
+			color: #fff;
+		}
+	</style>
 
 
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
 
 </head>
 <body>
-    <?php echo $__env->make('cookie_consent', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    
+<?php echo $__env->make('cookie_consent', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 <section class="vbox" id="app">
 
 
-    <?php echo $__env->make('partial.top_header', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('partial.top_header', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-    <section class="">
-        <section class="hbox stretch">
-
-
+	<section class="">
+		<section class="hbox stretch">
 
 
-            <?php echo $__env->make('partial.main_menu', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			<?php echo $__env->make('partial.main_menu', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
-            <?php echo $__env->yieldContent('content'); ?>
+			<?php echo $__env->yieldContent('content'); ?>
 
 
-            <?php echo $__env->make('partial.notifier', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			<?php echo $__env->make('partial.notifier', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
-        </section>
-    </section>
+		</section>
+	</section>
 </section>
 
+
 <script src="<?php echo e(getAsset('js/app.js')); ?>"></script>
+<?php echo $__env->yieldPushContent('custom-pagescript'); ?>
 
 <script src="<?php echo e(getAsset('js/theme.js')); ?>"></script>
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
 <script>
-    var locale = '<?php echo trans('app.'.'lang_code'); ?> ';
-    var base_url = '<?php echo e(url('/')); ?>';
+	var locale = '<?php echo trans('app.'.'
+	lang_code
+	'); ?> ';
+	var base_url = '<?php echo e(url('/')); ?>';
 
-      axios.defaults.headers.common['Content-Language'] = '<?php echo e(app()->getLocale()); ?>';
+	axios.defaults.headers.common['Content-Language'] = '<?php echo e(app()->getLocale()); ?>';
 </script>
 
 <?php if(config('system.pusher_enabled')): ?>
-    <?php echo $__env->make('partial.pusher', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('partial.pusher', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php endif; ?>
 
 
 <?php if(config('system.material_design')): ?>
-<script type="text/javascript" src="<?php echo e(getAsset('js/propeller.min.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(getAsset('js/propeller.min.js')); ?>"></script>
 <?php endif; ?>
 
 
 <script src="<?php echo e(getAsset('js/plugins.js')); ?>"></script>
 
-<?php if(isset($help)): ?> 
-    <script src="<?php echo e(getAsset('plugins/intro/intro.min.js')); ?>"></script>
-    <script src="<?php echo e(getAsset('plugins/intro/demo.js')); ?>"></script>
+<?php if(isset($help)): ?>
+	<script src="<?php echo e(getAsset('plugins/intro/intro.min.js')); ?>"></script>
+	<script src="<?php echo e(getAsset('plugins/intro/demo.js')); ?>"></script>
 <?php endif; ?>
 
 <?php echo Toastr::message(); ?>
@@ -212,37 +227,47 @@
 <?php echo $__env->make('partial.ajaxify', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <script>
-$(document).ready(function(){
-    $( ".comment-item table" ).addClass( "table table-striped" );
+	$(document).ready(function () {
+		$(".comment-item table").addClass("table table-striped");
 
-    $('.money').maskMoney({allowZero: true, thousands: '', allowNegative: true});
+		$('.money').maskMoney({allowZero: true, thousands: '', allowNegative: true});
 
-    if($('.nav-w-children li').hasClass('active')){
-        var el = $('.nav-w-children').attr('id');
-        $('#'+el).addClass( "active" );
-    }
-    
-    toastr.options.positionClass = '<?php echo e(config('toastr.options.positionClass')); ?>';
-    $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
-    $.fn.modal.prototype.constructor.Constructor.DEFAULTS.keyboard =  false;
-    $.fn.modal.Constructor.prototype.enforceFocus = function() {};
-    
-    $('.clickable tr').click(function () {
-            var href = $(this).find("a").attr("href");
-            if (href) {
-                window.location = href;
-            }
-    });
-    $('#clear-alerts').click(function () {
-        axios.get('<?php echo e(route('users.notifications.clear')); ?>').then(function (response) {
-            toastr.success('Notifications cleared successfully', '<?php echo trans('app.'.'response_status'); ?> ');
-          })
-          .catch(function (error) {
-            toastr.error('Error clearing notifications', '<?php echo trans('app.'.'response_status'); ?> ');
-        });
-    });
-});
+		if ($('.nav-w-children li').hasClass('active')) {
+			var el = $('.nav-w-children').attr('id');
+			$('#' + el).addClass("active");
+		}
+
+		toastr.options.positionClass = '<?php echo e(config('toastr.options.positionClass')); ?>';
+		$.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
+		$.fn.modal.prototype.constructor.Constructor.DEFAULTS.keyboard = false;
+		$.fn.modal.Constructor.prototype.enforceFocus = function () {
+		};
+
+		$('.clickable tr').click(function () {
+			var href = $(this).find("a").attr("href");
+			if (href) {
+				window.location = href;
+			}
+		});
+		$('#clear-alerts').click(function () {
+			axios.get('<?php echo e(route('users.notifications.clear')); ?>').then(function (response) {
+				toastr.success('Notifications cleared successfully', '<?php echo trans('app.'.'
+				response_status
+				'); ?> '
+			)
+				;
+			})
+				.catch(function (error) {
+					toastr.error('Error clearing notifications', '<?php echo trans('app.'.'
+					response_status
+					'); ?> '
+				)
+					;
+				});
+		});
+	});
 </script>
+
 
 </body>
 </html>

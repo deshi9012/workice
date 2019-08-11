@@ -1,4 +1,3 @@
-
 <div class="row">
 	<div class="col-lg-4 b-r">
 		<section class="panel panel-default">
@@ -7,7 +6,7 @@
 
 				<div class="m-xs">
 					<span class="text-muted">ID:</span>
-					<span class="text-bold">{{ $lead->id }}</span>
+					<span class="text-bold" id="lead-id">{{ $lead->id }}</span>
 				</div>
 				<div class="m-xs">
 					<span class="text-muted">@langapp('created_at'):</span>
@@ -20,7 +19,13 @@
 				</div>
 				<div class="m-xs">
 					<span class="text-muted">{{  langapp('stage')  }}:</</span>
-					<span class="text-bold text-danger">{{  ucfirst($lead->status->name)  }}</span>
+					{{--<span class="text-bold text-danger">{{  ucfirst($lead->status->name)  }}</span>--}}
+					<select id="custom_stage_id" name="stage_id">
+						@foreach (App\Entities\Category::leads()->get() as $stage)
+							<option class="text-bold text-danger" value="{{ $stage->id }}"
+									{{ $stage->id == $lead->stage_id ? ' selected' : '' }}>{{ ucfirst($stage->name) }}</option>
+						@endforeach
+					</select>
 				</div>
 
 				<div class="m-xs">
@@ -51,7 +56,7 @@
 							<a href="{{ route('leads.consent', ['lead' => $lead->id]) }}" class="btn btn-xs btn-success"
 							   data-rel="tooltip" title="Send Consent">@icon('solid/user-lock')</a>
 						@endif
-                    </span>
+					</span>
 				</div>
 
 				<div class="progress progress-xs progress-striped active">
@@ -68,8 +73,8 @@
 					<div class="line"></div>
 
 					<span class="thumb-sm avatar lobilist-check">
-                <img src="{{ $lead->agent->profile->photo  }}" class="img-circle">
-            </span> <strong>{{ $lead->agent->name }}</strong>
+					<img src="{{ $lead->agent->profile->photo  }}" class="img-circle">
+				</span> <strong>{{ $lead->agent->name }}</strong>
 				@endif
 
 
@@ -175,11 +180,11 @@
 				</div>
 
 				{{--<div class="map">--}}
-					{{--<a href="{{ $lead->maplink }}" rel="nofollow" target="_blank">--}}
-						{{--<img src="//maps.googleapis.com/maps/api/staticmap?center={{ $lead->map }}&amp;zoom=14&amp;scale=2&amp;size=600x340&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;key=AIzaSyAzrmdGlvKbFu9F7vPaY0Jg74q1WQo7B0w"--}}
-							 {{--alt="Google Map">--}}
+				{{--<a href="{{ $lead->maplink }}" rel="nofollow" target="_blank">--}}
+				{{--<img src="//maps.googleapis.com/maps/api/staticmap?center={{ $lead->map }}&amp;zoom=14&amp;scale=2&amp;size=600x340&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;key=AIzaSyAzrmdGlvKbFu9F7vPaY0Jg74q1WQo7B0w"--}}
+				{{--alt="Google Map">--}}
 
-					{{--</a>--}}
+				{{--</a>--}}
 				{{--</div>--}}
 
 
@@ -208,7 +213,8 @@
 					@if (App\Entities\CustomField::whereName($field->meta_key)->count() > 0)
 
 						<small class="text-uc text-xs text-muted">{{  ucfirst(humanize($field->meta_key, '-'))  }}</small>
-						<p>{{ isJson($field->meta_value) ? implode(', ', json_decode($field->meta_value)) : $field->meta_value }}</p>
+						<p>{{ isJson($field->meta_value) ? implode(', ', json_decode($field->meta_value)) : $field->meta_value }}
+						</p>
 
 
 
@@ -230,8 +236,8 @@
 
 		@php
 			$data = [
-				'notes' => $lead->notes, 'noteable_type' => get_class($lead),
-				'title' => $lead->name.' Note', 'noteable_id' => $lead->id
+			'notes' => $lead->notes, 'noteable_type' => get_class($lead),
+			'title' => $lead->name.' Note', 'noteable_id' => $lead->id
 			];
 		@endphp
 
@@ -242,3 +248,41 @@
 
 
 </div>
+@push('custom-pagescript')
+	{{--<script type="text/javascript">--}}
+		{{--$(document).ready(function () {--}}
+
+			{{--$('#custom_stage_id').on('change', function () {--}}
+				{{--var lead_id = $('#lead-id').text();--}}
+				{{--var data = {--}}
+					{{--'stage_id': $(this).val()--}}
+				{{--};--}}
+
+				{{--$.ajax({--}}
+					{{--type: "GET",--}}
+					{{--url: 'api/'.lead_id,--}}
+					{{--data: data,--}}
+
+					{{--success: function (response) {--}}
+						{{--console.log(response);--}}
+					{{--}--}}
+				{{--});--}}
+			{{--});--}}
+		{{--});--}}
+
+	{{--</script>--}}
+
+@endpush
+@push('pagescript')
+	<script>
+		$('#custom_stage_id').on('change', function () {
+			var lead_id = $('#lead-id').text();
+			axios.put('{{ route('leads.update-stage') }}', {lead_id:lead_id, stage_id : $(this).val()})
+				.then(function (response) {
+					console.log('asf');
+				});
+		});
+
+
+	</script>
+@endpush

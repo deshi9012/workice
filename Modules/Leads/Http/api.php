@@ -14,5 +14,7 @@ Route::group(
         Route::post('leads', 'LeadsApiController@save')->name('leads.api.save')->middleware('can:leads_create');
         Route::put('leads/{id}', 'LeadsApiController@update')->name('leads.api.update')->middleware('can:leads_update');
         Route::delete('leads/{id}', 'LeadsApiController@delete')->name('leads.api.delete')->middleware('can:leads_delete');
+
+
     }
 );

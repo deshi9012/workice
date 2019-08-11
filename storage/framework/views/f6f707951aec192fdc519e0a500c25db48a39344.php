@@ -1,4 +1,4 @@
-sss
+
 <?php $__currentLoopData = $fields; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $field): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php 
                         $val = $lead->metaValue($field->name);

@@ -1,4 +1,3 @@
-
 <div class="row">
 	<div class="col-lg-4 b-r">
 		<section class="panel panel-default">
@@ -7,7 +6,7 @@
 
 				<div class="m-xs">
 					<span class="text-muted">ID:</span>
-					<span class="text-bold"><?php echo e($lead->id); ?></span>
+					<span class="text-bold" id="lead-id"><?php echo e($lead->id); ?></span>
 				</div>
 				<div class="m-xs">
 					<span class="text-muted"><?php echo trans('app.'.'created_at'); ?>:</span>
@@ -20,7 +19,13 @@
 				</div>
 				<div class="m-xs">
 					<span class="text-muted"><?php echo e(langapp('stage')); ?>:</</span>
-					<span class="text-bold text-danger"><?php echo e(ucfirst($lead->status->name)); ?></span>
+					
+					<select id="custom_stage_id" name="stage_id">
+						<?php $__currentLoopData = App\Entities\Category::leads()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $stage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+							<option class="text-bold text-danger" value="<?php echo e($stage->id); ?>"
+									<?php echo e($stage->id == $lead->stage_id ? ' selected' : ''); ?>><?php echo e(ucfirst($stage->name)); ?></option>
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+					</select>
 				</div>
 
 				<div class="m-xs">
@@ -53,7 +58,7 @@
 							<a href="<?php echo e(route('leads.consent', ['lead' => $lead->id])); ?>" class="btn btn-xs btn-success"
 							   data-rel="tooltip" title="Send Consent"><?php echo e(svg_image('solid/user-lock')); ?></a>
 						<?php endif; ?>
-                    </span>
+					</span>
 				</div>
 
 				<div class="progress progress-xs progress-striped active">
@@ -70,8 +75,8 @@
 					<div class="line"></div>
 
 					<span class="thumb-sm avatar lobilist-check">
-                <img src="<?php echo e($lead->agent->profile->photo); ?>" class="img-circle">
-            </span> <strong><?php echo e($lead->agent->name); ?></strong>
+					<img src="<?php echo e($lead->agent->profile->photo); ?>" class="img-circle">
+				</span> <strong><?php echo e($lead->agent->name); ?></strong>
 				<?php endif; ?>
 
 
@@ -177,11 +182,11 @@
 				</div>
 
 				
-					
-						
-							 
+				
+				
+				
 
-					
+				
 				
 
 
@@ -210,7 +215,9 @@
 					<?php if(App\Entities\CustomField::whereName($field->meta_key)->count() > 0): ?>
 
 						<small class="text-uc text-xs text-muted"><?php echo e(ucfirst(humanize($field->meta_key, '-'))); ?></small>
-						<p><?php echo e(isJson($field->meta_value) ? implode(', ', json_decode($field->meta_value)) : $field->meta_value); ?></p>
+						<p><?php echo e(isJson($field->meta_value) ? implode(', ', json_decode($field->meta_value)) : $field->meta_value); ?>
+
+						</p>
 
 
 
@@ -232,8 +239,8 @@
 
 		<?php
 			$data = [
-				'notes' => $lead->notes, 'noteable_type' => get_class($lead),
-				'title' => $lead->name.' Note', 'noteable_id' => $lead->id
+			'notes' => $lead->notes, 'noteable_type' => get_class($lead),
+			'title' => $lead->name.' Note', 'noteable_id' => $lead->id
 			];
 		?>
 
@@ -244,3 +251,41 @@
 
 
 </div>
+<?php $__env->startPush('custom-pagescript'); ?>
+	
+		
+
+			
+				
+				
+					
+				
+
+				
+					
+					
+					
+
+					
+						
+					
+				
+			
+		
+
+	
+
+<?php $__env->stopPush(); ?>
+<?php $__env->startPush('pagescript'); ?>
+	<script>
+		$('#custom_stage_id').on('change', function () {
+			var lead_id = $('#lead-id').text();
+			axios.put('<?php echo e(route('leads.update-stage')); ?>', {lead_id:lead_id, stage_id : $(this).val()})
+				.then(function (response) {
+					console.log('asf');
+				});
+		});
+
+
+	</script>
+<?php $__env->stopPush(); ?>

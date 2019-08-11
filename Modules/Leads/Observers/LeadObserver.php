@@ -6,6 +6,7 @@ use App\Entities\Category;
 use Modules\Leads\Entities\Lead;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use Symfony\Component\HttpFoundation\Response;
 
 class LeadObserver {
     /**
@@ -14,6 +15,11 @@ class LeadObserver {
      * @param Lead $lead
      */
     public function saving(Lead $lead) {
+
+        if (request()->isMethod('get') && request()->has('stage_id')) {
+            return true;
+
+        }
         if (empty($lead->name) || $lead->name == '') {
             $lead->name = $lead->email;
         }
@@ -51,7 +57,15 @@ class LeadObserver {
      *
      * @param Lead $lead
      */
+
     public function saved(Lead $lead) {
+
+        if (request()->isMethod('put') && request()->has('stage_id')) {
+
+           $res = new Response();
+           return $res->send();
+
+        }
         if (request()->has('change_password')) {
             logger('password');
 
@@ -75,6 +89,7 @@ class LeadObserver {
             }
 
         } else {
+
             logger('asdfa');
             if (request()->has('tags')) {
                 $lead->retag(collect(request('tags'))->implode(','));

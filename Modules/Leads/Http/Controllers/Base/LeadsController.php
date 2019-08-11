@@ -59,6 +59,7 @@ abstract class LeadsController extends Controller {
             'can:menu_leads'
         ]);
 
+
         $this->displayType = request('view', 'table');
         $this->request = $request;
         $this->lead = $lead;
@@ -94,6 +95,22 @@ abstract class LeadsController extends Controller {
         return view('leads::modal.create');
     }
 
+    public function updateStage(Request $request) {
+
+
+        $stage_id = $request->all()['stage_id'];
+        $lead_id = $request->all()['lead_id'];
+        $lead = Lead::findOrFail( $lead_id);
+        if (isset($stage_id)) {
+
+            return $lead->update([
+                'name'     => $lead->name,
+                'stage_id' => $stage_id
+            ]);
+
+        }
+    }
+
     /**
      * Display the specified resource.
      *
@@ -110,6 +127,7 @@ abstract class LeadsController extends Controller {
             'calls',
             'overview'
         ];
+
         $data['tab'] = in_array($tab, $allowedTabs) ? $tab : 'overview';
         $data['page'] = $this->getPage();
         $data['lead'] = $lead;
@@ -457,7 +475,7 @@ abstract class LeadsController extends Controller {
         $data = DataTables::eloquent($model)->editColumn('name', function ($lead) {
             ini_set('max_execution_time', 300);
 
-            $str = '<a href="' . route('leads.view', $lead->id) . '">';
+            $str = '<a href="' . route('leads.view', $lead->id) . '"  target="_blank" >';
             if ($lead->has_email) {
                 $str .= '<i class="fas fa-envelope-open text-danger"></i> ';
             }
@@ -512,7 +530,7 @@ abstract class LeadsController extends Controller {
 
 //            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()->setTimezone($lead->timezone))->format('H:i:s');
             $carbon = Carbon::now()->tz($lead->timezone)->format('H:i:s');
-            if($lead->timezone == 'Europe/Malta') {
+            if ($lead->timezone == 'Europe/Malta') {
                 logger($lead->timezone);
                 logger($carbon);
             }

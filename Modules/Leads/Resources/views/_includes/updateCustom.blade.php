@@ -1,4 +1,4 @@
-sss
+
 @foreach ($fields as $field)
                         @php 
                         $val = $lead->metaValue($field->name);
