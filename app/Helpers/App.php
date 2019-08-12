@@ -561,17 +561,22 @@ function editorLocale() {
 }
 
 function mainMenu() {
+
     $cacheMenus = Cache::remember('workice-main-menu-' . \Auth::id(), now()->addDays(5), function () {
         $collection = Hook::with('children')->where('visible', 1)->whereParent('')->whereHook('main_menu')->orderBy('order')->get();
 
         return $collection->filter(function ($item) {
-            if (\Auth::user()->can($item['module'])) {
+
+            if (\Auth::user()->can($item['module']) || $item['module'] == 'menu_converted_leads') {
                 return $item;
             }
+
         })->toArray();
     });
+
 //    dd(Auth::user()->getAllPermissions());
     foreach ($cacheMenus as $key => $menu) {
+
         if ($menu['name'] == 'sales' ||
             $menu['name'] == 'deals' ||
             $menu['name'] == 'contacts' ||

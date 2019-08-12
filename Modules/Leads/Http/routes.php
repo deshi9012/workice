@@ -8,6 +8,7 @@ Route::group([
 ], function () {
 
     Route::get('/', 'LeadCustomController@index')->name('leads.index')->middleware('can:menu_leads');
+    Route::get('/converted', 'LeadCustomController@getConverted')->name('leads.converted');
     Route::get('/create', 'LeadCustomController@create')->name('leads.create')->middleware('can:leads_create');
     Route::patch('/update-stage', 'LeadCustomController@updateStage')->name('leads.update-stage')->middleware('can:leads_update');
 
@@ -29,6 +30,7 @@ Route::group([
     Route::post('csvprocess', 'LeadCustomController@processImport')->name('leads.csvprocess')->middleware('can:leads_create');
 
     Route::get('/data', 'LeadCustomController@tableData')->name('leads.data')->middleware('can:menu_leads');
+    Route::get('/data-converted', 'LeadCustomController@tableDataConverted')->name('leads.converted')->middleware('can:menu_leads');
 
     Route::get('/convert/{lead}', 'LeadCustomController@convert')->name('leads.convert')->middleware('can:deals_create');
 

@@ -1,0 +1,389 @@
+<style>
+	input#id, input#desk, input#source, input#language, input#courses, input#sales_rep {
+		width: 50px;
+	}
+
+	input#name {
+		width: 170px;
+	}
+
+	input#stage {
+		width: 100px;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li.red, li.green {
+		padding-left: 1em;
+		text-indent: -.3em;
+	}
+
+	.red::before {
+		content: "• ";
+		color: red; /* or whatever color you prefer */
+		font-size: 1.7em;
+	}
+
+	.green::before {
+		content: "• ";
+		color: green; /* or whatever color you prefer */
+		font-size: 170%;
+	}
+
+	.table-responsive {
+		max-height: 80vh;
+	}
+
+	/*table#leads-table{*/
+	/*max-height: 50vh;*/
+	/*}*/
+
+
+</style>
+
+<div class="col-lg-12">
+	<section class="panel panel-default">
+
+		<form id="frm-lead" action="{{ route('leads.bulk.email') }}" method="POST">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<input type="hidden" name="module" value="leads">
+			<div class="table-responsive">
+				<table class="table table-striped" id="leads-table">
+					<thead>
+					<tr>
+						<th class="hide"></th>
+						<th class="no-sort">
+							<label>
+								<input name="select_all" value="1" id="select-all" type="checkbox"/>
+								<span class="label-text"></span>
+							</label>
+						</th>
+						<th class="">ID</th>
+
+						<th class="">@langapp('name')</th>
+						<th class="">@langapp('email')</th>
+						<th class="">@langapp('mobile')</th>
+
+						<th class="">Country</th>
+						<th class="">Source</th>
+						<th class="">Desk</th>
+						<th class="">Modified time</th>
+						<th class="">Registration time</th>
+
+						<th class="">Language</th>
+						<th class="">Courses</th>
+
+						<th class="col-currency">Sales rep</th>
+						<th class="">@langapp('stage')</th>
+						<th class="col-currency">Last login</th>
+						<th class="col-currency">Local time</th>
+						{{--<th class="">@langapp('sales_rep')</th>--}}
+
+					</tr>
+					</thead>
+				</table>
+			</div>
+			@if(!(Auth::user()->hasRole('sales agent') || Auth::user()->hasRole('sales team leader')))
+				{{--@can('leads_create')--}}
+				<button type="submit" id="button" class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs"
+						value="bulk-email">
+					<span class="">@icon('solid/mail-bulk') @langapp('send_email')</span>
+				</button>
+				{{--@endcan--}}
+				{{--			@can('leads_update')--}}
+				<button type="submit" id="button" class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs"
+						value="bulk-archive">
+					<span class="">@icon('solid/archive') @langapp('archive')</span>
+				</button>
+				{{--@endcan--}}
+
+				{{--			@can('leads_delete')--}}
+				<button type="submit" id="button" class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs"
+						value="bulk-delete">
+					<span class="">@icon('solid/trash-alt') @langapp('delete')</span>
+				</button>
+				{{--@endcan--}}
+
+			@endif
+		</form>
+	</section>
+</div>
+@push('pagestyle')
+	@include('stacks.css.datatables')
+@endpush
+@push('pagescript')
+	@include('stacks.js.datatables')
+	<script>
+
+
+		$(function () {
+
+			$('#leads-table thead tr').clone(true).appendTo('#leads-table thead');
+			var tableHeader = $('#leads-table thead tr:eq(1) th');
+
+			var removed = tableHeader.splice(1, 1);
+
+			tableHeader.each(async function (i) {
+
+				var title = $(this).text();
+				if ($(this).attr('name') == 'select_all') {
+					return true;
+				} else {
+
+					title = title.replace(/\s+/g, '_').toLowerCase();
+
+					if (title == 'local_time') {
+						$(this).html('&nbsp');
+						return true;
+					}
+					if (title.indexOf('_') > -1 && (title.split('_')[1] == 'time' || title.split('_')[1] == 'login')) {
+						var field;
+						field = $(this).html('<input class="search" type="text" name="daterange" id="' + title + '" placeholder="' + title + '" />').daterangepicker({
+							autoUpdateInput: false,
+							locale: {
+								cancelLabel: 'Clear'
+							}
+						});
+
+						field.on('apply.daterangepicker', function (ev, picker) {
+
+							$(this).find('*').filter(':input:visible:first').val(picker.startDate.format('YYYY-MM-DD') + ' / ' + picker.endDate.format('YYYY-MM-DD'));
+							$(this).find('*').filter(':input:visible:first').change();
+						});
+						field.on('cancel.daterangepicker', function (ev, picker) {
+							$(this).find('*').filter(':input:visible:first').val('');
+							$(this).find('*').filter(':input:visible:first').change();
+						});
+
+
+					} else if (title == 'stage') {
+						$(this).html('<select class="select2-option form-control search"  id="' + title + '" name="stage" required>' +
+							'<option value="">Choose: </option>' +
+							'<option value="new">New</option>' +
+							'<option value="voice mail">Voice Mail</option>' +
+							'<option value="callback">Callback</option>' +
+							'<option value="high potential">High potential</option>' +
+							'<option value="converted">Converted</option>' +
+							'<option value="closed account">Closed account</option>' +
+							'<option value="not qualified - economic status">Not qualified - economic status</option>' +
+							'<option value="not qualified - under 18">Not qualified - under 18</option>' +
+							'</select>')
+
+					} else if (title == 'sales_rep') {
+						var self = $(this);
+						await $.ajax({
+							url: "/users/usersData",
+							type: 'GET',
+							success: function (res) {
+
+								self.html(
+									'<select class="select2-option form-control search"  id="' + title + '" name="stage" required>'+
+									'<option value="">Choose: </option>' +
+									res.map(function(value){
+										return '<option value="'+value+ '">'+value+'</option>';
+									}) +
+									'</select>'
+								);
+
+							}
+						});
+
+					} else {
+
+						$(this).html('<input class="search" type="text" id="' + title + '" placeholder="' + title + '" />');
+
+					}
+					$(this).find('*').filter(':input:visible:first').on('keyup change', function () {
+
+						if ($(this).val().length >= 2 || $(this).val().length == 0) {
+							table.columns.adjust().draw();
+
+						}
+
+					});
+					$(this).find('select').on('change', function () {
+
+						if ($(this).val().length >= 2 || $(this).val().length == 0) {
+							table.columns.adjust().draw();
+
+						}
+
+					});
+					$(this).find('#sales_rep').on('change', function () {
+						console.log('changed');
+
+						if ($(this).val().length >= 2 || $(this).val().length == 0) {
+							table.columns.adjust().draw();
+
+						}
+
+					});
+
+				}
+
+			});
+
+			var table = $('#leads-table').DataTable({
+				"autoWidth": true,
+
+				"searching": false,
+				orderCellsTop: true,
+				fixedHeader: true,
+				"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+					if (aData['is_logged']) {
+						$("td:eq(2)", nRow).html('<ul><li class="green">' + aData['name'] + '</li></ul>');
+					} else {
+						$("td:eq(2)", nRow).html('<ul><li class="red">' + aData['name'] + '</li></ul>');
+					}
+
+					if (aData['stage_id'] == 43 || aData['stage_id'] == null) {
+						$('td', nRow).css('background-color', '#FCEFD8');
+					} else if (aData['stage_id'] == 44 || aData['stage_id'] == 46) {
+						$('td', nRow).css('background-color', '#DCECFB');
+					} else if (aData['stage_id'] == 55 ||
+						aData['stage_id'] == 45 ||
+						aData['stage_id'] == 56 ||
+						aData['stage_id'] == 57) {
+
+						$('td', nRow).css('background-color', '#F9E1E0');
+
+					} else if (aData['stage_id'] == 54) {
+						$('td', nRow).css('background-color', '#F2FEE5');
+					} else if (aData['stage_id'] == 42) {
+						$('td', nRow).css('background-color', 'white');
+					}
+					else {
+						$('td', nRow).css('background-color', '#fff7e5')
+
+					}
+				},
+				processing: true,
+				serverSide: true,
+				ajax: {
+					url: '{{ route('leads.converted') }}',
+
+
+					data: function (data) {
+
+						data['searchFields'] = [];
+						$("input.search").map(function (index, value) {
+
+
+							if ($(value).val()) {
+
+								var name = $(value).attr('id').toLowerCase();
+
+								data.search[name] = $(value).val();
+
+							} else {
+
+								var name = $(value).attr('id').toLowerCase();
+
+								data.search[name] = false;
+							}
+						});
+						$("select.search").map(function (index, value) {
+
+
+							if ($(value).val()) {
+
+								var name = $(value).attr('id').toLowerCase();
+
+								data.search[name] = $(value).val();
+
+							} else {
+
+								var name = $(value).attr('id').toLowerCase();
+
+								data.search[name] = false;
+							}
+						});
+					}
+				},
+				order: [[0, "desc"]],
+				columns: [
+					{data: 'id', name: 'id'},
+					{data: 'chk', name: 'chk', searchable: false},
+					{data: 'id', name: 'id'},
+					{data: 'name', name: 'name'},
+					{data: 'email', name: 'email'},
+
+					{data: 'mobile', name: 'mobile'},
+					{data: 'country', name: 'country'},
+					{data: 'source', name: 'source'},
+					{data: 'desk', name: 'desk'},
+					{data: 'modified_time', name: 'modified_time'},
+					{data: 'registration_time', name: 'registration_time'},
+
+					{data: 'language', name: 'language'},
+					{data: 'courses', name: 'courses'},
+
+
+					{data: 'sales_rep', name: 'agent.name'},
+					{data: 'stage', name: 'stage'},
+					{data: 'last_login', name: 'last_login'},
+					{data: 'local_time', name: 'local_time'}
+
+				]
+			}).columns.adjust();
+
+			$("#frm-lead button").click(function (ev) {
+				ev.preventDefault();
+				if ($(this).attr("value") == "bulk-email") {
+					var form = $("#frm-lead").serialize();
+					$("#frm-lead").submit();
+				}
+
+				if ($(this).attr("value") == "bulk-archive") {
+					var form = $("#frm-lead").serialize();
+					axios.post('{{ route('archive.process') }}', form)
+						.then(function (response) {
+							toastr.warning(response.data.message, '@langapp('
+							response_status
+							')'
+						)
+							;
+							window.location.href = response.data.redirect;
+						})
+						.catch(function (error) {
+							showErrors(error);
+						});
+				}
+
+				if ($(this).attr("value") == "bulk-delete") {
+					var form = $("#frm-lead").serialize();
+					axios.post('{{ route('leads.bulk.delete') }}', form)
+						.then(function (response) {
+							toastr.warning(response.data.message, '@langapp('
+							response_status
+							') '
+						)
+							;
+							window.location.href = response.data.redirect;
+						})
+						.catch(function (error) {
+							showErrors(error);
+						});
+				}
+			});
+
+			function showErrors(error) {
+				var errors = error.response.data.errors;
+				var errorsHtml = '';
+				$.each(errors, function (key, value) {
+					errorsHtml += '<li>' + value[0] + '</li>';
+				});
+				toastr.error(errorsHtml, '@langapp('
+				response_status
+				') '
+			)
+				;
+			}
+
+		});
+	</script>
+@endpush

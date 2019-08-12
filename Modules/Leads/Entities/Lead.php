@@ -177,7 +177,8 @@ class Lead extends Model {
         } else {
             return [
                 'message'  => langapp('saved_successfully'),
-                'redirect' => route('clients.view', ['id' => $contact->business->id]),
+//                'redirect' => route('clients.view', ['id' => $contact->business->id]),
+                'redirect' => route('leads.index'),
             ];
         }
     }

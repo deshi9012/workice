@@ -2675,8 +2675,11 @@ class LeadsApiController extends Controller {
             'deal_title' => 'required',
             'id'         => 'required'
         ]);
+        $this->request->request->add(['converting' => 1]);
         $lead = $this->lead->findOrFail($id);
+        $lead->stage_id = 54;
         $data = $lead->toCustomer();
+        logger($data);
         event(new LeadConverted($lead, \Auth::id()));
 
         return ajaxResponse($data);

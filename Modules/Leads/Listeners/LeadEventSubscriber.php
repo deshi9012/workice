@@ -47,7 +47,6 @@ class LeadEventSubscriber
      */
     public function onLeadConverted($event)
     {
-
         $event->lead->update(['converted_at' => now()->toDateTimeString(), 'archived_at' => now()->toDateTimeString()]);
         $data = [
             'action' => 'activity_convert_lead', 'icon' => 'fa-balance-scale', 'user_id' => $event->user,

@@ -100,7 +100,7 @@ abstract class LeadsController extends Controller {
 
         $stage_id = $request->all()['stage_id'];
         $lead_id = $request->all()['lead_id'];
-        $lead = Lead::findOrFail( $lead_id);
+        $lead = Lead::findOrFail($lead_id);
         if (isset($stage_id)) {
 
             $lead->update([
@@ -108,12 +108,22 @@ abstract class LeadsController extends Controller {
                 'stage_id' => $stage_id
             ]);
             return ajaxResponse([
-                'id'       => $lead->id,
-                'message'  => langapp('saved_successfully'),
-//                'redirect' => route('leads.view', $lead->id),
+                'id'      => $lead->id,
+                'message' => langapp('saved_successfully'),
+                //                'redirect' => route('leads.view', $lead->id),
             ], true, Response::HTTP_CREATED);
 
         }
+    }
+
+    public function getConverted() {
+
+
+        $data['page'] = $this->getPage();
+        $data['displayType'] = $this->getDisplayType();
+        $data['filter'] = $this->request->filter;
+
+        return view('leads::converted')->with($data);
     }
 
     /**
@@ -409,35 +419,138 @@ abstract class LeadsController extends Controller {
      */
     public function tableData(Request $request) {
 
-//        $client = new Client();
-//        $loggedUsers = [];
-//        try {
-//
-//            $headers = ['Content-Type' => 'application/json'];
-//            $res = $client->request('GET', 'https://thebrokersacademy.com/getLoggedUsers.php?authTokenCRM=ahrnJBuscD0Gi23l8iPO');
-//            $loggedUsers = json_decode($res->getBody(), 1);
-//
-//        } catch (ClientException $exception) {
-//            logger($exception);
-//
-//        }
-//
-//
-//
-//        $loggedEmails = [];
-//        foreach ($loggedUsers as $loggedUser) {
-//            $loggedEmails[] = $loggedUser['user_email'];
-//        }
-//
-//
-//        $leads = Lead::whereIn('email',$loggedEmails)->update(['is_logged' => true]);
-
 
         //Get current auth user
         $user = Auth::user();
         $local_timezone = get_local_time();
 
 
+        if ($user->hasRole('admin') || $user->hasRole('office manager')) {
+            //Get all leads
+            $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
+
+        } elseif ($user->hasRole('sales agent')) {
+            //Get all leads under him
+            $model = $this->applyFilter()->where('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+
+        } elseif ($user->hasRole('team leader')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        } elseif ($user->hasRole('team manager')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        } elseif ($user->hasRole('desk manager')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        } elseif ($user->hasRole('office manager')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        } elseif ($user->hasRole('sales team leader')) {
+            //Get all leads under him and under his desk
+            $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
+        }
+
+        //Get leads which have the same desk_id as a autheticated user
+//        dd($model);
+
+        $sourceData = Category::whereModule('source')->get()->toArray();
+        $deskData = Desk::all()->toArray();
+        $allDesks = [];
+        $allSources = [];
+        foreach ($deskData as $key => $desk) {
+            $allDesks[$desk['id']] = $desk['name'];
+        }
+        foreach ($sourceData as $key => $item) {
+            $allSources[$item['id']] = $item['name'];
+        }
+
+        $data = DataTables::eloquent($model)->editColumn('name', function ($lead) {
+            ini_set('max_execution_time', 300);
+
+            $str = '<a href="' . route('leads.view', $lead->id) . '"  target="_blank" >';
+            if ($lead->has_email) {
+                $str .= '<i class="fas fa-envelope-open text-danger"></i> ';
+            }
+            return $str . str_limit($lead->name, 15) . '</a>';
+        })->editColumn('chk', function ($lead) {
+            return '<label><input type="checkbox" name="checked[]" value="' . $lead->id . '"><span class="label-text"></span></label>';
+        })->editColumn('mobile', function ($lead) {
+            return str_limit($lead->mobile, 15);
+        })->editColumn('email', function ($lead) {
+            $str = '<a href="' . route('leads.view', [
+                    'lead' => $lead->id,
+                    'tab'  => 'conversations'
+                ]) . '">';
+            return $str . $lead->email . '</a>';
+        })->editColumn('lead_value', function ($lead) {
+            return formatCurrency(get_option('default_currency'), (float)$lead->lead_value);
+        })->editColumn('stage', function ($lead) {
+            return '<span class="text-dark">' . str_limit($lead->status->name, 15) . '</span>';
+        })->editColumn('sales_rep', function ($lead) {
+            return str_limit(optional($lead->agent)->name, 15);
+        })->editColumn('source', function ($lead) use ($allSources) {
+            return $allSources[$lead->source];
+        })->editColumn('desk', function ($lead) use ($allDesks) {
+
+            return $allDesks[$lead->desk_id];
+        })->editColumn('approx_time', function ($lead) {
+            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
+            return $carbon->tz($lead->timezone)->toTimeString();
+        })->editColumn('registration_time', function ($lead) {
+            if ($lead->created_at) {
+                return $lead->created_at->toDateTimeString();
+            }
+
+        })->editColumn('sales_status', function ($lead) {
+            if (!$lead->sales_status) {
+                return $lead->sales_status = 'new';
+            } else {
+                return $lead->sales_status;
+            }
+
+        })->editColumn('modified_time', function ($lead) use ($local_timezone) {
+            if ($lead->updated_at) {
+                $carbon = Carbon::createFromFormat('Y-m-d H:i:s', $lead->updated_at, $local_timezone);
+//                logger($carbon->tz($lead->timezone)->toTimeString());
+//                logger($lead->updated_at->toDateTimeString(V));
+
+//                return $carbon->tz(get_local_time())->toDateTimeString();
+//                return $lead->updated_at->toDateTimeString();
+                return $carbon;
+            }
+        })->editColumn('local_time', function ($lead) {
+
+//            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()->setTimezone($lead->timezone))->format('H:i:s');
+            $carbon = Carbon::now()->tz($lead->timezone)->format('H:i:s');
+            if ($lead->timezone == 'Europe/Malta') {
+                logger($lead->timezone);
+                logger($carbon);
+            }
+            return $carbon;
+//            return $carbon->tz($lead->timezone)->toTimeString();
+        })->rawColumns([
+            'id',
+            'name',
+            'mobile',
+            'stage',
+            'chk',
+            'lead',
+            'email',
+            'language',
+            'is_logged'
+        ])->make(true);
+
+        return $data;
+    }
+
+    public function tableDataConverted() {
+
+
+        //Get current auth user
+        $user = Auth::user();
+        $local_timezone = get_local_time();
+
+        $this->request->request->add(['filter' => 'converted']);
         if ($user->hasRole('admin') || $user->hasRole('office manager')) {
             //Get all leads
             $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
@@ -598,7 +711,8 @@ abstract class LeadsController extends Controller {
     protected function applyFilter() {
 
         if ($this->request->filter === 'converted') {
-            return $this->lead->apply(['converted' => 1])->whereNull('archived_at');
+//            return $this->lead->apply(['converted' => 1])->whereNull('archived_at');
+            return $this->lead->query()->whereNotNull('archived_at')->orderby('is_logged', 'desc');
         }
         if ($this->request->filter === 'archived') {
             return $this->lead->apply(['archived' => 1]);

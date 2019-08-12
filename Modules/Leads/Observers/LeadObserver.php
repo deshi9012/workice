@@ -88,8 +88,16 @@ class LeadObserver {
 
             }
 
-        } else {
+        }
+        elseif(request()->has('converting')){
 
+            if (request()->has('tags')) {
+                $lead->retag(collect(request('tags'))->implode(','));
+            }
+            \Artisan::queue('leads:calcstage');
+            $lead->saveCustom(request('custom'));
+        }
+        else {
             logger('asdfa');
             if (request()->has('tags')) {
                 $lead->retag(collect(request('tags'))->implode(','));
