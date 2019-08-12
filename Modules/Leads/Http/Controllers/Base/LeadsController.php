@@ -103,10 +103,15 @@ abstract class LeadsController extends Controller {
         $lead = Lead::findOrFail( $lead_id);
         if (isset($stage_id)) {
 
-            return $lead->update([
+            $lead->update([
                 'name'     => $lead->name,
                 'stage_id' => $stage_id
             ]);
+            return ajaxResponse([
+                'id'       => $lead->id,
+                'message'  => langapp('saved_successfully'),
+//                'redirect' => route('leads.view', $lead->id),
+            ], true, Response::HTTP_CREATED);
 
         }
     }

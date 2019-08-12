@@ -2653,15 +2653,17 @@ class LeadsApiController extends Controller {
 
         $request->validate(['email' => 'unique:leads,email,' . $id]);
         $lead = $this->lead->findOrFail($id);
+        $leadID = $lead->id;
         $lead->update($request->except([
             'custom',
             'tags'
         ]));
         $lead->update(['desk_id' => $request->all()['desk']]);
+
         return ajaxResponse([
-            'id'       => $lead->id,
+            'id'       => $leadID,
             'message'  => langapp('changes_saved_successful'),
-            'redirect' => route('leads.view', $lead->id),
+            'redirect' => route('leads.view', $leadID),
         ], true, Response::HTTP_OK);
     }
 

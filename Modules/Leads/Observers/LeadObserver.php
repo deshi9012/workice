@@ -16,7 +16,8 @@ class LeadObserver {
      */
     public function saving(Lead $lead) {
 
-        if (request()->isMethod('get') && request()->has('stage_id')) {
+//
+        if (request()->isMethod('patch') && request()->has('stage_id')) {
             return true;
 
         }
@@ -59,8 +60,7 @@ class LeadObserver {
      */
 
     public function saved(Lead $lead) {
-
-        if (request()->isMethod('put') && request()->has('stage_id')) {
+        if (request()->isMethod('patch') && request()->has('stage_id')) {
 
            $res = new Response();
            return $res->send();

@@ -277,7 +277,7 @@
 	<script>
 		$('#custom_stage_id').on('change', function () {
 			var lead_id = $('#lead-id').text();
-			axios.put('{{ route('leads.update-stage') }}', {lead_id:lead_id, stage_id : $(this).val()})
+			axios.patch('{{ route('leads.update-stage') }}', {lead_id:lead_id, stage_id : $(this).val()})
 				.then(function (response) {
 					console.log('asf');
 				});
