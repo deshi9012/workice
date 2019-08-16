@@ -156,6 +156,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+
 </head>
 <body>
 @include('cookie_consent')
@@ -182,7 +183,6 @@
 	</section>
 </section>
 
-
 <script src="{{ getAsset('js/app.js') }}"></script>
 @stack('custom-pagescript')
 
@@ -192,6 +192,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+
 <script>
 	var locale = '@langapp('
 	lang_code

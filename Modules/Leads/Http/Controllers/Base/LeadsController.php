@@ -80,6 +80,7 @@ abstract class LeadsController extends Controller {
     public function index() {
 
         $data['page'] = $this->getPage();
+
         $data['displayType'] = $this->getDisplayType();
         $data['filter'] = $this->request->filter;
 
@@ -119,7 +120,8 @@ abstract class LeadsController extends Controller {
     public function getConverted() {
 
 
-        $data['page'] = $this->getPage();
+        $data['page'] = 'Client';
+
         $data['displayType'] = $this->getDisplayType();
         $data['filter'] = $this->request->filter;
 
@@ -172,6 +174,11 @@ abstract class LeadsController extends Controller {
 
         $data['lead'] = $lead;
         return view('leads::modal.update')->with($data);
+    }
+
+    public function bulkEdit(Request $request) {
+        logger($request->all());
+        return view('leads::modal.bulkEdit');
     }
 
     /**
@@ -712,7 +719,32 @@ abstract class LeadsController extends Controller {
 
         if ($this->request->filter === 'converted') {
 //            return $this->lead->apply(['converted' => 1])->whereNull('archived_at');
-            return $this->lead->query()->whereNotNull('archived_at')->orderby('is_logged', 'desc');
+            $q =  $this->lead->query()->where('stage_id', 54)->orderby('is_logged', 'desc');
+
+            if (empty($this->searchFields)) {
+                return $q;
+            }else{
+                foreach ($this->searchFields as $searchField => $searchValue) {
+                    if ($searchValue != 'false') {
+                        //Check if field contains  time
+                        if ((strpos($searchField, 'time') !== false)) {
+
+                            $date = explode('/', $searchValue);
+                            $timeField = explode('_', $searchField);
+
+                            $searchField = $timeField[0] . 'Time';
+                            $q->{$searchField}($date);
+                            continue;
+                        }
+                        if ($searchField == 'sales_rep') {
+                            $q->salesRep($searchValue);
+                            continue;
+                        }
+                        $q->{$searchField}($searchValue);
+                    }
+                }
+                return $q;
+            }
         }
         if ($this->request->filter === 'archived') {
             return $this->lead->apply(['archived' => 1]);

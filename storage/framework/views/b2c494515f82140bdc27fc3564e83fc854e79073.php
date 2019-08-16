@@ -58,6 +58,7 @@
 
 							<?php if(count($menu['children']) > 0): ?>
 
+
 								<li class="nav-w-children <?php echo e($page == langapp($menu['name']) && (in_array($menu['module'], array_pluck($menu['children'], 'parent'))) ? 'active'  : ''); ?>"
 									id="<?php echo e($menu['module']); ?>">
 
@@ -92,6 +93,7 @@
 									</ul>
 								</li>
 							<?php else: ?>
+
 								<li class="<?php echo e($page === langapp($menu['name']) ? 'active' : ''); ?>">
 									<?php if($menu['name'] == 'calendar'): ?>
 										<a href="calendar/appointments">

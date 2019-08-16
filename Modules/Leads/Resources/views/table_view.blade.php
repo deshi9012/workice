@@ -38,12 +38,63 @@
 		max-height: 80vh;
 	}
 
+	input[name="select_all"] > span {
+		display: none;
+	}
+
 	/*table#leads-table{*/
 	/*max-height: 50vh;*/
 	/*}*/
+	/* The Modal (background) */
+	.modal {
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		padding-top: 100px; /* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgb(0, 0, 0); /* Fallback color */
+		background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+	}
 
+	/* Modal Content */
+	.modal-content {
+		background-color: #fefefe;
+		margin: auto;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 80%;
+	}
+
+	/* The Close Button */
+	.close {
+		color: #aaaaaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	}
 
 </style>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<p>Some text in the Modal..</p>
+	</div>
+
+</div>
 
 <div class="col-lg-12">
 	<section class="panel panel-default">
@@ -109,6 +160,15 @@
 				{{--@endcan--}}
 
 			@endif
+			@if((Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')))
+				{{--<a href="{{ route('leads.bulkEdit') }}"--}}
+				{{--class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs" data-toggle="ajaxModal" data-rel="tooltip"--}}
+				{{--title="@langapp('edit')  ">Bulk</a>--}}
+				<button type="submit" id="button" class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs"
+						value="bulk-edit">
+					<span class="">@icon('solid/trash-alt')Bulk Edit</span>
+				</button>
+			@endif
 		</form>
 	</section>
 </div>
@@ -121,6 +181,12 @@
 
 
 		$(function () {
+			var modal = $('#myModal');
+
+
+			$('.close').on('click', function () {
+				modal.css('display', 'none');
+			});
 
 			$('#leads-table thead tr').clone(true).appendTo('#leads-table thead');
 			var tableHeader = $('#leads-table thead tr:eq(1) th');
@@ -131,6 +197,7 @@
 
 				var title = $(this).text();
 				if ($(this).attr('name') == 'select_all') {
+
 					return true;
 				} else {
 
@@ -181,13 +248,13 @@
 							success: function (res) {
 
 								self.html(
-									'<select class="select2-option form-control search"  id="' + title + '" name="stage" required>'+
+									'<select class="select2-option form-control search"  id="' + title + '" name="stage" required>' +
 									'<option value="">Choose: </option>' +
-										res.map(function(value){
-											return '<option value="'+value+ '">'+value+'</option>';
-										}) +
+									res.map(function (value) {
+										return '<option value="' + value + '">' + value + '</option>';
+									}) +
 									'</select>'
-							);
+								);
 
 							}
 						});
@@ -369,6 +436,42 @@
 							showErrors(error);
 						});
 				}
+				if ($(this).attr("value") == "bulk-edit") {
+					var modal = $('#myModal');
+					modal.css('display', 'block');
+
+					return;
+					var filters = [];
+					$("input.search").map(function (index, value) {
+
+						if ($(value).val()) {
+
+							var name = $(value).attr('id').toLowerCase();
+							filters[name] = $(value).val();
+
+						} else {
+
+							var name = $(value).attr('id').toLowerCase();
+							filters[name] = false;
+						}
+					});
+					console.log(filters);
+
+					return;
+					var form = $("#frm-lead").serialize();
+					axios.post('{{ route('leads.bulkEdit') }}', {'form': form, 'filters': filters})
+						.then(function (response) {
+							toastr.warning(response.data.message, '@langapp('
+							response_status
+							') '
+						)
+							;
+							window.location.href = response.data.redirect;
+						})
+						.catch(function (error) {
+							showErrors(error);
+						});
+				}
 			});
 
 			function showErrors(error) {
@@ -383,6 +486,7 @@
 			)
 				;
 			}
+
 
 		});
 	</script>

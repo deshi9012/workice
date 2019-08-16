@@ -58,6 +58,7 @@
 
 							@if (count($menu['children']) > 0)
 
+
 								<li class="nav-w-children {{ $page == langapp($menu['name']) && (in_array($menu['module'], array_pluck($menu['children'], 'parent'))) ? 'active'  : '' }}"
 									id="{{ $menu['module'] }}">
 
@@ -92,6 +93,7 @@
 									</ul>
 								</li>
 							@else
+
 								<li class="{{ $page === langapp($menu['name']) ? 'active' : '' }}">
 									@if($menu['name'] == 'calendar')
 										<a href="calendar/appointments">
