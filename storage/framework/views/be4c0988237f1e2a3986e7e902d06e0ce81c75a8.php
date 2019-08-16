@@ -278,12 +278,22 @@
 <?php $__env->stopPush(); ?>
 <?php $__env->startPush('pagescript'); ?>
 	<script>
+		var index = $('#custom_stage_id').prop('selectedIndex');
+		var select = $('#custom_stage_id');
+
 		$('#custom_stage_id').on('change', function () {
-			var lead_id = $('#lead-id').text();
-			axios.patch('<?php echo e(route('leads.update-stage')); ?>', {lead_id:lead_id, stage_id : $(this).val()})
-				.then(function (response) {
-					console.log('asf');
-				});
+			var alertConfirm = confirm("Are you sure you want to change stage for this lead ?");
+			if(alertConfirm) {
+				var lead_id = $('#lead-id').text();
+				axios.patch('<?php echo e(route('leads.update-stage')); ?>', {lead_id: lead_id, stage_id: $(this).val()})
+					.then(function (response) {
+						console.log('asf');
+					});
+			}else{
+				$('#custom_stage_id').prop('selectedIndex',index);
+				
+				return false;
+			}
 		});
 
 
