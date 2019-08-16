@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
 	<section id="content" class="bg">
 		<section class="vbox">
 			<header class="header bg-white b-b clearfix">
@@ -27,12 +26,14 @@
 									@icon('solid/pencil-alt') @langapp('edit') </a>
 							@endcan
 							@can('deals_create')
-								<a href="#"
-								   id="convert-lead-{{$lead->id}}"
-								   class="btn btn-{{ get_option('theme_color') }} btn-sm pull-right convert-lead"
-								   data-placement="left">
-									@icon('solid/check-circle') @langapp('convert')
-								</a>
+								@if($lead->stage_id != 54)
+									<a href="#"
+									   id="convert-lead-{{$lead->id}}"
+									   class="btn btn-{{ get_option('theme_color') }} btn-sm pull-right convert-lead"
+									   data-placement="left">
+										@icon('solid/check-circle') @langapp('convert')
+									</a>
+								@endif
 							@endcan
 							@can('leads_update')
 								<a href="{{ route('leads.nextstage', ['id' => $lead->id]) }}"

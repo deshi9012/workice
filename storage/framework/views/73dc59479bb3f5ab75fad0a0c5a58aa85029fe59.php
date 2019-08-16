@@ -1,5 +1,4 @@
 <?php $__env->startSection('content'); ?>
-
 	<section id="content" class="bg">
 		<section class="vbox">
 			<header class="header bg-white b-b clearfix">
@@ -27,12 +26,14 @@
 									<?php echo e(svg_image('solid/pencil-alt')); ?> <?php echo trans('app.'.'edit'); ?> </a>
 							<?php endif; ?>
 							<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('deals_create')): ?>
-								<a href="#"
-								   id="convert-lead-<?php echo e($lead->id); ?>"
-								   class="btn btn-<?php echo e(get_option('theme_color')); ?> btn-sm pull-right convert-lead"
-								   data-placement="left">
-									<?php echo e(svg_image('solid/check-circle')); ?> <?php echo trans('app.'.'convert'); ?>
-								</a>
+								<?php if($lead->stage_id != 54): ?>
+									<a href="#"
+									   id="convert-lead-<?php echo e($lead->id); ?>"
+									   class="btn btn-<?php echo e(get_option('theme_color')); ?> btn-sm pull-right convert-lead"
+									   data-placement="left">
+										<?php echo e(svg_image('solid/check-circle')); ?> <?php echo trans('app.'.'convert'); ?>
+									</a>
+								<?php endif; ?>
 							<?php endif; ?>
 							<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('leads_update')): ?>
 								<a href="<?php echo e(route('leads.nextstage', ['id' => $lead->id])); ?>"
