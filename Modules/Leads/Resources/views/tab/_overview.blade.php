@@ -288,7 +288,7 @@
 					});
 			}else{
 				$('#custom_stage_id').prop('selectedIndex',index);
-				
+
 				return false;
 			}
 		});

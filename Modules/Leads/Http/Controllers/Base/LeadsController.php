@@ -751,9 +751,9 @@ abstract class LeadsController extends Controller {
         }
         if (empty($this->searchFields)) {
 
-            return $this->lead->query()->whereNull('archived_at')->orderby('is_logged', 'desc');
+            return $this->lead->query()->whereNull('archived_at')->whereNotIn('stage_id', [54])->orderby('is_logged', 'desc');
         } else {
-            $q = $this->lead->query()->whereNull('archived_at')->orderby('is_logged', 'desc');
+            $q = $this->lead->query()->whereNull('archived_at')->whereNotIn('stage_id', [54])->orderby('is_logged', 'desc');
 //            if(isset($this->searchFields['name'])){
 //                $q->where('name', 'like', '%' . $this->searchFields['name'] . '%');
 //            }

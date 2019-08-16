@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7c0520f-514d-4eb0-9f2d-a143941ea56c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/sessions/GCtIdfdACnds6nTEtJtkXzZZ5RE5LeCPFC9R9T7l" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/GCtIdfdACnds6nTEtJtkXzZZ5RE5LeCPFC9R9T7l" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/73dc59479bb3f5ab75fad0a0c5a58aa85029fe59.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/73dc59479bb3f5ab75fad0a0c5a58aa85029fe59.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/be4c0988237f1e2a3986e7e902d06e0ce81c75a8.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/be4c0988237f1e2a3986e7e902d06e0ce81c75a8.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-16.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-16.log" afterDir="false" />
     </list>
@@ -25,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LeadsController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LeadsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="778" column="21" selection-start-line="778" selection-start-column="21" selection-end-line="778" selection-end-column="21" />
+            <state relative-caret-position="818">
+              <caret line="755" column="92" selection-start-line="755" selection-start-column="92" selection-end-line="755" selection-end-column="92" />
               <folding>
                 <element signature="e#55#91#0#PHP" expanded="true" />
               </folding>
@@ -91,17 +93,17 @@
       <file leaf-file-name="view.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="33" column="58" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="58" />
+            <state relative-caret-position="575">
+              <caret line="109" column="60" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_overview.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_overview.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="290" column="16" selection-start-line="290" selection-start-column="16" selection-end-line="290" selection-end-column="16" />
+            <state relative-caret-position="811">
+              <caret line="296" column="13" lean-forward="true" selection-start-line="276" selection-start-column="4" selection-end-line="296" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -110,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tableDataCo</find>
       <find>c</find>
       <find>convert(</find>
       <find>add</find>
@@ -133,13 +134,14 @@
       <find>var</find>
       <find>menu</find>
       <find>conve</find>
-      <find>convert</find>
       <find>update</find>
       <find>converted</find>
       <find>getConver</find>
       <find>table</find>
       <find>key</find>
       <find>stage</find>
+      <find>convert</find>
+      <find>tableDta</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,10 +197,10 @@
         <option value="$PROJECT_DIR$/Modules/Calendar/Http/Controllers/Base/CalendarController.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-08-15.log" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-08-16.log" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php" />
       </list>
     </option>
   </component>
@@ -688,12 +690,12 @@
       <workItem from="1565523620116" duration="2129000" />
       <workItem from="1565535257828" duration="35194000" />
       <workItem from="1565864254527" duration="17002000" />
-      <workItem from="1565957074903" duration="6615000" />
+      <workItem from="1565957074903" duration="9047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="438002000" />
+    <option name="totallyTimeSpent" value="440434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
@@ -706,7 +708,7 @@
       <window_info id="npm" order="2" sideWeight="0.5018797" side_tool="true" weight="0.23375931" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32962963" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49718046" visible="true" weight="0.25346112" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49718046" visible="true" weight="0.25346112" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298872" />
@@ -1101,16 +1103,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="778" column="21" selection-start-line="778" selection-start-column="21" selection-end-line="778" selection-end-column="21" />
-          <folding>
-            <element signature="e#55#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -1121,17 +1113,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php">
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="33" column="58" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="58" />
+        <state relative-caret-position="811">
+          <caret line="296" column="13" lean-forward="true" selection-start-line="276" selection-start-column="4" selection-end-line="296" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php">
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="290" column="16" selection-start-line="290" selection-start-column="16" selection-end-line="290" selection-end-column="16" />
+        <state relative-caret-position="575">
+          <caret line="109" column="60" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="818">
+          <caret line="755" column="92" selection-start-line="755" selection-start-column="92" selection-end-line="755" selection-end-column="92" />
+          <folding>
+            <element signature="e#55#91#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
