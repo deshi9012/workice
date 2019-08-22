@@ -6,8 +6,8 @@
         <span class="navbar-brand block {{ settingEnabled('blur_login') ? 'text-white' : '' }}">
             @php $display = get_option('logo_or_icon'); @endphp
             @if ($display == 'logo' || $display == 'logo_title')
-            <img src="{{ getStorageUrl(config('system.media_dir').'/'.get_option('company_logo')) }}"
-            class="img-responsive {{ ($display == 'logo' ? '' : 'thumb-sm m-r-sm') }}">
+            {{--<img src="{{ getStorageUrl(config('system.media_dir').'/'.get_option('company_logo')) }}"--}}
+            {{--class="img-responsive {{ ($display == 'logo' ? '' : 'thumb-sm m-r-sm') }}">--}}
             @elseif ($display == 'icon' || $display == 'icon_title')
             <i class="{{ get_option('site_icon') }}"></i>
             @endif

@@ -20,6 +20,8 @@ use App\Entities\Category;
 use Carbon\Carbon;
 use App\Entities\Desk;
 use Auth;
+use Session;
+use Modules\Users\Entities\User;
 
 
 use GuzzleHttp\Client;
@@ -68,8 +70,6 @@ abstract class LeadsController extends Controller {
 
         unset($this->searchFields['regex']);
         unset($this->searchFields['value']);
-
-
     }
 
     /**
@@ -78,7 +78,6 @@ abstract class LeadsController extends Controller {
      * @return \Illuminate\View\View
      */
     public function index() {
-
         $data['page'] = $this->getPage();
 
         $data['displayType'] = $this->getDisplayType();
@@ -97,13 +96,10 @@ abstract class LeadsController extends Controller {
     }
 
     public function updateStage(Request $request) {
-
-
         $stage_id = $request->all()['stage_id'];
         $lead_id = $request->all()['lead_id'];
         $lead = Lead::findOrFail($lead_id);
         if (isset($stage_id)) {
-
             $lead->update([
                 'name'     => $lead->name,
                 'stage_id' => $stage_id
@@ -113,13 +109,10 @@ abstract class LeadsController extends Controller {
                 'message' => langapp('saved_successfully'),
                 //                'redirect' => route('leads.view', $lead->id),
             ], true, Response::HTTP_CREATED);
-
         }
     }
 
     public function getConverted() {
-
-
         $data['page'] = 'Client';
 
         $data['displayType'] = $this->getDisplayType();
@@ -171,14 +164,142 @@ abstract class LeadsController extends Controller {
      * @return \Illuminate\View\View
      */
     public function edit(Lead $lead) {
-
         $data['lead'] = $lead;
         return view('leads::modal.update')->with($data);
     }
 
-    public function bulkEdit(Request $request) {
-        logger($request->all());
-        return view('leads::modal.bulkEdit');
+    public function leadsNumber() {
+
+        $selectAll = false;
+        $filters = [];
+        $perPageCount = $this->request->all()['perPage'];
+
+
+        foreach ($this->request->all()['filters'] as $filter) {
+            $filter = json_decode($filter, 1);
+
+            foreach ($filter as $column => $value) {
+                if ($value) {
+
+                    $filters[$column] = $value;
+                }
+            }
+        }
+
+        if (empty($filters)) {
+            return [
+                'allCount'     => Lead::all()->count(),
+                'perPageCount' => $perPageCount
+            ];
+
+        } else {
+            $q = Lead::query();
+            foreach ($filters as $searchField => $searchValue) {
+
+                //Check if field contains  time
+                if ((strpos($searchField, 'time') !== false)) {
+                    $date = explode('/', $searchValue);
+                    $timeField = explode('_', $searchField);
+
+                    $searchField = $timeField[0] . 'Time';
+                    $q->{$searchField}($date);
+                    continue;
+                }
+                if ($searchField == 'sales_rep') {
+                    $q->salesRep($searchValue);
+                    continue;
+                }
+                $q->{$searchField}($searchValue);
+
+            }
+            $allCount = $q->get()->count();
+            if ($allCount <= $perPageCount) {
+                $perPageCount = $allCount;
+            }
+
+            return [
+                'allCount'     => $allCount,
+                'perPageCount' => $perPageCount
+            ];
+        }
+
+    }
+
+    public function bulkEditCheck() {
+        $editIds = [];
+        $filters = [];
+        $selectAll = false;
+        $checked = false;
+        logger('startcheck');
+        $data = $this->request->all();
+
+        foreach ($data['form'] as $field) {
+            if ($field['name'] == 'select_all') {
+                $selectAll = true;
+            }
+            if ($field['name'] == 'checked[]') {
+                $checked = true;
+                $editIds [] = $field['value'];
+            }
+
+        }
+        if (!$selectAll && !$checked) {
+            return response()->json([
+                'message' => 'No leads selected',
+                'errors'  => ['missing' => ["Please select at least 1 lead"]]
+            ], 500);
+        }
+        foreach ($data['filters'] as $filter) {
+            foreach ($filter as $column => $value) {
+                if ($value != '') {
+                    $filters[$column] = $value;
+                }
+            }
+        }
+        if (empty($fitlers) && $selectAll) {
+            $countAll = Lead::all()->count();
+            $countSelected = count($editIds);
+            logger('All records are:' . $countAll);
+            logger('Selected records are:' . $countSelected);
+            Session::put('selectedIds', $editIds);
+
+            return [
+                'message' => 'Do you wanna edit all:' . $countAll . ' rows? Or just selected: ' . $countSelected
+            ];
+
+        }
+
+        if ($this->request->has('checked')) {
+            logger($this->request->all());
+        }
+
+    }
+
+    public function getEditValues() {
+        $countries = countries();
+        $users = User::select('id', 'name')->get();
+        $stages = Category::leads()->select('id', 'name')->get();
+        $desks = Desk::all();
+
+        return [
+            'countries' => $countries,
+            'users'     => $users,
+            'stages'    => $stages,
+            'desks'     => $desks
+        ];
+        logger($countries);
+    }
+
+    public function bulkEdit() {
+        return;
+        if ($this->request->has('checked')) {
+            logger($this->request->all());
+            return view('leads::modal.bulkEdit');
+        }
+//        return response()->json([
+//            'message' => 'No leads selected',
+//            'errors'  => ['missing' => ["Please select atleast 1 lead"]]
+//        ], 500);
     }
 
     /**
@@ -228,7 +349,6 @@ abstract class LeadsController extends Controller {
             $data = $importer->getData($path);
         } else {
             $data = array_map('str_getcsv', file($path));
-
         }
         if (count($data) > 0) {
             if ($request->has('header')) {
@@ -354,6 +474,7 @@ abstract class LeadsController extends Controller {
      */
     public function bulkEmail() {
         if ($this->request->has('checked')) {
+
             $data['page'] = $this->getPage();
             $data['leads'] = $this->lead->whereIn('id', $this->request->checked)->select('id', 'name', 'email')->get();
 
@@ -397,7 +518,9 @@ abstract class LeadsController extends Controller {
      * Delete multiple leads
      */
     public function bulkDelete() {
+
         if ($this->request->has('checked')) {
+
             BulkDeleteLeads::dispatch($this->request->checked, \Auth::id())->onQueue('normal');
             $data['message'] = langapp('deleted_successfully');
             $data['redirect'] = url()->previous();
@@ -435,11 +558,9 @@ abstract class LeadsController extends Controller {
         if ($user->hasRole('admin') || $user->hasRole('office manager')) {
             //Get all leads
             $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
-
         } elseif ($user->hasRole('sales agent')) {
             //Get all leads under him
             $model = $this->applyFilter()->where('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
-
         } elseif ($user->hasRole('team leader')) {
             //Get all leads under him and under his desk
             $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
@@ -498,7 +619,6 @@ abstract class LeadsController extends Controller {
         })->editColumn('source', function ($lead) use ($allSources) {
             return $allSources[$lead->source];
         })->editColumn('desk', function ($lead) use ($allDesks) {
-
             return $allDesks[$lead->desk_id];
         })->editColumn('approx_time', function ($lead) {
             $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
@@ -507,14 +627,12 @@ abstract class LeadsController extends Controller {
             if ($lead->created_at) {
                 return $lead->created_at->toDateTimeString();
             }
-
         })->editColumn('sales_status', function ($lead) {
             if (!$lead->sales_status) {
                 return $lead->sales_status = 'new';
             } else {
                 return $lead->sales_status;
             }
-
         })->editColumn('modified_time', function ($lead) use ($local_timezone) {
             if ($lead->updated_at) {
                 $carbon = Carbon::createFromFormat('Y-m-d H:i:s', $lead->updated_at, $local_timezone);
@@ -561,11 +679,9 @@ abstract class LeadsController extends Controller {
         if ($user->hasRole('admin') || $user->hasRole('office manager')) {
             //Get all leads
             $model = $this->applyFilter()->with('status:id,name', 'agent:id,username,name');
-
         } elseif ($user->hasRole('sales agent')) {
             //Get all leads under him
             $model = $this->applyFilter()->where('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
-
         } elseif ($user->hasRole('team leader')) {
             //Get all leads under him and under his desk
             $model = $this->applyFilter()->where('desk_id', $user->desk_id)->orWhere('sales_rep', $user->id)->with('status:id,name', 'agent:id,username,name');
@@ -624,7 +740,6 @@ abstract class LeadsController extends Controller {
         })->editColumn('source', function ($lead) use ($allSources) {
             return $allSources[$lead->source];
         })->editColumn('desk', function ($lead) use ($allDesks) {
-
             return $allDesks[$lead->desk_id];
         })->editColumn('approx_time', function ($lead) {
             $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now(), 'UTC');
@@ -633,14 +748,12 @@ abstract class LeadsController extends Controller {
             if ($lead->created_at) {
                 return $lead->created_at->toDateTimeString();
             }
-
         })->editColumn('sales_status', function ($lead) {
             if (!$lead->sales_status) {
                 return $lead->sales_status = 'new';
             } else {
                 return $lead->sales_status;
             }
-
         })->editColumn('modified_time', function ($lead) use ($local_timezone) {
             if ($lead->updated_at) {
                 $carbon = Carbon::createFromFormat('Y-m-d H:i:s', $lead->updated_at, $local_timezone);
@@ -716,19 +829,17 @@ abstract class LeadsController extends Controller {
     }
 
     protected function applyFilter() {
-
         if ($this->request->filter === 'converted') {
 //            return $this->lead->apply(['converted' => 1])->whereNull('archived_at');
-            $q =  $this->lead->query()->where('stage_id', 54)->orderby('is_logged', 'desc');
+            $q = $this->lead->query()->where('stage_id', 54)->orderby('is_logged', 'desc');
 
             if (empty($this->searchFields)) {
                 return $q;
-            }else{
+            } else {
                 foreach ($this->searchFields as $searchField => $searchValue) {
                     if ($searchValue != 'false') {
                         //Check if field contains  time
                         if ((strpos($searchField, 'time') !== false)) {
-
                             $date = explode('/', $searchValue);
                             $timeField = explode('_', $searchField);
 
@@ -750,7 +861,6 @@ abstract class LeadsController extends Controller {
             return $this->lead->apply(['archived' => 1]);
         }
         if (empty($this->searchFields)) {
-
             return $this->lead->query()->whereNull('archived_at')->whereNotIn('stage_id', [54])->orderby('is_logged', 'desc');
         } else {
             $q = $this->lead->query()->whereNull('archived_at')->whereNotIn('stage_id', [54])->orderby('is_logged', 'desc');
@@ -765,7 +875,6 @@ abstract class LeadsController extends Controller {
                 if ($searchValue != 'false') {
                     //Check if field contains  time
                     if ((strpos($searchField, 'time') !== false)) {
-
                         $date = explode('/', $searchValue);
                         $timeField = explode('_', $searchField);
 
@@ -788,7 +897,6 @@ abstract class LeadsController extends Controller {
 
 
     protected function getDisplayType() {
-
         if (!is_null($this->request->view)) {
             session(['leadview' => $this->displayType]);
         }

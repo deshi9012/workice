@@ -5,8 +5,8 @@
         <span class="navbar-brand block <?php echo e(settingEnabled('blur_login') ? 'text-white' : ''); ?>">
             <?php $display = get_option('logo_or_icon'); ?>
             <?php if($display == 'logo' || $display == 'logo_title'): ?>
-            <img src="<?php echo e(getStorageUrl(config('system.media_dir').'/'.get_option('company_logo'))); ?>"
-            class="img-responsive <?php echo e(($display == 'logo' ? '' : 'thumb-sm m-r-sm')); ?>">
+            
+            
             <?php elseif($display == 'icon' || $display == 'icon_title'): ?>
             <i class="<?php echo e(get_option('site_icon')); ?>"></i>
             <?php endif; ?>

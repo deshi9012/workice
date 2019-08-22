@@ -1,3 +1,41 @@
+<style>
+	/* The Modal (background) */
+	.modal {
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		padding-top: 100px; /* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgb(0, 0, 0); /* Fallback color */
+		background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+	}
+
+	/* Modal Content */
+	.modal-content {
+		background-color: #fefefe;
+		margin: auto;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 30%;
+	}
+
+	/* The Close Button */
+	.close {
+		color: #aaaaaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	button#yes, button#no{
+		margin:5px;
+		width: 60px;
+	}
+</style>
 <div class="row">
 	<div class="col-lg-4 b-r">
 		<section class="panel panel-default">
@@ -245,30 +283,40 @@
 
 
 	</div>
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<div id="message-modal"></div>
+		</div>
+
+	</div>
 
 
 </div>
 @push('custom-pagescript')
 	{{--<script type="text/javascript">--}}
-		{{--$(document).ready(function () {--}}
+	{{--$(document).ready(function () {--}}
 
-			{{--$('#custom_stage_id').on('change', function () {--}}
-				{{--var lead_id = $('#lead-id').text();--}}
-				{{--var data = {--}}
-					{{--'stage_id': $(this).val()--}}
-				{{--};--}}
+	{{--$('#custom_stage_id').on('change', function () {--}}
+	{{--var lead_id = $('#lead-id').text();--}}
+	{{--var data = {--}}
+	{{--'stage_id': $(this).val()--}}
+	{{--};--}}
 
-				{{--$.ajax({--}}
-					{{--type: "GET",--}}
-					{{--url: 'api/'.lead_id,--}}
-					{{--data: data,--}}
+	{{--$.ajax({--}}
+	{{--type: "GET",--}}
+	{{--url: 'api/'.lead_id,--}}
+	{{--data: data,--}}
 
-					{{--success: function (response) {--}}
-						{{--console.log(response);--}}
-					{{--}--}}
-				{{--});--}}
-			{{--});--}}
-		{{--});--}}
+	{{--success: function (response) {--}}
+	{{--console.log(response);--}}
+	{{--}--}}
+	{{--});--}}
+	{{--});--}}
+	{{--});--}}
 
 	{{--</script>--}}
 
@@ -278,19 +326,39 @@
 		var index = $('#custom_stage_id').prop('selectedIndex');
 		var select = $('#custom_stage_id');
 
+		var modal = $('#myModal');
+
 		$('#custom_stage_id').on('change', function () {
-			var alertConfirm = confirm("Are you sure you want to change stage for this lead ?");
-			if(alertConfirm) {
+
+			$('.close').on('click', function () {
+				modal.css('display', 'none');
+
+			});
+			
+			$('#message-modal').html(
+				'<div> ' +
+				'<p>Changing status to:'+$('#custom_stage_id option:selected').text()+ '</p>' +
+				'<button id="yes" >Yes</button>' +
+				'<button id="no" >No</button>' +
+				'</div>'
+			);
+			modal.css('display', 'block');
+			$('button#yes').click(function () {
 				var lead_id = $('#lead-id').text();
 				axios.patch('{{ route('leads.update-stage') }}', {lead_id: lead_id, stage_id: $(this).val()})
 					.then(function (response) {
 						console.log('asf');
+						modal.css('display', 'none');
 					});
-			}else{
-				$('#custom_stage_id').prop('selectedIndex',index);
+			});
+			$('button#no').click(function () {
 
+				$('#custom_stage_id').prop('selectedIndex', index);
+				modal.css('display', 'none');
 				return false;
-			}
+
+			});
+
 		});
 
 
