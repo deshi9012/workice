@@ -334,7 +334,7 @@
 				modal.css('display', 'none');
 
 			});
-			
+
 			$('#message-modal').html(
 				'<div> ' +
 				'<p>Changing status to:'+$('#custom_stage_id option:selected').text()+ '</p>' +
@@ -345,7 +345,8 @@
 			modal.css('display', 'block');
 			$('button#yes').click(function () {
 				var lead_id = $('#lead-id').text();
-				axios.patch('{{ route('leads.update-stage') }}', {lead_id: lead_id, stage_id: $(this).val()})
+				
+				axios.patch('{{ route('leads.update-stage') }}', {lead_id: lead_id, stage_id: $('#custom_stage_id').val()})
 					.then(function (response) {
 						console.log('asf');
 						modal.css('display', 'none');
