@@ -1,5 +1,6 @@
 <?php
 use Modules\Leads\Entities\Lead;
+use Session;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +11,9 @@ use Modules\Leads\Entities\Lead;
 | contains the "web" middleware group. Now create something great!
 |
  */
-
+Route::get('/test', function ( ){
+   return Session::all();
+});
 
 Route::get('/', 'Welcome@index')->middleware(['auth']);
 

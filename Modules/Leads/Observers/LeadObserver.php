@@ -96,6 +96,9 @@ class LeadObserver {
             }
             \Artisan::queue('leads:calcstage');
             $lead->saveCustom(request('custom'));
+        }elseif (request()->has('bulk_edit')){
+            $res = new Response();
+            return $res->send();
         }
         else {
             logger('asdfa');

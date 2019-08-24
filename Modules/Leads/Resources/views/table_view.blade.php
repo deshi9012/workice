@@ -93,6 +93,17 @@
 		text-align: center;
 	}
 
+	.custom-bulk {
+
+		margin: 0 auto;
+		/*top: 40px;*/
+		display: block;
+	}
+	#select-country,#select-user,#select-stage,#select-desk{
+		margin-top: 5px;
+		margin-bottom: 3px;
+	}
+
 </style>
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -109,6 +120,16 @@
 	<section class="panel panel-default">
 
 		<form id="frm-lead" action="{{ route('leads.bulk.email') }}" method="POST">
+			@if((Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')))
+				{{--<a href="{{ route('leads.bulkEdit') }}"--}}
+				{{--class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs" data-toggle="ajaxModal" data-rel="tooltip"--}}
+				{{--title="@langapp('edit')  ">Bulk</a>--}}
+				<button type="submit" id="button"
+						class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs custom-bulk"
+						value="bulk-edit">
+					<span class="">Mass assign</span>
+				</button>
+			@endif
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<input type="hidden" name="module" value="leads">
 			<div class="table-responsive">
@@ -169,15 +190,15 @@
 				{{--@endcan--}}
 
 			@endif
-			@if((Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')))
-				{{--<a href="{{ route('leads.bulkEdit') }}"--}}
-				{{--class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs" data-toggle="ajaxModal" data-rel="tooltip"--}}
-				{{--title="@langapp('edit')  ">Bulk</a>--}}
-				<button type="submit" id="button" class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs"
-						value="bulk-edit">
-					<span class="">@icon('solid/trash-alt')Bulk Edit</span>
-				</button>
-			@endif
+			{{--@if((Auth::user()->hasRole('admin') || Auth::user()->hasRole('desk manager') || Auth::user()->hasRole('office manager')))--}}
+			{{--<a href="{{ route('leads.bulkEdit') }}"--}}
+			{{--class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs" data-toggle="ajaxModal" data-rel="tooltip"--}}
+			{{--title="@langapp('edit')  ">Bulk</a>--}}
+			{{--<button type="submit" id="button" class="btn btn-sm btn-{{ get_option('theme_color') }} m-xs"--}}
+			{{--value="bulk-edit">--}}
+			{{--<span class="">@icon('solid/trash-alt')Bulk Edit</span>--}}
+			{{--</button>--}}
+			{{--@endif--}}
 		</form>
 	</section>
 </div>
@@ -195,6 +216,7 @@
 
 				if ($(this).prop("checked") == true) {
 					console.log("Checkbox is checked.");
+					$("input[type=checkbox]").prop('checked', $(this).prop('checked'));
 					var pageRows = $('select[name="leads-table_length"]').children("option:selected").val();
 
 					var filters = [];
@@ -218,24 +240,25 @@
 							'perPage': pageRows
 						}
 					});
-
-					console.log($(this).prop("checked"));
-					$('input[name="checked[]]"').each(function(i){
-						$(this).attr('checked');
-
-					});
+					if ($('input#select-all[type="checkbox"]').prop("checked") == true) {
+						$("input[type=checkbox]").prop('checked', $(this).prop('checked'));
+					}
 					$('div.dataTables_length').append('<div id="question"><span >All ' + res.data.perPageCount + ' items on this page are selected </span>' +
 						'<a id="selectAllRows" href="#">Select all ' + res.data.allCount + ' items</a></div>');
 
-					$('#selectAllRows').click(async function (ev) {
+					$('a#selectAllRows').click(function (ev) {
 						ev.preventDefault();
-						console.log('all choosen');
-					});
 
+						bulkEdit(true);
+
+					});
 				}
 				else {
 					console.log("Checkbox is unchecked.");
 					$('div#question').remove();
+				}
+				if ($(this).prop("checked") == true) {
+					$("input[type=checkbox]").prop('checked', $(this).prop('checked'));
 				}
 			});
 			var clickedOnce = 0;
@@ -252,14 +275,15 @@
 			var removed = tableHeader.splice(1, 1);
 
 			$('#select-all').remove();
-			tableHeader.each(async function (i,val) {
+			tableHeader.each(async function (i, val) {
 
 				var title = $(this).text();
-				if ($(this).find("input").attr('name') == 'select_all') {
-					console.log('kut');
+
+
+				if ($(this).find("input").attr('name') == 'select_all' || !title) {
+
 					return true;
 				} else {
-
 					title = title.replace(/\s+/g, '_').toLowerCase();
 
 					if (title == 'local_time') {
@@ -279,10 +303,12 @@
 
 							$(this).find('*').filter(':input:visible:first').val(picker.startDate.format('YYYY-MM-DD') + ' / ' + picker.endDate.format('YYYY-MM-DD'));
 							$(this).find('*').filter(':input:visible:first').change();
+							table.columns.adjust().draw();
 						});
 						field.on('cancel.daterangepicker', function (ev, picker) {
 							$(this).find('*').filter(':input:visible:first').val('');
 							$(this).find('*').filter(':input:visible:first').change();
+							table.columns.adjust().draw();
 						});
 
 
@@ -323,28 +349,29 @@
 						$(this).html('<input class="search" type="text" id="' + title + '" placeholder="' + title + '" />');
 
 					}
-					$(this).find('*').filter('input[type="text"]:visible:first').on('keyup change', function () {
+					$(this).find('*').filter('input[type=text]:visible:first').on('keyup change', function (event) {
 
+						if (typeof event.keyCode !== "undefined") {
+							if ($(this).val().length >= 2 || $(this).val().length == 0) {
 
-						if ($(this).val().length >= 2 || $(this).val().length == 0) {
-							console.log($(this).val());
-							console.log('jere');
-							table.columns.adjust().draw();
-							if ($('input#select-all[type="checkbox"]').prop("checked") === true) {
-								$('input#select-all[type="checkbox"]').trigger('click');
+								table.columns.adjust().draw();
 
-								$('div#question').remove();
+								if ($('input#select-all[type="checkbox"]').prop("checked") === true) {
+									$('input#select-all[type="checkbox"]').trigger('click');
+
+									$('div#question').remove();
+								}
+
 							}
 						}
 
 					});
+
 					$(this).find('select').on('change', function () {
 
 						console.log('here2');
 						if ($(this).val().length >= 2 || $(this).val().length == 0) {
 							table.columns.adjust().draw();
-
-
 							if ($('input#select-all[type="checkbox"]').prop("checked") === true) {
 								$('input#select-all[type="checkbox"]').trigger('click');
 
@@ -364,8 +391,10 @@
 
 								$('div#question').remove();
 							}
+
 						}
 					});
+
 				}
 			});
 
@@ -471,8 +500,11 @@
 					{data: 'local_time', name: 'local_time'}
 
 				],
-				"initComplete": function(settings, json) {
+				"initComplete": function (settings, json) {
 
+					if ($('input#select-all[type="checkbox"]').prop("checked") == true) {
+						$("input[type=checkbox]").prop('checked', $(this).prop('checked'));
+					}
 				}
 			}).columns.adjust();
 
@@ -490,7 +522,8 @@
 							toastr.warning(response.data.message, '@langapp('
 							response_status
 							')'
-						);
+						)
+							;
 							window.location.href = response.data.redirect;
 						})
 						.catch(function (error) {
@@ -517,135 +550,8 @@
 					clickedOnce++;
 
 					if (clickedOnce <= 1) {
-
-						var form = $("#frm-lead").serializeArray();
-
-
-						var filters = [];
-						$("input.search").map(function (index, value) {
-
-							if ($(value).val()) {
-
-								var name = $(value).attr('id').toLowerCase();
-								filters.push({[name]: $(value).val()});
-
-							} else {
-
-								var name = $(value).attr('id').toLowerCase();
-								filters.push({[name]: false});
-							}
-						});
-						var modal = $('#myModal');
-
-						axios.post('{{ route('leads.bulkEditCheck') }}', {
-							'form': form,
-							'filters': filters
-						}).then(async function (response) {
-							try {
-								const res = await axios.get('{{ route('leads.getEditValues') }}');
-
-								$('#message-modal').html(
-									'<form id="bulk-edit"> ' +
-									'<select id="select-country" class="form-control select2-option" name="country">' +
-									'</select>' +
-									'<select id="select-user" class="form-control select2-option" name="sales_rep">' +
-									'</select>' +
-									'<select id="select-stage" class="form-control select2-option" name="stage">' +
-									'</select>' +
-									'<select id="select-desk" class="form-control select2-option" name="desk">' +
-									'</select>' +
-									'<p>' + response.data.message + '</p>' +
-									'<input class="radio-class" type="radio" name="edit" value="all" checked />All</br>' +
-									'<input class="radio-class" type="radio" name="edit" value="onlySelected">Selected</br>' +
-									'<button id="submit-bulk" >Submit</button>' +
-									'</form>'
-								);
-
-								var countrySelect = $('#select-country');
-
-								$("<option />", {
-									value: false,
-									text: 'Select Country...'
-								}).appendTo(countrySelect);
-
-								for (var country in res.data.countries) {
-									$("<option />", {
-										value: res.data.countries[country]['name'],
-										text: res.data.countries[country]['name']
-									}).appendTo(countrySelect);
-								}
-
-								var userSelect = $('#select-user');
-								$("<option />", {
-									value: false,
-									text: 'Select sales rep'
-								}).appendTo(userSelect);
-
-								for (var user in res.data.users) {
-
-									$("<option />", {
-										value: res.data.users[user]['id'],
-										text: res.data.users[user]['name']
-									}).appendTo(userSelect);
-								}
-
-								var stageSelect = $('#select-stage');
-								$("<option />", {
-									value: false,
-									text: 'Select stage'
-								}).appendTo(stageSelect);
-
-								for (var stage in res.data.stages) {
-
-									$("<option />", {
-										value: res.data.stages[stage]['id'],
-										text: res.data.stages[stage]['name']
-									}).appendTo(stageSelect);
-								}
-
-
-								var deskSelect = $('#select-desk');
-								$("<option />", {
-									value: false,
-									text: 'Select desk'
-								}).appendTo(deskSelect);
-
-								for (var desk in res.data.desks) {
-
-									$("<option />", {
-										value: res.data.desks[desk]['id'],
-										text: res.data.desks[desk]['name']
-									}).appendTo(deskSelect);
-								}
-								modal.css('display', 'block');
-
-
-							} catch (error) {
-								showErrors(error);
-							}
-
-							$('#submit-bulk').click(function (ev) {
-								ev.preventDefault();
-								console.log($('#bulk-edit').serialize());
-							});
-							return;
-
-							var form = $("#frm-lead").serialize();
-							axios.post('{{ route('leads.bulkEdit') }}', {'form': form, 'filters': filters})
-								.then(function (response) {
-									toastr.warning(response.data.message, '@langapp('
-									response_status
-									') '
-								)
-									;
-									window.location.href = response.data.redirect;
-								})
-								.catch(function (error) {
-									showErrors(error);
-								});
-						}).catch(function (error) {
-							showErrors(error);
-						});
+						bulkEdit();
+						clickedOnce = 0;
 
 					} else {
 						console.log('nothing');
@@ -667,8 +573,166 @@
 				;
 			}
 
+			function bulkEdit(editAll) {
 
-		})
-		;
+
+				var form = $("#frm-lead").serializeArray();
+				var filters = [];
+				$("input.search").map(function (index, value) {
+
+					if ($(value).val()) {
+
+						var name = $(value).attr('id').toLowerCase();
+						filters.push({[name]: $(value).val()});
+
+					} else {
+
+						var name = $(value).attr('id').toLowerCase();
+						filters.push({[name]: false});
+					}
+				});
+				$("select.search").map(function (index, value) {
+
+					if ($(value).val()) {
+						var name = $(value).attr('id').toLowerCase();
+						filters.push({[name]: $(value).val()});
+					} else {
+
+						var name = $(value).attr('id').toLowerCase();
+						filters.push({[name]: false});
+					}
+				});
+				var modal = $('#myModal');
+
+				axios.post('{{ route('leads.bulkEditCheck') }}', {
+					'form': form,
+					'filters': filters,
+					'perPage': $('select[name="leads-table_length"]').children("option:selected").val()
+				}).then(async function (response) {
+
+					try {
+						const res = await axios.get('{{ route('leads.getEditValues') }}');
+						console.log(res.data);
+						$('#message-modal').html(
+							'<form id="bulk-edit"> ' +
+							'<label>Select Country:</label></br>' +
+							'<select id="select-country" class="form-control select2-option" name="country">' +
+							'</select>' +
+							'<label>Select Agent:</label></br>' +
+							'<select id="select-user" class="form-control select2-option" name="sales_rep">' +
+							'</select>' +
+							'<label>Select Stage:</label></br>' +
+							'<select id="select-stage" class="form-control select2-option" name="stage">' +
+							'</select>' +
+							'<label>Select Desk:</label></br>' +
+							'<select id="select-desk" class="form-control select2-option" name="desk">' +
+							'</select>' +
+							'<p>' + response.data.message + '</p>' +
+							'<button id="submit-bulk-post" >Submit</button>' +
+							'</form>'
+						);
+
+
+						var countrySelect = $('#select-country');
+
+						$("<option />", {
+							value: false,
+							text: 'Select Country...'
+						}).appendTo(countrySelect);
+
+						for (var country in res.data.countries) {
+							$("<option />", {
+								value: res.data.countries[country]['name'],
+								text: res.data.countries[country]['name']
+							}).appendTo(countrySelect);
+						}
+
+						var userSelect = $('#select-user');
+						$("<option />", {
+							value: false,
+							text: 'Select sales rep'
+						}).appendTo(userSelect);
+
+						for (var user in res.data.users) {
+
+							$("<option />", {
+								value: res.data.users[user]['id'],
+								text: res.data.users[user]['name']
+							}).appendTo(userSelect);
+						}
+
+						var stageSelect = $('#select-stage');
+						$("<option />", {
+							value: false,
+							text: 'Select stage'
+						}).appendTo(stageSelect);
+
+						for (var stage in res.data.stages) {
+
+							$("<option />", {
+								value: res.data.stages[stage]['id'],
+								text: res.data.stages[stage]['name']
+							}).appendTo(stageSelect);
+						}
+
+
+						var deskSelect = $('#select-desk');
+						$("<option />", {
+							value: false,
+							text: 'Select desk'
+						}).appendTo(deskSelect);
+
+						for (var desk in res.data.desks) {
+
+							$("<option />", {
+								value: res.data.desks[desk]['id'],
+								text: res.data.desks[desk]['name']
+							}).appendTo(deskSelect);
+						}
+						modal.css('display', 'block');
+
+					} catch (error) {
+						showErrors(error);
+					}
+
+					$('#submit-bulk-post').click(async function (ev) {
+
+						function showErrors(error) {
+							var errors = error.response.data.errors;
+							var errorsHtml = '';
+							$.each(errors, function (key, value) {
+								errorsHtml += '<li>' + value[0] + '</li>';
+							});
+							toastr.error(errorsHtml, '@langapp('
+							response_status
+							') '
+						)
+							;
+						}
+
+						console.log(filters);
+						console.log(editAll);
+						ev.preventDefault();
+						try {
+							const res = await axios.post('{{route('leads.postEdit')}}', {
+								form: $('#bulk-edit').serializeArray(),
+								filters: filters,
+								editAll: editAll ? true : false
+							});
+							modal.css('display', 'none');
+							table.columns.adjust().draw();
+							$('div#question').remove();
+							$("input[type=checkbox]").prop('checked', false);
+
+							console.log(res.data);
+						} catch (error) {
+							showErrors(error);
+						}
+					});
+				}).catch(function (error) {
+					showErrors(error);
+				});
+			}
+		});
 	</script>
 @endpush

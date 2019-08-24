@@ -80,7 +80,6 @@
 				@endadmin
 				{{--@endcan--}}
 
-
 			</header>
 			<section class="scrollable wrapper overflow-x-auto">
 

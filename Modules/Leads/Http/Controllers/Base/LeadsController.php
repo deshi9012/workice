@@ -234,15 +234,19 @@ abstract class LeadsController extends Controller {
         $data = $this->request->all();
 
         foreach ($data['form'] as $field) {
+
             if ($field['name'] == 'select_all') {
                 $selectAll = true;
             }
             if ($field['name'] == 'checked[]') {
+
                 $checked = true;
                 $editIds [] = $field['value'];
             }
 
         }
+
+        //If no leads are selected
         if (!$selectAll && !$checked) {
             return response()->json([
                 'message' => 'No leads selected',
@@ -250,28 +254,122 @@ abstract class LeadsController extends Controller {
             ], 500);
         }
         foreach ($data['filters'] as $filter) {
+
             foreach ($filter as $column => $value) {
+
                 if ($value != '') {
+
                     $filters[$column] = $value;
                 }
             }
         }
-        if (empty($fitlers) && $selectAll) {
+
+
+        //If all leads are selected without filtering
+        if (empty($filters) && $selectAll) {
+
             $countAll = Lead::all()->count();
             $countSelected = count($editIds);
-            logger('All records are:' . $countAll);
-            logger('Selected records are:' . $countSelected);
             Session::put('selectedIds', $editIds);
-
             return [
-                'message' => 'Do you wanna edit all:' . $countAll . ' rows? Or just selected: ' . $countSelected
+                'message' => 'Do you wanna edit: ' . $countSelected . ' rows?'
             ];
 
         }
-
-        if ($this->request->has('checked')) {
-            logger($this->request->all());
+        if(!empty($filters) && $selectAll){
+            $countSelected = count($editIds);
+            Session::put('selectedIds', $editIds);
+            return [
+                'message' => 'Edit:' . $countSelected
+            ];
         }
+
+//        if (empty($filters)) {
+            $countSelected = count($editIds);
+            Session::put('selectedIds', $editIds);
+            return [
+                'message' => 'Edit:' . $countSelected
+            ];
+//        }
+
+    }
+
+    public function editLeads() {
+
+        $this->request->request->add(['bulk_edit' => true]);
+        $editFields = [];
+        $isEmptyForm = true;
+        $filters = $this->request->all()['filters'];
+
+
+        foreach ($this->request->all()['form'] as $item) {
+            if($item['value'] != 'false'){
+                $isEmptyForm = false;
+                $editFields[$item['name']] = $item['value'];
+                continue;
+            }
+        }
+        if($isEmptyForm){
+            return response()->json([
+                'message' => 'No fields selected',
+                'errors'  => ['missing' => ["Please select at least 1 field"]]
+            ], 500);
+        }
+
+        if(empty($this->request->all()['editAll'])){
+            $selectedIds = Session::get('selectedIds');
+
+            $leads = Lead::whereIn('id', $selectedIds)->get();
+            foreach ($leads as $lead) {
+                foreach ($editFields as $editField => $value) {
+                    if($editField == 'stage'){
+                        $lead->stage_id = $value;
+                        continue;
+                    } if($editField == 'desk'){
+                        $lead->desk_id = $value;
+                        continue;
+                    }
+                    $lead->{$editField} = $value;
+
+                }
+                $lead->save();
+            }
+            return response()->json([
+                'message' => 'Updated'
+            ], 200);
+        }else{
+            $leads = Lead::query();
+            foreach ($filters as $filter) {
+                foreach ($filter as $filterName => $filterValue) {
+                    if($filterValue != ''){
+                        $leads->{$filterName}($filterValue);
+                    }
+                }
+
+            }
+
+            foreach ($leads->get() as $lead) {
+
+                foreach ($editFields as $editField => $value) {
+                    if($editField == 'stage'){
+                        $lead->stage_id = $value;
+                        continue;
+                    } if($editField == 'desk'){
+                        $lead->desk_id = $value;
+                        continue;
+                    }
+                    $lead->{$editField} = $value;
+
+                }
+                $lead->save();
+            }
+            return response()->json([
+                'message' => 'Updated'
+            ], 200);
+
+        }
+
+
 
     }
 
@@ -601,6 +699,7 @@ abstract class LeadsController extends Controller {
             }
             return $str . str_limit($lead->name, 15) . '</a>';
         })->editColumn('chk', function ($lead) {
+            logger($lead);
             return '<label><input type="checkbox" name="checked[]" value="' . $lead->id . '"><span class="label-text"></span></label>';
         })->editColumn('mobile', function ($lead) {
             return str_limit($lead->mobile, 15);

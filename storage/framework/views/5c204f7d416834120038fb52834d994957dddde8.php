@@ -79,7 +79,6 @@
 				<?php endif; ?>
 				
 
-
 			</header>
 			<section class="scrollable wrapper overflow-x-auto">
 
