@@ -2604,6 +2604,9 @@ class LeadsApiController extends Controller {
         logger('api start');
         logger($request);
         logger('api end');
+        if(!$request->has('country')){
+            return response('', Response::HTTP_UNPROCESSABLE_ENTITY);
+        }:q
         $countryCode = $this->getCountryCode($request->all()['country']);
         $timeZone = $this->get_time_zone($countryCode);
 
