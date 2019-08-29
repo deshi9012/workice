@@ -233,6 +233,22 @@
 							filters.push({[name]: false});
 						}
 					});
+					$("select.search").map(function (index, value) {
+
+
+						if ($(value).val()) {
+
+							var name = $(value).attr('id').toLowerCase();
+
+							filters.push({[name]: $(value).val()});
+
+						} else {
+
+							var name = $(value).attr('id').toLowerCase();
+
+							filters.push({[name]: false});
+						}
+					});
 
 					const res = await axios.get('<?php echo e(route('leads.leadsAllNumber')); ?>', {
 						params: {

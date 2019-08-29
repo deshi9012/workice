@@ -712,6 +712,7 @@ abstract class LeadsController extends Controller {
         })->editColumn('lead_value', function ($lead) {
             return formatCurrency(get_option('default_currency'), (float)$lead->lead_value);
         })->editColumn('stage', function ($lead) {
+            logger($lead);
             return '<span class="text-dark">' . str_limit($lead->status->name, 15) . '</span>';
         })->editColumn('sales_rep', function ($lead) {
             return str_limit(optional($lead->agent)->name, 15);
