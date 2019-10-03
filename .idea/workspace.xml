@@ -4,6 +4,23 @@
     <list default="true" id="b7c0520f-514d-4eb0-9f2d-a143941ea56c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/55/00/550008145734ab00035e72ede0c41369fdbbceb4" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/55/00/550008145734ab00035e72ede0c41369fdbbceb4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/60/18/6018c36df82d55890d12ccbb76ff496cea184eef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/69/ee/69ee74b4c0a6a886215347f3d3e6479d75a33f2b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/69/ee/69ee74b4c0a6a886215347f3d3e6479d75a33f2b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/6c/05/6c053e87f8b9649fec29937aadac4ad5fde44ff5" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/6c/05/6c053e87f8b9649fec29937aadac4ad5fde44ff5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/85/5f/855f92484c8c414d36c1b25cb24876e30229cbbf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/85/5f/855f92484c8c414d36c1b25cb24876e30229cbbf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/9a/e9/9ae94dc50e558db7ffe1a815095ce67c2ec993b1" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/9a/e9/9ae94dc50e558db7ffe1a815095ce67c2ec993b1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/a8/71/a87162cced83043b4310f95785defdda47d30fa2" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/a8/71/a87162cced83043b4310f95785defdda47d30fa2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/9d/c09da15061510aeab48a268b31d07bda9e27a18b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c8/64/c864aee304442d5f3e9ef45bb5f72b7eb1816b43" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c8/64/c864aee304442d5f3e9ef45bb5f72b7eb1816b43" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c8/f8/c8f84b8f63744f12d58615c5a8c69686b1efef10" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c8/f8/c8f84b8f63744f12d58615c5a8c69686b1efef10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/db/ce/dbcec0f6373f5c28b98bbb5ce51826c2d07a3bb2" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/db/ce/dbcec0f6373f5c28b98bbb5ce51826c2d07a3bb2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/73/ec734b651574683f36974c7f12847fbbe084dbe2" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/73/ec734b651574683f36974c7f12847fbbe084dbe2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/SLXbepFzywt4DjKaafgwSXYPMMhWEY9MlcvspkRR" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/be4c0988237f1e2a3986e7e902d06e0ce81c75a8.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/be4c0988237f1e2a3986e7e902d06e0ce81c75a8.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-02.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-05.log" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +40,7 @@
       <file leaf-file-name="LeadsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="977">
+            <state relative-caret-position="20730">
               <caret line="714" column="26" selection-start-line="714" selection-start-column="26" selection-end-line="714" selection-end-column="26" />
               <folding>
                 <element signature="e#55#91#0#PHP" expanded="true" />
@@ -32,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeadsApiController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LeadsApiController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="2607" column="67" selection-start-line="2607" selection-start-column="67" selection-end-line="2607" selection-end-column="67" />
+            <state relative-caret-position="657">
+              <caret line="2608" column="9" selection-start-line="2608" selection-start-column="9" selection-end-line="2608" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -44,7 +61,7 @@
       <file leaf-file-name="Response.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Response.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="1680">
               <caret line="63" column="35" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="35" />
             </state>
           </provider>
@@ -53,7 +70,7 @@
       <file leaf-file-name="helpers.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="23310">
               <caret line="798" column="13" selection-start-line="798" selection-start-column="13" selection-end-line="798" selection-end-column="13" />
             </state>
           </provider>
@@ -62,8 +79,26 @@
       <file leaf-file-name="table_view.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
+            <state relative-caret-position="4606">
               <caret line="248" column="58" selection-start-line="248" selection-start-column="58" selection-end-line="248" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_overview.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="290" column="34" selection-start-line="290" selection-start-column="34" selection-end-line="290" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-9104">
+              <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -71,15 +106,10 @@
       <file leaf-file-name="LeadObserver.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
+            <state relative-caret-position="1260">
               <caret line="46" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="laravel-2019-08-29.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-08-29.log">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
@@ -181,7 +211,6 @@
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-08-20.log" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-08-21.log" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-08-22.log" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/routes.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-08-23.log" />
@@ -193,6 +222,7 @@
         <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php" />
         <option value="$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php" />
+        <option value="$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php" />
       </list>
     </option>
   </component>
@@ -408,7 +438,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1177" />
@@ -694,15 +724,17 @@
       <workItem from="1566552665126" duration="32647000" />
       <workItem from="1566748316441" duration="597000" />
       <workItem from="1566814663684" duration="616000" />
-      <workItem from="1567060509571" duration="2858000" />
+      <workItem from="1567060509571" duration="3465000" />
+      <workItem from="1567173165478" duration="589000" />
+      <workItem from="1570112643368" duration="594000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="544978000" />
+    <option name="totallyTimeSpent" value="546768000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -789,6 +821,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77940">
+          <caret line="2608" column="11" selection-start-line="2608" selection-start-column="11" selection-end-line="2608" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1339">
@@ -920,13 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="37" selection-end-line="343" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/bulkEdit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1018,13 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="340" column="50" lean-forward="true" selection-start-line="340" selection-start-column="50" selection-end-line="340" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1088,26 +1113,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-08-29.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Observers/LeadObserver.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
+        <state relative-caret-position="1260">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="248" column="58" selection-start-line="248" selection-start-column="58" selection-end-line="248" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Base/LeadsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="977">
+        <state relative-caret-position="20730">
           <caret line="714" column="26" selection-start-line="714" selection-start-column="26" selection-end-line="714" selection-end-column="26" />
           <folding>
             <element signature="e#55#91#0#PHP" expanded="true" />
@@ -1117,7 +1132,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="23310">
           <caret line="798" column="13" selection-start-line="798" selection-start-column="13" selection-end-line="798" selection-end-column="13" />
         </state>
       </provider>
@@ -1131,15 +1146,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Response.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="1680">
           <caret line="63" column="35" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Leads/Http/Controllers/Api/v1/LeadsApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="2607" column="67" selection-start-line="2607" selection-start-column="67" selection-end-line="2607" selection-end-column="67" />
+        <state relative-caret-position="657">
+          <caret line="2608" column="9" selection-start-line="2608" selection-start-column="9" selection-end-line="2608" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/modal/update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9104">
+          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/table_view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4606">
+          <caret line="248" column="58" selection-start-line="248" selection-start-column="58" selection-end-line="248" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Leads/Resources/views/tab/_overview.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="290" column="34" selection-start-line="290" selection-start-column="34" selection-end-line="290" selection-end-column="34" />
         </state>
       </provider>
     </entry>

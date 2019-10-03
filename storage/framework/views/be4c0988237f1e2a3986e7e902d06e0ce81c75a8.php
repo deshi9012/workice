@@ -1,6 +1,6 @@
 <style>
 	/* The Modal (background) */
-	.modal {
+	.modal-ask {
 		display: none; /* Hidden by default */
 		position: fixed; /* Stay in place */
 		z-index: 1; /* Sit on top */
@@ -15,7 +15,7 @@
 	}
 
 	/* Modal Content */
-	.modal-content {
+	.modal-content-ask {
 		background-color: #fefefe;
 		margin: auto;
 		padding: 20px;
@@ -24,7 +24,7 @@
 	}
 
 	/* The Close Button */
-	.close {
+	.close-ask {
 		color: #aaaaaa;
 		float: right;
 		font-size: 28px;
@@ -287,11 +287,11 @@
 
 	</div>
 	<!-- The Modal -->
-	<div id="myModal" class="modal">
+	<div id="myModal" class="modal-ask">
 
 		<!-- Modal content -->
-		<div class="modal-content">
-			<span class="close">&times;</span>
+		<div class="modal-content-ask">
+			<span class="close-ask">&times;</span>
 			<div id="message-modal"></div>
 		</div>
 
@@ -348,7 +348,7 @@
 			modal.css('display', 'block');
 			$('button#yes').click(function () {
 				var lead_id = $('#lead-id').text();
-				
+
 				axios.patch('<?php echo e(route('leads.update-stage')); ?>', {lead_id: lead_id, stage_id: $('#custom_stage_id').val()})
 					.then(function (response) {
 						console.log('asf');
