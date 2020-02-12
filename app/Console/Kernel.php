@@ -56,7 +56,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('app:gdpr-delete')->dailyAt('01:45')->name('gdpr.delete')->withoutOverlapping(5);
         $schedule->command('app:cleaner')->hourlyAt(15)->name('app.cleaner')->withoutOverlapping(5);
 
-        $schedule->job(new GetLoggedLeads, 'loggedin')->everyMinute();
+        $schedule->job(new GetLoggedLeads, 'default')->everyMinute();
         // $schedule->command('inspire')
         //          ->hourly();
     }
