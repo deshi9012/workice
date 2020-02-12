@@ -211,14 +211,13 @@ abstract class UsersController extends Controller {
         //Get names of all desks
         $tmpDesks = Desk::all()->toArray();
         $allDesks = [];
-
         //set $key to be id of every desk
         foreach ($tmpDesks as $key => $desk) {
             $allDesks[$desk['id']] = $desk['name'];
         }
 
         $model = $this->applyFilter()->with(['profile:user_id,job_title,mobile,city,use_gravatar,avatar']);
-
+        
         $data = DataTables::eloquent($model)->editColumn('name', function ($user) {
                 return '<a href="' . route('users.view', $user->id) . '"><span class="thumb-xs avatar lobilist-check"><img src="' . $user->profile->photo . '" class="img-circle"></span> ' . str_limit($user->name, 15) . '</a>';
             })->editColumn('chk', function ($user) {
@@ -236,7 +235,7 @@ abstract class UsersController extends Controller {
                 return $user->roles->pluck('name');
             })->editColumn('desk', function ($user) use ($allDesks) {
                 //set desk name
-                return $allDesks[$user->desk_id];
+                return isset($allDesks[$user->desk_id]) ? $allDesks[$user->desk_id] : 'No desk assigned';
             })->rawColumns([
                 'name',
                 'chk',
@@ -244,7 +243,7 @@ abstract class UsersController extends Controller {
                 'role',
                 'user'
             ])->make(true);
-
+            
         return $data;
     }
 
