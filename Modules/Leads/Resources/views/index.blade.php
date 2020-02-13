@@ -145,7 +145,7 @@
 																			</div>
 																			@if ($lead->sales_rep > 0)
 																				<span class="thumb-xs avatar lobilist-check">
-                                                                <img src="{{ $lead->agent->profile->photo }}"
+                                                                <img src="{{ $lead->agent ? $lead->agent->profile->photo : '' }}"
 																	 class="img-circle">
                                                             </span>
 																			@endif
