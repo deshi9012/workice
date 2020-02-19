@@ -230,7 +230,7 @@ abstract class LeadsController extends Controller {
         $filters = [];
         $selectAll = false;
         $checked = false;
-        logger('startcheck');
+        // logger('startcheck');
         $data = $this->request->all();
 
         foreach ($data['form'] as $field) {
@@ -385,13 +385,13 @@ abstract class LeadsController extends Controller {
             'stages'    => $stages,
             'desks'     => $desks
         ];
-        logger($countries);
+        // logger($countries);
     }
 
     public function bulkEdit() {
         return;
         if ($this->request->has('checked')) {
-            logger($this->request->all());
+            // logger($this->request->all());
             return view('leads::modal.bulkEdit');
         }
 //        return response()->json([
@@ -699,7 +699,7 @@ abstract class LeadsController extends Controller {
             }
             return $str . str_limit($lead->name, 15) . '</a>';
         })->editColumn('chk', function ($lead) {
-            logger($lead);
+            // logger($lead);
             return '<label><input type="checkbox" name="checked[]" value="' . $lead->id . '"><span class="label-text"></span></label>';
         })->editColumn('mobile', function ($lead) {
             return str_limit($lead->mobile, 15);
@@ -712,7 +712,7 @@ abstract class LeadsController extends Controller {
         })->editColumn('lead_value', function ($lead) {
             return formatCurrency(get_option('default_currency'), (float)$lead->lead_value);
         })->editColumn('stage', function ($lead) {
-            logger($lead);
+            // logger($lead);
             return '<span class="text-dark">' . str_limit($lead->status->name, 15) . '</span>';
         })->editColumn('sales_rep', function ($lead) {
             return str_limit(optional($lead->agent)->name, 15);
@@ -748,8 +748,8 @@ abstract class LeadsController extends Controller {
 //            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()->setTimezone($lead->timezone))->format('H:i:s');
             $carbon = Carbon::now()->tz($lead->timezone)->format('H:i:s');
             if ($lead->timezone == 'Europe/Malta') {
-                logger($lead->timezone);
-                logger($carbon);
+                // logger($lead->timezone);
+                // logger($carbon);
             }
             return $carbon;
 //            return $carbon->tz($lead->timezone)->toTimeString();
@@ -869,8 +869,8 @@ abstract class LeadsController extends Controller {
 //            $carbon = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()->setTimezone($lead->timezone))->format('H:i:s');
             $carbon = Carbon::now()->tz($lead->timezone)->format('H:i:s');
             if ($lead->timezone == 'Europe/Malta') {
-                logger($lead->timezone);
-                logger($carbon);
+                // logger($lead->timezone);
+                // logger($carbon);
             }
             return $carbon;
 //            return $carbon->tz($lead->timezone)->toTimeString();
